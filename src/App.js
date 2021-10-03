@@ -1,25 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import Nav from './components/nav/Nav'
+import NavMobile from './components/nav/NavMobile'
 
-function App() {
+import About from './components/about/About'
+import Contact from './components/contact/Contact'
+import Works from './components/works/Works'
+
+import {Route, BrowserRouter as Router} from 'react-router-dom'
+import {useEffect, useState, useCallback} from 'react'
+import useMediaQuery from "./components/customHooks/useMediaQuery";
+
+
+const App = () => {
+  /* Extra small devices (phones, 600px and down) */
+  const xs = useMediaQuery('(max-width: 600px)');
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+    const s = useMediaQuery('(min-width: 600px)');
+    /* Medium devices (landscape tablets, 768px and up) */
+    const m = useMediaQuery('(min-width: 768px)');
+    /* Large devices (laptops/desktops, 992px and up) */
+    const l = useMediaQuery('(min-width: 992px)');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+    <div className="rootContainer">
+    <Nav m={m} l={l}/>
+    <Route path = "/about" exact>
+    <About  m={m} l={l}/>
+    </Route>
+    <Route path = "/contact" exact>
+    <Contact  m={m} l={l}/>
+    </Route>
+    <Route path = "/works" exact>
+    <Works  m={m} l={l}/>
+    </Route>
     </div>
-  );
+    </Router>
+  )
 }
 
-export default App;
+export default App

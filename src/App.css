@@ -1,10 +1,8 @@
 
-@import "~@fontsource/palanquin/index.css";
-@import "~@fontsource/jost/300.css";
-@import "~@fontsource/jost/400.css";
-@import "~@fontsource/jost/500.css";
-
-@import "~@fontsource/amiri/index.css";
+@import "~@fontsource/lusitana";
+@import "~@fontsource/la-belle-aurore";
+@import "~@fontsource/yaldevi";
+@import "~@fontsource/sen";
 
 * {
   box-sizing: border-box;
@@ -55,158 +53,60 @@ html{
     scroll-behavior: smooth;
 }
 
-.OpenedAuthor{
-  scroll-behavior: smooth;
-}
-
-
 :root{
+  --midnight: #2E3B4A;
+  --velvet: #611016;
+  --cinerous: #C1BEBE;
+  --desert-rose:#A94758;
+  --lilac: #DDDFE9;
+  --occlusion: #312727;
+  --highlight: #E7B1A7;
 
-  background: #2E3B4A;
-  background: #611016;
-  background: #708083;
-  background: #C1BEBE;
-  background: #F0F3F4;
-  background: #DDDFE9;
-  background: #312727;
-  background: #2E3B4A;
-  background: #A8B4B6;
-  background: #DDE1E2;
-  background: #AA535B;
-  background: #DDE1E4;
-  background: #D4BAC1;
-  background: #4F577F;
-  background: #9E9BB8;
-  background: #E7B1A7;
-  background: #D4BAC1;
-  background: #DDDFE9;
-  background: #353535;
-  background: #2E3B4A;
-  background: linear-gradient(180deg, #6A7B82 0%, rgba(142, 149, 180, 0) 100%);
-  background: #A9B5B7;
-  background: #E1CECF;
-  background: linear-gradient(180deg, #611016 0%, #DDDFE9 50.12%, #DDDFE9 94.91%);
-  background: linear-gradient(180deg, #611016 0%, #A94758 100%, #A94758 100%);
-  background: linear-gradient(180deg, rgba(142, 149, 180, 0) 0%, #6A7B82 100%);
-  background: linear-gradient(180deg, rgba(142, 149, 180, 0) 0%, #DDDFE9 100%);
-  background: linear-gradient(180deg, #DDDFE9 0%, rgba(142, 149, 180, 0) 100%, rgba(142, 149, 180, 0) 100%);
-  background: linear-gradient(180deg, #DDDFE9 0%, rgba(142, 149, 180, 0) 100%);
-  background: linear-gradient(180deg, #611016 0%, #A94758 100%);
-  background: linear-gradient(180deg, #6A7B82 0%, rgba(142, 149, 180, 0) 100%, rgba(142, 149, 180, 0) 100%);
-  background: #79839C;
-  background: #181E33;
-  background: #491616;
-  background: #628BB0;
-  background: #949494;
-  background: #94AEB2;
-  background: #A18F8F;
-  background: linear-gradient(180deg, #A94758 0%, #611016 100%);
-  background: #B06262;
-  background: #E2B9A7;
-  background: #FFFFFF;
+  --works-text: #708083;
+  --works-accent:#A8B4B6;
+  --works-bg:#DDE1E2;
 
-  --nav:rgba(83,100,109,1);
-  --nav-text:white;
+  --contact-text: #D4BAC1;
+  --contact-bg: #4F577F;
 
-  --searchpanel:#F5EBE2;
-  --searchpaneltext:#6B2A0A;
-  --searchpanellist:#EDEDED;
-  --searchpanellistborder:#BBBBBB;
-  --searchpanellistborderpressed:#C4C4C4;
+  --table-dark: #2E3B4A;
+  --table-light: #F0F3F4;
+  --table-neutral: #DDE1E4;
 
 
-  --shelfpanel:#E9D6CA;
-  --shelfpanellist:#DDDDDD;
-
-  --shelfpanellistpressed:#E0C6B6;
-  --shelfpanellistpressedborder:#A08D80;
-
-  --shelfpaneltext:#3D1C0D;
-  --shelfpanellistborder:#776A61;
-
-  --detailspanel:#494243;
-  --detailspaneltext:#e0ddd8;
-
-  --authorpanel:#71272F;
-  --authorpaneltext:#E9D6CA;
-
---lightactionbtn:#F17C67;
---lightactionbtntext:#F9F6F0;
---darkactionbtn:#71272F;
---darkactionbtntext:#F9F6F0;
-
---inactive:#BBBBBB;
---inactivetext:#FFFFFF;
-
---ink:#111111;
---paper:#F9F6F0;
-
---panelheight:calc(100vh - 3.5rem);
---panelheightmobile:calc(100vh - 4rem);
-
---focusedpanel:calc(70vw - 4rem);
---initpanel:calc(100vw - 8rem);
---authorheight:calc(100vh - 10rem);
---authorheightwnavtablet:calc(100vh - 16.5rem);
---authorheightwonavtablet:calc(100vh - 30.5rem);
---authorheightwnavmobile:calc(100vh - 19rem);
---authorheightwonavmobile:calc(100vh - 30.5rem);
---authorpanelopenheight:calc(100vh - 20.5rem);
---shelfnavheightmobile:calc(100vh - 25rem);
+  --works-gradient-rl: linear-gradient(180deg, rgba(142, 149, 180, 0) 0%, rgba(106, 123, 130, 0.6) 100%);
+  --works-gradient-lr: linear-gradient(180deg, rgba(106, 123, 130, 0.6) 0%, rgba(142, 149, 180, 0) 100%);
+  --works-hover-gradient-rl: linear-gradient(180deg, rgba(169, 71, 88, 0.6) 0%, rgba(97, 16, 22, 0.6) 100%);
+  --works-hover-gradient-lr: linear-gradient(180deg, rgba(97, 16, 22, 0.6) 0%, rgba(169, 71, 88, 0.6) 100%);
 
 
---mobileWidth:calc(100vw - 4rem);
---tabletWidth:calc(100vw - 10rem);
+  --mobile-nav-gradient-rl: linear-gradient(180deg, rgba(142, 149, 180, 0) 0%,  rgba(221, 223, 233, 0.6) 100%);
+  --mobile-nav-gradient-lr: linear-gradient(180deg, rgba(221, 223, 233, 0.6) 0%,rgba(142, 149, 180, 0) 100%);
+  --mobile-nav-hover-gradient-rl: linear-gradient(180deg, rgba(97, 16, 22, 0.6) 0%, rgba(221, 223, 233, 0.6)  50.12%,  rgba(221, 223, 233, 0.6) 94.91%);
+  --mobile-nav-hover-gradient-lr: linear-gradient(180deg,  rgba(221, 223, 233, 0.6) 0%, rgba(221, 223, 233, 0.6) 50.12%, rgba(97, 16, 22, 0.6) 94.91%);
 
---shelfoverlaytablet:calc(100vh - 13.5rem);
---focusedpaneltablet:calc(100vh - 11.5rem);
---focusedsearchpaneltablet:calc(100vh - 7.5rem);
-
---searchpanelheighttablet:calc(100vh - 11rem);
-
---focusedpanelmobile:calc(100vh - 13rem);
-
---lightshadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
---heavyshadow:0px 6px 8px rgba(0, 0, 0, 0.15);
-
---lighttextshadow: 0px 2px 2px rgba(0, 0, 0, 0.10);
---heavytextshadow:0px 6px 8px rgba(0, 0, 0, 0.35);
+  --desktop-nav-hover-gradient: linear-gradient(0deg, rgba(221, 223, 233, 0.6) 0%, rgba(142, 149, 180, 0) 100%);
 
 
---panelshadow:6px 0px 8px rgba(0, 0, 0, 0.15) inset;
---panelshadowtop:0px 6px 8px rgba(0, 0, 0, 0.15) inset;
+--mobilelheight:calc(100vh - 3.5rem);
+--desktopheight:calc(100vh - 4rem);
 
+  --main-headline1: 6.5rem/1.5 "Lusitana", serif;
+  --main-headline2: 4rem/1.5 "Lusitana", serif;
+  --main-headline3: 3.2rem/1.5 "Lusitana", serif;
+  --main-headline4: 2.3rem/1.5 "Lusitana", serif;
+  --main-headline5: 1.65rem/1.5 "Yaldevi", sans-serif;
+  --main-headline6: 500 1.35rem/1.5 "Yaldevi", sans-serif;
+  --main-body1:  1rem/1.5 "Yaldevi", sans-serif;
+  --main-body2:  0.9rem/1.5 "Yaldevi", sans-serif;
+  --main-subtitle1: 1.25rem/1.5 "La Belle Aurore", serif;
+  --main-subtitle2: 500 0.95rem/1.5 "La Belle Aurore", serif;
+  --main-button: bold 0.8rem/1.5 serif;
+  --main-overline:  0.65rem/1.5"Yaldevi", sans-serif;
+  --main-caption:  0.8rem/1.5 "Yaldevi", sans-serif;
 
-  --main-headline1: 300 6.5rem/1.5 "Jost", "Palanquin", sans-serif;
-  --main-headline2: 300 4rem/1.5 "Jost", "Palanquin", sans-serif;
-  --main-headline3: 3.2rem/1.5 "Jost", "Palanquin", sans-serif;
-  --main-headline4: 2.3rem/1.5 "Jost", "Palanquin", sans-serif;
-  --main-headline5: 1.65rem/1.5 "Jost", "Palanquin", sans-serif;
-  --main-headline6: 500 1.35rem/1.5 "Jost", "Palanquin", sans-serif;
-  --main-body1:  1rem/1.5 "Jost", "Palanquin", sans-serif;
-  --main-body2:  0.9rem/1.5 "Jost", "Palanquin", sans-serif;
-  --main-subtitle1: 1.25rem/1.5 "Jost", "Palanquin", sans-serif;
-  --main-subtitle2: 500 0.95rem/1.5 "Jost", "Palanquin", sans-serif;
-  --main-button: bold 0.8rem/1.5 "Palanquin", sans-serif;
-  --main-overline:  0.65rem/1.5"Jost",  "Palanquin", sans-serif;
-  --main-caption:  0.8rem/1.5 "Palanquin", sans-serif;
-
-
-  --details-headline1: 6.5rem/1.5 "Amiri",serif;
-  --details-headline2: 4rem/1.5 "Amiri",serif;
-  --details-headline3: 3.2rem/1.5 "Amiri",serif;
-  --details-headline4: 2.5rem/1.5 "Amiri",serif;
-  --details-headline5: 1.65rem/1.5 "Amiri",serif;
-  --details-headline6: bold 1.35rem/1.5 "Amiri",serif;
-  --details-body1:  1.2rem/1.5 "Amiri",serif;
-  --details-body2:  1rem/1.5 "Amiri",serif;
-  --details-subtitle1:  1.06rem/1.5 "Amiri",serif;
-  --details-subtitle2: bold 0.95rem/1.5 "Amiri",serif;
-  --details-button: bold 0.95rem/1.5 "Amiri",serif;
-  --details-overline:  0.65rem/1.5 "Amiri",serif;
-  --details-caption:  0.8rem/1.5 "Amiri",serif;
-  --details-overline-logo:  0.75rem/1.5 "Amiri",serif;
-
+  --mobile-logo: 1.25rem/1.5 "La Belle Aurore", serif;
+  --desktop-logo: 1.25rem/1.5 "La Belle Aurore", serif;
 
 }
 
@@ -263,50 +163,31 @@ letter-spacing: 0.375rem;}
   letter-spacing: 0.025rem;
 }
 
+.mobile-logo{font:var(--mobile-logo);}
+.desktop-logo{font:var(--desktop-logo);}
 
-.h1-details{ font:var(--details-headline1);
-text-transform: capitalize;
-letter-spacing: -0.094rem;}
-.h2-details{ font:var(--details-headline2);
-text-transform: capitalize;
-letter-spacing: -0.03rem;}
-.h3-details{ font:var(--details-headline3);
-text-transform: capitalize;}
-.h4-details{ font:var(--details-headline4);
-text-transform: capitalize;
-letter-spacing: 0.0156rem;}
-.h5-details{font:var(--details-headline5);
-text-transform: capitalize;}
-.h6-details{font:var(--details-headline6);
-text-transform: capitalize;
-letter-spacing: 0.01rem;}
-.body1-details{font:var(--details-body1);}
-.body2-details{font:var(--details-body2);}
-.subtitle1-details{font:var(--details-subtitle1);
-text-transform: capitalize;
-letter-spacing: 0.01rem;}
-.subtitle2-details{font:var(--details-subtitle2);
-text-transform: capitalize;
-letter-spacing: 0.0156rem;}
-.btn-details{font:var(--details-button);
-  text-transform: uppercase;
-  letter-spacing: 0.078rem;
-}
-.overline-details{font:var(--details-overline);
-text-transform: uppercase;
-letter-spacing: 0.375rem;}
-
-.overline-logo{font:var(--details-overline-logo);
-text-transform: uppercase;
-letter-spacing: 0.375rem;}
-
-.caption-details{font:var(--details-caption);
-  letter-spacing: 0.025rem;
+.desktopNavLink{
+  text-decoration: none;
+  padding:0 1.5rem;
+  opacity:0.7;
 }
 
+.desktopNavLink:hover{
+  opacity:1;
+}
 
 .rootContainer{
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.Row{
+  display:flex;
+  flex-direction: row;
+}
+
+.Column{
+  display:flex;
+  flex-direction: column;
 }
 
 .btn {
@@ -321,4 +202,101 @@ letter-spacing: 0.375rem;}
   letter-spacing: 0.078rem;
   text-decoration: none;
   font: var(--main-button);
+}
+
+
+.scrollIndicatorBio {
+  width: 1.5px;
+  height: 0px;
+  background-color: var(--darkactionbtn);
+  top: 0;
+  bottom: initial;
+  animation: line-animation 2.5s ease-in-out 0s infinite normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.scrollIndicatorBio::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--darkactionbtn);
+  border-bottom: 2px solid var(--darkactionbtn);
+  transform: rotate(45deg);
+  display: block;
+  position: absolute;
+  bottom: 0;
+  animation: arrow-animation 2.5s ease-in-out 0s infinite normal;
+  left:30vw;
+
+}
+.scrollIndicatorBio::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--darkactionbtn);
+  border-bottom: 2px solid var(--darkactionbtn);
+  transform: rotate(45deg);
+  display: block;
+  position: absolute;
+  bottom: 7px;
+  animation: arrow-animation 2.5s ease-in-out 0s infinite normal;
+  left:30vw;
+
+}
+
+
+.upwardsGradient {
+  position: relative;
+}
+
+.upwardsGradient:after {
+  position: absolute;
+  bottom: 0;
+  left:0;
+  content:'';
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to top,
+     rgba(17, 17, 17, 0.9) 30%,
+     rgba(17, 17, 17, 0.3) 80%
+  );
+  pointer-events: none; /* so the text is still selectable */
+}
+
+.NavLink{
+  color: var(--detailspaneltext);
+  text-decoration: none;
+  padding:0 3rem;
+  display:inline-block;
+  text-decoration: none;
+  padding:0.5rem 2rem;
+  transition-duration: 0.6s;
+  background: inherit;
+  opacity:0.6;
+  cursor:pointer;
+}
+
+.transition{
+    transition-duration: 0.3s;
+}
+
+.NavLink:hover{
+  background: var(--desktop-nav-hover-gradient);
+  opacity:1;
+
+}
+
+
+@keyframes line-animation {
+  0% {opacity: 0.5}
+  50% {opacity: 0.9}
+  100% {opacity: 0.5}
+}
+
+@keyframes arrow-animation {
+  0% {opacity: 0.5}
+  50% {opacity: 0.9}
+  100% {opacity: 0.5}
 }
