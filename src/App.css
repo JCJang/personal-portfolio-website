@@ -1,0 +1,324 @@
+
+@import "~@fontsource/palanquin/index.css";
+@import "~@fontsource/jost/300.css";
+@import "~@fontsource/jost/400.css";
+@import "~@fontsource/jost/500.css";
+
+@import "~@fontsource/amiri/index.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color:  var(--inactive) var(--searchpanel);
+
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--lightactionbtn);
+}
+*::-webkit-scrollbar-track {
+  background: var(--searchpanel));
+   box-shadow: inset var(--lightshadow);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--inactive);
+  border-radius: 20px;
+  cursor: pointer;
+  border: 1.5px solid var(--inactive);
+
+}
+
+::-webkit-scrollbar-corner{
+  background: var(--inactive);
+
+}
+
+.noScrollBar::-webkit-scrollbar {
+  display: none;}
+
+.noScrollBar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.OpenedAuthor{
+  scroll-behavior: smooth;
+}
+
+
+:root{
+
+  background: #2E3B4A;
+  background: #611016;
+  background: #708083;
+  background: #C1BEBE;
+  background: #F0F3F4;
+  background: #DDDFE9;
+  background: #312727;
+  background: #2E3B4A;
+  background: #A8B4B6;
+  background: #DDE1E2;
+  background: #AA535B;
+  background: #DDE1E4;
+  background: #D4BAC1;
+  background: #4F577F;
+  background: #9E9BB8;
+  background: #E7B1A7;
+  background: #D4BAC1;
+  background: #DDDFE9;
+  background: #353535;
+  background: #2E3B4A;
+  background: linear-gradient(180deg, #6A7B82 0%, rgba(142, 149, 180, 0) 100%);
+  background: #A9B5B7;
+  background: #E1CECF;
+  background: linear-gradient(180deg, #611016 0%, #DDDFE9 50.12%, #DDDFE9 94.91%);
+  background: linear-gradient(180deg, #611016 0%, #A94758 100%, #A94758 100%);
+  background: linear-gradient(180deg, rgba(142, 149, 180, 0) 0%, #6A7B82 100%);
+  background: linear-gradient(180deg, rgba(142, 149, 180, 0) 0%, #DDDFE9 100%);
+  background: linear-gradient(180deg, #DDDFE9 0%, rgba(142, 149, 180, 0) 100%, rgba(142, 149, 180, 0) 100%);
+  background: linear-gradient(180deg, #DDDFE9 0%, rgba(142, 149, 180, 0) 100%);
+  background: linear-gradient(180deg, #611016 0%, #A94758 100%);
+  background: linear-gradient(180deg, #6A7B82 0%, rgba(142, 149, 180, 0) 100%, rgba(142, 149, 180, 0) 100%);
+  background: #79839C;
+  background: #181E33;
+  background: #491616;
+  background: #628BB0;
+  background: #949494;
+  background: #94AEB2;
+  background: #A18F8F;
+  background: linear-gradient(180deg, #A94758 0%, #611016 100%);
+  background: #B06262;
+  background: #E2B9A7;
+  background: #FFFFFF;
+
+  --nav:rgba(83,100,109,1);
+  --nav-text:white;
+
+  --searchpanel:#F5EBE2;
+  --searchpaneltext:#6B2A0A;
+  --searchpanellist:#EDEDED;
+  --searchpanellistborder:#BBBBBB;
+  --searchpanellistborderpressed:#C4C4C4;
+
+
+  --shelfpanel:#E9D6CA;
+  --shelfpanellist:#DDDDDD;
+
+  --shelfpanellistpressed:#E0C6B6;
+  --shelfpanellistpressedborder:#A08D80;
+
+  --shelfpaneltext:#3D1C0D;
+  --shelfpanellistborder:#776A61;
+
+  --detailspanel:#494243;
+  --detailspaneltext:#e0ddd8;
+
+  --authorpanel:#71272F;
+  --authorpaneltext:#E9D6CA;
+
+--lightactionbtn:#F17C67;
+--lightactionbtntext:#F9F6F0;
+--darkactionbtn:#71272F;
+--darkactionbtntext:#F9F6F0;
+
+--inactive:#BBBBBB;
+--inactivetext:#FFFFFF;
+
+--ink:#111111;
+--paper:#F9F6F0;
+
+--panelheight:calc(100vh - 3.5rem);
+--panelheightmobile:calc(100vh - 4rem);
+
+--focusedpanel:calc(70vw - 4rem);
+--initpanel:calc(100vw - 8rem);
+--authorheight:calc(100vh - 10rem);
+--authorheightwnavtablet:calc(100vh - 16.5rem);
+--authorheightwonavtablet:calc(100vh - 30.5rem);
+--authorheightwnavmobile:calc(100vh - 19rem);
+--authorheightwonavmobile:calc(100vh - 30.5rem);
+--authorpanelopenheight:calc(100vh - 20.5rem);
+--shelfnavheightmobile:calc(100vh - 25rem);
+
+
+--mobileWidth:calc(100vw - 4rem);
+--tabletWidth:calc(100vw - 10rem);
+
+--shelfoverlaytablet:calc(100vh - 13.5rem);
+--focusedpaneltablet:calc(100vh - 11.5rem);
+--focusedsearchpaneltablet:calc(100vh - 7.5rem);
+
+--searchpanelheighttablet:calc(100vh - 11rem);
+
+--focusedpanelmobile:calc(100vh - 13rem);
+
+--lightshadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+--heavyshadow:0px 6px 8px rgba(0, 0, 0, 0.15);
+
+--lighttextshadow: 0px 2px 2px rgba(0, 0, 0, 0.10);
+--heavytextshadow:0px 6px 8px rgba(0, 0, 0, 0.35);
+
+
+--panelshadow:6px 0px 8px rgba(0, 0, 0, 0.15) inset;
+--panelshadowtop:0px 6px 8px rgba(0, 0, 0, 0.15) inset;
+
+
+  --main-headline1: 300 6.5rem/1.5 "Jost", "Palanquin", sans-serif;
+  --main-headline2: 300 4rem/1.5 "Jost", "Palanquin", sans-serif;
+  --main-headline3: 3.2rem/1.5 "Jost", "Palanquin", sans-serif;
+  --main-headline4: 2.3rem/1.5 "Jost", "Palanquin", sans-serif;
+  --main-headline5: 1.65rem/1.5 "Jost", "Palanquin", sans-serif;
+  --main-headline6: 500 1.35rem/1.5 "Jost", "Palanquin", sans-serif;
+  --main-body1:  1rem/1.5 "Jost", "Palanquin", sans-serif;
+  --main-body2:  0.9rem/1.5 "Jost", "Palanquin", sans-serif;
+  --main-subtitle1: 1.25rem/1.5 "Jost", "Palanquin", sans-serif;
+  --main-subtitle2: 500 0.95rem/1.5 "Jost", "Palanquin", sans-serif;
+  --main-button: bold 0.8rem/1.5 "Palanquin", sans-serif;
+  --main-overline:  0.65rem/1.5"Jost",  "Palanquin", sans-serif;
+  --main-caption:  0.8rem/1.5 "Palanquin", sans-serif;
+
+
+  --details-headline1: 6.5rem/1.5 "Amiri",serif;
+  --details-headline2: 4rem/1.5 "Amiri",serif;
+  --details-headline3: 3.2rem/1.5 "Amiri",serif;
+  --details-headline4: 2.5rem/1.5 "Amiri",serif;
+  --details-headline5: 1.65rem/1.5 "Amiri",serif;
+  --details-headline6: bold 1.35rem/1.5 "Amiri",serif;
+  --details-body1:  1.2rem/1.5 "Amiri",serif;
+  --details-body2:  1rem/1.5 "Amiri",serif;
+  --details-subtitle1:  1.06rem/1.5 "Amiri",serif;
+  --details-subtitle2: bold 0.95rem/1.5 "Amiri",serif;
+  --details-button: bold 0.95rem/1.5 "Amiri",serif;
+  --details-overline:  0.65rem/1.5 "Amiri",serif;
+  --details-caption:  0.8rem/1.5 "Amiri",serif;
+  --details-overline-logo:  0.75rem/1.5 "Amiri",serif;
+
+
+}
+
+
+h1{ font:var(--main-headline1);
+text-transform: capitalize;
+letter-spacing: -0.094rem;}
+h2{ font:var(--main-headline2);
+text-transform: capitalize;
+letter-spacing: -0.03rem;}
+h3{ font:var(--main-headline3);
+text-transform: capitalize;}
+h4{ font:var(--main-headline4);
+text-transform: capitalize;
+letter-spacing: 0.0156rem;}
+h5{font:var(--main-headline5);
+text-transform: capitalize;}
+h6{font:var(--main-headline6);
+text-transform: capitalize;
+letter-spacing: 0.01rem;}
+body{font:var(--main-body1);}
+.h1{ font:var(--main-headline1);
+text-transform: capitalize;
+letter-spacing: -0.094rem;}
+.h2{ font:var(--main-headline2);
+text-transform: capitalize;
+letter-spacing: -0.03rem;}
+.h3{ font:var(--main-headline3);
+text-transform: capitalize;}
+.h4{ font:var(--main-headline4);
+text-transform: capitalize;
+letter-spacing: 0.0156rem;}
+.h5{font:var(--main-headline5);
+text-transform: capitalize;}
+.h6{font:var(--main-headline6);
+text-transform: capitalize;
+letter-spacing: 0.01rem;}
+.body1{font:var(--main-body1);}
+.body2{font:var(--main-body2);}
+.subtitle1{font:var(--main-subtitle1);
+text-transform: capitalize;
+letter-spacing: 0.01rem;}
+.subtitle2{font:var(--main-subtitle2);
+text-transform: capitalize;
+letter-spacing: 0.0156rem;}
+.btn{font:var(--main-button);
+  text-transform: uppercase;
+  letter-spacing: 0.078rem;
+}
+.overline{font:var(--main-overline);
+text-transform: uppercase;
+letter-spacing: 0.375rem;}
+.caption{font:var(--main-caption);
+  letter-spacing: 0.025rem;
+}
+
+
+.h1-details{ font:var(--details-headline1);
+text-transform: capitalize;
+letter-spacing: -0.094rem;}
+.h2-details{ font:var(--details-headline2);
+text-transform: capitalize;
+letter-spacing: -0.03rem;}
+.h3-details{ font:var(--details-headline3);
+text-transform: capitalize;}
+.h4-details{ font:var(--details-headline4);
+text-transform: capitalize;
+letter-spacing: 0.0156rem;}
+.h5-details{font:var(--details-headline5);
+text-transform: capitalize;}
+.h6-details{font:var(--details-headline6);
+text-transform: capitalize;
+letter-spacing: 0.01rem;}
+.body1-details{font:var(--details-body1);}
+.body2-details{font:var(--details-body2);}
+.subtitle1-details{font:var(--details-subtitle1);
+text-transform: capitalize;
+letter-spacing: 0.01rem;}
+.subtitle2-details{font:var(--details-subtitle2);
+text-transform: capitalize;
+letter-spacing: 0.0156rem;}
+.btn-details{font:var(--details-button);
+  text-transform: uppercase;
+  letter-spacing: 0.078rem;
+}
+.overline-details{font:var(--details-overline);
+text-transform: uppercase;
+letter-spacing: 0.375rem;}
+
+.overline-logo{font:var(--details-overline-logo);
+text-transform: uppercase;
+letter-spacing: 0.375rem;}
+
+.caption-details{font:var(--details-caption);
+  letter-spacing: 0.025rem;
+}
+
+
+.rootContainer{
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  align-self: center;
+  min-height:50px;
+  min-width: 120px;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.078rem;
+  text-decoration: none;
+  font: var(--main-button);
+}
