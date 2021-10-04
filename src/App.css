@@ -69,6 +69,7 @@ html{
   --works-bg:#DDE1E2;
 
   --contact-text: #D4BAC1;
+  --contact-accent: #4F577F;
   --contact-bg: #4F577F;
 
   --table-dark: #2E3B4A;
@@ -112,7 +113,7 @@ html{
   --main-body2:  0.8rem/1.5 "Yaldevi", sans-serif;
   --main-subtitle1: 1.55rem/1.5 "La Belle Aurore", serif;
   --main-subtitle2: 500 0.95rem/1.5 "La Belle Aurore", serif;
-  --main-button: bold 0.8rem/1.5 serif;
+  --main-button: 1.2rem/1.4 "La Belle Aurore", serif;
   --main-overline:  0.65rem/1.5"Yaldevi", sans-serif;
   --main-caption:  0.8rem/1.5 "Yaldevi", sans-serif;
 
@@ -166,7 +167,6 @@ letter-spacing: 0.01rem;}
 text-transform: capitalize;
 letter-spacing: 0.0156rem;}
 .btn{font:var(--main-button);
-  text-transform: uppercase;
   letter-spacing: 0.078rem;
 }
 .overline{font:var(--main-overline);
@@ -229,15 +229,13 @@ letter-spacing: 0.375rem;}
 }
 
 .btn {
-  display: inline-block;
-  border: none;
-  align-self: center;
-  min-height:50px;
-  min-width: 120px;
-  padding: 0.3rem 1rem;
+  align-self: flex-end;
+  padding: 0.3rem 0.3rem;
   cursor: pointer;
-  text-transform: uppercase;
   letter-spacing: 0.078rem;
+  border-radius: 3px;
+  border: 1.5px solid var(--highlight);
+  margin-top: 2rem;
   text-decoration: none;
   font: var(--main-button);
 }
@@ -417,4 +415,52 @@ letter-spacing: 0.375rem;}
   height:0.6rem;
   width:4rem;
   margin:1.5rem 0;
+}
+
+label{
+  font:1.2rem/1.5 "Lusitana", serif;
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+input{
+  font:1rem/1.5 "Lusitana", serif;
+  border-radius: 3px;
+  border: 1.5px solid var(--contact-text);
+  background: var(--cinerous);
+  text-align: center;
+  height: 1.8rem;
+  color:var(--contact-accent);
+}
+
+
+input:focus{
+  border: 2px solid var(--highlight);
+  outline: none !important;
+}
+
+textarea{
+  font:1rem/1.5 "Lusitana", serif;
+  border-radius: 3px;
+  border: 1.5px solid var(--contact-text);
+  background: var(--cinerous);
+  text-align: center;
+  color:var(--contact-accent);
+}
+
+textarea:focus{
+  border: 2px solid var(--highlight);
+  outline: none !important;
+}
+
+button{
+  background:var(--desert-rose);
+  color:var(--highlight);
+  border:none;
+  padding:0.5rem 2rem;
+}
+
+button:focus{
+  border: 2px solid var(--highlight);
+  outline: none !important;
 }
