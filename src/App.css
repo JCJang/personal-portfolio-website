@@ -2,6 +2,8 @@
 @import "~@fontsource/lusitana";
 @import "~@fontsource/la-belle-aurore";
 @import "~@fontsource/yaldevi";
+@import "~@fontsource/yaldevi/300.css";
+
 @import "~@fontsource/sen";
 
 * {
@@ -74,10 +76,21 @@ html{
   --table-neutral: #DDE1E4;
 
 
-  --works-gradient-rl: linear-gradient(to left, rgba(106, 123, 130, 0.6) 0%, rgba(142, 149, 180, 0) 100%);
-  --works-gradient-lr: linear-gradient(to right, rgba(106, 123, 130, 0.6) 0%, rgba(142, 149, 180, 0) 100%);
-  --works-hover-gradient-rl: linear-gradient(to left, rgba(169, 71, 88, 0.6) 0%, rgba(97, 16, 22, 0.6) 100%);
-  --works-hover-gradient-lr: linear-gradient(to right, rgba(169, 71, 88, 0.6) 0%, rgba(97, 16, 22, 0.6) 100%);
+  --works-gradient-rl:
+  linear-gradient(to left, rgba(46, 59, 74, 0.5),rgba(46, 59, 74, 0.3)),
+  linear-gradient(to left, rgba(106, 123, 130, 0.7) 0%, rgba(142, 149, 180, 0) 100%);
+
+  --works-gradient-lr:
+   linear-gradient(to right, rgba(46, 59, 74, 0.5),rgba(46, 59, 74, 0.3)),
+   linear-gradient(to right, rgba(106, 123, 130, 0.7) 0%, rgba(142, 149, 180, 0) 100%);
+
+  --works-hover-gradient-rl:
+   linear-gradient(to left, rgba(46, 59, 74, 0.5),rgba(46, 59, 74, 0.3)),
+   linear-gradient(to left, rgba(169, 71, 88, 0.6) 0%, rgba(97, 16, 22, 0.6) 100%);
+
+  --works-hover-gradient-lr:
+   linear-gradient(to right, rgba(46, 59, 74, 0.5),rgba(46, 59, 74, 0.3)),
+   linear-gradient(to right, rgba(169, 71, 88, 0.6) 0%, rgba(97, 16, 22, 0.6) 100%);
 
 
   --mobile-nav-gradient-rl: linear-gradient(to left, rgba(142, 149, 180, 0) 0%,  rgba(221, 223, 233, 0.6) 100%);
@@ -96,14 +109,14 @@ html{
   --main-headline5: 1.65rem/1.5 "Yaldevi", sans-serif;
   --main-headline6: 500 1.35rem/1.5 "Yaldevi", sans-serif;
   --main-body1:  1rem/1.5 "Yaldevi", sans-serif;
-  --main-body2:  0.9rem/1.5 "Yaldevi", sans-serif;
+  --main-body2:  0.8rem/1.5 "Yaldevi", sans-serif;
   --main-subtitle1: 1.55rem/1.5 "La Belle Aurore", serif;
   --main-subtitle2: 500 0.95rem/1.5 "La Belle Aurore", serif;
   --main-button: bold 0.8rem/1.5 serif;
   --main-overline:  0.65rem/1.5"Yaldevi", sans-serif;
   --main-caption:  0.8rem/1.5 "Yaldevi", sans-serif;
 
-  --nav-text:  0.9rem/1.5 "Lusitana", serif;
+  --nav-text:  0.85rem/1.5 "Lusitana", serif;
 
   --mobile-logo: 1.25rem/1.5 "La Belle Aurore", serif;
   --desktop-logo: 1.25rem/1.5 "La Belle Aurore", serif;
@@ -339,7 +352,7 @@ letter-spacing: 0.375rem;}
   content:'';
   height: 100%;
   width: 100%;
-  background:linear-gradient(to left, rgba(46, 59, 74, 0.5),rgba(46, 59, 74, 0.5)), var(--works-gradient-rl);
+  background: var(--works-gradient-rl);
   pointer-events: none;
   mix-blend-mode:multiply;
 }
@@ -351,7 +364,7 @@ letter-spacing: 0.375rem;}
   content:'';
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(to left, rgba(46, 59, 74, 0.5),rgba(46, 59, 74, 0.5)), var(--works-hover-gradient-rl);
+  background-image:var(--works-hover-gradient-rl);
   pointer-events: none;
   mix-blend-mode:multiply;
 }
@@ -363,7 +376,7 @@ letter-spacing: 0.375rem;}
   content:'';
   height: 100%;
   width: 100%;
-  background: linear-gradient(to right, rgba(46, 59, 74, 0.5),rgba(46, 59, 74, 0.5)), var(--works-gradient-lr);
+  background: var(--works-gradient-lr);
   pointer-events: none;
   mix-blend-mode:multiply;
 
@@ -376,7 +389,7 @@ letter-spacing: 0.375rem;}
   content:'';
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(to right, rgba(46, 59, 74, 0.5),rgba(46, 59, 74, 0.5)), var(--works-hover-gradient-lr);
+  background-image: var(--works-hover-gradient-lr);
   mix-blend-mode:multiply;
   pointer-events: none;
 }
@@ -403,5 +416,5 @@ letter-spacing: 0.375rem;}
   border-radius:2px;
   height:0.6rem;
   width:4rem;
-  margin:2rem 0;
+  margin:1.5rem 0;
 }

@@ -27,10 +27,11 @@ const gradientSetting = () =>{
     <Link to={routeName} className={gradientSetting()} onMouseEnter={() => setHover(true)}
       onMouseLeave={() => {setHover(false)}} style = {{ textDecoration: "none",
     overflow: "hidden",
-    borderLeft: direction === "lr" && hover? "8px solid var(--desert-rose)" : direction === "lr" && "15px solid var(--works-text)",
-    borderRight: direction === "rl" && hover? "8px solid var(--desert-rose)" : direction === "rl" && "15px solid var(--works-text)",
+    borderRight: direction === "lr" && hover? "2px solid var(--desert-rose)" : direction === "lr" && "8px solid var(--midnight)",
+    borderLeft: direction === "rl" && hover? "2px solid var(--desert-rose)" : direction === "rl" && "8px solid var(--midnight)"
+
   }}>
-      <ImageFadeIn className="gridImage transition" src={image} style={{ filter:hover?"saturate(0.6)":"saturate(0.1)"
+      <ImageFadeIn className="gridImage transition" src={image} style={{ filter:hover?"saturate(0.6)":"saturate(0.1) opacity(0.8)"
 }}/>
       <div className="transition Column" style = {{
     height: "100%",
@@ -41,11 +42,11 @@ const gradientSetting = () =>{
     color: "var(--works-bg)",
     lineHeight: "5rem",
     justifyContent: "center",
-    padding:direction==="lr"?"0 2rem 0 0":"0 0 0 2rem"
+    padding:direction==="lr"?"0 4rem 0 0":"0 0 0 4rem"
   }}
    >
-        <div style={{lineHeight:"3rem"}}>{role}</div>
-        <div style={{font:"2.5rem/1.7 'Yaldevi',sans-serif",textTransform:"uppercase"}}>{title}</div>
+        <div style={{lineHeight:"1.5rem"}}>{role}</div>
+        <div style={{fontWeight:"300",font:"2.3rem/1.7 'Yaldevi',sans-serif", letterSpacing:"0.0156rem",textTransform:"uppercase"}}>{title}</div>
         <div className="subtitle1" style={{lineHeight:"3rem"}}>{subtitle}</div>
     </div>
     </Link>

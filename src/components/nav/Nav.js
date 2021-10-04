@@ -3,7 +3,7 @@ import {useState,useEffect} from 'react'
 import useDebounce from '../../customHooks/useDebounce'
 import { IoBookSharp as AboutIcon } from "react-icons/io5";
 import { IoCubeSharp as WorksIcon } from "react-icons/io5";
-import { IoMailOpenSharp as ContactIcon } from "react-icons/io5";
+import { IoMailOpen as ContactIcon } from "react-icons/io5";
 
 import { IoBookOutline as AboutIconLogo } from "react-icons/io5";
 import { IoCubeOutline as WorksIconLogo } from "react-icons/io5";
@@ -81,21 +81,34 @@ const iconLogoOptions = () => {
   //  </select>
 
   return (
-    <nav className="Row transition" style={{
+    <div style={{
     width: "100vw",
     position:"sticky",
     background: backgroundForNav(),
     padding: "0 3rem",
     color: colorForNav(),
-    height: "5rem",
+    zIndex:"40",
+    height: "5rem"}}>
+
+    <nav className="Row transition" style={{
     alignItems: "center",
     justifyContent:"space-between",
-    zIndex:"40",
-    display: "flex",
-    borderBottom: `1.5px solid ${colorForNav()}`
+    height:"calc(5rem - 1.1px)"
   }}>
 
-        <div className="desktop-logo RowCentered" style={{opacity:0.8}}><div className="selfCentered transition" style={{marginRight:"2rem", fontSize:"1.5rem",opacity:logoOpacity,transformOrigin:"center",transform:logoRotation}}>{iconLogo}</div><div style={{paddingTop:"0.5rem"}}>Jennifer Jang</div></div>
+        <div className="desktop-logo RowCentered" style={{opacity:0.8}}>
+
+          <div className="selfCentered transition" style={{marginRight:"2rem", fontSize:"1.5rem",opacity:logoOpacity,transformOrigin:"center",transform:logoRotation}}>
+              {iconLogo}
+          </div>
+
+          <div style={{paddingTop:"0.5rem"}}>
+          Jennifer Jang
+          </div>
+
+        </div>
+
+
         <div className="RowCentered navText">
         <Links routeName="/works" label="Works" routeFocus={routeFocus} colorForNav={colorForNav} setRouteFocus={setRouteFocus} Icon={WorksIcon} />
         <Links routeName="/about" label="About" routeFocus={routeFocus} colorForNav={colorForNav}  setRouteFocus={setRouteFocus} Icon={AboutIcon} />
@@ -104,6 +117,8 @@ const iconLogoOptions = () => {
         </div>
 
   </nav>
+  <div style={{background:colorForNav(),height:"1.1px",margin:"0 2rem",opacity:"0.8"}}></div>
+</div>
   )
 }
 
