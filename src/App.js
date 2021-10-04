@@ -8,7 +8,7 @@ import Works from './components/works/Works'
 
 import {Route, BrowserRouter as Router} from 'react-router-dom'
 import {useEffect, useState, useCallback} from 'react'
-import useMediaQuery from "./components/customHooks/useMediaQuery";
+import useMediaQuery from "./customHooks/useMediaQuery";
 
 
 const App = () => {
@@ -21,9 +21,17 @@ const App = () => {
     /* Large devices (laptops/desktops, 992px and up) */
     const l = useMediaQuery('(min-width: 992px)');
 
+    const desktopStyle = () => {
+        return {
+          height:"100vh",
+          overflowY:"auto"
+        }
+    }
+
+
   return (
     <Router>
-    <div className="rootContainer">
+    <div className="rootContainer" style={desktopStyle()}>
     <Nav m={m} l={l}/>
     <Route path = "/about" exact>
     <About  m={m} l={l}/>

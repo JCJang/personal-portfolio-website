@@ -1,9 +1,9 @@
 import Links from './Links'
 import {useState,useEffect} from 'react'
-import useDebounce from '../customHooks/useDebounce'
-import { IoBook as AboutIcon } from "react-icons/io5";
-import { IoCube as WorksIcon } from "react-icons/io5";
-import { IoMailOpen as ContactIcon } from "react-icons/io5";
+import useDebounce from '../../customHooks/useDebounce'
+import { IoBookSharp as AboutIcon } from "react-icons/io5";
+import { IoCubeSharp as WorksIcon } from "react-icons/io5";
+import { IoMailOpenSharp as ContactIcon } from "react-icons/io5";
 
 import { IoBookOutline as AboutIconLogo } from "react-icons/io5";
 import { IoCubeOutline as WorksIconLogo } from "react-icons/io5";
@@ -15,20 +15,25 @@ import { IoCaretUpOutline} from 'react-icons/io5';
 
 const Nav = ({m, l}) => {
 
-const [routeFocus, setRouteFocus] = useState("/")
+const [routeFocus, setRouteFocus] = useState("")
 const [logoOpacity, setLogoOpacity] = useState(1)
-const [iconLogo, setIconLogo] = useState(<AboutIconLogo/>)
+const [iconLogo, setIconLogo] = useState(<WorksIconLogo/>)
 const [logoRotation, setLogoRotation] = useState("")
-useEffect(()=>{
-  setLogoRotation("rotateY(70deg)")
-  setLogoOpacity(0)
-},[routeFocus])
+
+  useEffect(()=>{
+    setLogoRotation("rotateY(70deg)")
+    setLogoOpacity(0)
+  },[routeFocus])
 
   useDebounce(()=>{
     setLogoRotation("")
     setIconLogo(iconLogoOptions())
     setLogoOpacity(1)
   }, 200, [routeFocus])
+
+  useEffect(()=>{
+    setIconLogo(iconLogoOptions())
+  },[])
 
 const backgroundForNav = () => {
   if(routeFocus==="/about"){
@@ -78,7 +83,7 @@ const iconLogoOptions = () => {
   return (
     <nav className="Row transition" style={{
     width: "100vw",
-    position:"absolute",
+    position:"sticky",
     background: backgroundForNav(),
     padding: "0 3rem",
     color: colorForNav(),
@@ -90,7 +95,7 @@ const iconLogoOptions = () => {
     borderBottom: `1.5px solid ${colorForNav()}`
   }}>
 
-        <div className="desktop-logo RowCentered" style={{opacity:0.8}}><div className="selfCentered transition" style={{marginRight:"2rem", fontSize:"2rem",opacity:logoOpacity,transformOrigin:"center",transform:logoRotation}}>{iconLogo}</div>Jennifer Jang</div>
+        <div className="desktop-logo RowCentered" style={{opacity:0.8}}><div className="selfCentered transition" style={{marginRight:"2rem", fontSize:"1.5rem",opacity:logoOpacity,transformOrigin:"center",transform:logoRotation}}>{iconLogo}</div><div style={{paddingTop:"0.5rem"}}>Jennifer Jang</div></div>
         <div className="RowCentered navText">
         <Links routeName="/works" label="Works" routeFocus={routeFocus} colorForNav={colorForNav} setRouteFocus={setRouteFocus} Icon={WorksIcon} />
         <Links routeName="/about" label="About" routeFocus={routeFocus} colorForNav={colorForNav}  setRouteFocus={setRouteFocus} Icon={AboutIcon} />
