@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 import ImageFadeIn from '../../customHooks/imageFadeIn'
 
 import {useEffect, useState} from 'react';
-const GridItem = ({direction, routeName, image, role, title, subtitle, classes}) => {
+const GridItem = ({m, l, direction, routeName, image, role, title, subtitle, classes}) => {
 
   const [hover, setHover] = useState(false)
 
@@ -22,14 +22,49 @@ const gradientSetting = () =>{
   }
 }
 
+const borderRight = () => {
+  if(direction === "rl"){return;}
+
+  if(l){
+    if(hover){
+      return "2px solid var(--desert-rose)"
+      } else {
+    return "8px solid var(--midnight)"
+    }
+  }else{
+    if(hover){
+      return "4px solid var(--desert-rose)"
+      } else {
+    return "4px solid var(--midnight)"
+    }
+  }
+}
+
+const borderLeft = () => {
+  if(direction === "lr"){return;}
+
+  if(l){
+    if(hover){
+      return "2px solid var(--desert-rose)"
+      } else {
+    return "8px solid var(--midnight)"
+    }
+  }else{
+    if(hover){
+      return "4px solid var(--desert-rose)"
+      } else {
+    return "4px solid var(--midnight)"
+    }
+  }
+}
+
   return (
 
     <Link to={routeName} className={gradientSetting()} onMouseEnter={() => setHover(true)}
       onMouseLeave={() => {setHover(false)}} style = {{ textDecoration: "none",
     overflow: "hidden",
-    borderRight: direction === "lr" && hover? "2px solid var(--desert-rose)" : direction === "lr" && "8px solid var(--midnight)",
-    borderLeft: direction === "rl" && hover? "2px solid var(--desert-rose)" : direction === "rl" && "8px solid var(--midnight)"
-
+    borderRight: borderRight(),
+    borderLeft: borderLeft()
   }}>
       <ImageFadeIn className="gridImage transition" src={image} style={{ filter:hover?"saturate(0.6)":"saturate(0.1) opacity(0.8)"
 }}/>
