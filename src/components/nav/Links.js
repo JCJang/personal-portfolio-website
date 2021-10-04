@@ -16,9 +16,17 @@ const background = () =>{
 }
 
 const color = () =>{
-  if(hover){
-    return "var(--desert-rose)"
-  }
+  if(hover || routeFocus===routeName){
+      if(routeFocus==="/about"){
+        return "var(--highlight)"
+      }else if (routeFocus==="/works") {
+        return "var(--desert-rose)"
+      }else if (routeFocus==="/contact") {
+        return "var(--highlight)"
+      }else{
+        return "var(--velvet)"
+      }
+    }
 }
 
   return (
@@ -26,9 +34,11 @@ const color = () =>{
 
 
     <Link to={routeName} style={{color:"inherit",textDecoration: "none"}}>
-      <div className="desktopNavLink Row transition" onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => {setHover(false)}} onClick={()=>setRouteFocus(routeName)} style={{alignItems:"center", justifyContent:"center",height:"3.5rem", whiteSpace:"nowrap", background:background(),color:color()}}>
-      <Icon style={{fontSize:"1.2rem", marginRight:"0.5rem"}}/>
+      <div className="desktopNavLink RowCentered transition" onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => {setHover(false)}} onClick={()=>setRouteFocus(routeName)} style={{height:"3.5rem", whiteSpace:"nowrap", background:background(),color:color()}}>
+      <div className="ColumnCentered" style={{margin:"0.5rem",width:"2rem",height:"3.5rem",position:"relative"}}>
+      <Icon className="transition" style={{margin:"auto",position:"relative", opacity:hover || routeFocus===routeName?"1":"0", transform:hover || routeFocus===routeName?"":"translateY(0.5rem)",visibility:hover?"visible":routeFocus!==routeName && "hidden", fontSize:routeFocus===routeName?"1rem":hover?"1.5rem":"1rem"}}/>
+      </div>
     {label}
     </div>
     </Link>

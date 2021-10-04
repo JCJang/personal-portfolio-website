@@ -61,7 +61,7 @@ html{
   --lilac: #DDDFE9;
   --occlusion: #312727;
   --highlight: #E7B1A7;
-
+  --neutral: #B4B4B4;
   --works-text: #708083;
   --works-accent:#A8B4B6;
   --works-bg:#DDE1E2;
@@ -85,9 +85,6 @@ html{
   --mobile-nav-hover-gradient-rl: linear-gradient(180deg, rgba(97, 16, 22, 0.6) 0%, rgba(221, 223, 233, 0.6)  50.12%,  rgba(221, 223, 233, 0.6) 94.91%);
   --mobile-nav-hover-gradient-lr: linear-gradient(180deg,  rgba(221, 223, 233, 0.6) 0%, rgba(221, 223, 233, 0.6) 50.12%, rgba(97, 16, 22, 0.6) 94.91%);
 
-  --desktop-nav-hover-gradient: linear-gradient(0deg, rgba(221, 223, 233, 0.6) 0%, rgba(142, 149, 180, 0) 100%);
-
-
 --mobilelheight:calc(100vh - 3.5rem);
 --desktopheight:calc(100vh - 4rem);
 
@@ -104,6 +101,8 @@ html{
   --main-button: bold 0.8rem/1.5 serif;
   --main-overline:  0.65rem/1.5"Yaldevi", sans-serif;
   --main-caption:  0.8rem/1.5 "Yaldevi", sans-serif;
+
+  --nav-text:  0.9rem/1.5 "Lusitana", serif;
 
   --mobile-logo: 1.25rem/1.5 "La Belle Aurore", serif;
   --desktop-logo: 1.25rem/1.5 "La Belle Aurore", serif;
@@ -162,6 +161,9 @@ letter-spacing: 0.375rem;}
 .caption{font:var(--main-caption);
   letter-spacing: 0.025rem;
 }
+.navText{
+  font:var(--nav-text);
+}
 
 .mobile-logo{font:var(--mobile-logo);}
 .desktop-logo{font:var(--desktop-logo);}
@@ -169,13 +171,12 @@ letter-spacing: 0.375rem;}
 .desktopNavLink{
   text-decoration: none;
   padding:0 1.5rem;
-  opacity:0.7;
+  opacity:0.9;
 }
 
 .desktopNavLink:hover{
   opacity:1;
 }
-
 .rootContainer{
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
@@ -188,6 +189,29 @@ letter-spacing: 0.375rem;}
 .Column{
   display:flex;
   flex-direction: column;
+}
+
+
+.RowCentered{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.ColumnCentered{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.selfCentered{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn {
@@ -280,12 +304,6 @@ letter-spacing: 0.375rem;}
 
 .transition{
     transition-duration: 0.3s;
-}
-
-.NavLink:hover{
-  background: var(--desktop-nav-hover-gradient);
-  opacity:1;
-
 }
 
 

@@ -1,9 +1,13 @@
 import Links from './Links'
 import {useState,useEffect} from 'react'
+import useDebounce from '../customHooks/useDebounce'
+import { IoBook as AboutIcon } from "react-icons/io5";
+import { IoCube as WorksIcon } from "react-icons/io5";
+import { IoMailOpen as ContactIcon } from "react-icons/io5";
 
-import { IoPrismOutline as ContactIcon } from "react-icons/io5";
-import { IoBookOutline as AboutIcon } from "react-icons/io5";
-import { IoCubeOutline as WorksIcon } from "react-icons/io5";
+import { IoBookOutline as AboutIconLogo } from "react-icons/io5";
+import { IoCubeOutline as WorksIconLogo } from "react-icons/io5";
+import { IoMailOpenOutline as ContactIconLogo } from "react-icons/io5";
 
 import { IoCaretDownOutline} from 'react-icons/io5';
 import { IoCaretUpOutline} from 'react-icons/io5';
@@ -12,6 +16,19 @@ import { IoCaretUpOutline} from 'react-icons/io5';
 const Nav = ({m, l}) => {
 
 const [routeFocus, setRouteFocus] = useState("/")
+const [logoOpacity, setLogoOpacity] = useState(1)
+const [iconLogo, setIconLogo] = useState(<AboutIconLogo/>)
+const [logoRotation, setLogoRotation] = useState("")
+useEffect(()=>{
+  setLogoRotation("rotateY(70deg)")
+  setLogoOpacity(0)
+},[routeFocus])
+
+  useDebounce(()=>{
+    setLogoRotation("")
+    setIconLogo(iconLogoOptions())
+    setLogoOpacity(1)
+  }, 200, [routeFocus])
 
 const backgroundForNav = () => {
   if(routeFocus==="/about"){
@@ -21,7 +38,7 @@ const backgroundForNav = () => {
   }else if (routeFocus==="/contact") {
     return "var(--contact-bg)"
   }else{
-    return "var(--cinerous)"
+    return "var(--neutral)"
   }
 }
 
@@ -33,25 +50,23 @@ const colorForNav = () => {
   }else if (routeFocus==="/contact") {
     return "var(--contact-text)"
   }else{
-    return "var(--occlusion)"
+    return "var(--velvet)"
   }
 }
 
-const icon = () => {
+const iconLogoOptions = () => {
   if(routeFocus==="/about"){
-    return <AboutIcon/>
+    return <AboutIconLogo/>
   }else if (routeFocus==="/works") {
-    return <WorksIcon/>
+    return <WorksIconLogo/>
   }else if (routeFocus==="/contact") {
-    return <ContactIcon/>
+    return <ContactIconLogo/>
   }else{
-    return WorksIcon
+    return <WorksIconLogo/>
   }
 }
 
 
-
-  //
   // <label htmlFor="languageSetting" className="subtitle2">site language:</label>
   // <select className="form-control" id="languageSetting" value={languageSetting}
   //  onChange={(e)=>setLanguageSetting(e.target.value)} placeholder="toggles auto input settings">
@@ -65,6 +80,7 @@ const icon = () => {
     width: "100vw",
     position:"absolute",
     background: backgroundForNav(),
+    padding: "0 3rem",
     color: colorForNav(),
     height: "5rem",
     alignItems: "center",
@@ -74,8 +90,8 @@ const icon = () => {
     borderBottom: `1.5px solid ${colorForNav()}`
   }}>
 
-        <div className="desktop-logo Row" style={{opacity:0.8}}><div style={{paddingRight:"1rem"}}>{icon()}</div>Jennifer Jang</div>
-        <div className="Row">
+        <div className="desktop-logo RowCentered" style={{opacity:0.8}}><div className="selfCentered transition" style={{marginRight:"2rem", fontSize:"2rem",opacity:logoOpacity,transformOrigin:"center",transform:logoRotation}}>{iconLogo}</div>Jennifer Jang</div>
+        <div className="RowCentered navText">
         <Links routeName="/works" label="Works" routeFocus={routeFocus} colorForNav={colorForNav} setRouteFocus={setRouteFocus} Icon={WorksIcon} />
         <Links routeName="/about" label="About" routeFocus={routeFocus} colorForNav={colorForNav}  setRouteFocus={setRouteFocus} Icon={AboutIcon} />
 
