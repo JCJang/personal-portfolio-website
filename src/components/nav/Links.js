@@ -33,11 +33,11 @@ const color = () =>{
 
 
 
-    <Link to={routeName} style={{color:"inherit",textDecoration: "none"}}>
+    <Link to={routeName} style={{color:"inherit",textDecoration: "none", font:hover?"italic 0.9rem/1.5 'Lusitana', serif":"italic 0.85rem/1.5 'Lusitana', serif"}}>
       <div className="desktopNavLink RowCentered transition" onMouseEnter={() => setHover(true)}
         onMouseLeave={() => {setHover(false)}} onClick={()=>setRouteFocus(routeName)} style={{height:"3.5rem", whiteSpace:"nowrap", background:background(),color:color(), cursor:routeFocus===routeName?"default":"pointer"}}>
 
-      <div className="ColumnCentered" style={{margin:"0.5rem",width:"2rem",height:"3.5rem",position:"relative"}}>
+      <div className="ColumnCentered" style={{margin:"0.2rem",width:"2rem",height:"3.5rem",position:"relative"}}>
       <Icon className="transition" style={{margin:"auto",position:"relative", opacity:hover || routeFocus===routeName?"1":"0", transform:hover || routeFocus===routeName?"":"translateY(0.5rem)",visibility:hover?"visible":routeFocus!==routeName && "hidden", fontSize:routeFocus===routeName?"1rem":hover?"1.5rem":"1rem"}}/>
       </div>
     {label}

@@ -81,7 +81,7 @@ const iconLogoOptions = () => {
   //  </select>
 
   return (
-    <div style={{
+    <div className="transition" style={{
     width: "100vw",
     position:"sticky",
     background: backgroundForNav(),
@@ -93,7 +93,7 @@ const iconLogoOptions = () => {
     <nav className="Row transition" style={{
     alignItems: "center",
     justifyContent:"space-between",
-    height:"calc(5rem - 1.1px)"
+    height:"calc(5rem - 1.1px - 1.5rem)"
   }}>
 
         <div className="desktop-logo RowCentered" style={{opacity:0.8}}>
@@ -109,7 +109,7 @@ const iconLogoOptions = () => {
         </div>
 
 
-        <div className="RowCentered navText">
+        <div className="RowCentered">
         <Links routeName="/works" label="Works" routeFocus={routeFocus} colorForNav={colorForNav} setRouteFocus={setRouteFocus} Icon={WorksIcon} />
         <Links routeName="/about" label="About" routeFocus={routeFocus} colorForNav={colorForNav}  setRouteFocus={setRouteFocus} Icon={AboutIcon} />
 
@@ -118,6 +118,21 @@ const iconLogoOptions = () => {
 
   </nav>
   <div style={{background:colorForNav(),height:"1.1px",margin:"0 2rem",opacity:"0.8"}}></div>
+  {routeFocus==="/works" &&
+    <div className="RowCentered" style={{height:"1.5rem", justifyContent:"space-between",margin:"0 4rem"}}>
+    <div style={{font:"0.8rem/1.5 'Lusitana'"}}> Winter 2021</div>
+    <div style={{height:"1.5rem", font:"0.8rem/1.5 'Lusitana'"}}>Issue <strong>#15</strong></div>
+    </div>
+  }
+  {routeFocus==="/about" &&
+    <div className="RowCentered" style={{height:"1.5rem", justifyContent:"space-between",margin:"0 4rem"}}>
+    </div>
+  }
+  {routeFocus==="/contact" &&
+    <div className="RowCentered" style={{height:"1.5rem", justifyContent:"space-between",margin:"0 4rem"}}>
+    <div style={{font:"0.8rem/1.5 'Lusitana'"}}> My quote: "" - favorite author</div>
+    </div>
+  }
 </div>
   )
 }

@@ -74,7 +74,7 @@ const Contact = ({m, l}) => {
                 <br></br>
 
                 <label for="message" className="RowCentered"><WorksIconLogo style={{fontSize:"1.2rem", marginRight:"0.5rem"}}/> Let's collaborate:</label>
-                 <textarea onChange={(e)=>{setMessage(e.target.value)}} rows={m?"7":"10"} name="message" id="message" value={message} placeholder="Send me your idea! I can work with your design, or create a website you will love." style={{width:inputWidth()}}></textarea>
+                 <textarea onChange={(e)=>{setMessage(e.target.value)}} rows={m?"7":"10"} name="message" id="message" value={message} placeholder="Send me your idea! I can develop your design, or craft your idea into a website you'll love." style={{width:inputWidth()}}></textarea>
 
 
                 <button type="submit" className="RowCentered btn" style={{width:inputWidth(true)}}>
