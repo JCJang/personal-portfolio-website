@@ -14,12 +14,11 @@ import { IoCaretDownOutline} from 'react-icons/io5';
 import { IoCaretUpOutline} from 'react-icons/io5';
 
 
-const NavMobile = ({m, l}) => {
+const NavMobile = ({m, l, routeFocus, setRouteFocus}) => {
 
 const [navShelf, setNavShelf] = useState(false)
 const [navText, setNavText] = useState(false)
 
-const [routeFocus, setRouteFocus] = useState("")
 const [logoOpacity, setLogoOpacity] = useState(1)
 const [iconLogo, setIconLogo] = useState("")
 const [logoRotation, setLogoRotation] = useState("")
@@ -52,7 +51,7 @@ const backgroundForNav = () => {
   }else if (routeFocus==="/contact") {
     return "var(--contact-bg)"
   }else{
-    return "var(--neutral)"
+    return "var(--table-neutral)"
   }
 }
 
@@ -66,7 +65,7 @@ const colorForNav = () => {
   }else if (routeFocus==="/contact") {
     return "var(--contact-text)"
   }else{
-    return "var(--velvet)"
+    return "var(--occlusion)"
   }
 }
 
@@ -124,7 +123,7 @@ const iconLogoOptions = () => {
     <div className="Column" style={worksStyle()}>
       <nav className="Column" style={{flex:"1", overflowY:"auto"}}>
 
-        <div className="desktop-logo transition RowCentered" style={{opacity:0.8,height:"5rem",margin:"0 1.5rem"}}>
+        <div className="desktop-logo transition RowCentered" style={{height:"5rem",margin:"0 1.5rem"}}>
           <div className="ColumnCentered" onClick={()=>{setNavShelf(!navShelf)}}  style={{color:colorForNav()}}>
           <div className="transition selfCentered" style={{fontSize:"1.5rem", opacity:logoOpacity,transformOrigin:"center",transform:logoRotation}}>
               {iconLogo}

@@ -13,9 +13,8 @@ import { IoCaretDownOutline} from 'react-icons/io5';
 import { IoCaretUpOutline} from 'react-icons/io5';
 
 
-const Nav = ({m, l}) => {
+const Nav = ({m, l, routeFocus, setRouteFocus}) => {
 
-const [routeFocus, setRouteFocus] = useState("")
 const [logoOpacity, setLogoOpacity] = useState(1)
 const [iconLogo, setIconLogo] = useState(<WorksIconLogo/>)
 const [logoRotation, setLogoRotation] = useState("")
@@ -24,6 +23,7 @@ const [logoRotation, setLogoRotation] = useState("")
     setLogoRotation("rotateY(70deg)")
     setLogoOpacity(0)
   },[routeFocus])
+
 
   useDebounce(()=>{
     setLogoRotation("")
@@ -43,7 +43,7 @@ const backgroundForNav = () => {
   }else if (routeFocus==="/contact") {
     return "var(--contact-bg)"
   }else{
-    return "var(--neutral)"
+    return "var(--table-neutral)"
   }
 }
 
@@ -55,7 +55,7 @@ const colorForNav = () => {
   }else if (routeFocus==="/contact") {
     return "var(--contact-text)"
   }else{
-    return "var(--velvet)"
+    return "var(--occlusion)"
   }
 }
 

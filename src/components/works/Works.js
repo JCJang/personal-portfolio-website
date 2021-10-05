@@ -10,7 +10,7 @@ import { IoLocateOutline as UserFrustrationsIcon } from 'react-icons/io5';
 import { IoTextOutline as TypographyIcon} from 'react-icons/io5';
 
 
-const Works = ({m, l}) => {
+const Works = ({s, m, l}) => {
 
 
 const worksStyle = () => {
@@ -39,6 +39,7 @@ const worksStyle = () => {
 
             <GridItem
              image = {projectBookImg}
+             s = {s}
              m = {m}
              l = {l}
              classes = "grid-book"
@@ -50,6 +51,7 @@ const worksStyle = () => {
 
              <GridItem
               image={projectBookImg}
+              s = {s}
               m = {m}
               l = {l}
               routeName = "/works/pharmacy-concept-app"
@@ -59,6 +61,7 @@ const worksStyle = () => {
               subtitle = "How can I simplify pharmacy trips?" / >
 
               <GridItem
+                s = {s}
                 m = {m}
                 l = {l}
                routeName = "/works/more"

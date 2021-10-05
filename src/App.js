@@ -25,6 +25,9 @@ const App = () => {
     /* Large devices (laptops/desktops, 992px and up) */
     const l = useMediaQuery('(min-width: 992px)');
 
+    const [routeFocus, setRouteFocus] = useState("")
+
+
     const desktopStyle = () => {
         return {
           height:"100vh",
@@ -36,9 +39,9 @@ const App = () => {
   return (
     <Router>
     <div className="rootContainer" style={desktopStyle()}>
-    {m? <Nav m={m} l={l}/>
+    {m? <Nav m={m} l={l} routeFocus={routeFocus} setRouteFocus={setRouteFocus}/>
     :
-    <NavMobile m={m} l={l}/>}
+    <NavMobile m={m} l={l} routeFocus={routeFocus} setRouteFocus={setRouteFocus}/>}
 
     <Route path = "/about" exact>
     <About  m={m} l={l}/>
@@ -47,19 +50,19 @@ const App = () => {
     <Contact  m={m} l={l}/>
     </Route>
     <Route path = "/works" exact>
-    <Works  m={m} l={l}/>
+    <Works s={s} m={m} l={l}/>
     </Route>
 
     <Route path = "/works/humanities-book-database" exact>
-      <ProjectHumanities  m={m} l={l}/>
+      <ProjectHumanities  m={m} l={l} setRouteFocus={setRouteFocus}/>
     </Route>
 
     <Route path = "/works/pharmacy-concept-app" exact>
-    <ProjectPharmacy  m={m} l={l}/>
+    <ProjectPharmacy  m={m} l={l} setRouteFocus={setRouteFocus}/>
     </Route>
 
     <Route path = "/works/more" exact>
-    <WorksMore  m={m} l={l}/>
+    <WorksMore  m={m} l={l} setRouteFocus={setRouteFocus}/>
     </Route>
 
     </div>

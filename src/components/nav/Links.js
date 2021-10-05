@@ -16,7 +16,11 @@ const background = () =>{
 }
 
 const color = () =>{
-  if(hover || routeFocus===routeName){
+  if (routeFocus.slice(0,7)==="/works/"){
+    if(hover || routeName==="/works"){
+      return "var(--velvet)"
+    }
+ }else if(hover || routeFocus===routeName){
       if(routeFocus==="/about"){
         return "var(--highlight)"
       }else if (routeFocus==="/works") {
