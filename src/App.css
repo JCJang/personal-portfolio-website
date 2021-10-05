@@ -110,11 +110,11 @@ html{
 --desktopheight:calc(100vh - 5rem);
 --grid-image-width:calc(50vw - 3rem);
 
-  --main-headline1: 6.5rem/1.5 "Lusitana", serif;
+  --main-headline1: 5.5rem/1.5 "Lusitana", serif;
   --main-headline2: 4rem/1.5 "Lusitana", serif;
   --main-headline3: 3.2rem/1.5 "Lusitana", serif;
   --main-headline4: 2.3rem/1.5 "Lusitana", serif;
-  --main-headline5: 1.65rem/1.5 "Yaldevi", sans-serif;
+  --main-headline5: 1.8rem/1.5 "Yaldevi", sans-serif;
   --main-headline6: 500 1.35rem/1.5 "Yaldevi", sans-serif;
   --main-body1:  1rem/1.5 "Yaldevi", sans-serif;
   --main-body2:  0.8rem/1.5 "Yaldevi", sans-serif;
