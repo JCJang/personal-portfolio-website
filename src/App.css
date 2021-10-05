@@ -95,10 +95,16 @@ html{
    linear-gradient(to right, rgba(169, 71, 88, 0.8) 0%, rgba(97, 16, 22, 0.8) 100%);
 
 
-  --mobile-nav-gradient-rl: linear-gradient(to left, rgba(142, 149, 180, 0) 0%,  rgba(221, 223, 233, 0.6) 100%);
-  --mobile-nav-gradient-lr: linear-gradient(to right, rgba(142, 149, 180, 0) 0%,  rgba(221, 223, 233, 0.6) 100%);
-  --mobile-nav-hover-gradient-rl: linear-gradient(to left, rgba(97, 16, 22, 0.6) 0%, rgba(221, 223, 233, 0.6)  50.12%,  rgba(221, 223, 233, 0.6) 94.91%);
-  --mobile-nav-hover-gradient-lr: linear-gradient(to right, rgba(97, 16, 22, 0.6) 0%, rgba(221, 223, 233, 0.6)  50.12%,  rgba(221, 223, 233, 0.6) 94.91%);
+  --mobile-nav-gradient-lr:
+  linear-gradient(to left, rgba(142, 149, 180, 0) 0%,  rgba(221, 223, 233, 0.6) 100%);
+
+
+  --mobile-nav-gradient-rl:
+  linear-gradient(to right, rgba(142, 149, 180, 0) 0%,  rgba(221, 223, 233, 0.6) 100%);
+  --mobile-nav-hover-gradient-lr:
+  linear-gradient(to left, rgba(97, 16, 22, 0.6) 0%, rgba(221, 223, 233, 0.6)  50.12%,  rgba(221, 223, 233, 0.6) 94.91%);
+  --mobile-nav-hover-gradient-rl:
+  linear-gradient(to right, rgba(97, 16, 22, 0.6) 0%, rgba(221, 223, 233, 0.6)  50.12%,  rgba(221, 223, 233, 0.6) 94.91%);
 
 --mobileheight:calc(100vh - 5rem);
 --desktopheight:calc(100vh - 5rem);
@@ -118,7 +124,7 @@ html{
   --main-overline:  0.65rem/1.5"Yaldevi", sans-serif;
   --main-caption:  0.8rem/1.5 "Yaldevi", sans-serif;
 
-  --mobile-logo: 1.25rem/1.5 "La Belle Aurore", serif;
+  --mobile-logo: 1.45rem/1.5 "La Belle Aurore", serif;
   --desktop-logo: 1.25rem/1.5 "La Belle Aurore", serif;
 
 }
@@ -170,7 +176,7 @@ letter-spacing: 0.0156rem;}
 }
 .overline{font:var(--main-overline);
 text-transform: uppercase;
-letter-spacing: 0.375rem;}
+}
 .caption{font:var(--main-caption);
   letter-spacing: 0.025rem;
 }
@@ -406,21 +412,79 @@ letter-spacing: 0.375rem;}
 }
 
 
-.mobile-nav-lr{
-  background:var(--mobile-nav-gradient-lr);
+.mobile-nav-lr:after{
+  background-image:var(--mobile-nav-gradient-lr);
+  position: absolute;
+  bottom: 0;
+  left:0;
+  content:'';
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
 }
 
-.mobile-nav-rl{
-  background:var(--mobile-nav-gradient-rl);
+.mobile-nav-rl:after{
+  background-image:var(--mobile-nav-gradient-rl);
+  position: absolute;
+  bottom: 0;
+  left:0;
+  content:'';
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
 }
 
-.mobile-nav-rl:hover{
+.mobile-nav-rl-hover:after{
   background:var(--mobile-nav-hover-gradient-rl);
+  position: absolute;
+  bottom: 0;
+  left:0;
+  content:'';
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
 }
 
-.mobile-nav-lr:hover{
+.mobile-nav-lr-hover:after{
   background:var(--mobile-nav-hover-gradient-lr);
+  position: absolute;
+  bottom: 0;
+  left:0;
+  content:'';
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
 }
+
+.boxDecoration-navMobileBottom:after{
+  border:2px solid var(--velvet);
+  border-radius:2px;
+  height:0.8rem;
+  width:25vw;
+  margin:1.5rem 0;
+  position: absolute;
+  z-index: 50;
+  bottom:-2rem;
+  left:calc(37.5vw);
+  content:'';
+  pointer-events: none;
+}
+
+
+.boxDecoration-navMobileTop:before{
+  border:2px solid var(--velvet);
+  border-radius:2px;
+  height:0.8rem;
+  width:25vw;
+  margin:1.5rem 0;
+  position: absolute;
+  z-index: 50;
+  top:-2rem;
+  left:calc(37.5vw);
+  content:'';
+  pointer-events: none;
+}
+
 
 .boxDecoration{
   border:1.5px solid var(--midnight);

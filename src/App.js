@@ -32,7 +32,10 @@ const App = () => {
   return (
     <Router>
     <div className="rootContainer" style={desktopStyle()}>
-    <Nav m={m} l={l}/>
+    {m? <Nav m={m} l={l}/>
+    :
+    <NavMobile m={m} l={l}/>}
+
     <Route path = "/about" exact>
     <About  m={m} l={l}/>
     </Route>
