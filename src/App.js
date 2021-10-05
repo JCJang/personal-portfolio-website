@@ -6,6 +6,10 @@ import About from './components/about/About'
 import Contact from './components/contact/Contact'
 import Works from './components/works/Works'
 
+import ProjectPharmacy from './components/works/projects/ProjectPharmacy/ProjectPharmacy'
+import ProjectHumanities from './components/works/projects/ProjectHumanities/ProjectHumanities'
+import WorksMore from './components/works/projects/WorksMore/WorksMore'
+
 import {Route, BrowserRouter as Router} from 'react-router-dom'
 import {useEffect, useState, useCallback} from 'react'
 import useMediaQuery from "./customHooks/useMediaQuery";
@@ -45,6 +49,19 @@ const App = () => {
     <Route path = "/works" exact>
     <Works  m={m} l={l}/>
     </Route>
+
+    <Route path = "/works/humanities-book-database" exact>
+      <ProjectHumanities  m={m} l={l}/>
+    </Route>
+
+    <Route path = "/works/pharmacy-concept-app" exact>
+    <ProjectPharmacy  m={m} l={l}/>
+    </Route>
+
+    <Route path = "/works/more" exact>
+    <WorksMore  m={m} l={l}/>
+    </Route>
+
     </div>
     </Router>
   )

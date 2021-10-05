@@ -42,7 +42,7 @@ const worksStyle = () => {
              m = {m}
              l = {l}
              classes = "grid-book"
-             routeName = "/humanities-book-database"
+             routeName = "/works/humanities-book-database"
              direction = "rl"
              role = "UX Designer, full stack development"
              title = "Humanities Book Database"
@@ -52,7 +52,7 @@ const worksStyle = () => {
               image={projectBookImg}
               m = {m}
               l = {l}
-              routeName = "/humanities-book-database"
+              routeName = "/works/pharmacy-concept-app"
               direction = "lr"
               role = "UX Designer"
               title = "Pharmacy concept app"
@@ -61,7 +61,7 @@ const worksStyle = () => {
               <GridItem
                 m = {m}
                 l = {l}
-               routeName = "/humanities-book-database"
+               routeName = "/works/more"
                direction = "rl"
                title = "Other projects"
                subtitle = "Including this site" / >
