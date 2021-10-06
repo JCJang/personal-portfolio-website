@@ -8,10 +8,8 @@ const Summary = ({s, m, l, displayImages, mainImage, title, text, roles, summary
         return {
           background:"var(--cinerous)",
           color: "var(--velvet)",
-          height:"var(--desktopheight)",
-          overflowY:"auto",
           margin:"0",
-          padding:"0"
+          padding:"0",
         }
       };
 
@@ -24,9 +22,9 @@ const Summary = ({s, m, l, displayImages, mainImage, title, text, roles, summary
       }
 
     return (
-      <div className="Column" style={summaryStyle()}>
+      <div className="Column" id="summary" style={summaryStyle()}>
 
-        <div className="Column" style={{position:"relative",zIndex:"29", padding:m?"4rem 5rem":"3rem 1.5rem", height:m?"20rem":"25rem", width:"100vw"}}>
+        <div className="Column" style={{position:"relative",zIndex:"29", padding:m?"4rem 5rem":"3rem 1.5rem", height:m?"20rem":"25rem", width:"100vw",color:"var(--occlusion)", background:"var(--table-neutral)"}}>
           <div style={{width:m?"35vw":"80vw"}}>
           <h2 className={l && "h1"}>{title}</h2>
           <br></br>
@@ -36,10 +34,8 @@ const Summary = ({s, m, l, displayImages, mainImage, title, text, roles, summary
           </div>
           </div>
 
-          <br></br>
-
         <div className={s?"mainImage-desktop":"mainImage-mobile"} style={{position:"relative",height:"100vh",width:"100vw"}}>
-        <ImageFadeIn src={mainImage} style={{filter:"saturate(0.5)",background:"var(--velvet)", position:"relative",top:"0",left:"0",width: "100vw", height:"100vh", display: "block",objectFit:"cover"}}/>
+        <ImageFadeIn src={mainImage} style={{filter:"saturate(0)",background:"var(--velvet)", position:"relative",top:"0",left:"0",width: "100vw", height:"100vh", display: "block",objectFit:"cover"}}/>
         </div>
 
 
@@ -71,7 +67,7 @@ const Summary = ({s, m, l, displayImages, mainImage, title, text, roles, summary
 
         </div>
 
-        <div id="summary-col-2" className="Column" style={{padding:l?"8rem 2rem 2rem 5rem":"0 1.5rem 1.5rem 1.5rem",width:m?"40rem":"80vw"}}>
+        <div id="summary-col-2" className="Column" style={{padding:m?"8rem 2rem 2rem 5rem":"0 1.5rem 1.5rem 1.5rem",width:m?"40rem":"80vw"}}>
         <br></br>
 
         <div className="body1">
@@ -81,19 +77,14 @@ const Summary = ({s, m, l, displayImages, mainImage, title, text, roles, summary
 
       </div>
 
-      <div className="Column" style={{margin:textMargin(), alignSelf:"flex-end"}}>
-      <div className="subtitle1">
-        See Final Screens as Follows >
-      </div>
-      <div className="subtitle2">
-        or visit <a href="https://www.humanitiesdatabase.com" target="_blank" style={{textDecoration:"none", color:"inherit"}}>www.humanitiesdatabase.com</a>.
-      </div>
-      </div>
-
-        {carousel && <div className="body2">
+        {carousel && <div className="body2" id="Final Screens">
         <Carousel carouselSlides={carouselSlides} carouselSlidesTitles={carouselSlidesTitles}/>
         </div>}
 
+
+        <div className="Column subtitle1" style={{margin:textMargin(), alignSelf:"flex-end"}}>
+          Visit the Web App at <a href="https://www.humanitiesdatabase.com" target="_blank" style={{textDecoration:"none", color:"inherit"}}>www.humanitiesdatabase.com</a>.
+        </div>
 
       </div>
     )

@@ -613,3 +613,7 @@ line-height: 100%;
   transform: scaleY(1.2);
   cursor:pointer;
 }
+
+.ProjectSectionTitle{
+  color:var(--midnight);
+}

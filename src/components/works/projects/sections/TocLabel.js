@@ -2,8 +2,12 @@ import { IoPlayForwardSharp as GoTo } from "react-icons/io5";
 
 const TocLabel = ({m, label, sublabel}) => {
   return (
-    <div className="Column TocLabel transition" style={{
+    <a className="Column TocLabel transition"
+        href={`#${label}`}
+        style={{
         margin:"0 2rem",
+        color:"inherit",
+        textDecoration:"none",
         paddingTop:m && "1.5rem",
         paddingBottom:!m && "1.5rem",
         alignItems:!m && "flex-end",
@@ -17,7 +21,7 @@ const TocLabel = ({m, label, sublabel}) => {
         </div>
 
         <div style={{paddingTop:"1rem",order:m?"2":"1"}}><em>{sublabel}</em></div>
-    </div>
+    </a>
 
     )
 }
