@@ -69,6 +69,19 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
          surveyResults="The competitive analysis gave me a better understanding of the existing range of resources and book-related features that readers may find attractive – along with their limitations./For example, thedailyidea.org, a website compiling philosophy resources, has several well-organized lists drawn from university curriculums. However, curriculum-style reading usually seeks to cover a whole topic. Books include 'Introduction to' or 'Cambridge companion to' or '...handbook', which thesis are to cover many ideas instead of exploring a specific one. I envision my own website to only include works that explore narrowly-defined questions, so that instead of exploring topics such as “existentialism,” the reader explores topics such as “How Can Moral Consciousness Be Defined Outside Of Religion?” The topic may include many different 'answers', including that written by existentialist authors - but not excluding other ones either. My goal is to make humanities reading highly specific and personal instead of broad and abstract."
 
          surveyResultsEmphasis="It is important to visualize the book search user flow as a cycle, and present it as such."
+         screenFeatures={[
+           ["Central thesis search bar","subject matter filter","subject matter introduction panel","basic referential data","table of contents","2-3 paragraphs that captures the author's central thesis and writing style"],
+
+           ["in-depth referential data","subject matter introduction panel","Further reading – related books, authors, subjects etc.","Reviews","Discussion form"],
+           ["saved books (read and to read)","saved shelves", "contacts and submitted discussion forms","profile settings"], ["data visualization - book and spokes", "filter by referenced works/their authors"],
+           ["filter by genre and year"],
+           ["display count of readers that are interested in a yet-untranslated book and/or out-of-print books", "isbn etc. - more technical information"]
+         ]}
+         screenTitles={["Search by central argument (book exploration)", "post-reading screen","user account screen", "relational search (by related authors or by references)", "literature map", "publisher board"]}
+
+         designKeywords={["trustworthy", "reputable", "high-caliber", "academic"]}
+         designTone={["serious", "concise", "rational", "neutral"]}
+         valueProposal="The selected books must be of high enough quality to be of value for users. Personality: This person is not writing a textbook; it is a passionate argument of a person’s opinion and core beliefs.     Rationality: this person is using facts as presented to him or her. They have tried to get perspective before making an opinion. Aka, they know what they’re talking about.           Specificity: The book is not an overview on a topic. The author explores a particular question, and returns his or her systematic thoughts on the matter.           Systematicity: The table of contents breaks down the core question into arguments."
         />
 
 
