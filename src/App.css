@@ -617,3 +617,16 @@ line-height: 100%;
 .ProjectSectionTitle{
   color:var(--midnight);
 }
+
+.AccordionLabel{
+  position:relative;
+  border-left: 3px solid var(--midnight);
+  padding:0.5rem 1rem;
+  transition: border-left ease 0.5s;
+}
+
+.AccordionLabel:hover{
+  color:var(--velvet);
+  border-left: 16px solid var(--midnight);
+  cursor:pointer;
+}

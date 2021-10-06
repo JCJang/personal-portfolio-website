@@ -83,13 +83,6 @@ const Research = ({s, m, l, ideationText, ideationEmphasis, researchText, compet
 
 <div className={m?"Row":"Column"} style={{margin:textMargin()}}>
 
-      <div id="summary-col-2" className="Column" style={{padding:m?"8rem 2rem 2rem 5rem":"0 1.5rem 1.5rem 1.5rem",width:m?"25rem":"80vw",order:m?"1":"2"}}>
-      <br></br>
-      <h5><em>{surveyResultsEmphasis}</em></h5>
-      </div>
-
-        <div id="summary-col-1" className="Column" style={{padding:l?"2rem":"1.5rem", width:m?"100rem":"80vw",order:m?"2":"1"}}>
-
 
         {surveyResults &&
           <div>
@@ -100,9 +93,6 @@ const Research = ({s, m, l, ideationText, ideationEmphasis, researchText, compet
           <Accordion m={m} l={l}/>
 
           </div>}
-
-        </div>
-
 
 
       </div>
