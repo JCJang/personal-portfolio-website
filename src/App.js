@@ -17,13 +17,18 @@ import useMediaQuery from "./customHooks/useMediaQuery";
 
 const App = () => {
   /* Extra small devices (phones, 600px and down) */
-  const xs = useMediaQuery('(max-width: 600px)');
+  const xxs = useMediaQuery('(max-width: 359px)');
+  /* Extra small devices (phones, 600px and down) */
+  const xs = useMediaQuery('(min-width: 359px)');
   /* Small devices (portrait tablets and large phones, 600px and up) */
     const s = useMediaQuery('(min-width: 600px)');
     /* Medium devices (landscape tablets, 768px and up) */
     const m = useMediaQuery('(min-width: 768px)');
     /* Large devices (laptops/desktops, 992px and up) */
     const l = useMediaQuery('(min-width: 992px)');
+    const xl = useMediaQuery('(min-width: 1200px)');
+    const xxl = useMediaQuery('(min-width: 1600px)');
+
 
     const [routeFocus, setRouteFocus] = useState("")
 
@@ -32,7 +37,8 @@ const App = () => {
         return {
           width:"100vw",
           overflowY:"auto",
-          overflowX:"hidden"
+          overflowX:"hidden",
+          fontSize:xxs?"13px":xxl?"18px":xl?"16px":"14px"
         }
     }
 

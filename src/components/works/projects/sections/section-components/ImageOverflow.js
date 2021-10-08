@@ -1,21 +1,21 @@
 import ImageFadeIn from '../../../../../customHooks/imageFadeIn'
 
-const ImageOverflow = ({m, images, height="50vh"}) => {
+const ImageOverflow = ({m, images, height="50vh", style}) => {
 
   return (
-    <div style={{position:"relative", height:"20rem", width:m? "100%":"100vw"}}>
-    <div className={m?"Row":"Column"} style={{position:"absolute", left:!m && "0px", height:"20rem",overflowX:"auto", width:m?"100%":"100vw"}}>
+    <div className={m?"Row":"Column"} style={{position:"relative", zIndex:"25", left:"0px", height:height ,overflowX:"auto", width:m? "100%":"100vw"}}>
      {images && images.map((image)=>{
        return <ImageFadeIn src={image} style={{
          filter:"saturate(0.5)",
-         width: "auto",
+         zIndex:"25",
+         position:"absolute",
+         width: "fit-content",
          height: height,
-         margin:"2rem",
          display: "block",
-         objectFit:"cover"}}/>
+         objectFit:"cover"}} style={style}/>
      })}
      </div>
-    </div>  )
+ )
 }
 
 export default ImageOverflow

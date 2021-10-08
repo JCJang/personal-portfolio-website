@@ -35,6 +35,22 @@ import hifiDesktop from './images/design/hifi-desktop.png'
 import textRef1 from './images/design/typography-ref.png'
 import typographyFinalImg from './images/design/typography-final.png'
 
+import descriptionSpring from './images/design/description-spring.png'
+import descriptionSummer from './images/design/description-summer.png'
+import descriptionWinter from './images/design/description-winter.png'
+
+import moodboardSpring from './images/design/moodboard-spring.jpg'
+import moodboardSummer from './images/design/moodboard-summer.jpg'
+import moodboardWinter from './images/design/moodboard-winter.jpg'
+
+import texturesSpring from './images/design/textures-spring.jpg'
+import texturesSummer from './images/design/textures-summer.jpg'
+import texturesWinter from './images/design/textures-winter.jpg'
+
+import wireframeSpring from './images/design/wireframe-spring.png'
+import wireframeSummer from './images/design/wireframe-summer.png'
+import wireframeWinter from './images/design/wireframe-winter.png'
+
 const ProjectHumanities = ({m, l, setRouteFocus}) => {
 
     console.log(displayImage1)
@@ -105,12 +121,18 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
         designEmphasis="hi"
         typography="prior to creating a mood board, I jumped into typography. Since this application is for book lovers, I was certain that finding the right typography sends a crucial message regarding the platform’s quality. I didn’t want something with a thick stem or a thick and serif, which feelreminds one of old print.For something more lightweight, I tried to remember the most flawless reading experiences I had, and one of the top ones was reading Everyman’s library’s edition of Naguib Mahfouz’s The cairo trilogy. Moving through my bookshelf, I looked for other typesets used in Classics that emanate the message of being 'light weight' and 'effortless'."
         typographyRefImages={[textRef1]}
+        finalTypography={["4-App Titles - Jost", "4-App Body - Palanquin", "3-Book-related Text - Amiri"]}
         typographyFinalImg={typographyFinalImg}
         color="hi"
         lofiWireframesImg={lofiWireframesImg}
         hifiMobile={hifiMobile}
         hifiTablet={hifiTablet}
         hifiDesktop={hifiDesktop}
+
+        colorWireframes={[wireframeSpring, wireframeSummer, wireframeWinter]}
+        colorTextures={[texturesSpring, texturesSummer, texturesWinter]}
+        colorMoodboard={[moodboardSpring, moodboardSummer, moodboardWinter]}
+        colorDescriotion={[descriptionSpring, descriptionSummer, descriptionWinter]}
         />
 
 
