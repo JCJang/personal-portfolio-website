@@ -1,6 +1,6 @@
 import ImageFadeIn from '../../../../customHooks/imageFadeIn'
-import Carousel from './Carousel'
-import TocLabel from './TocLabel'
+import Carousel from './section-components/Carousel'
+import TocLabel from './section-components/TocLabel'
 
 const Summary = ({s, m, l, displayImages, mainImage, title, text, roles, summary, challenge, solution, carouselSlides, carouselSlidesTitles, carousel, background=false, research=false, design=false, development=false}) => {
 

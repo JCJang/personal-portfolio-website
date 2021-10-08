@@ -1,6 +1,6 @@
-import ImageFadeIn from '../../../../customHooks/imageFadeIn'
-import useTimeout from '../../../../customHooks/useTimeout'
-import useDebounce from '../../../../customHooks/useDebounce'
+import ImageFadeIn from '../../../../../customHooks/imageFadeIn'
+import useTimeout from '../../../../../customHooks/useTimeout'
+import useDebounce from '../../../../../customHooks/useDebounce'
 
 import { IoEllipseOutline as Circle } from "react-icons/io5";
 import { IoEllipseSharp as CircleFilled } from "react-icons/io5";
