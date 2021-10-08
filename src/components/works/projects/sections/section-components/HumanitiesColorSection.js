@@ -5,6 +5,7 @@ import { IoEllipseSharp as CircleFilled } from "react-icons/io5";
 
 const HumanitiesColorSection = ({textMargin, colorTexture, colorWireframe, colorMoodboard, designColors, designDescription, designTitle, m, l, number}) => {
 
+  const [openedLayout,setOpenedLayout] = useState(false)
   const leftToRight = (number) =>{
   if(number===0 || number === 2){
     return true;
@@ -22,10 +23,10 @@ const HumanitiesColorSection = ({textMargin, colorTexture, colorWireframe, color
 }
 
   return (
-    <div className={l?"Row":"Column"} style={{margin:textMargin(), color:"var(--midnight)",order:leftToRight?"1":"2"}}>
+    <div className={l?"Row":"Column"} style={{position:"relative", margin:textMargin(), color:"var(--midnight)",order:leftToRight?"1":"2"}}>
 
-    <div id="image-col" className="ColumnCentered" style={{background:"var(--table-light)", position:"relative", left:leftToRight && "-3rem", right:rightToLeft && "3rem"}}>
-    <div style={{margin:"3rem", objectFit:"cover"}}>
+    <div className="image-col ColumnCentered" style={{background:"var(--table-light)", position:"relative", left:leftToRight && openedLayout?"-30vw":leftToRight && "-3rem", right:rightToLeft && openedLayout? "30vw":rightToLeft && "3rem"}}>
+    <div style={{margin:"3rem", objectFit:"cover"}} onClick={()=>{setOpenedLayout(!openedLayout)}}>
     <ImageFadeIn style={{height:l?"30vw":"20",width:l?"30vw":"20vw"}} src={colorMoodboard}/>
     </div>
     </div>
