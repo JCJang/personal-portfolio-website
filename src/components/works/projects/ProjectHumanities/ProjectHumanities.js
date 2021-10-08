@@ -1,4 +1,6 @@
 //summary
+import Summary from '../sections/Summary'
+
 import mainImageV from './images/user-with-iphone-V.jpg'
 import mainImageH from './images/preview-page-H.jpg'
 
@@ -15,13 +17,23 @@ import topView5 from './images/top-view/authorpanel-burke.jpg'
 import topView6 from './images/top-view/authorbg-burke.jpg'
 import topView7 from './images/top-view/authorbio-burke.jpg'
 
-import Summary from '../sections/Summary'
+//research
 import Research from '../sections/Research'
 
+import userFlowImg from './images/user-flow-result.png'
+
+//design
+import Design from '../sections/Design'
 
 import { useLocation } from "react-router-dom";
 import {useState, useEffect} from 'react';
+import lofiWireframesImg from './images/design/lofi.png'
+import hifiMobile from './images/design/hifi-mobile.png'
+import hifiTablet from './images/design/hifi-tablet.png'
+import hifiDesktop from './images/design/hifi-desktop.png'
 
+import textRef1 from './images/design/typography-ref.png'
+import typographyFinalImg from './images/design/typography-final.png'
 
 const ProjectHumanities = ({m, l, setRouteFocus}) => {
 
@@ -32,7 +44,7 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
   },[])
 
     return (
-      <div style={{width:"100vw", height:"var(--desktopheight)", overflowY:"auto", scrollBehavior: "smooth"}}>
+      <div style={{width:"100vw", height:"var(--desktopheight)", overflowY:"auto", overflowX:"hidden", scrollBehavior: "smooth"}}>
         <Summary
           mainImage={m? mainImageH : mainImageV}
           m={m}
@@ -73,18 +85,33 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
            ["Central thesis search bar","subject matter filter","subject matter introduction panel","basic referential data","table of contents","2-3 paragraphs that captures the author's central thesis and writing style"],
 
            ["in-depth referential data","subject matter introduction panel","Further reading – related books, authors, subjects etc.","Reviews","Discussion form"],
-           ["saved books (read and to read)","saved shelves", "contacts and submitted discussion forms","profile settings"], ["data visualization - book and spokes", "filter by referenced works/their authors"],
+           ["saved books (read and to read)","saved questions", "contacts and submitted discussion forms","profile settings"], ["data visualization - book and spokes", "filter by referenced works/their authors"],
            ["filter by genre and year"],
            ["display count of readers that are interested in a yet-untranslated book and/or out-of-print books", "isbn etc. - more technical information"]
          ]}
-         screenTitles={["Search by central argument (book exploration)", "post-reading screen","user account screen", "relational search (by related authors or by references)", "literature map", "publisher board"]}
+         screenTitles={[`<strong>primary feature</strong> - Search by central argument (book exploration)`, `<strong>primary feature</strong> - post-reading screen`,"user account screen", "relational search (by related authors or by references)", "literature map", "publisher board"]}
 
-         designKeywords={["trustworthy", "reputable", "high-caliber", "academic"]}
-         designTone={["serious", "concise", "rational", "neutral"]}
+         designKeywords={["single page", "cyclical flow", "minimalistic", "linear motif"]}
+         designTone={["serious", "concise", "rational", "neutral", "reputable", "academic"]}
          valueProposal="The selected books must be of high enough quality to be of value for users. Personality: This person is not writing a textbook; it is a passionate argument of a person’s opinion and core beliefs.     Rationality: this person is using facts as presented to him or her. They have tried to get perspective before making an opinion. Aka, they know what they’re talking about.           Specificity: The book is not an overview on a topic. The author explores a particular question, and returns his or her systematic thoughts on the matter.           Systematicity: The table of contents breaks down the core question into arguments."
+
+         userFlowText = "With good user knowledge under my belt, I can now start planning the app layout. I enjoy starting with the information architecture to really lay out in the abstract what I am trying to accomplish."
+         userFlowImg={userFlowImg}
         />
 
+        <Design m={m} l={l}
+        designText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
+        designEmphasis="hi"
+        typography="prior to creating a mood board, I jumped into typography. Since this application is for book lovers, I was certain that finding the right typography sends a crucial message regarding the platform’s quality. I didn’t want something with a thick stem or a thick and serif, which feelreminds one of old print.For something more lightweight, I tried to remember the most flawless reading experiences I had, and one of the top ones was reading Everyman’s library’s edition of Naguib Mahfouz’s The cairo trilogy. Moving through my bookshelf, I looked for other typesets used in Classics that emanate the message of being 'light weight' and 'effortless'."
+        typographyRefImages={[textRef1]}
+        typographyFinalImg={typographyFinalImg}
+        color="hi"
+        lofiWireframesImg={lofiWireframesImg}
+        hifiMobile={hifiMobile}
+        hifiTablet={hifiTablet}
+        hifiDesktop={hifiDesktop}
+        />
 
 
       </div>

@@ -30,8 +30,9 @@ const App = () => {
 
     const desktopStyle = () => {
         return {
-          height:"100vh",
-          overflowY:"auto"
+          width:"100vw",
+          overflowY:"auto",
+          overflowX:"hidden"
         }
     }
 
