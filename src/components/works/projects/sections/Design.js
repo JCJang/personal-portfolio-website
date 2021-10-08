@@ -1,5 +1,6 @@
 import ImageFadeIn from '../../../../customHooks/imageFadeIn'
 import ImageOverflow from './section-components/ImageOverflow'
+import HumanitiesColorSection from './section-components/HumanitiesColorSection'
 
 import { IoColorFilterOutline as ColorIcon } from "react-icons/io5";
 import { IoTextOutline as TypographyIcon } from "react-icons/io5";
@@ -17,7 +18,7 @@ import transitional from './images/font-types/6-transitional.png'
 
 import Accordion from './section-components/Accordion'
 
-const Design = ({s, m, l, designText, designEmphasis,typography, color, lofiWireframesImg, hifiWireframesImg, typographyRefImages, typographyFinalImg,finalTypography}) => {
+const Design = ({s, m, l, designText, designEmphasis,typography, color, lofiWireframesImg, hifiWireframesImg, typographyRefImages, typographyFinalImg,finalTypography, colorWireframes, colorTextures, colorDescriptions, colorMoodboards, colorColors, colorTitles}) => {
 
   const serifTypes = [handwriting, modern, oldStyle, sans, slab, transitional]
 
@@ -109,7 +110,19 @@ const Design = ({s, m, l, designText, designEmphasis,typography, color, lofiWire
           <ColorIcon style={{alignSelf:"center", marginRight:"0.8rem"}}/>
           Color</h4>
 
-          <Accordion m={m} l={l}/>
+          {colorWireframes && colorWireframes.map((wireframe, number)=>{
+            return <HumanitiesColorSection
+                  m={m}
+                  l={l}
+                  number={number}
+                  designColors={["blue", "green", "red"]}
+                  designTitle={colorTitles[number]}
+                  textMargin={textMargin}
+                  colorWireframe={wireframe}
+                  colorTexture={colorTextures[number]}
+                  colorMoodboard={colorMoodboards[number]}
+                  designDescription={colorDescriptions[number]}/>
+          })}
 
           </div>}
 
@@ -149,10 +162,6 @@ const Design = ({s, m, l, designText, designEmphasis,typography, color, lofiWire
           </>}
 
         </div>
-
-
-
-
       </div>
 
 

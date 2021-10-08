@@ -129,10 +129,14 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
         hifiTablet={hifiTablet}
         hifiDesktop={hifiDesktop}
 
+        colorColors
+        colorTitles={["Spring", "Summer", "Winter"]}
+        colorDescriptions={["Shadows are soft, cast by strong, outdor ambient light.", "Crisp, dark shadows cast by the mid-day sun.", "Dim shadows cast by soft, indoor ambient/bounce light."]}
+        colorAccents={["silver", "copper", "bronze"]}
+
         colorWireframes={[wireframeSpring, wireframeSummer, wireframeWinter]}
         colorTextures={[texturesSpring, texturesSummer, texturesWinter]}
-        colorMoodboard={[moodboardSpring, moodboardSummer, moodboardWinter]}
-        colorDescriotion={[descriptionSpring, descriptionSummer, descriptionWinter]}
+        colorMoodboards={[moodboardSpring, moodboardSummer, moodboardWinter]}
         />
 
 
