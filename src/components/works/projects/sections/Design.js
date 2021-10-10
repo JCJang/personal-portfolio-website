@@ -105,7 +105,7 @@ const Design = ({s, m, l, designText, designEmphasis,typography, color, lofiWire
           </div>}
 
         {color &&
-          <div style={{padding:l?"2rem":"1.5rem", width:m?"40rem":"80vw"}}>
+          <div style={{padding:l?"2rem":"0", width:m?"40rem":"100vw"}}>
           <h4 className="Row" style={{margin:"2rem 0"}}>
           <ColorIcon style={{alignSelf:"center", marginRight:"0.8rem"}}/>
           Color</h4>
@@ -114,6 +114,7 @@ const Design = ({s, m, l, designText, designEmphasis,typography, color, lofiWire
             return <HumanitiesColorSection
                   m={m}
                   l={l}
+                  direction="lr"
                   number={number}
                   designColors={["blue", "green", "red"]}
                   designTitle={colorTitles[number]}
@@ -127,19 +128,14 @@ const Design = ({s, m, l, designText, designEmphasis,typography, color, lofiWire
           </div>}
 
 
-        <div className={m?"Row":"Column"}>
+        <div className="Column">
             {lofiWireframesImg && <>
 
               <h4 className="Row" style={{margin:"2rem 0"}}>
                 <LofiIcon style={{alignSelf:"center", marginRight:"0.8rem"}}/>
               Lofi Wireframes</h4>
-              <div className={m?"Row":"Column"}>
-               <ImageFadeIn src={lofiWireframesImg} style={{
-                 filter:"saturate(0.5)",
-                 width: "80vw",
-                 height:"60vh",
-                 display: "block",
-                 objectFit:"cover"}}/>
+              <div className="RowCentered" style={{height:l?"70vh":"85vh", margin:"2rem 0",  width:"100vw", background:"var(--table-light)"}}>
+              <ImageOverflow m={m} height={l?"60vh":"75vh"} images={[lofiWireframesImg]} style={{filter:"saturate(0)"}}/>
               </div>
           </>}
 
