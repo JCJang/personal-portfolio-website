@@ -148,51 +148,47 @@ const Research = ({s, m, l, ideationText, ideationEmphasis, researchText, compet
         </div>
 
 <div className={m?"Row":"Column"} style={{background:"var(--midnight)",color:"var(--table-neutral)", padding:textMargin()}}>
-  <div id="design-direction-col-1" className="Column" style={{padding:l?"2rem":"1.5rem", width:m?"40rem":"80vw"}}>
 
-          <h4 className="Row" style={{margin:"2rem 0"}}>
-          <DesignDirectionIcon style={{alignSelf:"center", marginRight:"0.8rem"}}/>
-          Design Direction</h4>
+  <div id="design-direction-col-2" className="Column" style={{padding:l?"2rem":"1.5rem", width:m?"40rem":"80vw"}}>
 
-          <h6><strong>{competitiveAnalysisEmphasis}</strong></h6>
+            <h4 className="Row" style={{margin:"2rem 0"}}>
+            <DesignDirectionIcon style={{alignSelf:"center", marginRight:"0.8rem"}}/>
+            Design Direction</h4>
 
-        <div className="boxDecoration" style={{borderColor:"var(--table-neutral)"}}></div>
-
-          <h6><strong>{surveyResultsEmphasis}</strong></h6>
-          </div>
-
-  <div id="design-direction-col-2" className="Column" style={{padding:l?"2rem":"1.5rem", width:m?"20rem":"80vw"}}>
-
-          <div className="Column">
+          <div className="Row">
             <div className="Column">
-            <div className="overline" style={{margin:"2rem 0"}}>DESIGN KEYWORDS:</div>
+            <div className="overline" style={{margin:"2rem 0", marginRight:"3rem"}}>DESIGN KEYWORDS:</div>
             <div> {designKeywords.map((keyword)=>{
-              return <div className="subtitle1"> - {keyword}</div>
+              return <div className="body1">{keyword}</div>
             })}</div>
             </div>
+
+            <div style={{width:"0.1px",  borderLeft: "1.5px solid var(--neutral)", margin:"2rem"}}></div>
 
             <div className="Column">
             <div className="overline" style={{margin:"2rem 0"}}>TONE:</div>
             <div>{designTone.map((keyword)=>{
-              return <div className="subtitle1"> - {keyword}</div>
+              return <div className="body1">{keyword}</div>
             })}</div>
             </div>
           </div>
 
-          </div>
-
-          <div style={{width:"0.1px",  borderLeft: "1.5px solid var(--neutral)", margin:"2rem"}}></div>
-
-          <div id="design-direction-col-3" className="Row" style={{padding:l?"2rem":"1.5rem",width:m?"30rem":"80vw"}}>
-
-
           <div className="Column">
           <div className="overline" style={{margin:"2rem 0"}}>UNIQUE VALUE PROPOSAL:</div>
-          <div className="subtitle2">{valueProposal}
+          <div className="body1">{valueProposal}
           </div>
           </div>
 
           </div>
+  <div id="design-direction-col-1" className="Column" style={{padding:m?"8rem 2rem 2rem 5rem":"0 1.5rem 1.5rem 1.5rem", width:m?"20rem":"80vw"}}>
+
+          <h6><em>{competitiveAnalysisEmphasis}</em></h6>
+
+        <div className="boxDecoration" style={{borderColor:"var(--table-neutral)"}}></div>
+
+          <h6><em>{surveyResultsEmphasis}</em></h6>
+          </div>
+
 
       </div>
 

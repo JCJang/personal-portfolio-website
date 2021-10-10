@@ -15,7 +15,7 @@ const Summary = ({s, m, l, displayImages, mainImage, title, text, roles, summary
 
       const textMargin = () => {
         if(m){
-          return "3rem 5rem 1rem 5rem"
+          return "4rem 5rem 2rem 5rem"
         }else{
           return "2rem 1rem"
         }

@@ -10,9 +10,10 @@ import ProjectPharmacy from './components/works/projects/ProjectPharmacy/Project
 import ProjectHumanities from './components/works/projects/ProjectHumanities/ProjectHumanities'
 import WorksMore from './components/works/projects/WorksMore/WorksMore'
 
-import {Route, BrowserRouter as Router} from 'react-router-dom'
 import {useEffect, useState, useCallback} from 'react'
 import useMediaQuery from "./customHooks/useMediaQuery";
+import {Route, BrowserRouter as Router} from 'react-router-dom'
+
 
 
 const App = () => {
@@ -38,7 +39,7 @@ const App = () => {
           width:"100vw",
           overflowY:"auto",
           overflowX:"hidden",
-          fontSize:xxs?"13px":xxl?"18px":xl?"16px":"14px"
+          fontSize:xxs?"12px":xxl?"18px":xl?"15px":"13px"
         }
     }
 

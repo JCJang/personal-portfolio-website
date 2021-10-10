@@ -1,18 +1,22 @@
 import ImageFadeIn from '../../../../../customHooks/imageFadeIn'
 import ScrollHorizontal from './mouseScroll.js'
-const ImageOverflow = ({m, images, height="50vh", style}) => {
+const ImageOverflow = ({m, images, height="50vh", style, titles}) => {
 
   return (
-    <div className={m?"Row":"Column"} style={{cursor:"grab", position:"relative", zIndex:"25", left:"0px", height:height ,overflowX:"scroll", width:m? "100%":"100vw"}}>
-     {images && images.map((image)=>{
-       return <ImageFadeIn src={image} style={{
-         filter:"saturate(0.5)",
+    <div className="Row" style={{cursor:"grab", position:"relative", zIndex:"25", left:"0px", height:height ,overflowX:"scroll", width:m? "100%":"100vw"}}>
+     {images && images.map((image, number)=>{
+       return <>
+       <div className="overline" style={{alignSelf:"flex-start", justifySelf:"flex-start", paddingTop:"1rem", paddingLeft:"2rem"}}>
+         {titles && titles[number]}
+       </div>
+       <ImageFadeIn src={image} style={{
          zIndex:"25",
          position:"absolute",
          width: "fit-content",
          height: height,
          display: "block",
          objectFit:"cover"}} style={style}/>
+         </>
      })}
      </div>
  )

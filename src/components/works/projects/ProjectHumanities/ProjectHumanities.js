@@ -27,7 +27,7 @@ import Design from '../sections/Design'
 
 import { useLocation } from "react-router-dom";
 import {useState, useEffect} from 'react';
-import lofiWireframesImg from './images/design/lofi.png'
+import lofiWireframesImage from './images/design/lofi.png'
 import hifiMobile from './images/design/hifi-mobile.png'
 import hifiTablet from './images/design/hifi-tablet.png'
 import hifiDesktop from './images/design/hifi-desktop.png'
@@ -116,24 +116,27 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
         />
 
         <Design m={m} l={l}
-        designText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-        designEmphasis="hi"
-        typography="prior to creating a mood board, I jumped into typography. Since this application is for book lovers, I was certain that finding the right typography sends a crucial message regarding the platform’s quality. I didn’t want something with a thick stem or a thick and serif, which feelreminds one of old print.For something more lightweight, I tried to remember the most flawless reading experiences I had, and one of the top ones was reading Everyman’s library’s edition of Naguib Mahfouz’s The cairo trilogy. Moving through my bookshelf, I looked for other typesets used in Classics that emanate the message of being 'light weight' and 'effortless'."
+        lofiWireframesImage={lofiWireframesImage}
+
+        lofi="Taking the insights and design keywords from the UX research, I created various paper wireframes for each screen based on different looks I pictured for the app. Selecting the most responsive and functional design, I created low fidelity wireframes for mobile and desktop versions of the web app."
+
+        typographyEmphasis="As an application designed for readers, its typography alone sends a crucial message of trust and quality."
+        typography="While my usual approach to design begins with creating moodboards and deciding on a color scheme, for this project I began with typography - As an application designed for readers, its typography alone sends a crucial message of trust and quality. Recalling my own reading experiences with different fonts, I decided that I didn’t want my final typography to have thick stems or thick serifs, both of which are characteristic of old print. Moving through my bookshelf, I examined the typesets used in Classics that emanate the message of being 'light weight' and 'effortless', finally deciding on 'Amiri' for reading-heavy experiences in the web app. For the interface of the app, I chose the sharp and angular 'Jost' font, which emulates the smart cover font used by Penguin classics, and selected the rounder 'Palanquin' for use in body texts."
         typographyRefImages={[textRef1]}
         finalTypography={["4-App Titles - Jost", "4-App Body - Palanquin", "3-Book-related Text - Amiri"]}
         typographyFinalImg={typographyFinalImg}
         color="hi"
-        lofiWireframesImg={lofiWireframesImg}
-        hifiMobile={hifiMobile}
-        hifiTablet={hifiTablet}
-        hifiDesktop={hifiDesktop}
+        hifiWireframesImages={[hifiMobile, hifiTablet, hifiDesktop]}
+        hifiWireframesTitles={["Mobile screens", "Tablet screens", "Desktop screens"]}
 
         colorColors
         colorTitles={["Spring", "Summer", "Winter"]}
-        colorDescriptions={["Shadows are soft, cast by strong, outdor ambient light.", "Crisp, dark shadows cast by the mid-day sun.", "Dim shadows cast by soft, indoor ambient/bounce light."]}
+        colorDescriptions={["Shadows are soft, cast by strong, outdoor ambient light.", "Crisp, dark shadows cast by the mid-day sun.", "Dim shadows cast by soft, indoor ambient/bounce light."]}
         colorAccents={["silver", "copper", "bronze"]}
 
+        colorLabels={[["search", "shelf", "details","action"],["search", "shelf", "details","action"],["search", "shelf", "details","action"]]}
+        colorHexes={[["#F5EBE2","#E9D6CA","#494243","#F17C67"],["#CFDFE6","#9B6D57","#0C5A5A","#73BCBC"],["#D2E2F1","#8F7642","#373B4D","#446F8C"]]}
         colorWireframes={[wireframeSpring, wireframeSummer, wireframeWinter]}
         colorTextures={[texturesSpring, texturesSummer, texturesWinter]}
         colorMoodboards={[moodboardSpring, moodboardSummer, moodboardWinter]}

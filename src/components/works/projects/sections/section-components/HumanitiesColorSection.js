@@ -3,42 +3,57 @@ import ImageFadeIn from '../../../../../customHooks/imageFadeIn'
 import { IoEllipseSharp as CircleFilled } from "react-icons/io5";
 
 
-const HumanitiesColorSection = ({textMargin, direction, colorTexture, colorWireframe, colorMoodboard, designColors, designDescription, designTitle, m, l, number}) => {
+const HumanitiesColorSection = ({textMargin, direction, colorTexture, colorWireframe, colorMoodboard, designColorLabels, designColorHexes, designDescription, designTitle, m, l, number}) => {
 
   const [openedLayout,setOpenedLayout] = useState(false)
+  const [hover,setHover] = useState(false)
 
   const leftToRight = () =>{
-  if(direction==="lr"){
+  if(number===0 || number === 2){
     return true;
   } else {
     return false;
   }
 }
 
+const rightToLeft = () =>{
+if(number===1){
+  return true;
+} else {
+  return false;
+}
+}
+
   return (
+    <>
     <div className={l?"Row":"Column"} style={{
-      flexDirection:!l && "column-reverse",
-      margin:l? textMargin():"0rem",
+      flexDirection:l && rightToLeft()? "row-reverse": !l && "column-reverse",
+      margin:l? "5rem":"5rem 0",
       position:"relative",
       height:"fit-content",
       overflow:!l && "hidden",
-      width:"100vw",
-     color:"var(--midnight)",
-     order:leftToRight()?"1":"2",
+      width:l?"calc(100vw - 10rem)":"100vw",
+     color:"var(--occlusion)",
      position: "relative",
-     left: !l? "0rem": leftToRight() && openedLayout ? "-20vw" :"0rem",
-     right: !l? "0rem": !leftToRight() && openedLayout ? "20vw" : "0rem",
-     transition: "left ease 0.7s, right ease 0.7s"}}>
+    }}>
 
     <div className="image-col ColumnCentered">
-      <div  onClick={()=>{setOpenedLayout(!openedLayout)}}
+      <div  onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => {setHover(false)}}
+            onClick={()=>{setOpenedLayout(!openedLayout)}}
           style={{
+            position: "relative",
+            right: !l? "0rem": rightToLeft() && openedLayout ? "-20vw" : rightToLeft() ? "0rem" : "",
+            left: !l? "0rem": leftToRight() && openedLayout ? "-20vw" : leftToRight() ? "0rem" : "",
+            transition: "left ease 0.7s, right ease 0.7s, box-shadow ease 0.3s",
             cursor:"pointer",
             background: "var(--table-light)",
+            boxShadow:openedLayout || hover?"5px 6px 0px var(--works-accent)":"3px 4px 0px var(--neutral)",
             top:!l && openedLayout && "0px",
-            left:!l && openedLayout && "0px",
 }}>
-        <div style={{margin:l?"3rem":openedLayout?"0rem":"2rem", objectFit:"cover", transition:"margin linear 0.4s, transform ease 0.6s",            transform:l? "": openedLayout ?"scale(1.5,1.5)":"scale(1,1)", background: "var(--table-light)"}}>
+        <div
+              style={{margin:l?"3rem":openedLayout?"0rem":"2rem", objectFit:"cover", transition:"margin linear 0.4s, transform ease 0.6s",
+          transform: hover? "scale(1.2)":l? "": openedLayout ?"scale(1.5)":"scale(1)", background: "var(--table-light)"}}>
           <div style={{opacity:openedLayout && "0.4", transition: "opacity ease 0.9s"}}>
               <ImageFadeIn style={{
                 transition: "filter linear 0.5s",
@@ -49,23 +64,27 @@ const HumanitiesColorSection = ({textMargin, direction, colorTexture, colorWiref
           </div>
         </div>
       </div>
-    <div className="overline" style={{alignSelf:"flex-start", justifySelf:"flex-start", paddingTop:"1rem"}}>
+    <div className="overline" style={{alignSelf:leftToRight()? "flex-start":"flex-end", justifySelf:"flex-start", paddingTop:"1rem",
+    marginLeft:!l && leftToRight() && "4rem",
+    marginRight:!l && rightToLeft() && "4rem"}}>
       moodboard
     </div>
     </div>
 
     <div id="description-col" className="Column" style={{
-      order:leftToRight()?"2":"1",
       width:l?"30vw":"80vw",
-      marginLeft:"4rem"
+      marginLeft:leftToRight() && "4rem",
+      marginRight:rightToLeft() && "4rem",
+      textAlign:rightToLeft() && "right",
+      alignSelf:!l && rightToLeft() && "flex-end"
+
     }}>
 
       <div className="subtitle1" style={{
         fontSize:"3rem",
-        width:"30rem",
         position:"relative",
-        left: !l? "": leftToRight() && openedLayout ? "55vw" : "1px",
-        right: !l? "": !leftToRight() && openedLayout ? "55vw" : "1px",
+        left: !l? "": leftToRight() && openedLayout ? "55vw" : leftToRight() ? "1px" : "",
+        right: !l? "": rightToLeft() && openedLayout ? "55vw" : rightToLeft() ?  "1px" : "",
         opacity: !l? "1" : openedLayout? "0" : "1",
         transition: "left ease 0.7s, right ease 0.7s, opacity linear 0.5s"}}>
         Design {number+1}: {designTitle}</div>
@@ -74,24 +93,26 @@ const HumanitiesColorSection = ({textMargin, direction, colorTexture, colorWiref
         margin:"1.5rem 0",
         fontSize:"1.2rem",
         position:"relative",
-        left: leftToRight() && openedLayout ? "75vw" : "1px",
-        right: !leftToRight() && openedLayout ? "75vw" : "1px",
+        left: leftToRight() && openedLayout ? "75vw" : leftToRight() ? "1px" : "",
+        right: rightToLeft() && openedLayout ? "75vw" : rightToLeft() ? "1px" : "",
         opacity: openedLayout? "0" : "1",
         transition: "left ease 0.9s, right ease 0.9s, opacity linear 0.6s"}}>
        {designDescription}</h4>
 
       <div className="Row" style={{
+        justifyContent:rightToLeft() && "flex-end",
         margin:"0 0.5rem",
         flex:"1",
         position:"relative",
-        left: leftToRight() && openedLayout ? "95vw" : "1px",
-        right: !leftToRight() && openedLayout ? "95vw" : "1px",
+        left: leftToRight() && openedLayout ? "95vw" : leftToRight() ? "1px" : "",
+        right: rightToLeft() && openedLayout ? "95vw" :  rightToLeft() ? "1px" : "",
         opacity: openedLayout? "0" : "1",
         transition: "left ease 0.9s, right ease 0.9s, opacity linear 0.6s"}}>
-            {designColors.map((color)=>{
+            {designColorHexes.map((hex, number)=>{
               return <div className="Column" style={{alignItems:"center"}}>
-               <CircleFilled style={{height:"1.5rem", width:"1.5rem", color:color, margin:"0.25rem 1rem"}}/>
-               {color}
+               <CircleFilled style={{height:l?"2rem":"3rem", width:l?"2rem":"3rem", color:hex, margin:"0.25rem 1.3rem"}}/>
+               <div><strong> {designColorLabels && designColorLabels[number]}</strong></div>
+               <div style={{fontSize:"0.7rem", opacity:"0.8"}}>{hex}</div>
                </div>
             })}
       </div>
@@ -99,8 +120,8 @@ const HumanitiesColorSection = ({textMargin, direction, colorTexture, colorWiref
       <div className="subtitle1" style={{
         position:"relative",
         paddingTop:!l && "4rem",
-        alignSelf:"flex-end",
-        justfySelf:l?"flex-end":"center",
+        alignSelf:l?"flex-end":"center",
+        justifySelf:l?"flex-end":"center",
         bottom: openedLayout ? "-3rem" : "1px",
         opacity: openedLayout? "0" : "1",
         transition: "bottom ease 0.7s, opacity linear 0.4s"
@@ -110,12 +131,13 @@ const HumanitiesColorSection = ({textMargin, direction, colorTexture, colorWiref
     </div>
 
   <div id="opened-col-colorTextures" className="Row" style={{
+          flexDirection:l && rightToLeft() ? "row-reverse" : "",
           position:"absolute",
           height:"fit-content",
           width:!l && "100vw",
           top:l?"-2rem":"7rem",
           left: leftToRight()?"": openedLayout && l? "8vw" : openedLayout ?"0rem" : "-155vw",
-          right: !leftToRight()?"": openedLayout && l? "8vw" : openedLayout ?"0rem" : "-155vw",
+          right: rightToLeft()?"": openedLayout && l? "8vw" : openedLayout ?"0rem" : "-155vw",
           alignContent:"flex-start",
           transition: "left ease 1.1s, right ease 1.1s",
           }}>
@@ -128,7 +150,7 @@ const HumanitiesColorSection = ({textMargin, direction, colorTexture, colorWiref
             }} src={colorTexture}/>
             </div>
 
-      <div className="subtitle1" style={{marginLeft:l?"2rem":"3rem", fontSize:l?"2rem":"1.5rem", paddingTop:"2rem"}}>
+      <div className="subtitle1" style={{margin:l?"2rem":"3rem", fontSize:l?"2rem":"1.5rem"}}>
        {leftToRight()?"<= Textures":"Textures =>"}
       </div>
 
@@ -139,9 +161,9 @@ const HumanitiesColorSection = ({textMargin, direction, colorTexture, colorWiref
       height:l?"100%":"fit-content",
       width:"fit-content",
       left: leftToRight()?"": openedLayout && l? "10vw" : openedLayout? "0rem": "-105vw",
-      right: !leftToRight()?"": openedLayout && l? "10vw" : openedLayout? "0rem": "-105vw",
+      right: rightToLeft()?"": openedLayout && l? "10vw" : openedLayout? "0rem": "-105vw",
       justifyContent:"flex-end",
-      top: l?"-2rem":"20rem",
+      top: l?"0rem":"20rem",
       alignItems:"flex-end",
       transition: "left ease 0.6s, right ease 0.6s",
     }}>
@@ -154,10 +176,9 @@ const HumanitiesColorSection = ({textMargin, direction, colorTexture, colorWiref
 
     </div>
     </div>
-
-
-
     </div>
+    {number!==2 && <div className="Row" style={{justifyContent:"center", width:"100vw"}}><div className="boxDecoration" style={{width:"20vw", borderColor:"var(--velvet)"}}></div></div>}
+</>
   )
 }
 
