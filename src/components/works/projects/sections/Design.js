@@ -57,7 +57,7 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
                 Low-fidelity Wireframes</h4>
                 <div>{lofi}</div>
                 <div className="RowCentered" style={{height:l?"70vh":"85vh", width:"100vw", background:"var(--table-light)"}}>
-                <ImageOverflow m={m} height={l?"60vh":"75vh"} images={[lofiWireframesImage]} style={{filter:"saturate(0)"}}/>
+                {lofiWireframesImage && <ImageOverflow m={m} height={l?"60vh":"75vh"} images={[lofiWireframesImage]} style={{filter:"saturate(0)"}}/>}
                 </div>
             </>}
 
@@ -82,7 +82,7 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
           </>
           })}
           <div style={{}}>
-          <ImageOverflow m={m} height={l?"30vh":"50vh"} images={[typographyRefImages]} style={{filter:"saturate(0)"}}/>
+          {typographyRefImages && <ImageOverflow m={m} height={l?"30vh":"50vh"} images={[typographyRefImages]} style={{filter:"saturate(0)"}}/>}
           </div>
           </div>
 
@@ -110,7 +110,7 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
           </div>
 
           <div className="RowCentered" style={{height:"80vh", margin:"2rem 0",  width:"100vw", background:"var(--table-light)"}}>
-          <ImageOverflow m={m} height="70vh" images={[typographyFinalImg]}/>
+          {typographyFinalImg && <ImageOverflow m={m} height="70vh" images={[typographyFinalImg]}/>}
           </div>
           </div>}
 
@@ -149,7 +149,7 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
                 <HifiIcon style={{alignSelf:"center", marginRight:"0.8rem"}}/>
               High-fidelity Wireframes</h4>
               <div className="RowCentered" style={{height:l?"70vh":"85vh",  width:"100vw", background:"var(--table-light)"}}>
-              <ImageOverflow m={m} height={l?"60vh":"75vh"} images={hifiWireframesImages} titles={hifiWireframesTitles} style={{filter:"saturate(0.8)"}}/>
+              {hifiWireframesImages && <ImageOverflow m={m} height={l?"60vh":"75vh"} images={hifiWireframesImages} titles={hifiWireframesTitles} style={{filter:"saturate(0.8)"}}/>}
               </div>
           </>}
 

@@ -1,6 +1,6 @@
 import ImageFadeIn from '../../../../../customHooks/imageFadeIn'
 import ScrollHorizontal from './mouseScroll.js'
-const ImageOverflow = ({m, images, height="50vh", style, titles}) => {
+const ImageOverflow = ({m, images=[], height="50vh", style, titles}) => {
 
   return (
     <div className="Row" style={{cursor:"grab", position:"relative", zIndex:"25", left:"0px", height:height ,overflowX:"scroll", width:m? "100%":"100vw"}}>
