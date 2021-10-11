@@ -51,9 +51,19 @@ import wireframeSpring from './images/design/wireframe-spring.png'
 import wireframeSummer from './images/design/wireframe-summer.png'
 import wireframeWinter from './images/design/wireframe-winter.png'
 
+//Development
+import Development from '../sections/Development'
+
+import irisMarionYoungInfluences from './images/development/iris-marion-young-influences.jpg'
+import simoneDeBeauvoirInfluenced from './images/development/simone-de-beauvoir-influenced.jpg'
+import influencedResult from './images/development/influenced-result.jpg'
+
+import filteredBg from './images/development/filtered-bg.jpg'
+import filteredPublished from './images/development/filtered-published.jpg'
+
+
 const ProjectHumanities = ({m, l, setRouteFocus}) => {
 
-    console.log(displayImage1)
   const location = useLocation();
   useEffect(()=>{
     setRouteFocus(location.pathname)
@@ -189,6 +199,47 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
         colorMoodboards={[moodboardSpring, moodboardSummer, moodboardWinter]}
         />
 
+
+       <Development
+         m={m}
+         l={l}
+         developmentText="I chose psychology as my major in college because I thought the field would address human meaning and purpose. However, as I soon realized, Psychology had long shifted away from humanism and other forms of self-inquiry, taking a more behavioristic approach instead. Still driven by curiosity, I asked many Humanities professors for supplementary reading that addresses humanistic topics, and that was my main source of book recommendations. Conversations with other readers seem to lead to the same conclusion - despite living in an information-rich world today, the best book recommendations seem to travel by word of mouth. My solution was to create a book database full of quality humanities books, so that myself and other readers have a reliable resource to better understand meaning and ethics in life."
+         developmentEmphasis="despite living in an information-rich world today, the best book recommendations seem to travel by word of mouth."
+
+         resourcesText="As part of UX research I conducted (1) a competitive analysis of features offered by 11 similar book-focused websites and (2) a user survey. The bilingual survey (written using Google Forms) was distributed among four major Taiwanese University Facebook groups, and was filled out by 50 self-selected humanities readers."
+
+
+         surveyResultsTitle="Survey Results"
+
+         surveyResultsEmphasis="It is important to visualize the book search user flow as a cycle, and present it as such."
+
+         screenDescriptions={["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]}
+         screenFeatures={[
+           ["Central thesis search bar","subject matter filter","subject matter introduction panel","basic referential data","table of contents","2-3 paragraphs that captures the author's central thesis and writing style"],
+           ["in-depth referential data","subject matter introduction panel","Further reading – related books, authors, subjects etc.","Reviews","Discussion form"]
+         ]}
+         screenTitles={[`primary screen - Search by central argument`, `primary screen - post-reading screen`]}
+
+         databaseText="After wasting almost a week trying to make MySQL work, I turned to MongoDB, which I was able to learn in a day. Creating with MongoDB is a joy. Users can submit books in any language, regardless whether there is an edition in English. To overcome this, I used created each shelf and book under the label of its language"
+
+         databaseCode="jcjang/295f625013e731ddaa5f1744bb29631a"
+
+         serverText="After wasting almost a week trying to make MySQL work, I turned to MongoDB, which I was able to learn in a day. Creating with MongoDB is a joy. Users can submit books in any language, regardless whether there is an edition in English. To overcome this, I used created each shelf and book under the label of its language"
+
+         serverCode="jcjang/a30c855283f48103c3426c2f9dd3ded5"
+         relationalSearchText="snisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi"
+
+         relationalSearchClientCode="JCJang/c9a57189bb48a02adbc070bd22e01605"
+         relationalSearchServerCode="JCJang/dcd1b407f2a11d801f63c0e32746da5e"
+         relationalSearchImages={[irisMarionYoungInfluences, simoneDeBeauvoirInfluenced]}
+         relationalSearchTitles={["Iris Marion Young listed Influences in the database", "Simone de Beauvoir listed Influenced in the database"]}
+         relationalSearchResultImg={influencedResult}
+
+         functionalText="snisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi"
+         functionalCode="JCJang/2bcdfa5f86b85269fac053ad0caf3ec1"
+         functionalProgrammingImages={[filteredBg, filteredPublished]}
+         functionalProgrammingTitles={["result for filterAroundPublicationDate()", "result for filterAroundLifetime()"]}
+        />
 
       </div>
     )

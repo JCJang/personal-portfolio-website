@@ -22,7 +22,7 @@
 /* Works on Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color:  var(--inactive) var(--searchpanel);
+  scrollbar-color:  var(--neutral) var(--neutral);
 
 }
 
@@ -31,23 +31,21 @@
   width: 12px;
 }
 *::-webkit-scrollbar-thumb:hover {
-  background: var(--lightactionbtn);
+  background: var(--midnight);
 }
 *::-webkit-scrollbar-track {
-  background: var(--searchpanel));
+  background: var(--table-light);
    box-shadow: inset var(--lightshadow);
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--inactive);
-  border-radius: 20px;
+  background-color: var(--neutral);
   cursor: pointer;
-  border: 1.5px solid var(--inactive);
 
 }
 
 ::-webkit-scrollbar-corner{
-  background: var(--inactive);
+  background: var(--neutral);
 
 }
 
@@ -704,4 +702,14 @@ line-height: 100%;
   outline-offset:-4px;
   background:var(--table-light);
   transition: outline ease 0.4s, outline-offset ease 0.6s, transform ease 0.5s, border-top ease 0.25s;
+}
+
+.gistStyles{
+  height:70vh;
+  overflow: auto;
+}
+
+.gist-meta{
+  position: sticky;
+  bottom:0;
 }
