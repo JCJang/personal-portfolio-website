@@ -60,7 +60,13 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
   },[])
 
     return (
-      <div style={{width:"100vw", height:"var(--desktopheight)", overflowY:"auto", overflowX:"hidden", scrollBehavior: "smooth"}}>
+      <div style={{
+      color:"var(--works-text)",
+      width:"100vw",
+      height:"var(--desktopheight)",
+      overflowY:"auto",
+      overflowX:"hidden",
+      scrollBehavior: "smooth"}}>
         <Summary
           mainImage={m? mainImageH : mainImageV}
           m={m}
@@ -145,7 +151,7 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
            ["filter by genre and year"],
            ["display count of readers that are interested in a yet-untranslated book and/or out-of-print books", "isbn etc. - more technical information"]
          ]}
-         screenTitles={[`<strong>primary feature</strong> - Search by central argument (book exploration)`, `<strong>primary feature</strong> - post-reading screen`,"user account screen", "relational search (by related authors or by references)", "literature map", "publisher board"]}
+         screenTitles={[`primary screen - Search by central argument`, `primary screen - post-reading screen`,"user account screen", "Search by related authors and works", "literature map", "publisher board"]}
 
          designKeywords={["single page", "cyclical flow", "minimalistic", "linear motif"]}
          designTone={["serious", "concise", "rational", "neutral", "reputable", "academic"]}

@@ -70,7 +70,7 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
           <div className={m?"Row":"Column"} style={{margin:textMargin()}}>
           <div id="typography-col-1" style={{padding:l?"2rem":"1.5rem", width:m?"30rem":"80vw"}}>
 
-          <h4 className="Row" style={{margin:"2rem 7rem"}}>
+          <h4 className="Row" style={{margin:textMargin(), padding:"2rem 0"}}>
           <TypographyIcon style={{alignSelf:"center", marginRight:"0.8rem"}}/>
           Typography</h4>
 

@@ -6,7 +6,7 @@ import { IoGridOutline as FinalScreensIcon } from "react-icons/io5";
 import { IoGitBranchOutline as UserFlowIcon } from "react-icons/io5";
 
 
-
+import ScreensLabel from './section-components/ScreensLabel'
 import Accordion from './section-components/Accordion'
 
 const Research = ({s, m, l, ideationText, ideationEmphasis, researchText, competitiveAnalysisEmphasis,competitiveAnalysis, surveyResultsEmphasis, surveyResultsTitle, screenTitles, screenFeatures, designKeywords, designTone, valueProposal, userFlowImg, userFlowText,  sectionTitles, sectionResultsArr, sectionApplicationArr, problemSolution}) => {
@@ -94,27 +94,9 @@ const Research = ({s, m, l, ideationText, ideationEmphasis, researchText, compet
           <h4 className="Row" style={{margin:"2rem 0"}}>
           <FinalScreensIcon style={{alignSelf:"center", marginRight:"0.8rem"}}/>
           Screens and Features</h4>
-            <div className={m?"Row":"Column"}>
+            <div className={l?"grid-container-screens-and-features":"grid-container-screens-and-features-tablet"}>
            {screenTitles.map((screen, i)=>{
-             return <a className="Column TocLabel transition"
-                 style={{
-                 margin:"0 2rem",
-                 color:"inherit",
-                 textDecoration:"none",
-                 paddingTop:m && "1.5rem",
-                 paddingBottom:!m && "1.5rem",
-                 alignItems:!m && "flex-end",
-                 width:!m && "50vw",
-                 textAlign:!m && "right",
-                 alignSelf:!m && "flex-end"}}>
-
-                 <div className="Row">
-                       <h6 style={{flex:"1"}}>{screen}</h6>
-                 </div>
-
-                 <div style={{paddingTop:"1rem"}}><em>{screenFeatures && screenFeatures[i].map((feature)=>{return <div style={{marginTop:"0.2rem"}}>{feature}</div>})}</em></div>
-             </a>
-
+             return <ScreensLabel m={m} screen={screen} features={screenFeatures[i]}/>
            })}
 
         </div>

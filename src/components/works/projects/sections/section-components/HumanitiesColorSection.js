@@ -45,10 +45,9 @@ if(number===1){
             position: "relative",
             right: !l? "0rem": rightToLeft() && openedLayout ? "-20vw" : rightToLeft() ? "0rem" : "",
             left: !l? "0rem": leftToRight() && openedLayout ? "-20vw" : leftToRight() ? "0rem" : "",
-            transition: "left ease 0.7s, right ease 0.7s, box-shadow ease 0.3s",
+            transition: "left ease 0.7s, right ease 0.7s",
             cursor:"pointer",
-            background: "var(--table-light)",
-            boxShadow:openedLayout || hover?"5px 6px 0px var(--works-accent)":"3px 4px 0px var(--neutral)",
+            background: "var(--works-bg)",
             top:!l && openedLayout && "0px",
 }}>
         <div
