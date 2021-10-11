@@ -1,6 +1,7 @@
 import ImageFadeIn from '../../../../customHooks/imageFadeIn'
 import ImageOverflow from './section-components/ImageOverflow'
 import HumanitiesColorSection from './section-components/HumanitiesColorSection'
+import PharmacyColorSection from './section-components/PharmacyColorSection'
 
 import { IoColorFilterOutline as ColorIcon } from "react-icons/io5";
 import { IoTextOutline as TypographyIcon } from "react-icons/io5";
@@ -18,7 +19,7 @@ import transitional from './images/font-types/6-transitional.png'
 
 import Accordion from './section-components/Accordion'
 
-const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWireframesImage, hifiWireframesImages, hifiWireframesTitles, typographyRefImages, typographyFinalImg,finalTypography, colorWireframes, colorTextures, colorDescriptions, colorMoodboards,colorLabels, colorHexes, colorTitles}) => {
+const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWireframesImage, hifiWireframesImages, hifiWireframesTitles, typographyRefImages, typographyFinalImg,finalTypography, colorSection, colorWireframes, colorTextures, colorText, colorDescriptions, colorMoodboards,colorLabels, colorHexes, colorTitles}) => {
 
   const serifTypes = [handwriting, modern, oldStyle, sans, slab, transitional]
 
@@ -98,12 +99,11 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
 
           <div className="RowCentered" style={{margin:textMargin(),paddingBottom:"4rem"}}>
           {finalTypography.map((typography)=>{
-
             return <div className={m?"RowCentered":"ColumnCentered"} style={{padding:"0 3rem", width:"28vw", justifyContent:"flex-start", height:!m && "15vh"}}>
             <div>
             <img src={serifTypes[typography.slice(0,1)-1]} style={{height:"8vw",width:"auto"}}></img>
             </div>
-            <div className="subtitle2" style={{color:"var(--midnight)", width:m?"13vw":"28vw", marginLeft:"2rem", marginTop:!m&&"1rem"}}>
+            <div className={`${typography.split(':')[1].split(/\s/).join(" ").trim()}`} style={{color:"var(--midnight)", fontSize:"1.2rem", width:m?"13vw":"28vw", marginLeft:"2rem", marginTop:!m&&"1rem"}}>
             {typography.slice(2)}
             </div>
             </div>})}
@@ -122,21 +122,34 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
           <ColorIcon style={{alignSelf:"center", color:"var(--velvet)",marginRight:"0.8rem"}}/>
           Color</h4>
 
-          {colorWireframes && colorWireframes.map((wireframe, number)=>{
+          {colorSection==="Humanities"? colorWireframes.map((wireframe, number)=>{
             return <HumanitiesColorSection
                   m={m}
                   l={l}
-                  direction="lr"
                   number={number}
                   designColorLabels={colorLabels[number]}
                   designColorHexes={colorHexes[number]}
                   designTitle={colorTitles[number]}
                   textMargin={textMargin}
                   colorWireframe={wireframe}
-                  colorTexture={colorTextures[number]}
+                  colorTexture={colorTextures && colorTextures[number]}
                   colorMoodboard={colorMoodboards[number]}
                   designDescription={colorDescriptions[number]}/>
-          })}
+          }):colorSection==="Pharmacy"?
+           <PharmacyColorSection
+                m={m}
+                l={l}
+                designColorLabels={colorLabels}
+                designColorHexes={colorHexes}
+                designTitle={colorTitles}
+                textMargin={textMargin}
+                colorWireframe={colorWireframes}
+                colorText={colorText}
+                colorTexture={colorTextures && colorTextures}
+                colorMoodboard={colorMoodboards}
+                designDescription={colorDescriptions}/>
+            :""
+          }
 
           </div>}
 

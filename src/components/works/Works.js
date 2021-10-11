@@ -1,6 +1,8 @@
 import GridItem from './GridItem'
 
-import projectBookImg from '../../images/pexels-cottonbro-4065864.png'
+import projectBookImg from '../../images/woman-using-laptop-V.jpg'
+import projectPharmacyImg from '../../images/5-order-screen.jpg'
+
 
 import { IoAlbumsOutline as LofiIcon} from 'react-icons/io5/index.esm.js';
 import { IoLayersOutline as HifiIcon} from 'react-icons/io5';
@@ -50,7 +52,7 @@ const worksStyle = () => {
              subtitle = "How can I help readers find quality humanities books?" / >
 
              <GridItem
-              image={projectBookImg}
+              image={projectPharmacyImg}
               s = {s}
               m = {m}
               l = {l}

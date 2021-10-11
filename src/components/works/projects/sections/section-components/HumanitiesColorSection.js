@@ -3,7 +3,7 @@ import ImageFadeIn from '../../../../../customHooks/imageFadeIn'
 import { IoEllipseSharp as CircleFilled } from "react-icons/io5";
 
 
-const HumanitiesColorSection = ({textMargin, direction, colorTexture, colorWireframe, colorMoodboard, designColorLabels, designColorHexes, designDescription, designTitle, m, l, number}) => {
+const HumanitiesColorSection = ({textMargin, colorTexture, colorWireframe, colorMoodboard, designColorLabels, designColorHexes, designDescription, designTitle, m, l, number}) => {
 
   const [openedLayout,setOpenedLayout] = useState(false)
   const [hover,setHover] = useState(false)

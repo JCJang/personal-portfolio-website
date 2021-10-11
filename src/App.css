@@ -6,6 +6,14 @@
 
 @import "~@fontsource/sen";
 
+
+@import "~@fontsource/lora";
+@import "~@fontsource/quicksand";
+
+@import "~@fontsource/amiri";
+@import "~@fontsource/jost";
+@import "~@fontsource/palanquin";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -134,6 +142,33 @@ html{
 }
 
 
+.Yaldevi{
+  font-family: "Yaldevi";
+}
+.Lusitana{
+  font-family: "Lusitana";
+}
+.La-Belle-Aurore{
+  font-family: "La Belle Aurore";
+}
+
+.Lora{
+  font-family: "Lora";
+}
+.Quicksand{
+  font-family: "Quicksand";
+}
+
+.Jost{
+  font-family: "Jost";
+}
+.Amiri{
+  font-family: "Amiri";
+}
+.Palanquin{
+  font-family: "Palanquin";
+}
+
 h1{ font:var(--main-headline1);
 text-transform: capitalize;
 letter-spacing: -0.094rem;}
@@ -166,7 +201,7 @@ letter-spacing: 0.0156rem;}
 text-transform: capitalize;}
 .h6{font:var(--main-headline6);
 text-transform: capitalize;
-letter-spacing: 0.01rem;}j
+letter-spacing: 0.01rem;}
 .body1{font:var(--main-body1);}
 .body2{font:var(--main-body2);}
 .subtitle1{font:var(--main-subtitle1);
@@ -355,6 +390,7 @@ text-transform: uppercase;
   align-content: stretch;
   height:var(--mobileheight);
 }
+
 
 .grid-book {
   grid-row-start: 1;
@@ -629,4 +665,22 @@ line-height: 100%;
   color:var(--velvet);
   border-left: 16px solid var(--midnight);
   cursor:pointer;
+}
+
+
+.grid-container-screens-and-features {
+  width:80vw;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-row-gap: 2rem;
+  grid-column-gap: 2.5rem;
+
+}
+
+.grid-container-screens-and-features-tablet {
+  width:80vw;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-row-gap: 2rem;
+  grid-column-gap: 2.5rem;
 }

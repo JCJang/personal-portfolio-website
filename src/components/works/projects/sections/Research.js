@@ -9,7 +9,7 @@ import { IoGitBranchOutline as UserFlowIcon } from "react-icons/io5";
 
 import Accordion from './section-components/Accordion'
 
-const Research = ({s, m, l, ideationText, ideationEmphasis, researchText, competitiveAnalysisEmphasis,competitiveAnalysis, surveyResultsEmphasis, surveyResults, screenTitles, screenFeatures, designKeywords, designTone, valueProposal, userFlowImg, userFlowText}) => {
+const Research = ({s, m, l, ideationText, ideationEmphasis, researchText, competitiveAnalysisEmphasis,competitiveAnalysis, surveyResultsEmphasis, surveyResultsTitle, screenTitles, screenFeatures, designKeywords, designTone, valueProposal, userFlowImg, userFlowText,  sectionTitles, sectionResultsArr, sectionApplicationArr, problemSolution}) => {
 
       const researchStyle = () => {
         return {
@@ -79,13 +79,13 @@ const Research = ({s, m, l, ideationText, ideationEmphasis, researchText, compet
 
           </div>}
 
-        {surveyResults &&
+        {surveyResultsTitle &&
           <div style={{padding:l?"2rem":"1.5rem", width:m?"40rem":"80vw"}}>
           <h4 className="Row" style={{margin:"2rem 0"}}>
           <SurveyResultsIcon style={{alignSelf:"center", marginRight:"0.8rem"}}/>
-          Survey Results</h4>
+          {surveyResultsTitle}</h4>
 
-          <Accordion m={m} l={l}/>
+          <Accordion m={m} l={l} problemSolution={problemSolution} sectionTitles={sectionTitles} sectionResultsArr={sectionResultsArr} sectionApplicationArr={sectionApplicationArr}/>
 
           </div>}
 
@@ -112,7 +112,7 @@ const Research = ({s, m, l, ideationText, ideationEmphasis, researchText, compet
                        <h6 style={{flex:"1"}}>{screen}</h6>
                  </div>
 
-                 <div style={{paddingTop:"1rem"}}><em>{screenFeatures && screenFeatures[i]}</em></div>
+                 <div style={{paddingTop:"1rem"}}><em>{screenFeatures && screenFeatures[i].map((feature)=>{return <div style={{marginTop:"0.2rem"}}>{feature}</div>})}</em></div>
              </a>
 
            })}

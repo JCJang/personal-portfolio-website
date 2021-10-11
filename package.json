@@ -3,8 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fontsource/amiri": "^4.5.0",
+    "@fontsource/jost": "^4.5.0",
     "@fontsource/la-belle-aurore": "^4.5.0",
+    "@fontsource/lora": "^4.5.0",
     "@fontsource/lusitana": "^4.5.0",
+    "@fontsource/palanquin": "^4.5.0",
+    "@fontsource/quicksand": "^4.5.1",
     "@fontsource/sen": "^4.5.0",
     "@fontsource/yaldevi": "^4.5.0",
     "@testing-library/jest-dom": "^5.14.1",
