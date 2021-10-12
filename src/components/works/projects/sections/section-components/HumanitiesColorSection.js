@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import ImageFadeIn from '../../../../../customHooks/imageFadeIn'
 import { IoEllipseSharp as CircleFilled } from "react-icons/io5";
+import { IoColorFilterOutline as ColorIcon } from "react-icons/io5";
 
 
 const HumanitiesColorSection = ({textMargin, colorTexture, colorWireframe, colorMoodboard, designColorLabels, designColorHexes, designDescription, designTitle, m, l, number}) => {
@@ -26,9 +27,20 @@ if(number===1){
 
   return (
     <>
+
+    {number === 0 && <>
+      <br></br>
+
+    <h4 className="Row"  style={{margin:m?"1rem 5rem 0 5rem":"1rem 2rem 0 2rem"}}>
+    <ColorIcon style={{alignSelf: "center",
+    marginRight: "0.8rem"}}/>
+    Color</h4>
+
+    </>}
+
     <div className={l?"Row":"Column"} style={{
       flexDirection:l && rightToLeft()? "row-reverse": !l && "column-reverse",
-      margin:l? "5rem":"5rem 0",
+      margin:l? "2.5rem":"2.5rem 0",
       position:"relative",
       height:"fit-content",
       overflow:!l && "hidden",
@@ -52,28 +64,28 @@ if(number===1){
 }}>
         <div
               style={{margin:l?"3rem":openedLayout?"0rem":"2rem", objectFit:"cover", transition:"margin linear 0.4s, transform ease 0.6s",
-          transform: hover? "scale(1.2)":l? "": openedLayout ?"scale(1.5)":"scale(1)", background: "var(--table-light)"}}>
+          transform: l && hover? "scale(1.2)":l? "": openedLayout ?"scale(1.5)":"scale(1)", background: "var(--table-light)"}}>
           <div style={{opacity:openedLayout && "0.4", transition: "opacity ease 0.9s"}}>
               <ImageFadeIn style={{
                 transition: "filter linear 0.5s",
-                height:l?"30vw":"80vw",
-                width:l?"30vw":"80vw",
+                height:l?"30vw":"70vw",
+                width:l?"30vw":"70vw",
                 filter:openedLayout && "saturate(0)"
               }} src={colorMoodboard}/>
           </div>
         </div>
       </div>
     <div className="overline" style={{alignSelf:leftToRight()? "flex-start":"flex-end", justifySelf:"flex-start", paddingTop:"1rem",
-    marginLeft:!l && leftToRight() && "4rem",
-    marginRight:!l && rightToLeft() && "4rem"}}>
+    marginLeft:!l && leftToRight() && "5rem",
+    marginRight:!l && rightToLeft() && "5rem"}}>
       moodboard
     </div>
     </div>
 
     <div id="description-col" className="Column" style={{
       width:l?"30vw":"80vw",
-      marginLeft:leftToRight() && "4rem",
-      marginRight:rightToLeft() && "4rem",
+      marginLeft:!m?"":leftToRight() && "4rem",
+      marginRight:!m?"":rightToLeft() && "4rem",
       textAlign:rightToLeft() && "right",
       alignSelf:!l && rightToLeft() && "flex-end"
 
@@ -82,6 +94,8 @@ if(number===1){
       <div className="subtitle1" style={{
         fontSize:"3rem",
         position:"relative",
+        marginLeft:!m && leftToRight() && "2rem",
+        marginRight:!m && rightToLeft() && "2rem",
         left: !l? "": leftToRight() && openedLayout ? "55vw" : leftToRight() ? "1px" : "",
         right: !l? "": rightToLeft() && openedLayout ? "55vw" : rightToLeft() ?  "1px" : "",
         opacity: !l? "1" : openedLayout? "0" : "1",
@@ -92,6 +106,8 @@ if(number===1){
         margin:"1.5rem 0",
         fontSize:"1.2rem",
         position:"relative",
+        marginLeft:!m && leftToRight() && "2rem",
+        marginRight:!m && rightToLeft() && "2rem",
         left: leftToRight() && openedLayout ? "75vw" : leftToRight() ? "1px" : "",
         right: rightToLeft() && openedLayout ? "75vw" : rightToLeft() ? "1px" : "",
         opacity: openedLayout? "0" : "1",
@@ -119,13 +135,17 @@ if(number===1){
       <div className="subtitle1" style={{
         position:"relative",
         paddingTop:!l && "4rem",
+        marginLeft:!m && leftToRight() && "2rem",
+        marginRight:!m && rightToLeft() && "2rem",
         alignSelf:l?"flex-end":"center",
         justifySelf:l?"flex-end":"center",
         bottom: openedLayout ? "-3rem" : "1px",
         opacity: openedLayout? "0" : "1",
         transition: "bottom ease 0.7s, opacity linear 0.4s"
       }}>
-            {!l? "Click moodboard below to view color concept":leftToRight()?"<= Click moodboard to view color concept":"Click moodboard to view color concept =>"}
+            {!l? "Click moodboard below to view color concept":
+            leftToRight()?"<= Click moodboard to view color concept":
+            "Click moodboard to view color concept =>"}
       </div>
     </div>
 
@@ -134,7 +154,7 @@ if(number===1){
           position:"absolute",
           height:"fit-content",
           width:!l && "100vw",
-          top:l?"-2rem":"7rem",
+          top:l?"0.5rem":"10rem",
           left: leftToRight()?"": openedLayout && l? "8vw" : openedLayout ?"0rem" : "-155vw",
           right: rightToLeft()?"": openedLayout && l? "8vw" : openedLayout ?"0rem" : "-155vw",
           alignContent:"flex-start",
@@ -155,7 +175,11 @@ if(number===1){
 
       </div>
 
-    <div id="opened-col-colorWireframe" className="Column" style={{
+    <div id="opened-col-colorWireframe"
+    className="Column"
+    onClick={()=>{if(l) return
+      setOpenedLayout(!openedLayout)}}
+    style={{
       position:"absolute",
       height:l?"100%":"fit-content",
       width:"fit-content",

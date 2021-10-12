@@ -22,7 +22,7 @@
 /* Works on Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color:  var(--neutral) var(--neutral);
+  scrollbar-color:  var(--table-light) var(--neutral);
 
 }
 
@@ -31,21 +31,24 @@
   width: 12px;
 }
 *::-webkit-scrollbar-thumb:hover {
-  background: var(--midnight);
+  border-top: 4px double var(--table-light);
+  transition-duration: 0.2s;
+  cursor:grab;
 }
 *::-webkit-scrollbar-track {
-  background: var(--table-light);
-   box-shadow: inset var(--lightshadow);
+  border-bottom: 2px solid var(--cinerous);
+
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--neutral);
-  cursor: pointer;
+  background-color: var(--cinerous);
+  cursor:grab;
+  transition-duration: 0.2s;
 
 }
 
 ::-webkit-scrollbar-corner{
-  background: var(--neutral);
+  background: var(--cinerous);
 
 }
 
@@ -172,12 +175,15 @@ text-transform: capitalize;
 letter-spacing: -0.094rem;}
 h2{ font:var(--main-headline2);
 text-transform: capitalize;
-letter-spacing: -0.03rem;}
+letter-spacing: -0.03rem;
+padding-top: 3rem;}
 h3{ font:var(--main-headline3);
-text-transform: capitalize;}
+text-transform: capitalize;
+padding-top: 2rem;}
 h4{ font:var(--main-headline4);
 text-transform: capitalize;
-letter-spacing: 0.0156rem;}
+letter-spacing: 0.0156rem;
+}
 h5{font:var(--main-headline5);
 text-transform: capitalize;}
 h6{font:var(--main-headline6);
@@ -667,7 +673,7 @@ line-height: 100%;
 
 
 .grid-container-screens-and-features {
-  width:80vw;
+  width:calc(100% - 10rem);
   display: grid;
   grid-template-columns: auto auto auto;
   grid-row-gap: 1.5rem;
@@ -676,15 +682,23 @@ line-height: 100%;
 }
 
 .grid-container-screens-and-features-tablet {
-  width:90vw;
+  width:calc(100% - 10rem);
   display: grid;
   grid-template-columns: auto auto;
   grid-row-gap: 1.5rem;
   grid-column-gap: 1rem;
 }
 
+.grid-container-screens-and-features-mobile {
+  width:calc(100% - 4rem);
+  display: grid;
+  grid-template-columns: auto;
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 1rem;
+}
+
 .screens-and-features-item {
-  overflow-y: hidden;
+  overflow: hidden;
   position:relative;
   padding:2rem;
   outline:2px solid var(--works-accent);
@@ -693,7 +707,7 @@ line-height: 100%;
 }
 
 .screens-and-features-item:hover {
-  overflow-y: hidden;
+  overflow: hidden;
   position:relative;
   padding:2rem;
   color:var(--midnight);
@@ -704,6 +718,23 @@ line-height: 100%;
   transition: outline ease 0.4s, outline-offset ease 0.6s, transform ease 0.5s, border-top ease 0.25s;
 }
 
+.grid-container-resources {
+  margin:2rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-row-gap: 1.4rem;
+  grid-column-gap: 3rem;
+}
+
+.grid-container-resources-mobile {
+  margin:2rem;
+  display: grid;
+  grid-template-columns: auto;
+  grid-row-gap: 1.4rem;
+  grid-column-gap: 3rem;
+}
+
+
 .gistStyles{
   height:70vh;
   overflow: auto;
@@ -712,4 +743,8 @@ line-height: 100%;
 .gist-meta{
   position: sticky;
   bottom:0;
+}
+
+.displayNone{
+  display: none;
 }

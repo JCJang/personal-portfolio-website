@@ -20,7 +20,7 @@ import topView7 from './images/top-view/authorbio-burke.jpg'
 //research
 import Research from '../sections/Research'
 
-import userFlowImg from './images/user-flow-result.png'
+import userFlowImg from './images/user-flow.png'
 
 //design
 import Design from '../sections/Design'
@@ -32,12 +32,11 @@ import hifiMobile from './images/design/hifi-mobile.png'
 import hifiTablet from './images/design/hifi-tablet.png'
 import hifiDesktop from './images/design/hifi-desktop.png'
 
-import textRef1 from './images/design/typography-ref.png'
-import typographyFinalImg from './images/design/typography-final.png'
+import textRefCover from './images/design/typography-ref.png'
+import textRefHeavy from './images/design/textRef-heavy.jpg'
+import textRefLight from './images/design/textRef-light.jpg'
 
-import descriptionSpring from './images/design/description-spring.png'
-import descriptionSummer from './images/design/description-summer.png'
-import descriptionWinter from './images/design/description-winter.png'
+import typographyFinalImg from './images/design/typography-final.png'
 
 import moodboardSpring from './images/design/moodboard-spring.jpg'
 import moodboardSummer from './images/design/moodboard-summer.jpg'
@@ -178,8 +177,10 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
         lofi="Taking the insights and design keywords from the UX research, I created various paper wireframes for each screen based on different looks I pictured for the app. Selecting the most responsive and functional design, I created low fidelity wireframes for mobile and desktop versions of the web app."
 
         typographyEmphasis="As an application designed for readers, its typography alone sends a crucial message of trust and quality."
-        typography="While my usual approach to design begins with creating moodboards and deciding on a color scheme, for this project I began with typography - As an application designed for readers, its typography alone sends a crucial message of trust and quality. Recalling my own reading experiences with different fonts, I decided that I didn’t want my final typography to have thick stems or thick serifs, both of which are characteristic of old print. Moving through my bookshelf, I examined the typesets used in Classics that emanate the message of being 'light weight' and 'effortless', finally deciding on 'Amiri' for reading-heavy experiences in the web app. For the interface of the app, I chose the sharp and angular 'Jost' font, which emulates the smart cover font used by Penguin classics, and selected the rounder 'Palanquin' for use in body texts."
-        typographyRefImages={[textRef1]}
+        typography="While my usual approach to design begins with creating moodboards and deciding on a color scheme, for this project I began with typography - As an application designed for readers, its typography alone sends a crucial message of trust and quality. Recalling my own reading experiences with different fonts, I decided that I didn’t want my final typography to have thick stems or thick serifs, both of which are characteristic of old print. Moving through my bookshelf, I examined the typefaces used in Classics that emanate the message of being 'light weight' and 'effortless', finally deciding on 'Amiri' for reading-heavy experiences in the web app. For the interface of the app, I chose the sharp and angular 'Jost' font, which emulates the smart cover font used by Penguin classics, and selected the rounder 'Palanquin' for use in body texts."
+        typographyRefImages={[textRefHeavy, textRefLight,textRefCover]}
+        typographyRefTitles={["typefaces that feel 'heavier' due to their thick stems and serifs", "typefaces that feel 'lightweight' in comparison","Typefaces used in Classics covers"]}
+
         finalTypography={["4-App Titles: Jost", "4-App Body: Palanquin", "3-Reading-heavy texts: Amiri"]}
         typographyFinalImg={typographyFinalImg}
         color="hi"

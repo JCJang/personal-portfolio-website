@@ -21,6 +21,7 @@ const ScreensLabel = ({m, screen, features}) => {
         <div style={{paddingTop:"1rem",
         color: "var(--works-text)",
         transform:hover ? "translateY(calc(-4rem)) scaleX(1.1) scaleY(1.3)":"translateY(0) scale(1)",
+        transformOrigin:"left",
         opacity:hover? "1": "0.9",
         transition:"opacity linear 0.5s, transform ease 0.4s"}}
         ><em>{features.map((feature)=>{return <div style={{marginTop:"0.2rem"}}>{feature}</div>})}</em></div>

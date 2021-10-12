@@ -36,160 +36,137 @@ const Research = ({
     return {background: "var(--works-bg)", color: "var(--works-text)", margin: "0", padding: "0"}
   };
 
-  const textMargin = () => {
-    if (m) {
-      return "3rem 5rem 1rem 5rem"
-    } else {
-      return "2rem 1rem"
+  const textMarginStyle=()=>{
+    if (m) return {
+      margin:"1rem 5rem",
     }
+    return {margin:"1rem 2rem"}
   }
 
-  return (<div className="Column" id="research" style={researchStyle()}>
+  const textMarginStyleRows=()=>{
+    if (m) return {
+      margin:"1rem 5rem",
+      gap:"5rem"
+    }
+    return {margin:"1rem 2rem"}
+  }
+
+  const textMargin = () => {
+    if (m) return "1rem 5rem"
+    return "1rem 2rem"
+  }
+
+  const colLarge = () => {
+    if (m) return {
+        width:"calc(70vw - 7.5rem)"
+      }
+      return{
+        width:"80vw"
+      }
+  }
+  const colSmall = () => {
+    if (m) return {
+        width:"calc(30vw - 7.5rem)"
+      }
+      return{
+        width:"80vw"
+      }
+  }
+
+  const colHalf = () => {
+    if (m) return {
+        width:"calc(50vw - 7.5rem)"
+      }
+      return{
+        width:"80vw"
+      }
+  }
+
+  const iconStyle = () => {
+    return{
+      alignSelf: "center",
+      marginRight: "0.8rem"
+    }
+  }
+ const overflowStyle = () => {
+   return {
+     width:"100vw",
+     background:"var(--table-light)"
+   }
+ }
+
+  return (
+
+  <div className="Column" id="research" style={researchStyle()}>
+
+<h2 className="ProjectSectionTitle" style={textMarginStyle()}>Ideation</h2>
 
     <div className={m
         ? "Row"
-        : "Column"} style={{
-        margin: textMargin()
-      }}>
+        : "Column"} style={textMarginStyleRows()}>
 
-      <div id="summary-col-1" className="Column" style={{
-          padding: l
-            ? "2rem"
-            : "1.5rem",
-          width: m
-            ? "40rem"
-            : "80vw"
-        }}>
-        <h2 className="ProjectSectionTitle">Ideation</h2>
-
-        <br></br>
-        <div className="body1">
+      <div id="summary-col-1" className="Column body1" style={colLarge()}>
           {ideationText}
-        </div>
       </div>
 
-      <div id="summary-col-2" className="Column" style={{
-          padding: m
-            ? "8rem 2rem 2rem 5rem"
-            : "0 1.5rem 1.5rem 1.5rem",
-          width: m
-            ? "25rem"
-            : "80vw"
-        }}>
-        <br></br>
-        <h5>
-          <em>{ideationEmphasis}</em>
-        </h5>
-
+      <div id="summary-col-2" className="Column" style={colHalf()}>
+        <h5><em>{ideationEmphasis}</em></h5>
       </div>
-
     </div>
 
-    <div className="Column" style={{
-        margin: textMargin()
-      }}>
 
-      <div id="summary-col-1" className="Column" style={{
-          padding: l
-            ? "2rem"
-            : "1.5rem",
-          width: m
-            ? "40rem"
-            : "80vw"
-        }}>
-        <h2 className="ProjectSectionTitle">Research</h2>
+<h2 className="ProjectSectionTitle" style={textMarginStyle()}>Research</h2>
 
-        <br></br>
-
-        <div className="body1">
+  <div className="body1" style={textMarginStyle()}>
           {researchText}
-        </div>
+  </div>
 
-      </div>
+<h4 className="Row" style={textMarginStyle()}><CompetitiveAnalysisIcon style={iconStyle()}/>Competitive Analysis</h4>
 
-      {
-        competitiveAnalysis && <div style={{
-              padding: l
-                ? "2rem"
-                : "1.5rem",
-              width: m
-                ? "40rem"
-                : "80vw"
-            }}>
-            <h4 className="Row" style={{
-                margin: "2rem 0"
-              }}>
-              <CompetitiveAnalysisIcon style={{
-                  alignSelf: "center",
-                  marginRight: "0.8rem"
-                }}/>
-              Competitive Analysis</h4>
-            {
-              competitiveAnalysis.split("/").map((section) => {
-                return <> < div className = "body1" > {
+  <div style={textMarginStyle()}>
+            {competitiveAnalysis.split("/").map((section) => {
+                return <> <div className = "body1" > {
                   section
-                } < /div>
-          <br></br > </>
+                } </div>
+
+                  <br></br >
+                </>
               })
             }
+  </div>
 
-          </div>
-      }
+<h4 className="Row" style={textMarginStyle()}><SurveyResultsIcon style={iconStyle()}/> {surveyResultsTitle}</h4>
 
-      {
-        surveyResultsTitle && <div style={{
-              padding: l
-                ? "2rem"
-                : "1.5rem",
-              width: m
-                ? "40rem"
-                : "80vw"
-            }}>
-            <h4 className="Row" style={{
-                margin: "2rem 0"
-              }}>
-              <SurveyResultsIcon style={{
-                  alignSelf: "center",
-                  marginRight: "0.8rem"
-                }}/> {surveyResultsTitle}</h4>
+<div style={textMarginStyle()}>
+<Accordion m={m} l={l} problemSolution={problemSolution} sectionTitles={sectionTitles} sectionResultsArr={sectionResultsArr} sectionApplicationArr={sectionApplicationArr}/>
+</div>
 
-            <Accordion m={m} l={l} problemSolution={problemSolution} sectionTitles={sectionTitles} sectionResultsArr={sectionResultsArr} sectionApplicationArr={sectionApplicationArr}/>
+<h4 className = "Row" style={textMarginStyle()}> <FinalScreensIcon style={iconStyle()}/>
+        Screens and Features</h4>
 
-          </div>
-      }
-
-      {
-        screenTitles && <> < h4 className = "Row" style = {{margin:"2rem 0"}} > <FinalScreensIcon style={{
-            alignSelf: "center",
-            marginRight: "0.8rem"
-          }}/>
-        Screens and Features</h4> < div className = {
-          l
-            ? "grid-container-screens-and-features"
-            : "grid-container-screens-and-features-tablet"
-        } > {
-          screenTitles.map((screen, i) => {
+    <div className = {
+          l? "grid-container-screens-and-features":
+          m?"grid-container-screens-and-features-tablet":
+          "grid-container-screens-and-features-mobile"
+        } style={textMarginStyle()}>
+        {screenTitles.map((screen, i) => {
             return <ScreensLabel m={m} screen={screen} features={screenFeatures[i]}/>
           })
         }
+    </div>
 
-        </div>
-    </>
-      }
 
-      {
-        userFlowImg && <> < h4 className = "Row" style = {{margin:"2rem 0"}} > <UserFlowIcon style={{
-            alignSelf: "center",
-            marginRight: "0.8rem"
-          }}/>
-        User Flow</h4> < div className = "body1" style = {{margin:textMargin()}} > {
-          userFlowText
-        }
-        </div>
+<h4 className = "Row" style={textMarginStyle()} > <UserFlowIcon style={iconStyle()}/>
+        User Flow</h4>
 
-      <div className={m
+  <div className = "body1" style={textMarginStyle()}>
+    {userFlowText}
+  </div>
+
+
+    <div className={m
           ? "RowCentered"
-          : "ColumnCentered"}>
+          : "ColumnCentered"} style = {textMarginStyle()}>
 
         <ImageFadeIn src={userFlowImg} style={{
             filter: "saturate(0.5)",
@@ -205,10 +182,7 @@ const Research = ({
           }}/>
 
       </div>
-    </>
-      }
 
-    </div>
 
     <div className={m
         ? "Row"
@@ -298,7 +272,6 @@ const Research = ({
           <em>{surveyResultsEmphasis}</em>
         </h6>
       </div>
-
     </div>
 
   </div>)

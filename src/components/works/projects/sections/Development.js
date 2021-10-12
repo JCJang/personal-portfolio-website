@@ -43,31 +43,91 @@ const Development = ({
     return {background: "var(--works-bg)", color: "var(--works-text)", margin: "0", padding: "0"}
   };
 
+  const textMarginStyle=()=>{
+    if (m) return {
+      margin:"1rem 5rem",
+    }
+    return {margin:"1rem 2rem"}
+  }
+
+  const textMarginStyleRows=()=>{
+    if (m) return {
+      margin:"1rem 5rem",
+      gap:"5rem"
+    }
+    return {margin:"1rem 2rem"}
+  }
+
+
+  const textMarginStyleH3=()=>{
+    if (m) return {
+      margin:"1rem 5rem",
+      color:"var(--midnight)"
+    }
+    return {margin:"1rem 2rem"}
+  }
+
   const textMargin = () => {
-    if (m) {
-      return "3rem 5rem 1rem 5rem"
-    } else {
-      return "2rem 1rem"
+    if (m) return "1rem 5rem"
+    return "1rem 2rem"
+  }
+
+  const colLarge = () => {
+    if (m) return {
+        width:"calc(70vw - 7.5rem)"
+      }
+      return{
+        width:"80vw"
+      }
+  }
+  const colSmall = () => {
+    if (m) return {
+        width:"calc(30vw - 7.5rem)"
+      }
+      return{
+        width:"80vw"
+      }
+  }
+
+  const colHalf = () => {
+    if (m) return {
+        width:"calc(50vw - 7.5rem)"
+      }
+      return{
+        width:"80vw"
+      }
+  }
+
+  const iconStyle = () => {
+    return{
+      alignSelf: "center",
+      marginRight: "0.8rem"
     }
   }
 
-  return (<div className="Column" id="development" style={developmentStyle()}>
+  const gistStyle = () => {
+    const result = textMarginStyle()
+    return result
+  }
+
+  const overflowStyle = () => {
+    return {
+      width:"100vw",
+      background:"var(--table-light)"
+    }
+  }
+
+  return (
+  <div className="Column" id="development" style={developmentStyle()}>
+
+    <h2 className="ProjectSectionTitle" style={{ margin: textMargin()}}>Development</h2>
 
     <div className={m
         ? "Row"
-        : "Column"} style={{
-        margin: textMargin()
-      }}>
+        : "Column"}
+      style={textMarginStyleRows()}>
 
-      <div id="summary-col-1" className="Column" style={{
-          padding: l
-            ? "2rem"
-            : "1.5rem",
-          width: m
-            ? "40rem"
-            : "80vw"
-        }}>
-        <h2 className="ProjectSectionTitle">Development</h2>
+      <div id="summary-col-1" className="Column" style={colLarge()}>
 
         <br></br>
         <div className="body1">
@@ -75,153 +135,86 @@ const Development = ({
         </div>
       </div>
 
-      <div id="summary-col-2" className="Column" style={{
-          padding: m
-            ? "8rem 2rem 2rem 5rem"
-            : "0 1.5rem 1.5rem 1.5rem",
-          width: m
-            ? "25rem"
-            : "80vw"
-        }}>
-        <br></br>
+    <div id="summary-col-2" className="Column" style={colHalf()}>
         <h5>
           <em>{developmentEmphasis}</em>
         </h5>
-
-      </div>
-
+    </div>
     </div>
 
-    <div className="Column" style={{
-        margin: textMargin()
-      }}>
+    <h3 style={textMarginStyleH3()}>Resources and Backend</h3>
 
-      <div id="summary-col-1" className="Column" style={{
-          padding: l
-            ? "2rem"
-            : "1.5rem",
-          width: m
-            ? "40rem"
-            : "80vw"
-        }}>
-        <h3 className="ProjectSectionTitle">Resources and Backend</h3>
 
-        <br></br>
+  <div className="body1" style={textMarginStyle()}>
+          {resourcesText}</div>
 
-        <div className="body1">
-          {resourcesText}
-        </div>
 
-      </div>
+  <h4 className = "Row" style = {textMarginStyle()} > <ScreensIcon style={iconStyle()}/>
+        Screens and Features</h4>
 
-      {
-        screenTitles && <> < h4 className = "Row" style = {{margin:"2rem 0"}} > <ScreensIcon style={{
-            alignSelf: "center",
-            marginRight: "0.8rem"
-          }}/>
-        Screens and Features</h4> < div className = "grid-container-screens-and-features-tablet" > {
-          screenTitles.map((screen, i) => {
-            return <> < div style = {{margin:textMargin()}} > {
-              i === 0 && screenDescriptions[i]
-            }</div> < ScreensLabel m = {
-              m
-            }
-            screen = {
-              screen
-            }
-            features = {
-              screenFeatures[i]
-            } /> <div style={{
-                margin: textMargin()
-              }}>{i === 1 && screenDescriptions[i]}</div>
+
+  <div className = {m?"grid-container-resources":"grid-container-resources-mobile"} style = {textMarginStyle()}>
+          {screenTitles.map((screen, i) => {
+            return <>
+            <ScreensLabel m = {m}
+            screen = {screen}
+            features = {screenFeatures[i]}/>
+
+            <div>{screenDescriptions[i]}</div>
           </>
           })
         }
+</div>
 
-        </div>
-    </>
-      }
+<h4 className = "Row" style = {textMarginStyle()} >
+  <DatabaseIcon style={iconStyle()}/> Database Design</h4>
 
-      {
-        databaseText && <> < h4 className = "Row" style = {{margin:"2rem 0"}} > <DatabaseIcon style={{
-            alignSelf: "center",
-            marginRight: "0.8rem"
-          }}/>
-        Database Design</h4> < div className = "body1" > {
-          databaseText
-        }
-        </div>
+<div className = "body1"  style = {textMarginStyle()}> {databaseText}</div>
 
-      <div style={{
-          width: "80vw"
-        }}>
-        <ReactEmbedGist contentClass ="gistStyles" gist={databaseCode}/>
+<div style={gistStyle()}>
+  <ReactEmbedGist contentClass ="gistStyles" titleClass="displayNone"  gist={databaseCode}/>
+</div>
+
+<h4 className = "Row" style = {textMarginStyle()} >
+  <ServerIcon style={iconStyle()}/>Server</h4>
+    <div className = "body1"  style = {textMarginStyle()}> {serverText}</div>
+
+      <div style={gistStyle()}>
+        <ReactEmbedGist contentClass ="gistStyles" titleClass="displayNone"  gist={serverCode}/>
       </div>
-    </>
-      }
 
-      {
-        serverText && <> < h4 className = "Row" style = {{margin:"2rem 0"}} > <ServerIcon style={{
-            alignSelf: "center",
-            marginRight: "0.8rem"
-          }}/>
-        Server</h4> < div className = "body1" > {
-          serverText
-        }
-        </div>
+    <h3 className="Column" style={textMarginStyleH3()}>Frontend and problem-solving</h3>
 
-      <div style={{
-          width: "80vw"
-        }}>
-        <ReactEmbedGist contentClass ="gistStyles" gist={serverCode}/>
-      </div>
-    </>
-      }
-
-    </div>
-    <div className="Column" style={{
-        margin: textMargin()
-      }}>
-
-      <h3 className="ProjectSectionTitle">Frontend and problem-solving</h3>
-
-      <br></br>
-
-      <h4 className="Row" style={{
-          margin: "2rem 0"
-        }}>
-
-        <RelationIcon style={{
-            alignSelf: "center",
-            marginRight: "0.8rem"
-          }}/>
+    <h4 className="Row" style={textMarginStyle()}>
+        <RelationIcon style={iconStyle()}/>
         Implementing Search by Related Authors</h4>
 
-      <div className="body1">
-        {relationalSearchText}
-      </div>
-    </div>
+  <div className="body1" style={textMarginStyle()}>
+    {relationalSearchText}
+  </div>
 
-    <div style={{
-        background: "var(--table-light)"
-      }}>
+<br></br>
+
+    <div style={overflowStyle()}>
       <ImageOverflow images={relationalSearchImages} titles={relationalSearchTitles}/>
     </div>
+
+<br></br>
+
     <div>
-      <div style={{
-          width: "80vw"
-        }}>
-        <ReactEmbedGist contentClass ="gistStyles" gist={relationalSearchClientCode}/>
+      <div style={gistStyle()}>
+        <ReactEmbedGist contentClass ="gistStyles" titleClass="displayNone"  gist={relationalSearchClientCode}/>
       </div>
-      <div style={{
-          width: "80vw"
-        }}>
-        <ReactEmbedGist contentClass ="gistStyles" gist={relationalSearchServerCode}/>
+
+<br></br>
+
+      <div style={gistStyle()}>
+        <ReactEmbedGist contentClass ="gistStyles" titleClass="displayNone"  gist={relationalSearchServerCode}/>
       </div>
 
     </div>
 
-    <div className="RowCentered">
+    <div className="RowCentered" style = {textMarginStyle()}>
       <ImageFadeIn src={relationalSearchResultImg} style={{
           width: m
             ? "60vw"
@@ -235,33 +228,19 @@ const Development = ({
         }}/>
     </div>
 
-    <div className="Column" style={{
-        margin: textMargin()
-      }}>
+ <h4 className = "Row" style = {textMarginStyle()} >
+        <FunctionalIcon style={iconStyle()}/>
+        Customizing Timelines with Functional programming </h4>
 
-      {
-        functionalText && <> < h4 className = "Row" style = {{margin:"2rem 0"}} >
-        <FunctionalIcon style={{
-            alignSelf: "center",
-            marginRight: "0.8rem"
-          }}/>
-        Customizing Timelines with Functional programming </h4> < div className = "body1" > {
-          functionalText
-        }
-        </div>
+        < div className = "body1" style={textMarginStyle()}> {functionalText}</div>
 
-      <div style={{
-          width: "80vw"
-        }}>
-        <ReactEmbedGist contentClass ="gistStyles" gist={functionalCode}/>
+      <div style={gistStyle()}>
+        <ReactEmbedGist contentClass ="gistStyles" titleClass="displayNone"  gist={functionalCode}/>
       </div>
 
-    </>
-      }
-    </div>
-    <div style={{
-        background: "var(--table-light)"
-      }}>
+<br></br>
+
+    <div style={overflowStyle()}>
       <ImageOverflow images={functionalProgrammingImages} titles={functionalProgrammingTitles}/>
     </div>
   </div>)

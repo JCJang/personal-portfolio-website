@@ -27,22 +27,88 @@ const Summary = ({
     return {background: "var(--cinerous)", color: "var(--velvet)", margin: "0", padding: "0"}
   };
 
-  const textMargin = () => {
-    if (m) {
-      return "4rem 5rem 2rem 5rem"
-    } else {
-      return "2rem 1rem"
+
+    const textMarginStyle=()=>{
+      if (m) return {
+        margin:"1rem 5rem",
+      }
+      return {margin:"1rem 2rem"}
     }
-  }
+
+    const textMarginStyleRows=()=>{
+      if (m) return {
+        margin:"1rem 5rem",
+        gap:"5rem"
+      }
+      return {margin:"1rem 2rem"}
+    }
+
+
+    const textMarginStyleH3=()=>{
+      if (m) return {
+        margin:"1rem 5rem",
+        color:"var(--midnight)"
+      }
+      return {margin:"1rem 2rem"}
+    }
+
+    const textMargin = () => {
+      if (m) return "1rem 5rem"
+      return "1rem 2rem"
+    }
+
+    const colLarge = () => {
+      if (m) return {
+          width:"calc(70vw - 7.5rem)"
+        }
+        return{
+          width:"80vw"
+        }
+    }
+    const colSmall = () => {
+      if (m) return {
+          width:"calc(30vw - 7.5rem)"
+        }
+        return{
+          width:"80vw"
+        }
+    }
+
+    const colHalf = () => {
+      if (m) return {
+          width:"calc(50vw - 7.5rem)"
+        }
+        return{
+          width:"80vw"
+        }
+    }
+
+    const iconStyle = () => {
+      return{
+        alignSelf: "center",
+        marginRight: "0.8rem"
+      }
+    }
+
+    const gistStyle = () => {
+      const result = textMarginStyle()
+      return result
+    }
+
+    const overflowStyle = () => {
+      return {
+        width:"100vw",
+        background:"var(--table-light)"
+      }
+    }
+
 
   return (<div className="Column" id="summary" style={summaryStyle()}>
 
     <div className="Column" style={{
         position: "relative",
         zIndex: "29",
-        padding: m
-          ? "4rem 5rem"
-          : "3rem 1.5rem",
+        padding: textMargin(),
         height: m
           ? "20rem"
           : "25rem",
@@ -55,7 +121,7 @@ const Summary = ({
             ? "35vw"
             : "80vw"
         }}>
-        <h2 className={l && "h1"}>{title}</h2>
+        <h2 className={l && "h1"} style={{paddingTop:"0"}}>{title}</h2>
         <br></br>
         <h5 style={{
             fontSize: l && "2rem"
@@ -92,7 +158,7 @@ const Summary = ({
         : "Row"} style={{
         background: "var(--table-neutral)",
         paddingBottom: "3rem",
-        paddingTop: !m && "3rem",
+        paddingTop: "3rem",
         color: "var(--occlusion)"
       }}>
 
@@ -118,46 +184,29 @@ const Summary = ({
       </div>
     </div>
 
+
+<h2 style={textMarginStyle()}>Summary</h2>
+
     <div className={m
         ? "Row"
-        : "Column"} style={{
-        margin: textMargin()
-      }}>
+        : "Column"} style={textMarginStyleRows()}>
 
-      <div id="summary-col-1" className="Column" style={{
-          padding: l
-            ? "2rem"
-            : "1.5rem",
-          width: m
-            ? "25rem"
-            : "80vw"
-        }}>
-        <h2>Summary</h2>
-
-        <br></br>
-
+      <div id="summary-col-1" className="Column" style={colHalf()}>
         <h5>
           <em>challenge: {challenge}</em>
         </h5>
+
         <div className="boxDecoration" style={{
             borderColor: "var(--velvet)"
           }}></div>
+
         <h6>
           <strong>{solution}</strong>
         </h6>
 
       </div>
 
-      <div id="summary-col-2" className="Column" style={{
-          padding: m
-            ? "8rem 2rem 2rem 5rem"
-            : "0 1.5rem 1.5rem 1.5rem",
-          width: m
-            ? "40rem"
-            : "80vw"
-        }}>
-        <br></br>
-
+      <div id="summary-col-2" className="Column" style={colHalf()}>
         <div className="body1">
           {summary}
         </div>
@@ -166,7 +215,8 @@ const Summary = ({
     </div>
 
     {
-      carousel && <div className="body2" id="Final Screens">
+      carousel &&
+        <div className="body2" id="Final Screens" style={{margin:m?"3rem 0":"2rem 0"}}>
           <Carousel carouselSlides={carouselSlides} carouselSlidesTitles={carouselSlidesTitles}/>
         </div>
     }

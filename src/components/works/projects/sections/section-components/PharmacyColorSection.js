@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import ImageFadeIn from '../../../../../customHooks/imageFadeIn'
 import { IoEllipseSharp as CircleFilled } from "react-icons/io5";
 import ImageOverflow from './ImageOverflow'
+import { IoColorFilterOutline as ColorIcon } from "react-icons/io5";
 
 
 const HumanitiesColorSection = ({textMargin, direction, colorTexture, colorText, colorWireframe, colorMoodboard, designColorLabels, designColorHexes, designDescription, designTitle, m, l, number}) => {
@@ -10,9 +11,20 @@ const HumanitiesColorSection = ({textMargin, direction, colorTexture, colorText,
 
   return (
     <>
+
+    {number === 0 && <>
+      <br></br>
+
+    <h4 className="Row"  style={{margin:m?"1rem 5rem 0 5rem":"1rem 2rem 0 2rem"}}>
+    <ColorIcon style={{alignSelf: "center",
+    marginRight: "0.8rem"}}/>
+    Color</h4>
+
+    </>}
+
     <div className={l?"Row":"Column"} style={{
       flexDirection:l ? "row-reverse": "column-reverse",
-      margin:l? "5rem":"3rem 0",
+      margin:l? "2.5rem":"2.5rem 0",
       position:"relative",
       height:"fit-content",
       overflow:!l && "hidden",
