@@ -12,7 +12,7 @@ import displayImage4 from './images/design/motion-design-short.jpg'
 //research
 import Research from '../sections/Research'
 
-import userFlowImg from './images/design/user-flow.jpg'
+import userFlowImg from './images/design/user-flow-pharmacy.png'
 
 //design
 import Design from '../sections/Design'
@@ -28,7 +28,7 @@ import hifiImg3 from './images/design/registration-screens.png'
 import hifiImg4 from './images/design/refill-user-flow.png'
 import hifiImg5 from './images/design/transfer-and-add-screens.png'
 
-import textRef1 from '../ProjectHumanities/images/design/typography-ref.png'
+import textRef1 from './images/design/textRef-pharmacy.jpg'
 import typographyFinalImg from '../ProjectHumanities/images/design/typography-final.png'
 
 import moodboard from './images/design/color-ideation.png'
@@ -142,6 +142,9 @@ const ProjectPharmacy = ({m, l, setRouteFocus}) => {
        lofi="I created lo-fi wireframes based on the flat architecture, making sure to implement clear user flows where needed. The goal is to make each goal’s entry point as easy to find as possible, and each goal’s completion as smooth and distraction-free as possible."
 
        typography="I began looking at various signage around Maine Medical Center. My initial decision was to match the typography - using a serif font for headings and a sans serif for text and buttons./For the headings and subtitles I wanted something that matched the MaineHealth Logo - serious, traditional, and elegant./On the other hand, for the sans serif font that will be the body text, I wanted something lightweight. In addition, I wanted the text to be more box shaped than rectangular./Using the low-fidelity RX screen, which has the most variety of text, I mapped out all the combinations and narrowed it down to the final look."
+
+       typographyRefImages={[textRef1]}
+       typographyRefTitles={["reference typefaces from around the hospital campus"]}
 
        finalTypography={["3-App Titles: Lora", "4-App Body: Quicksand"]}
 

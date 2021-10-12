@@ -76,6 +76,8 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
       overflowY:"auto",
       overflowX:"hidden",
       scrollBehavior: "smooth"}}>
+
+
         <Summary
           mainImage={m? mainImageH : mainImageV}
           m={m}
@@ -97,6 +99,7 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
          solution="By pairing reader-defined quality books with an interface that prioritizes valued book selection criteria."
          />
 
+         <span id="research"></span>
        <Research
          m={m}
          l={l}
@@ -164,12 +167,12 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
 
          designKeywords={["single page", "cyclical flow", "minimalistic", "linear motif"]}
          designTone={["serious", "concise", "rational", "neutral", "reputable", "academic"]}
-         valueProposal="The selected books must be of high enough quality to be of value for users. Personality: This person is not writing a textbook; it is a passionate argument of a person’s opinion and core beliefs.     Rationality: this person is using facts as presented to him or her. They have tried to get perspective before making an opinion. Aka, they know what they’re talking about.           Specificity: The book is not an overview on a topic. The author explores a particular question, and returns his or her systematic thoughts on the matter.           Systematicity: The table of contents breaks down the core question into arguments."
 
          userFlowText = "With good user knowledge under my belt, I can now start planning the app layout. I enjoy starting with the information architecture to really lay out in the abstract what I am trying to accomplish."
          userFlowImg={userFlowImg}
         />
 
+        <span id="design"></span>
         <Design m={m} l={l}
 
         lofiWireframesImage={lofiWireframesImage}
@@ -200,41 +203,41 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
         colorMoodboards={[moodboardSpring, moodboardSummer, moodboardWinter]}
         />
 
-
+        <span id="development"></span>
        <Development
          m={m}
          l={l}
-         developmentText="I chose psychology as my major in college because I thought the field would address human meaning and purpose. However, as I soon realized, Psychology had long shifted away from humanism and other forms of self-inquiry, taking a more behavioristic approach instead. Still driven by curiosity, I asked many Humanities professors for supplementary reading that addresses humanistic topics, and that was my main source of book recommendations. Conversations with other readers seem to lead to the same conclusion - despite living in an information-rich world today, the best book recommendations seem to travel by word of mouth. My solution was to create a book database full of quality humanities books, so that myself and other readers have a reliable resource to better understand meaning and ethics in life."
-         developmentEmphasis="despite living in an information-rich world today, the best book recommendations seem to travel by word of mouth."
 
-         resourcesText="As part of UX research I conducted (1) a competitive analysis of features offered by 11 similar book-focused websites and (2) a user survey. The bilingual survey (written using Google Forms) was distributed among four major Taiwanese University Facebook groups, and was filled out by 50 self-selected humanities readers."
+         developmentText="Although i pictured other screens in research and set a general direction, for the first iteration of the design I focused on building the minimum viable product, which is the search by query screen and the Discovery screen and the further reading screen. Planning ahead made me certain that I can finish the proejct."
 
+         finalStack="Development technology stack: React, Axios, Express, Mongoose, MongoDB."
 
-         surveyResultsTitle="Survey Results"
-
-         surveyResultsEmphasis="It is important to visualize the book search user flow as a cycle, and present it as such."
-
-         screenDescriptions={["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]}
+         screenDescriptions={["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.","As part of the survey I asked users to submit Qualitative books (multilingual), I have a book list on hand already of books i have read, or books recommended to me. I was also able to gather many books through the survey. However, many of the suggestions did not come with the book’s thesis question, or stated a too-broad question. For each book I browsed with my criteria and decided to include, exclude, or save for a later release. I came up with thesis statements for each book, and grouped similar books under the same question."]}
          screenFeatures={[
            ["Central thesis search bar","subject matter filter","subject matter introduction panel","basic referential data","table of contents","2-3 paragraphs that captures the author's central thesis and writing style"],
-           ["in-depth referential data","subject matter introduction panel","Further reading – related books, authors, subjects etc.","Reviews","Discussion form"]
+           ["in-depth referential data","subject matter introduction panel","Further reading – related books, authors, subjects etc.","Reviews","Discussion form"],
+           ["specificity", "personality", "etc"]
          ]}
-         screenTitles={[`primary screen - Search by central argument`, `primary screen - post-reading screen`]}
+         screenTitles={[`primary screen - Search by central argument`, `primary screen - post-reading screen`,"book selection criteria"]}
 
-         databaseText="After wasting almost a week trying to make MySQL work, I turned to MongoDB, which I was able to learn in a day. Creating with MongoDB is a joy. Users can submit books in any language, regardless whether there is an edition in English. To overcome this, I used created each shelf and book under the label of its language"
+         databaseText="After testing the APIs, I began building a private screen that can autofill needed data into a form that I can edit and submit. During this stage, I decided on most of the data that I need and began thinking of how I can best store them. The main challenge is figuring out a way to store data in multiple languages. I did not want to use English as primary access, because there may be future entries that are not created in English. So, I have to create a highly flexible database that can be queried in any language./At first, being aware of the potential overlaps in data (author pages, influences, influenced, countries), I thought I should use mySQL to minimize duplicate data. But as I began creating the database model that finally ended up with 18 tables, I decided it would be overkill and ill-fitted to my simple information architecture. I turned to MongoDB Atlas instead, using which I pared down all tables into two major collections: one for the shelves and books, and the other one for author data. By creating ‘editions’ of shelves and books that can be queried by language./Without foreign keys, the two collections are connected by author names alone, which can be risky – Chinese translations of foreign names can vary widely based on the translator. With that in mind, however, this structure better fits my information architecture, with the author details that belong in the ‘post-reading screen’ separate from the ‘search by primary argument’ screen. What’s more, using document databases will allow me much freedom to make changes in the future, an advantage since I have not solved the puzzle of how my future data will look like, such as how to store user information, literature books etc."
+
 
          databaseCode="jcjang/295f625013e731ddaa5f1744bb29631a"
 
          serverText="After wasting almost a week trying to make MySQL work, I turned to MongoDB, which I was able to learn in a day. Creating with MongoDB is a joy. Users can submit books in any language, regardless whether there is an edition in English. To overcome this, I used created each shelf and book under the label of its language"
 
          serverCode="jcjang/a30c855283f48103c3426c2f9dd3ded5"
+
+         frontendText="With my private API and database set up, I began developing the main screens of the web app in React. By reusing logic from the private screen and switching the public APIs with my private one, most of the public screen logic is easily completed. I used flexbox and inline CSS for the"
          relationalSearchText="snisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi"
 
          relationalSearchClientCode="JCJang/c9a57189bb48a02adbc070bd22e01605"
          relationalSearchServerCode="JCJang/dcd1b407f2a11d801f63c0e32746da5e"
          relationalSearchImages={[irisMarionYoungInfluences, simoneDeBeauvoirInfluenced]}
-         relationalSearchTitles={["Iris Marion Young listed Influences in the database", "Simone de Beauvoir listed Influenced in the database"]}
-         relationalSearchResultImg={influencedResult}
+         relationalSearchTitles={["Iris Marion Young listed Simone de Beauvoir in her 'Influences' list", "While Simone de Beauvoir does not have Young in her 'Influenced' list"]}
+         relationalSearchResultImg={[influencedResult]}
+         relationalSearchResultTitle={["By searching for unreciprocated relationships in the database, Iris Marion Young appears in Simone de Beauvoir's 'Influenced' list."]}
 
          functionalText="snisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi"
          functionalCode="JCJang/2bcdfa5f86b85269fac053ad0caf3ec1"

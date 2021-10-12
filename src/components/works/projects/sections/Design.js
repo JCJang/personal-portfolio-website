@@ -1,4 +1,3 @@
-import ImageFadeIn from '../../../../customHooks/imageFadeIn'
 import ImageOverflow from './section-components/ImageOverflow'
 import HumanitiesColorSection from './section-components/HumanitiesColorSection'
 import PharmacyColorSection from './section-components/PharmacyColorSection'
@@ -80,9 +79,12 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
       const iconStyle = () => {
         return{
           alignSelf: "center",
-          marginRight: "0.8rem"
+          marginRight: "0.8rem",
+          fontSize: "2rem",
+          minWidth:"2rem"
         }
       }
+
      const overflowStyle = () => {
        return {
          width:"100vw",
@@ -90,8 +92,12 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
        }
      }
 
+     const col2PaddingTop = () => {
+       if (!m) return "2rem"
+     }
+
     return (
-<div className="Column" id="design" style={designStyle()}>
+<div className="Column" style={designStyle()}>
 
   <h2 className="ProjectSectionTitle" style={textMarginStyle()}>Design Process</h2>
 
@@ -127,7 +133,7 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
     </div>
 
     <div id="typography-col-2" style={colHalf()}>
-        <h5><em>{typographyEmphasis}</em></h5>
+        <h5 style={{paddingTop:col2PaddingTop()}} ><em>{typographyEmphasis}</em></h5>
     </div>
   </div>
 
@@ -214,7 +220,7 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
 
     <div id="design-direction-col-2" className="Column" style={colSmall()}>
 
-      <div className="overline" style={{margin:"2rem 0"}}>DESIGN KEYWORDS:</div>
+      <div className="overline" style={{paddingTop:col2PaddingTop()}}>DESIGN KEYWORDS:</div>
       hi
     </div>
 

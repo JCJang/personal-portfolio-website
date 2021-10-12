@@ -1,16 +1,12 @@
 import {useState, useEffect} from 'react'
 import AccordionLabel from './AccordionLabel'
-const Accordion = ({m, l, sectionTitles, sectionResultsArr, sectionApplicationArr, problemSolution=false}) => {
+const Accordion = ({m, l, sectionTitles, sectionResultsArr, sectionApplicationArr, problemSolution=false, number}) => {
 
 const [focus, setFocus] = useState()
 
-const textMargin = () => {
-  if(m){
-    return "3rem 5rem 1rem 5rem"
-  }else{
-    return "2rem 1rem"
-  }
-}
+useEffect(()=>{
+    setFocus(sectionTitles[0])
+},[])
 
   return (
 

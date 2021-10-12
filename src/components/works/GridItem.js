@@ -61,7 +61,8 @@ const borderLeft = () => {
   return (
 
     <Link to={routeName} className={gradientSetting()} onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => {setHover(false)}} style = {{ textDecoration: "none",
+      onMouseLeave={() => {setHover(false)}} onMouseDown={() => setHover(true)}
+        onMouseUp={() => {setHover(false)}}  style = {{ textDecoration: "none",
     overflow: "hidden",
     borderRight: borderRight(),
     borderLeft: borderLeft()

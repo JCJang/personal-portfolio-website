@@ -86,7 +86,9 @@ const Summary = ({
     const iconStyle = () => {
       return{
         alignSelf: "center",
-        marginRight: "0.8rem"
+        marginRight: "0.8rem",
+        fontSize: "2rem",
+        minWidth:"2rem"
       }
     }
 
@@ -102,6 +104,9 @@ const Summary = ({
       }
     }
 
+    const col2PaddingTop = () => {
+      if (!m) return "2rem"
+    }
 
   return (<div className="Column" id="summary" style={summaryStyle()}>
 
@@ -207,7 +212,7 @@ const Summary = ({
       </div>
 
       <div id="summary-col-2" className="Column" style={colHalf()}>
-        <div className="body1">
+        <div className="body1" style={{paddingTop:col2PaddingTop()}}>
           {summary}
         </div>
       </div>

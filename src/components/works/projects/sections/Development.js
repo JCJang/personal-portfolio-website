@@ -1,4 +1,3 @@
-import ImageFadeIn from '../../../../customHooks/imageFadeIn'
 import ImageOverflow from './section-components/ImageOverflow'
 
 import {IoTerminalOutline as ScreensIcon} from "react-icons/io5";
@@ -18,7 +17,7 @@ const Development = ({
   m,
   l,
   developmentText,
-  developmentEmphasis,
+  finalStack,
   resourcesText,
   screenTitles,
   screenFeatures,
@@ -33,6 +32,7 @@ const Development = ({
   relationalSearchImages,
   relationalSearchTitles,
   relationalSearchResultImg,
+  relationalSearchResultTitle,
   functionalText,
   functionalCode,
   functionalProgrammingImages,
@@ -101,7 +101,9 @@ const Development = ({
   const iconStyle = () => {
     return{
       alignSelf: "center",
-      marginRight: "0.8rem"
+      marginRight: "0.8rem",
+      fontSize: "2rem",
+      minWidth:"2rem"
     }
   }
 
@@ -117,10 +119,14 @@ const Development = ({
     }
   }
 
-  return (
-  <div className="Column" id="development" style={developmentStyle()}>
+  const col2PaddingTop = () => {
+    if (!m) return "2rem"
+  }
 
-    <h2 className="ProjectSectionTitle" style={{ margin: textMargin()}}>Development</h2>
+  return (
+  <div className="Column" style={developmentStyle()}>
+
+    <h2 style={textMarginStyleH3()}>Development</h2>
 
     <div className={m
         ? "Row"
@@ -136,8 +142,8 @@ const Development = ({
       </div>
 
     <div id="summary-col-2" className="Column" style={colHalf()}>
-        <h5>
-          <em>{developmentEmphasis}</em>
+        <h5 style={{paddingTop:col2PaddingTop()}}>
+          <strong>{finalStack}</strong>
         </h5>
     </div>
     </div>
@@ -150,7 +156,7 @@ const Development = ({
 
 
   <h4 className = "Row" style = {textMarginStyle()} > <ScreensIcon style={iconStyle()}/>
-        Screens and Features</h4>
+        Planning and Defining Resources</h4>
 
 
   <div className = {m?"grid-container-resources":"grid-container-resources-mobile"} style = {textMarginStyle()}>
@@ -193,15 +199,8 @@ const Development = ({
     {relationalSearchText}
   </div>
 
-<br></br>
-
-    <div style={overflowStyle()}>
-      <ImageOverflow images={relationalSearchImages} titles={relationalSearchTitles}/>
-    </div>
-
-<br></br>
-
     <div>
+
       <div style={gistStyle()}>
         <ReactEmbedGist contentClass ="gistStyles" titleClass="displayNone"  gist={relationalSearchClientCode}/>
       </div>
@@ -214,20 +213,20 @@ const Development = ({
 
     </div>
 
-    <div className="RowCentered" style = {textMarginStyle()}>
-      <ImageFadeIn src={relationalSearchResultImg} style={{
-          width: m
-            ? "60vw"
-            : "auto",
-          height: m
-            ? "auto"
-            : "60vh",
-          overflowX: !m && "auto",
-          display: "block",
-          objectFit: "cover"
-        }}/>
-    </div>
 
+    <br></br>
+
+        <div style={overflowStyle()}>
+          <ImageOverflow images={relationalSearchImages} titles={relationalSearchTitles}/>
+        </div>
+
+    <br></br>
+
+    <div className="RowCentered" style = {textMarginStyle()}>
+      <ImageOverflow images={relationalSearchResultImg} titles={relationalSearchResultTitle}
+      height="80vh"/>
+    </div>
+functionalText
  <h4 className = "Row" style = {textMarginStyle()} >
         <FunctionalIcon style={iconStyle()}/>
         Customizing Timelines with Functional programming </h4>
@@ -241,7 +240,7 @@ const Development = ({
 <br></br>
 
     <div style={overflowStyle()}>
-      <ImageOverflow images={functionalProgrammingImages} titles={functionalProgrammingTitles}/>
+      <ImageOverflow height="80vh" images={functionalProgrammingImages} titles={functionalProgrammingTitles}/>
     </div>
   </div>)
 }

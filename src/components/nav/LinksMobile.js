@@ -32,8 +32,8 @@ const gradientSetting = () =>{
 
   return (
 
-    <Link to={routeName} className={gradientSetting()} onClick={()=>{setNavShelf(false);setRouteFocus(routeName)}} onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => {setHover(false)}} style = {{ textDecoration: "none",
+    <Link to={routeName} className={gradientSetting()} onClick={()=>{setNavShelf(false);setRouteFocus(routeName)}} onMouseDown ={() => setHover(true)}
+      onMouseUp={() => {setHover(false)}} style = {{ textDecoration: "none",
     overflow: "hidden",
 
   }}>

@@ -39,12 +39,16 @@ const Contact = ({m, l}) => {
   }
   }
 
+  const col2PaddingTop = () => {
+    if (!m) return "2rem"
+  }
+
   return (
-    <div className="ColumnCentered" style={contactStyle()}>
+    <div className="ColumnCentered noScrollBar" style={contactStyle()}>
 
-    <div className={m?"Row":"Column"} style={{overflowY:"auto"}}>
+    <div className={m?"Row noScrollBar":"Column noScrollBar"} style={{overflowY:"auto"}}>
 
-            <div className={m?"Column":"ColumnCentered"} style={{position:"relative",zIndex:"1", padding:"0 2rem", width:"inputWidth()", color:"var(--contact-text)"}}>
+            <div className={m?"Column":"ColumnCentered"} style={{position:"relative",zIndex:"1", padding:m && "0 2rem", width:"inputWidth()", color:"var(--contact-text)"}}>
               <h2>Contact me</h2>
               <div className="boxDecoration" style={{ border:"1.5px solid var(--contact-text)", width:!l && "40vw"}}></div>
               <h5>You can also write to me directly at: inbox@jcjang.com</h5>
@@ -53,7 +57,7 @@ const Contact = ({m, l}) => {
               </div>
               </div>
 
-            <form className="ColumnCentered" name="contact" method="POST" data-netlify="true" style={{position:"relative", zIndex:"1"}}>
+            <form className="ColumnCentered" name="contact" method="POST" data-netlify="true" style={{position:"relative", zIndex:"1", paddingTop:col2PaddingTop()}}>
 
                 <div className="Row">
 
