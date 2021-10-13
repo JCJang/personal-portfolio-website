@@ -235,7 +235,7 @@ const Development = ({
       <ImageOverflow images={relationalSearchResultImg} titles={relationalSearchResultTitle}
       height="70vh"/>
     </div>
-functionalText
+
  <h4 className = "Row" style = {textMarginStyleH4()} >
         <FunctionalIcon style={iconStyle()}/>
         Customizing Timelines with Functional programming </h4>

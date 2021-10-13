@@ -73,7 +73,7 @@ html{
   --occlusion: #312727;
   --highlight: #E7B1A7;
   --neutral: #B4B4B4;
-  --works-text: #708083;
+  --works-text: #516867;
   --works-accent:#A8B4B6;
   --works-bg:#DDE1E2;
 
@@ -129,8 +129,8 @@ html{
   --main-headline4: 2.4rem/1.5 "Lusitana", serif;
   --main-headline5: 1.6rem/1.5 "Yaldevi", sans-serif;
   --main-headline6: 500 1.35rem/1.5 "Yaldevi", sans-serif;
-  --main-body1:  1rem/1.5 "Yaldevi", sans-serif;
-  --main-body2:  0.8rem/1.5 "Yaldevi", sans-serif;
+  --main-body1:  1rem/1.6 "Yaldevi", sans-serif;
+  --main-body2:  0.8rem/1.6 "Yaldevi", sans-serif;
   --main-subtitle1: 1.55rem/1.5 "La Belle Aurore", serif;
   --main-subtitle2: 500 0.95rem/1.5 "La Belle Aurore", serif;
   --main-button: 1.2rem/1.4 "La Belle Aurore", serif;
