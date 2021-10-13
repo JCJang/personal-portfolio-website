@@ -188,9 +188,9 @@ const Research = ({
   </div>
 
 
-    <div style = {textMarginStyle()}>
+    <div className="RowCentered" style = {textMarginStyle()}>
 
-        <ImageOverflow height="70vh" images={[userFlowImg]} style={{
+        <ImageOverflow height="80vh" images={[userFlowImg]} style={{
             filter: "saturate(0.5)",
           }}/>
 

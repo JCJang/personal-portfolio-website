@@ -44,7 +44,7 @@ if(number===1){
       position:"relative",
       height:"fit-content",
       overflow:!l && "hidden",
-      width:l?"calc(100vw - 10rem)":"100vw",
+      width:l?"calc(100vw - 5rem)":"100vw",
      color:"var(--occlusion)",
      position: "relative",
     }}>

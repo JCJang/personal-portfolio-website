@@ -6,7 +6,7 @@ import useClickOutside from '../../../../../customHooks/useClickOutside';
 import {useRef, useState,useEffect} from 'react'
 import ImageOverflowModal from './ImageOverflowModal'
 
-const ImageOverflow = ({m, images=[], height="50vh", width="100%", style, titles}) => {
+const ImageOverflow = ({m, images=[], height="50vh", style, titles}) => {
 
   const draggableScrollRef = useRef(null);
   const { onMouseDown } = useDraggableScroll(draggableScrollRef);
@@ -22,12 +22,11 @@ const ImageOverflow = ({m, images=[], height="50vh", width="100%", style, titles
 
 
   return (
-    <div className="Row" ref={draggableScrollRef}
+    <div className={images.length===1?"Row":"Row"} ref={draggableScrollRef}
     onMouseDown={onMouseDown} style={{
       zIndex:"25",
       height:height,
       overflowX:"scroll",
-      width:m? width:"100vw",
       padding:"4rem"}}>
 
       <ImageOverflowModal isOpen={isOpen} modalRef={modalRef} setIsOpen={setIsOpen} image={images[imageArrNumber]} onClose={() => setIsOpen(false)}>
@@ -54,6 +53,7 @@ const ImageOverflow = ({m, images=[], height="50vh", width="100%", style, titles
          zIndex:"25",
          position:"absolute",
          width: "fit-content",
+         alignSelf:"center",
          height: height,
          display: "block",
          objectFit:"cover"}} style={style}/>

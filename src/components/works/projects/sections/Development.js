@@ -233,7 +233,7 @@ const Development = ({
 
     <div className="RowCentered" style = {textMarginStyle()}>
       <ImageOverflow images={relationalSearchResultImg} titles={relationalSearchResultTitle}
-      height="80vh"/>
+      height="70vh"/>
     </div>
 functionalText
  <h4 className = "Row" style = {textMarginStyleH4()} >

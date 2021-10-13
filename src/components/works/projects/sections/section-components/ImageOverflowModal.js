@@ -49,12 +49,17 @@ export default function ImageOverflowModal({ isOpen, modalRef, setIsOpen, childr
              <button className="modalBtn modalCloseBtn" style={{right:"0", position:"absolute"}} onClick={onClose}><CloseIcon style={{fontSize:"1.2rem"}}/></button>
            </div>
         <TransformComponent>
-              <ImageFadeIn src={image} draggable="false" style={{
+        <div style={{  height: "80vh",
+          width:"95vw"}}>
+            <ImageFadeIn src={image} draggable="false" style={{
                 pointerEvents:"none",
                 height: "80vh",
                 width:"95vw",
-                objectFit:"contain"
+                objectFit:"contain",
+                padding:"2rem 0",
+
               }}/>
+        </div>
         </TransformComponent>
         </React.Fragment>
         )}
