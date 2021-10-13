@@ -148,7 +148,7 @@ const About = ({m, l}) => {
 
 <div className="Row" style={textMarginStyleLanding()}>
 
-  <div id="summary-col-1" className="Column" style={{width:"50%", height:m?"70vh":"60vh",zIndex:"5"}}>
+  <div id="summary-col-1" className="Column" style={{width:"50%", height:l?"var(--desktopheight)":"70vh",zIndex:"5"}}>
 
   <h2>Frontend Developer</h2>
 
