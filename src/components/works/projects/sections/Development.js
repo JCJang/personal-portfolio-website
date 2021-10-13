@@ -1,4 +1,5 @@
 import ImageOverflow from './section-components/ImageOverflow'
+import Fade from 'react-reveal/Fade';
 
 import {IoTerminalOutline as ScreensIcon} from "react-icons/io5";
 import {IoServerOutline as DatabaseIcon} from "react-icons/io5";
@@ -134,7 +135,6 @@ const Development = ({
 
   return (
   <div className="Column" style={developmentStyle()}>
-
     <h2 style={textMarginStyleHeader()}>Development</h2>
 
     <div className={m
@@ -171,11 +171,12 @@ const Development = ({
   <div className = {m?"grid-container-resources":"grid-container-resources-mobile"} style = {textMarginStyle()}>
           {screenTitles.map((screen, i) => {
             return <>
-            <ScreensLabel m = {m}
+            <Fade bottom><ScreensLabel m = {m}
             screen = {screen}
             features = {screenFeatures[i]}/>
 
             <div>{screenDescriptions[i]}</div>
+            </Fade>
           </>
           })
         }
@@ -208,7 +209,8 @@ const Development = ({
     {relationalSearchText}
   </div>
 
-    <div>
+
+  <div>
 
       <div style={gistStyle()}>
         <ReactEmbedGist contentClass ="gistStyles" titleClass="displayNone"  gist={relationalSearchClientCode}/>
@@ -225,16 +227,20 @@ const Development = ({
 
     <br></br>
 
+    <Fade bottom>
         <div style={overflowStyle()}>
           <ImageOverflow images={relationalSearchImages} titles={relationalSearchTitles}/>
         </div>
+    </Fade>
 
     <br></br>
 
+    <Fade bottom>
     <div className="RowCentered" style = {textMarginStyle()}>
       <ImageOverflow images={relationalSearchResultImg} titles={relationalSearchResultTitle}
       height="70vh"/>
     </div>
+</Fade>
 
  <h4 className = "Row" style = {textMarginStyleH4()} >
         <FunctionalIcon style={iconStyle()}/>
@@ -242,15 +248,17 @@ const Development = ({
 
         < div className = "body1" style={textMarginStyle()}> {functionalText}</div>
 
+
       <div style={gistStyle()}>
         <ReactEmbedGist contentClass ="gistStyles" titleClass="displayNone"  gist={functionalCode}/>
       </div>
 
 <br></br>
-
+<Fade bottom>
     <div style={overflowStyle()}>
       <ImageOverflow height="80vh" images={functionalProgrammingImages} titles={functionalProgrammingTitles}/>
     </div>
+</Fade>
   </div>)
 }
 

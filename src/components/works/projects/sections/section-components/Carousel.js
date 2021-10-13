@@ -58,7 +58,7 @@ const Carousel = ({carouselSlides, carouselSlidesTitles}) => {
   })
 
   return (
-    <div className="Row" style={{position:"relative",height:"100vh",width:"100vw",background:"var(--velvet)"}}>
+    <div className="Row" style={{position:"relative",height:"100vh",width:"100vw",background:"var(--velvet)",overflow:"hidden"}}>
 
           <ImageOverflowModal isOpen={isOpen} modalRef={modalRef} setIsOpen={setIsOpen} image={carouselSlides[imageArrNumber]} onClose={() => setIsOpen(false)}>
           </ImageOverflowModal>

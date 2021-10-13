@@ -1,11 +1,14 @@
 import { IoPlayForwardSharp as GoTo } from "react-icons/io5";
 import {useState} from 'react'
+import Fade from 'react-reveal/Fade';
+
 
 const ScreensLabel = ({m, screen, features}) => {
 
   const [hover, setHover] = useState(false)
 
   return (
+    <Fade bottom>
     <div  onMouseEnter={() => setHover(true)}
           onMouseLeave={() => {setHover(false)}}
           className="Column screens-and-features-item transition">
@@ -26,6 +29,7 @@ const ScreensLabel = ({m, screen, features}) => {
         transition:"opacity linear 0.5s, transform ease 0.4s"}}
         ><em>{features.map((feature)=>{return <div style={{marginTop:"0.2rem"}}>{feature}</div>})}</em></div>
     </div>
+    </Fade>
 
     )
 }

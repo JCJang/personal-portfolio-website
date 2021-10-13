@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import ImageFadeIn from '../../../../../customHooks/imageFadeIn'
 import { IoEllipseSharp as CircleFilled } from "react-icons/io5";
 import { IoColorFilterOutline as ColorIcon } from "react-icons/io5";
+import Fade from 'react-reveal/Fade';
 
 
 const HumanitiesColorSection = ({textMargin, colorTexture, colorWireframe, colorMoodboard, designColorLabels, designColorHexes, designDescription, designTitle, m, l, number}) => {
@@ -49,6 +50,8 @@ if(number===1){
      position: "relative",
     }}>
 
+    <Fade bottom>
+
     <div className="image-col ColumnCentered">
       <div  onMouseEnter={() => setHover(true)}
             onMouseLeave={() => {setHover(false)}}
@@ -81,6 +84,7 @@ if(number===1){
       moodboard
     </div>
     </div>
+    </Fade>
 
     <div id="description-col" className="Column" style={{
       width:l?"30vw":"80vw",
@@ -102,6 +106,7 @@ if(number===1){
         transition: "left ease 0.7s, right ease 0.7s, opacity linear 0.5s"}}>
         Design {number+1}: {designTitle}</div>
 
+      <Fade bottom>
       <h4 className="h3" style={{
         margin:"1.5rem 0",
         fontSize:"1.2rem",
@@ -147,6 +152,7 @@ if(number===1){
             leftToRight()?"<= Click moodboard to view color concept":
             "Click moodboard to view color concept =>"}
       </div>
+      </Fade>
     </div>
 
   <div id="opened-col-colorTextures" className="Row" style={{
@@ -175,6 +181,7 @@ if(number===1){
 
       </div>
 
+      <Fade bottom>
     <div id="opened-col-colorWireframe"
     className="Column"
     onClick={()=>{if(l) return
@@ -199,6 +206,8 @@ if(number===1){
 
     </div>
     </div>
+    </Fade>
+
     </div>
     {number!==2 && <div className="Row" style={{justifyContent:"center", width:"100vw"}}><div className="boxDecoration" style={{width:"20vw", borderColor:"var(--velvet)"}}></div></div>}
 </>

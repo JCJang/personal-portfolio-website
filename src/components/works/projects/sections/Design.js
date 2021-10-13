@@ -1,6 +1,7 @@
 import ImageOverflow from './section-components/ImageOverflow'
 import HumanitiesColorSection from './section-components/HumanitiesColorSection'
 import PharmacyColorSection from './section-components/PharmacyColorSection'
+import Fade from 'react-reveal/Fade';
 
 import { IoTextOutline as TypographyIcon } from "react-icons/io5";
 import { IoAlbumsOutline as LofiIcon } from "react-icons/io5";
@@ -114,7 +115,6 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
 
     return (
 <div className="Column" style={designStyle()}>
-
   <h2 className="ProjectSectionTitle" style={textMarginStyleHeader()}>Design Process</h2>
 
   <h4 className="Row" style={textMarginStyleH4()}>
@@ -122,12 +122,14 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
   Low-fidelity Wireframes</h4>
 
   <div style={textMarginStyle()}>{lofi}</div>
-
   <br></br>
+
+  <Fade bottom>
 
   <div className="RowCentered" style={overflowStyle()}>
     {lofiWireframesImage && <ImageOverflow m={m} height={l?"60vh":"75vh"} images={[lofiWireframesImage]} style={{filter:"saturate(0)"}}/>}
   </div>
+  </Fade>
 
   <br></br>
 
@@ -152,13 +154,12 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
         <h5 style={{paddingTop:col2PaddingTop()}} ><em>{typographyEmphasis}</em></h5>
     </div>
   </div>
-
+<Fade bottom>
   <div style={textMarginStyle()}>
     <ImageOverflow m={m} height="60vh" images={typographyRefImages} titles={typographyRefTitles} style={{filter:"saturate(0)"}}/>
   </div>
 
   <br></br>
-
   <div className="RowCentered" style={textMarginStyle()}>
 
     {finalTypography.map((typography)=>{
@@ -172,13 +173,12 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
       </div>})}
 
   </div>
-
+</Fade>
   <br></br>
 
   <div className="RowCentered" style={overflowStyle()}>
       {typographyFinalImg && <ImageOverflow m={m} height="70vh" images={[typographyFinalImg]}/>}
   </div>
-
   <div style={{width:"100vw", background:"var(--cinerous)", color:"var(--occlusion)"}}>
 
       {colorSection==="Humanities"? colorWireframes.map((wireframe, number)=>{
@@ -212,20 +212,19 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
 
   </div>
 
-
   <h4 className="Row" style={textMarginStyleH4()}><HifiIcon style={iconStyle()}/>
   High-fidelity Wireframes</h4>
 
   <br></br>
 
+<Fade bottom>
   <div className="RowCentered" style={overflowStyle()}>
     {hifiWireframesImages && <ImageOverflow m={m} height={l?"60vh":"75vh"} images={hifiWireframesImages} titles={hifiWireframesTitles} style={{filter:"saturate(0.8)"}}/>}
   </div>
-
+</Fade>
   <br></br>
 
   <div className={m?"Row":"Column"} style={textMarginStyleRows()} style={{background:"var(--midnight)",color:"var(--table-neutral)"}}>
-
     <div id="design-direction-col-1" className="Column" style={colLarge()}>
         <h6><strong>With the high fidelity wireframes ready, I had to return to my features map and begin the development process. However, the design process is far from over. Throughout development, I made changes and improvements to the design, such as stripping the navigation bar of its individual color and and making it blend in with the rest of the page. By doing so, I reinforced the single-page feeling that was a key target for the design.</strong></h6>
 
@@ -241,8 +240,8 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
     </div>
 
     <div style={{width:"0.1px",  borderLeft: "1.5px solid var(--neutral)", margin:"2rem"}}></div>
-  </div>
 
+  </div>
 </div>
     )
 }

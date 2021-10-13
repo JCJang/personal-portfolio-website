@@ -1,6 +1,7 @@
 import { IoEllipseSharp as CircleFilled } from "react-icons/io5";
 import ImageOverflow from './ImageOverflow'
 import { IoColorFilterOutline as ColorIcon } from "react-icons/io5";
+import Fade from 'react-reveal/Fade';
 
 
 const HumanitiesColorSection = ({textMargin, direction, colorTexture, colorText, colorWireframe, colorMoodboard, designColorLabels, designColorHexes, designDescription, designTitle, m, l, number}) => {
@@ -76,16 +77,16 @@ const col2PaddingTop = () => {
      {designDescription}</h4>
   </div>
 
+  <Fade bottom>
     <div className="image-col ColumnCentered">
       <div style={colLarge()}>
         <ImageOverflow height="60vh" images={[colorMoodboard]} style={{paddingTop:col2PaddingTop()}}/>
       </div>
     </div>
-
+    </Fade>
   </div>
 
   <div className="Row" style={{justifyContent:"center", width:"100vw"}}><div className="boxDecoration" style={{width:"20vw", borderColor:"var(--velvet)"}}></div></div>
-
 
 <div id="opened-col-colorText" className="Row" style={textMarginStyle()}>
     <div style={colSmall()}>
@@ -93,11 +94,13 @@ const col2PaddingTop = () => {
           margin:"0 0.5rem"
         }}>
               {designColorHexes.map((hex, number)=>{
-                return <div className="Column" style={{alignItems:"center"}}>
+                return <Fade bottom>
+                <div className="Column" style={{alignItems:"center"}}>
                  <CircleFilled style={{height:l?"2rem":"3rem", width:l?"2rem":"3rem", color:hex, margin:"0.25rem 1.3rem"}}/>
                  <div><strong> {designColorLabels && designColorLabels[number]}</strong></div>
                  <div style={{fontSize:"0.7rem", opacity:"0.8"}}>{hex}</div>
                  </div>
+                 </Fade>
               })}
         </div>
     </div>
@@ -118,12 +121,15 @@ const col2PaddingTop = () => {
     </div>
 </div>
 
+<Fade bottom>
 <div style={{ width:"100vw", background:"var(--table-light)"}}>
     <ImageOverflow
     m={m}
     height={l?"110vh":"70vh"}
     images={[colorWireframe]}/>
 </div>
+</Fade>
+
 </>
 
   )

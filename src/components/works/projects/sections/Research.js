@@ -1,4 +1,5 @@
 import ImageOverflow from './section-components/ImageOverflow'
+import Fade from 'react-reveal/Fade';
 
 import {IoLocateOutline as CompetitiveAnalysisIcon} from "react-icons/io5";
 import {IoNewspaperOutline as SurveyResultsIcon} from "react-icons/io5";
@@ -138,7 +139,6 @@ const Research = ({
       </div>
     </div>
 
-
 <h2 className="ProjectSectionTitle" style={textMarginStyleHeader()}>Research</h2>
 
   <div className="body1" style={textMarginStyle()}>
@@ -188,6 +188,7 @@ const Research = ({
   </div>
 
 
+<Fade bottom>
     <div className="RowCentered" style = {textMarginStyle()}>
 
         <ImageOverflow height="80vh" images={[userFlowImg]} style={{
@@ -196,6 +197,7 @@ const Research = ({
 
       </div>
 
+</Fade>
 
 
 <div style={{background: "var(--midnight)",

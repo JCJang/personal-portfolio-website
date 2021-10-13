@@ -1,6 +1,7 @@
 import ImageFadeIn from '../../../../customHooks/imageFadeIn'
 import Carousel from './section-components/Carousel'
 import TocLabel from './section-components/TocLabel'
+import Fade from 'react-reveal/Fade';
 
 const Summary = ({
   s,
@@ -154,6 +155,7 @@ const Summary = ({
         height: "100vh",
         width: "100vw"
       }}>
+      <Fade bottom>
       <ImageFadeIn src={mainImage} style={{
           filter: "saturate(0)",
           background: "var(--velvet)",
@@ -165,6 +167,7 @@ const Summary = ({
           display: "block",
           objectFit: "cover"
         }}/>
+      </Fade>
     </div>
 
     <div className={m
@@ -196,7 +199,6 @@ const Summary = ({
       </div>
     </div>
 
-
 <h2 style={textMarginStyleHeader()}>Summary</h2>
 
     <div className={m
@@ -225,9 +227,8 @@ const Summary = ({
       </div>
 
     </div>
+    {carousel &&
 
-    {
-      carousel &&
         <div className="body2" id="Final Screens" style={{margin:m?"3rem 0":"2rem 0"}}>
           <Carousel carouselSlides={carouselSlides} carouselSlidesTitles={carouselSlidesTitles}/>
         </div>
@@ -243,7 +244,6 @@ const Summary = ({
           color: "inherit"
         }}>www.humanitiesdatabase.com</a>.
     </div>
-
   </div>)
 }
 
