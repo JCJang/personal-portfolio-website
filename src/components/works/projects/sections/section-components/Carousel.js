@@ -11,7 +11,10 @@ import { IoPlayOutline as Play } from "react-icons/io5";
 
 
 
-import {useEffect, useState} from 'react'
+import {useEffect, useState, useRef} from 'react'
+import useClickOutside from '../../../../../customHooks/useClickOutside';
+import ImageOverflowModal from './ImageOverflowModal'
+
 const Carousel = ({carouselSlides, carouselSlidesTitles}) => {
 
   const [slideNumber, setSlideNumber] = useState(0)
@@ -28,14 +31,14 @@ const Carousel = ({carouselSlides, carouselSlidesTitles}) => {
 
 
   useTimeout(()=>{
-      if(autoPlay){
+      if(!isOpen && autoPlay){
         setSlideNumber(1)
       }
     },4000)
 
 
   useDebounce(()=>{
-    if(autoPlay){
+    if(!isOpen && autoPlay){
       if(slideNumber===carouselSlides.length-1){
         setSlideNumber(0)
       }else{
@@ -44,20 +47,40 @@ const Carousel = ({carouselSlides, carouselSlidesTitles}) => {
     }
   },3500,[slideNumber])
 
+//modal
+  const [imageArrNumber, setImageArrNumber] = useState(0)
+  const [isOpen, setIsOpen] = useState(false)
+
+
+  const modalRef = useRef()
+  useClickOutside(modalRef, ()=>{
+    if (isOpen) setIsOpen (false)
+  })
 
   return (
     <div className="Row" style={{position:"relative",height:"100vh",width:"100vw",background:"var(--velvet)"}}>
 
+          <ImageOverflowModal isOpen={isOpen} modalRef={modalRef} setIsOpen={setIsOpen} image={carouselSlides[imageArrNumber]} onClose={() => setIsOpen(false)}>
+          </ImageOverflowModal>
+
       {carouselSlides.map((slide)=>{
-      return  <div  className="carousel-gradient" style={{
+      return  <div  className="carousel-gradient ImageOverflowImg" style={{
         position:"absolute",
         top:"0",
         left:slideLeft(slide),
-        transition:"opacity linear 1s, left ease 0.7s",
+        transition:"opacity linear 1s, left ease 0.7s, transform ease 0.7s",
         opacity:carouselSlides.indexOf(slide)!==slideNumber && "0"
       }}>
 
-      <ImageFadeIn src={slide} key={carouselSlides.indexOf(slide)} style={{
+      <ImageFadeIn src={slide}
+      dragabble="false"
+      onClick={(e) => {
+        e.stopPropagation();
+          setImageArrNumber(carouselSlides.indexOf(slide));
+          setIsOpen(true)
+        }
+      }
+      key={carouselSlides.indexOf(slide)} style={{
         filter:"saturate(0.5)",
         width: "100vw",
         height:"100vh",

@@ -555,7 +555,7 @@ label{
   margin-top: 0.5rem;
 }
 
-input{
+form  input{
   font:1rem/1.5 "Lusitana", serif;
   border-radius: 3px;
   border: 1.5px solid var(--contact-text);
@@ -566,13 +566,13 @@ input{
   padding: 0 0.5rem;
 }
 
-input::placeholder{
+form  input::placeholder{
   text-align: center;
   padding: 0.1rem 0.5rem;
 }
 
 
-input:focus{
+form  input:focus{
   border: 2px solid var(--highlight);
   outline: none !important;
 }
@@ -598,16 +598,52 @@ textarea::placeholder{
   outline: none !important;
 }
 
-button{
+.contactBtn{
   background:var(--desert-rose);
   color:var(--highlight);
   border:none;
   padding:0.5rem 2rem;
 }
 
-button:focus{
+.contactBtn:focus{
   border: 2px solid var(--highlight);
   outline: none !important;
+}
+
+.modalBtn{
+background:var(--table-neutral);
+color:var(--table-dark);
+border:none;
+padding:0.5rem 2rem;
+}
+
+.modalBtn:hover{
+color:var(--velvet);
+outline: none !important;
+border: none;
+}
+
+
+.modalCloseBtn{
+  background:var(--velvet);
+  color:var(--cinerous);
+  outline: none !important;
+  border: none;
+}
+
+.modalCloseBtn:hover{
+  background:var(--desert-rose);
+  color:var(--table-neutral);
+  outline: none !important;
+  border: none;
+}
+
+.modalBtn:focus{
+  outline: none !important;
+}
+
+button:active{
+  transform: scale(0.94);
 }
 
 .mainImage-desktop::before{
@@ -747,4 +783,24 @@ line-height: 100%;
 
 .displayNone{
   display: none;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+.ImageOverflowImg{
+  transition-duration: 0.3s;
+
+}
+.ImageOverflowImg:hover{
+  transform:scale(1.1);
+  transform-origin: center;
+  cursor:zoom-in;
+  transition-duration: 0.3s;
+
 }

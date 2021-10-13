@@ -81,7 +81,7 @@ const Contact = ({m, l}) => {
                  <textarea onChange={(e)=>{setMessage(e.target.value)}} rows={m?"7":"10"} name="message" id="message" value={message} placeholder="Send me your idea! I can develop your design, or craft your idea into a website you'll love." style={{width:inputWidth()}}></textarea>
 
 
-                <button type="submit" className="RowCentered btn" style={{width:inputWidth(true)}}>
+                <button type="submit" className="RowCentered btn contactBtn" style={{width:inputWidth(true)}}>
                     <p className="selfCentered" style={{marginTop:"0.3rem"}}>Send</p>
                     <SendIcon style={{fontSize:"1.2rem", marginLeft:"1rem"}}/>
                 </button>
