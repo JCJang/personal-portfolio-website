@@ -5,7 +5,7 @@ import { IoCubeOutline as WorksIconLogo } from "react-icons/io5";
 import {useState} from 'react';
 import useDebounce from '../../customHooks/useDebounce'
 
-import bgImage from '../../images/pexels-cottonbro-4065864.png'
+import bgImage from '../../images/F592-min.jpg'
 
 
 const Contact = ({m, l}) => {

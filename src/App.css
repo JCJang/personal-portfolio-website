@@ -2,9 +2,11 @@
 @import "~@fontsource/lusitana";
 @import "~@fontsource/la-belle-aurore";
 @import "~@fontsource/yaldevi";
-@import "~@fontsource/yaldevi/300.css";
 
-@import "~@fontsource/sen";
+@import "~@fontsource/lato";
+@import "~@fontsource/ibm-plex-sans";
+
+
 
 
 @import "~@fontsource/lora";
@@ -127,7 +129,7 @@ html{
   --main-headline2: 3.8rem/1.5 "Lusitana", serif;
   --main-headline3: 3.2rem/1.5 "Lusitana", serif;
   --main-headline4: 2.4rem/1.5 "Lusitana", serif;
-  --main-headline5: 1.6rem/1.5 "Yaldevi", sans-serif;
+  --main-headline5: 1.6rem/1.5 "Assistant", sans-serif;
   --main-headline6: 500 1.35rem/1.5 "Yaldevi", sans-serif;
   --main-body1:  1rem/1.6 "Yaldevi", sans-serif;
   --main-body2:  0.8rem/1.6 "Yaldevi", sans-serif;
@@ -686,6 +688,18 @@ line-height: 100%;
 .TocLabel:hover{
   border-top: 5px solid var(--velvet);
   color:var(--velvet);
+  transform: scaleY(1.2);
+  cursor:pointer;
+}
+
+.AboutLabel{
+  position:relative;
+  border-top:2px solid var(--velvet);
+  transition: transform ease 0.5s, border-top ease 0.25s;
+}
+
+.AboutLabel:hover{
+  border-top: 5px solid var(--desert-rose);
   transform: scaleY(1.2);
   cursor:pointer;
 }

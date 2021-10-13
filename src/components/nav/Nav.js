@@ -37,7 +37,7 @@ const [logoRotation, setLogoRotation] = useState("")
 
 const backgroundForNav = () => {
   if(routeFocus==="/about"){
-    return "var(--velvet)"
+    return "var(--cinerous)"
   }else if (routeFocus==="/works") {
     return "var(--works-accent)"
   }else if (routeFocus==="/contact") {
@@ -49,7 +49,7 @@ const backgroundForNav = () => {
 
 const colorForNav = () => {
   if(routeFocus==="/about"){
-    return "var(--cinerous)"
+    return "var(--velvet)"
   }else if (routeFocus==="/works") {
     return "var(--midnight)"
   }else if (routeFocus==="/contact") {
@@ -81,7 +81,7 @@ const iconLogoOptions = () => {
   //  </select>
 
   return (
-    <div className="transition" style={{
+    <div style={{
     width: "100vw",
     position:"sticky",
     background: backgroundForNav(),

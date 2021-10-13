@@ -22,7 +22,7 @@ const color = () =>{
     }
  }else if(hover || routeFocus===routeName){
       if(routeFocus==="/about"){
-        return "var(--highlight)"
+        return "var(--desert-rose)"
       }else if (routeFocus==="/works") {
         return "var(--velvet)"
       }else if (routeFocus==="/contact") {

@@ -1,8 +1,14 @@
 import { IoPlayForwardSharp as GoTo } from "react-icons/io5";
+import {useState} from 'react'
 
-const TocLabel = ({m, label, sublabel}) => {
+const TocLabel = ({m, label, about=false, sublabel}) => {
+
+  const [hover, setHover] = useState(false)
+
   return (
-    <a className="Column TocLabel transition"
+    <a onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => {setHover(false)}}
+      className={about? "Column AboutLabel transition":"Column TocLabel transition"}
         href={`#${label}`}
         style={{
         margin:"0 2rem",
@@ -13,11 +19,12 @@ const TocLabel = ({m, label, sublabel}) => {
         alignItems:!m && "flex-end",
         width:!m && "50vw",
         textAlign:!m && "right",
-        alignSelf:!m && "flex-end"}}>
+        alignSelf:!m && "flex-end"
+      }}>
 
         <div className="Row" style={{order:m?"1":"2"}}>
               <h6 style={{flex:"1"}}>{label}</h6>
-              <GoTo style={{margin:"0.5rem", color:"var(--velvet)", alignSelf:"flex-end", fontSize:"1.3rem"}}/>
+              <GoTo className="transition" style={{margin:"0.5rem", color:hover && about?"var(--desert-rose)":"var(--velvet)", alignSelf:"flex-end", fontSize:"1.3rem"}}/>
         </div>
 
         <div style={{paddingTop:"1rem",order:m?"2":"1"}}><em>{sublabel}</em></div>

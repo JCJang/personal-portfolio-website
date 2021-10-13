@@ -45,7 +45,7 @@ const backgroundForNav = () => {
   if(navShelf===true){
     return "var(--desert-rose)";
   }else if(routeFocus==="/about"){
-    return "var(--velvet)"
+    return "var(--cinerous)"
   }else if (routeFocus==="/works") {
     return "var(--works-accent)"
   }else if (routeFocus==="/contact") {
@@ -59,7 +59,7 @@ const colorForNav = () => {
   if(navShelf===true){
     return "var(--highlight)";
   }else if(routeFocus==="/about"){
-    return "var(--cinerous)"
+    return "var(--velvet)"
   }else if (routeFocus==="/works") {
     return "var(--midnight)"
   }else if (routeFocus==="/contact") {
