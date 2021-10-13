@@ -24,7 +24,7 @@ const Summary = ({
 }) => {
 
   const summaryStyle = () => {
-    return {background: "var(--cinerous)", color: "var(--velvet)", margin: "0", padding: "0"}
+    return {background: "var(--cinerous)", color: "var(--occlusion)", margin: "0", padding: "0"}
   };
 
 
@@ -44,13 +44,22 @@ const Summary = ({
     }
 
 
-    const textMarginStyleH3=()=>{
+    const textMarginStyleHeader=()=>{
       if (m) return {
         margin:"1rem 5rem",
-        color:"var(--midnight)"
+
       }
-      return {margin:"1rem 2rem"}
+      return {margin:"1rem 2rem",fontSize:"2.5rem", textAlign:"center"}
     }
+
+    const textMarginStyleH4=()=>{
+      if (m) return {
+        margin:"1rem 5rem",
+
+      }
+      return {margin:"1rem 2rem", fontSize:"1.8rem"}
+    }
+
 
     const textMargin = () => {
       if (m) return "1rem 5rem"
@@ -178,9 +187,7 @@ const Summary = ({
 
       <div className={m
           ? "Row"
-          : "Column"} style={{
-          padding: textMargin()
-        }}>
+          : "Column"} style={textMarginStyle()}>
         {background && <TocLabel m={m} label="background" sublabel={background}/>}
         {research && <TocLabel m={m} label="research" sublabel={research}/>}
         {design && <TocLabel m={m} label="design" sublabel={design}/>}
@@ -190,7 +197,7 @@ const Summary = ({
     </div>
 
 
-<h2 style={textMarginStyle()}>Summary</h2>
+<h2 style={textMarginStyleHeader()}>Summary</h2>
 
     <div className={m
         ? "Row"

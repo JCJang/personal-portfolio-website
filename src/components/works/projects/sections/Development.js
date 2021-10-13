@@ -59,12 +59,21 @@ const Development = ({
   }
 
 
-  const textMarginStyleH3=()=>{
+  const textMarginStyleHeader=()=>{
     if (m) return {
       margin:"1rem 5rem",
-      color:"var(--midnight)"
+      color:"var(--midnight)",
     }
-    return {margin:"1rem 2rem"}
+    return {margin:"1rem 2rem", color:"var(--midnight)", fontSize:"2.5rem", textAlign:"center"}
+  }
+
+
+  const textMarginStyleH4=()=>{
+    if (m) return {
+      margin:"1rem 5rem",
+
+    }
+    return {margin:"1rem 2rem", fontSize:"1.8rem"}
   }
 
   const textMargin = () => {
@@ -126,7 +135,7 @@ const Development = ({
   return (
   <div className="Column" style={developmentStyle()}>
 
-    <h2 style={textMarginStyleH3()}>Development</h2>
+    <h2 style={textMarginStyleHeader()}>Development</h2>
 
     <div className={m
         ? "Row"
@@ -148,14 +157,14 @@ const Development = ({
     </div>
     </div>
 
-    <h3 style={textMarginStyleH3()}>Resources and Backend</h3>
+    <h3 style={textMarginStyleHeader()}>Resources and Backend</h3>
 
 
   <div className="body1" style={textMarginStyle()}>
           {resourcesText}</div>
 
 
-  <h4 className = "Row" style = {textMarginStyle()} > <ScreensIcon style={iconStyle()}/>
+  <h4 className = "Row" style = {textMarginStyleH4()} > <ScreensIcon style={iconStyle()}/>
         Planning and Defining Resources</h4>
 
 
@@ -172,7 +181,7 @@ const Development = ({
         }
 </div>
 
-<h4 className = "Row" style = {textMarginStyle()} >
+<h4 className = "Row" style = {textMarginStyleH4()} >
   <DatabaseIcon style={iconStyle()}/> Database Design</h4>
 
 <div className = "body1"  style = {textMarginStyle()}> {databaseText}</div>
@@ -181,7 +190,7 @@ const Development = ({
   <ReactEmbedGist contentClass ="gistStyles" titleClass="displayNone"  gist={databaseCode}/>
 </div>
 
-<h4 className = "Row" style = {textMarginStyle()} >
+<h4 className = "Row" style = {textMarginStyleH4()} >
   <ServerIcon style={iconStyle()}/>Server</h4>
     <div className = "body1"  style = {textMarginStyle()}> {serverText}</div>
 
@@ -189,9 +198,9 @@ const Development = ({
         <ReactEmbedGist contentClass ="gistStyles" titleClass="displayNone"  gist={serverCode}/>
       </div>
 
-    <h3 className="Column" style={textMarginStyleH3()}>Frontend and problem-solving</h3>
+    <h3 className="Column" style={textMarginStyleHeader()}>Frontend and problem-solving</h3>
 
-    <h4 className="Row" style={textMarginStyle()}>
+    <h4 className="Row" style={textMarginStyleH4()}>
         <RelationIcon style={iconStyle()}/>
         Implementing Search by Related Authors</h4>
 
@@ -227,7 +236,7 @@ const Development = ({
       height="80vh"/>
     </div>
 functionalText
- <h4 className = "Row" style = {textMarginStyle()} >
+ <h4 className = "Row" style = {textMarginStyleH4()} >
         <FunctionalIcon style={iconStyle()}/>
         Customizing Timelines with Functional programming </h4>
 

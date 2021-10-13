@@ -26,7 +26,7 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
           background:"var(--works-bg)",
           color: "var(--works-text)",
           margin:"0",
-          padding:"0",
+          padding:"0"
         }
       };
 
@@ -36,6 +36,22 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
         }
         return {margin:"1rem 2rem"}
       }
+
+      const textMarginStyleHeader=()=>{
+        if (m) return {
+          margin:"1rem 5rem",
+          color:"var(--midnight)",
+        }
+        return {margin:"1rem 2rem", color:"var(--midnight)", fontSize:"2.5rem", textAlign:"center"}
+      }
+
+      const textMarginStyleH4=()=>{
+        if (m) return {
+          margin:"1rem 5rem",
+        }
+        return {margin:"1rem 2rem", fontSize:"1.8rem"}
+      }
+
 
       const textMarginStyleRows=()=>{
         if (m) return {
@@ -99,9 +115,9 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
     return (
 <div className="Column" style={designStyle()}>
 
-  <h2 className="ProjectSectionTitle" style={textMarginStyle()}>Design Process</h2>
+  <h2 className="ProjectSectionTitle" style={textMarginStyleHeader()}>Design Process</h2>
 
-  <h4 className="Row" style={textMarginStyle()}>
+  <h4 className="Row" style={textMarginStyleH4()}>
     <LofiIcon style={iconStyle()}/>
   Low-fidelity Wireframes</h4>
 
@@ -115,7 +131,7 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
 
   <br></br>
 
-  <h4 className="Row" style={textMarginStyle()}><TypographyIcon style={iconStyle()}/>
+  <h4 className="Row" style={textMarginStyleH4()}><TypographyIcon style={iconStyle()}/>
   Typography</h4>
 
   <div className={m?"Row":"Column"} style={textMarginStyleRows()}>
@@ -197,7 +213,7 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
   </div>
 
 
-  <h4 className="Row" style={textMarginStyle()}><HifiIcon style={iconStyle()}/>
+  <h4 className="Row" style={textMarginStyleH4()}><HifiIcon style={iconStyle()}/>
   High-fidelity Wireframes</h4>
 
   <br></br>

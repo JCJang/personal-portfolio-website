@@ -43,6 +43,24 @@ const Research = ({
     return {margin:"1rem 2rem"}
   }
 
+  const textMarginStyleHeader=()=>{
+    if (m) return {
+      margin:"1rem 5rem",
+      color:"var(--midnight)"
+    }
+    return {margin:"1rem 2rem", color:"var(--midnight)", fontSize:"2.5rem", textAlign:"center"}
+  }
+
+
+  const textMarginStyleH4=()=>{
+    if (m) return {
+      margin:"1rem 5rem",
+
+    }
+    return {margin:"1rem 2rem", fontSize:"1.8rem"}
+  }
+
+
   const textMarginStyleRows=()=>{
     if (m) return {
       margin:"1rem 5rem",
@@ -105,7 +123,7 @@ const Research = ({
 
   <div className="Column" style={researchStyle()}>
 
-<h2 className="ProjectSectionTitle" style={textMarginStyle()}>Ideation</h2>
+<h2 className="ProjectSectionTitle" style={textMarginStyleHeader()}>Ideation</h2>
 
     <div className={m
         ? "Row"
@@ -121,13 +139,13 @@ const Research = ({
     </div>
 
 
-<h2 className="ProjectSectionTitle" style={textMarginStyle()}>Research</h2>
+<h2 className="ProjectSectionTitle" style={textMarginStyleHeader()}>Research</h2>
 
   <div className="body1" style={textMarginStyle()}>
           {researchText}
   </div>
 
-<h4 className="Row" style={textMarginStyle()}><CompetitiveAnalysisIcon style={iconStyle()}/>Competitive Analysis</h4>
+<h4 className="Row" style={textMarginStyleH4()}><CompetitiveAnalysisIcon style={iconStyle()}/>Competitive Analysis</h4>
 
   <div style={textMarginStyle()}>
             {competitiveAnalysis.split("/").map((section) => {
@@ -141,13 +159,13 @@ const Research = ({
             }
   </div>
 
-<h4 className="Row" style={textMarginStyle()}><SurveyResultsIcon style={iconStyle()}/> {surveyResultsTitle}</h4>
+<h4 className="Row" style={textMarginStyleH4()}><SurveyResultsIcon style={iconStyle()}/> {surveyResultsTitle}</h4>
 
 <div style={textMarginStyle()}>
 <Accordion m={m} l={l} problemSolution={problemSolution} sectionTitles={sectionTitles} sectionResultsArr={sectionResultsArr} sectionApplicationArr={sectionApplicationArr}/>
 </div>
 
-<h4 className = "Row" style={textMarginStyle()}> <FinalScreensIcon style={iconStyle()}/>
+<h4 className = "Row" style={textMarginStyleH4()}> <FinalScreensIcon style={iconStyle()}/>
         Screens and Features</h4>
 
     <div className = {

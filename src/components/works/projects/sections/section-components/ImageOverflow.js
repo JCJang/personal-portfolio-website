@@ -19,7 +19,10 @@ const ImageOverflow = ({m, images=[], height="50vh", width="100%", style, titles
       padding:"4rem"}}>
 
      {images && images.map((image, number)=>{
-       return <>
+       return <div style={{
+         display:"flex",
+         flexDirection:images.length===1 ? "reverse-column" : "row"
+       }}>
        <div className="overline" style={{alignSelf:"flex-start", justifySelf:"flex-start", paddingTop:"1rem", padding:"0 2rem"}}>
          {titles && titles[number]}
        </div>
@@ -31,7 +34,7 @@ const ImageOverflow = ({m, images=[], height="50vh", width="100%", style, titles
          height: height,
          display: "block",
          objectFit:"cover"}} style={style}/>
-         </>
+         </div>
      })}
      </div>
  )
