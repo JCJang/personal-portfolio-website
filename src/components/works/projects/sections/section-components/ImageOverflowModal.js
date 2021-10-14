@@ -1,4 +1,5 @@
 import ImageFadeIn from '../../../../../customHooks/imageFadeIn';
+import Fade from 'react-reveal/Fade';
 import React  from 'react'
 import ReactDom from 'react-dom'
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";

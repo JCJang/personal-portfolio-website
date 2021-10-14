@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom'
 import ImageFadeIn from '../../customHooks/imageFadeIn'
+import Fade from 'react-reveal/Fade';
 
 import {useEffect, useState} from 'react';
 const GridItem = ({m, l, direction, routeName, image, role, title, subtitle, classes}) => {
@@ -67,8 +68,10 @@ const borderLeft = () => {
     borderRight: borderRight(),
     borderLeft: borderLeft()
   }}>
+
       <ImageFadeIn className="gridImage transition" src={image} style={{ filter:hover?"saturate(0.6)":"saturate(0.1) opacity(0.8)"
 }}/>
+
       <div className="transition Column" style = {{
     height: "100%",
     width: "100%",
@@ -81,12 +84,19 @@ const borderLeft = () => {
     padding:direction==="lr"?"0 4rem 0 0":"0 0 0 4rem"
   }}
    >
+   <Fade top>
         <div style={{lineHeight:"1.5rem"}}>{role}</div>
+    </Fade>
+    <Fade>
         <div style={{fontWeight:"300",font:"2.3rem/1.7 'Yaldevi',sans-serif", letterSpacing:"0.0156rem",textTransform:"uppercase"}}>{title}</div>
+    </Fade>
+    <Fade bottom>
         <div className="subtitle1" style={{lineHeight:"3rem"}}>{subtitle}</div>
-    </div>
-    </Link>
+        </Fade>
 
+    </div>
+
+    </Link>
 
   )
 }

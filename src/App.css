@@ -129,7 +129,7 @@ html{
   --main-headline2: 3.8rem/1.5 "Lusitana", serif;
   --main-headline3: 3.2rem/1.5 "Lusitana", serif;
   --main-headline4: 2.4rem/1.5 "Lusitana", serif;
-  --main-headline5: 1.6rem/1.5 "Assistant", sans-serif;
+  --main-headline5: 1.6rem/1.5 "Yaldevi", sans-serif;
   --main-headline6: 500 1.35rem/1.5 "Yaldevi", sans-serif;
   --main-body1:  1rem/1.6 "Yaldevi", sans-serif;
   --main-body2:  0.8rem/1.6 "Yaldevi", sans-serif;
@@ -504,6 +504,7 @@ text-transform: uppercase;
 
 .carousel-gradient:after{
   background:var(--carousel-gradient);
+  mix-blend-mode: multiply;
   position: absolute;
   bottom: 0;
   left:0;
@@ -728,6 +729,20 @@ line-height: 100%;
   cursor:pointer;
 }
 
+
+.HobbyLabel{
+ font-family: "La Belle Aurore";
+ transition: transform ease 0.4s,  border-bottom ease 0.5s;
+
+}
+
+.HobbyLabel:hover{
+  color:var(--highlight);
+  transform: scale(1.2);
+  transition: transform ease 0.4s,  border-bottom ease 0.5s;
+
+}
+
 .ProjectSectionTitle{
   color:var(--midnight);
 }
@@ -833,12 +848,12 @@ line-height: 100%;
 
 .ImageOverflowImg{
   transition:filter linear 0.5s, scale ease 0.3s;
-  filter:saturate(0.3);
+  filter:saturate(0.7);
 
 }
 .ImageOverflowImg:hover{
   transform:scale(1.1);
-  filter:saturate(0.8);
+  filter:saturate(0.9);
   transform-origin: center;
   cursor:zoom-in;
   transition:filter linear 0.5s, scale ease 0.3s;

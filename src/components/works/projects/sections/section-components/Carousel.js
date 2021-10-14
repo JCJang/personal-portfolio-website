@@ -15,7 +15,7 @@ import {useEffect, useState, useRef} from 'react'
 import useClickOutside from '../../../../../customHooks/useClickOutside';
 import ImageOverflowModal from './ImageOverflowModal'
 
-const Carousel = ({carouselSlides, carouselSlidesTitles}) => {
+const Carousel = ({carouselSlides, carouselSlidesTitles, height="100vh", width="100vw"}) => {
 
   const [slideNumber, setSlideNumber] = useState(0)
   const [autoPlay, setAutoPlay] = useState(true)
@@ -58,7 +58,7 @@ const Carousel = ({carouselSlides, carouselSlidesTitles}) => {
   })
 
   return (
-    <div className="Row" style={{position:"relative",height:"100vh",width:"100vw",background:"var(--velvet)",overflow:"hidden"}}>
+    <div className="Row" style={{position:"relative",height:height,width:width,background:"var(--velvet)",overflow:"hidden"}}>
 
           <ImageOverflowModal isOpen={isOpen} modalRef={modalRef} setIsOpen={setIsOpen} image={carouselSlides[imageArrNumber]} onClose={() => setIsOpen(false)}>
           </ImageOverflowModal>
@@ -81,8 +81,8 @@ const Carousel = ({carouselSlides, carouselSlidesTitles}) => {
         }
       }
       key={carouselSlides.indexOf(slide)} style={{
-        width: "100vw",
-        height:"100vh",
+        width: width,
+        height:height,
         display: "block",
         objectFit:"cover"}}/>
 
@@ -111,7 +111,7 @@ const Carousel = ({carouselSlides, carouselSlidesTitles}) => {
        position:"absolute",
        bottom:"0",
        left:"0",
-       height:"100vh",
+       height:height,
        fontSize:"2rem",
       }}>
        <Prev/>
@@ -134,7 +134,7 @@ const Carousel = ({carouselSlides, carouselSlidesTitles}) => {
           position:"absolute",
           bottom:"0",
           right:"0",
-          height:"100vh",
+          height:height,
           fontSize:"2rem"}}>
           <Next/>
           </button>
