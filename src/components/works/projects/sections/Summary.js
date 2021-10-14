@@ -29,94 +29,111 @@ const Summary = ({
   };
 
 
-    const textMarginStyle=()=>{
-      if (m) return {
-        margin:"1rem 5rem",
-      }
-      return {margin:"1rem 2rem"}
-    }
 
-    const textMarginStyleRows=()=>{
-      if (m) return {
-        margin:"1rem 5rem",
-        gap:"5rem"
-      }
-      return {margin:"1rem 2rem"}
-    }
-
-
-    const textMarginStyleHeader=()=>{
-      if (m) return {
-        margin:"1rem 5rem",
-
-      }
-      return {margin:"1rem 2rem",fontSize:"2.5rem", textAlign:"center"}
-    }
-
-    const textMarginStyleH4=()=>{
-      if (m) return {
-        margin:"1rem 5rem",
-
-      }
-      return {margin:"1rem 2rem", fontSize:"1.8rem"}
-    }
-
-
-    const textMargin = () => {
-      if (m) return "1rem 5rem"
-      return "1rem 2rem"
-    }
-
-    const colLarge = () => {
-      if (m) return {
-          width:"calc(70vw - 7.5rem)"
+        const textMarginStyle=()=>{
+          if (l) return {
+            margin:"1rem 10rem",
+          }
+          if (m) return {
+            margin:"1rem 5rem"
+          }
+          return {margin:"1rem 2rem"}
         }
-        return{
-          width:"80vw"
-        }
-    }
-    const colSmall = () => {
-      if (m) return {
-          width:"calc(30vw - 7.5rem)"
-        }
-        return{
-          width:"80vw"
-        }
-    }
 
-    const colHalf = () => {
-      if (m) return {
-          width:"calc(50vw - 7.5rem)"
+        const textMarginStyleHeader=()=>{
+          if (l) return {
+            margin:"1rem 10rem"
+          }
+          if (m) return {
+            margin:"1rem 5rem",
+          }
+          return {margin:"1rem 2rem", fontSize:"2.5rem", textAlign:"center"}
         }
-        return{
-          width:"80vw"
+
+        const textMarginStyleH4=()=>{
+          if (l) return {
+            margin:"1rem 10rem",
+          }
+          if (m) return {
+            margin:"1rem 5rem",
+          }
+          return {margin:"1rem 2rem", fontSize:"1.8rem"}
         }
-    }
 
-    const iconStyle = () => {
-      return{
-        alignSelf: "center",
-        marginRight: "0.8rem",
-        fontSize: "2rem",
-        minWidth:"2rem"
-      }
-    }
 
-    const gistStyle = () => {
-      const result = textMarginStyle()
-      return result
-    }
+        const textMarginStyleRows=()=>{
+          if (l) return {
+            margin:"1rem 10rem",
+            gap:"5rem"
+          }
+          if (m) return {
+            margin:"1rem 5rem",
+            gap:"5rem"
+          }
+          return {margin:"1rem 2rem"}
+        }
 
-    const overflowStyle = () => {
-      return {
-        width:"100vw",
-        background:"var(--table-light)"
-      }
-    }
+        const textMargin = () => {
+          if (l) return "1rem 10rem"
+          if (m) return "1rem 5rem"
+          return "1rem 2rem"
+        }
 
-    const col2PaddingTop = () => {
-      if (!m) return "2rem"
-    }
+        const colLarge = () => {
+          if (l) return {
+              width:"calc(70vw - 12.5rem)"
+            }
+          if (l) return {
+              width:"calc(70vw - 7.5rem)"
+            }
+            return{
+              width:"80vw"
+            }
+        }
+        const colSmall = () => {
+          if (l) return {
+              width:"calc(30vw - 12.5rem)"
+            }
+          if (l) return {
+              width:"calc(30vw - 7.5rem)"
+            }
+            return{
+              width:"80vw"
+            }
+        }
+
+        const colHalf = () => {
+          if (l) return {
+              width:"calc(50vw - 12.5rem)"
+            }
+          if (m) return {
+              width:"calc(50vw - 7.5rem)"
+            }
+            return{
+              width:"80vw"
+            }
+        }
+
+        const iconStyle = () => {
+          return{
+            alignSelf: "center",
+            marginRight: "0.8rem",
+            fontSize: "2rem",
+            minWidth:"2rem"
+          }
+        }
+
+       const overflowStyle = () => {
+         return {
+           width:"100vw",
+           background:"var(--table-light)"
+         }
+       }
+
+       const col2PaddingTop = () => {
+         if (!m) return "2rem"
+       }
+
 
   return (<div className="Column" id="summary" style={summaryStyle()}>
 

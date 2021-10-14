@@ -762,7 +762,7 @@ line-height: 100%;
 
 
 .grid-container-screens-and-features {
-  width:calc(100% - 10rem);
+  width:calc(100% - 20rem);
   display: grid;
   grid-template-columns: auto auto auto;
   grid-row-gap: 1.5rem;

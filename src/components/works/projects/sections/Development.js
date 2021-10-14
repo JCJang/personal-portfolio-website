@@ -45,22 +45,20 @@ const Development = ({
   };
 
   const textMarginStyle=()=>{
+    if (l) return {
+      margin:"1rem 10rem",
+    }
     if (m) return {
-      margin:"1rem 5rem",
+      margin:"1rem 5rem"
     }
     return {margin:"1rem 2rem"}
   }
-
-  const textMarginStyleRows=()=>{
-    if (m) return {
-      margin:"1rem 5rem",
-      gap:"5rem"
-    }
-    return {margin:"1rem 2rem"}
-  }
-
 
   const textMarginStyleHeader=()=>{
+    if (l) return {
+      margin:"1rem 10rem",
+      color:"var(--midnight)",
+    }
     if (m) return {
       margin:"1rem 5rem",
       color:"var(--midnight)",
@@ -68,22 +66,40 @@ const Development = ({
     return {margin:"1rem 2rem", color:"var(--midnight)", fontSize:"2.5rem", textAlign:"center"}
   }
 
-
   const textMarginStyleH4=()=>{
+    if (l) return {
+      margin:"1rem 10rem",
+    }
     if (m) return {
       margin:"1rem 5rem",
-
     }
     return {margin:"1rem 2rem", fontSize:"1.8rem"}
   }
 
+
+  const textMarginStyleRows=()=>{
+    if (l) return {
+      margin:"1rem 10rem",
+      gap:"5rem"
+    }
+    if (m) return {
+      margin:"1rem 5rem",
+      gap:"5rem"
+    }
+    return {margin:"1rem 2rem"}
+  }
+
   const textMargin = () => {
+    if (l) return "1rem 10rem"
     if (m) return "1rem 5rem"
     return "1rem 2rem"
   }
 
   const colLarge = () => {
-    if (m) return {
+    if (l) return {
+        width:"calc(70vw - 12.5rem)"
+      }
+    if (l) return {
         width:"calc(70vw - 7.5rem)"
       }
       return{
@@ -91,7 +107,10 @@ const Development = ({
       }
   }
   const colSmall = () => {
-    if (m) return {
+    if (l) return {
+        width:"calc(30vw - 12.5rem)"
+      }
+    if (l) return {
         width:"calc(30vw - 7.5rem)"
       }
       return{
@@ -100,6 +119,9 @@ const Development = ({
   }
 
   const colHalf = () => {
+    if (l) return {
+        width:"calc(50vw - 12.5rem)"
+      }
     if (m) return {
         width:"calc(50vw - 7.5rem)"
       }
@@ -117,21 +139,21 @@ const Development = ({
     }
   }
 
-  const gistStyle = () => {
-    const result = textMarginStyle()
-    return result
-  }
+ const overflowStyle = () => {
+   return {
+     width:"100vw",
+     background:"var(--table-light)"
+   }
+ }
 
-  const overflowStyle = () => {
-    return {
-      width:"100vw",
-      background:"var(--table-light)"
-    }
-  }
+ const col2PaddingTop = () => {
+   if (!m) return "2rem"
+ }
 
-  const col2PaddingTop = () => {
-    if (!m) return "2rem"
-  }
+ const gistStyle = () => {
+   return textMarginStyle()
+ }
+
 
   return (
   <div className="Column" style={developmentStyle()}>
@@ -236,7 +258,7 @@ const Development = ({
     <br></br>
 
     <Fade bottom>
-    <div className="RowCentered" style = {textMarginStyle()}>
+    <div className="RowCentered">
       <ImageOverflow images={relationalSearchResultImg} titles={relationalSearchResultTitle}
       height="70vh"/>
     </div>

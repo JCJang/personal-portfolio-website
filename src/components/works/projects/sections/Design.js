@@ -34,13 +34,20 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
       };
 
       const textMarginStyle=()=>{
+        if (l) return {
+          margin:"1rem 10rem",
+        }
         if (m) return {
-          margin:"1rem 5rem",
+          margin:"1rem 5rem"
         }
         return {margin:"1rem 2rem"}
       }
 
       const textMarginStyleHeader=()=>{
+        if (l) return {
+          margin:"1rem 10rem",
+          color:"var(--midnight)",
+        }
         if (m) return {
           margin:"1rem 5rem",
           color:"var(--midnight)",
@@ -49,6 +56,9 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
       }
 
       const textMarginStyleH4=()=>{
+        if (l) return {
+          margin:"1rem 10rem",
+        }
         if (m) return {
           margin:"1rem 5rem",
         }
@@ -57,6 +67,10 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
 
 
       const textMarginStyleRows=()=>{
+        if (l) return {
+          margin:"1rem 10rem",
+          gap:"5rem"
+        }
         if (m) return {
           margin:"1rem 5rem",
           gap:"5rem"
@@ -65,12 +79,16 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
       }
 
       const textMargin = () => {
+        if (l) return "1rem 10rem"
         if (m) return "1rem 5rem"
         return "1rem 2rem"
       }
 
       const colLarge = () => {
-        if (m) return {
+        if (l) return {
+            width:"calc(70vw - 12.5rem)"
+          }
+        if (l) return {
             width:"calc(70vw - 7.5rem)"
           }
           return{
@@ -78,7 +96,10 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
           }
       }
       const colSmall = () => {
-        if (m) return {
+        if (l) return {
+            width:"calc(30vw - 12.5rem)"
+          }
+        if (l) return {
             width:"calc(30vw - 7.5rem)"
           }
           return{
@@ -87,6 +108,9 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
       }
 
       const colHalf = () => {
+        if (l) return {
+            width:"calc(50vw - 12.5rem)"
+          }
         if (m) return {
             width:"calc(50vw - 7.5rem)"
           }
@@ -171,7 +195,7 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
 }
   </div>
 <Fade bottom>
-  <div style={textMarginStyle()}>
+  <div>
     <ImageOverflow m={m} height="60vh" images={typographyRefImages} titles={typographyRefTitles} style={{filter:"saturate(0)"}}/>
   </div>
 
