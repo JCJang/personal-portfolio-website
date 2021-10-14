@@ -2,7 +2,7 @@ import ImageFadeIn from '../../../../../customHooks/imageFadeIn';
 import React  from 'react'
 import ReactDom from 'react-dom'
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-
+//code modified from 'react-zoom-pan-pinch'
 import { VscZoomIn as ZoomInIcon } from "react-icons/vsc";
 import { VscZoomOut as ZoomOutIcon } from "react-icons/vsc";
 import { IoResizeOutline as ResetIcon } from "react-icons/io5";

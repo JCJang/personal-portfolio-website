@@ -1,18 +1,12 @@
 import {Link} from 'react-router-dom'
 import ImageFadeIn from '../../customHooks/imageFadeIn'
-import { useLocation } from "react-router-dom";
-import {useEffect, useState} from 'react';
+import { useState} from 'react';
 
 
 const LinksMobile = ({m, l, direction, setNavShelf, setRouteFocus,routeName, boxDecorationTop, boxDecorationBottom, Icon, image, title, subtitle, classes}) => {
 
   const [hover, setHover] = useState(false)
 
-  const location = useLocation();
-
-  useEffect(()=>{
-    setRouteFocus(location.pathname)
-  },[])
 
 const gradientSetting = () =>{
   if(hover){
@@ -32,8 +26,8 @@ const gradientSetting = () =>{
 
   return (
 
-    <Link to={routeName} className={gradientSetting()} onClick={()=>{setNavShelf(false);setRouteFocus(routeName)}} onMouseDown ={() => setHover(true)}
-      onMouseUp={() => {setHover(false)}} style = {{ textDecoration: "none",
+    <Link to={routeName} className={gradientSetting()} onClick={()=>setNavShelf(false)} onMouseDown ={() => setHover(true)}
+      onMouseUp={() => setHover(false)} style = {{ textDecoration: "none",
     overflow: "hidden",
 
   }}>

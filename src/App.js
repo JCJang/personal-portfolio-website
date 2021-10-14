@@ -52,13 +52,13 @@ const App = () => {
     <NavMobile m={m} l={l} routeFocus={routeFocus} setRouteFocus={setRouteFocus}/>}
 
     <Route path = "/about" exact>
-    <About  m={m} l={l}/>
+    <About  m={m} l={l} setRouteFocus={setRouteFocus}/>
     </Route>
     <Route path = "/contact" exact>
-    <Contact  m={m} l={l}/>
+    <Contact  m={m} l={l} setRouteFocus={setRouteFocus}/>
     </Route>
     <Route path = "/works" exact>
-    <Works s={s} m={m} l={l}/>
+    <Works s={s} m={m} l={l} setRouteFocus={setRouteFocus}/>
     </Route>
 
     <Route path = "/works/humanities-book-database" exact>

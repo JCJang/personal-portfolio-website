@@ -11,9 +11,17 @@ import { IoColorFilterOutline as ColorIcon} from 'react-icons/io5';
 import { IoLocateOutline as UserFrustrationsIcon } from 'react-icons/io5';
 import { IoTextOutline as TypographyIcon} from 'react-icons/io5';
 
+import {useEffect} from 'react'
+import { useLocation } from "react-router-dom";
 
-const Works = ({s, m, l}) => {
 
+const Works = ({s, m, l, setRouteFocus}) => {
+
+
+const location = useLocation();
+useEffect(()=>{
+  setRouteFocus(location.pathname)
+},[])
 
 const worksStyle = () => {
   return {

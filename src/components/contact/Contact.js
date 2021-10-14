@@ -2,16 +2,23 @@ import ImageFadeIn from '../../customHooks/imageFadeIn'
 import { IoSendOutline as SendIcon } from "react-icons/io5";
 import { IoCubeOutline as WorksIconLogo } from "react-icons/io5";
 
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import { useLocation } from "react-router-dom";
+
 import useDebounce from '../../customHooks/useDebounce'
 
 import bgImage from '../../images/F592-min.jpg'
 
 
-const Contact = ({m, l}) => {
+const Contact = ({m, l, setRouteFocus}) => {
   const [sender, setSender] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
+
+const location = useLocation();
+useEffect(()=>{
+  setRouteFocus(location.pathname)
+},[])
 
   const contactStyle = () => {
     return {

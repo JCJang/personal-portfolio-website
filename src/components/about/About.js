@@ -6,7 +6,6 @@ import TocLabel from '../works/projects/sections/section-components/TocLabel'
 import headshot from '../../images/figmav.jpg'
 
 import jazz from '../../images/sketches/jazz.jpg'
-import sunset from '../../images/sketches/sunset.jpg'
 import plants from '../../images/sketches/plants.jpg'
 import rooftop from '../../images/sketches/rooftop.jpg'
 import snow from '../../images/sketches/snow.jpeg'
@@ -17,7 +16,15 @@ import bg from '../../images/F592-min.jpg'
 
 import map from '../../images/traveled-countries-violet.svg'
 
-const About = ({m, l}) => {
+import {useEffect} from 'react'
+import { useLocation } from "react-router-dom";
+
+const About = ({m, l, setRouteFocus}) => {
+
+    const location = useLocation();
+    useEffect(()=>{
+      setRouteFocus(location.pathname)
+    },[])
 
     const aboutStyle = () => {
       return {
@@ -251,7 +258,7 @@ const About = ({m, l}) => {
 
 <div className="RowCentered">
 
-    <ImageOverflow height="50vh" images={[jazz,sunset,plants,rooftop,snow,sunrise,park,yiping]} style={{
+    <ImageOverflow height="50vh" images={[snow,sunrise,plants,rooftop,park,jazz,yiping]} style={{
         filter: "saturate(0)",
       }}/>
 
