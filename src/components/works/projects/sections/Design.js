@@ -5,7 +5,9 @@ import Fade from 'react-reveal/Fade';
 
 import { IoTextOutline as TypographyIcon } from "react-icons/io5";
 import { IoAlbumsOutline as LofiIcon } from "react-icons/io5";
-import { IoShapesOutline as HifiIcon } from "react-icons/io5";
+import { IoAccessibilityOutline as UsabilityIcon } from "react-icons/io5";
+import { IoShapesOutline as DesignSystemIcon } from "react-icons/io5";
+import { IoPhonePortraitOutline as HifiIcon } from "react-icons/io5";
 
 import handwriting from './images/font-types/1-handwriting.png'
 import modern from './images/font-types/2-modern.png'
@@ -18,7 +20,7 @@ import transitional from './images/font-types/6-transitional.png'
 
 import Accordion from './section-components/Accordion'
 
-const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWireframesImage, hifiWireframesImages, hifiWireframesTitles, typographyRefImages,typographyRefTitles, typographyFinalImg,finalTypography, colorSection, colorWireframes, colorTextures, colorText, colorDescriptions, colorMoodboards,colorLabels, colorHexes, colorTitles}) => {
+const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWireframesImage,usability, usabilityTitlesArr, usabilityResultsArr, usabilityApplicationArr, designSystemImages, designSystemTitles, hifiWireframesImages, hifiWireframesTitles, typographyRefImages,typographyRefTitles, typographyFinalImg,finalTypography, colorSection, colorWireframes, colorTextures, colorText, colorDescriptions, colorMoodboards,colorLabels, colorHexes, colorTitles}) => {
 
   const serifTypes = [handwriting, modern, oldStyle, sans, slab, transitional]
 
@@ -133,11 +135,24 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
 
   <br></br>
 
+{usability && <>
+  <h4 className="Row" style={textMarginStyleH4()}>
+    <UsabilityIcon style={iconStyle()}/>
+  Usability study</h4>
+
+  <div style={textMarginStyle()}>{usability}</div>
+
+  <div style={textMarginStyle()}>
+  <Accordion m={m} l={l} sectionTitles={usabilityTitlesArr} sectionResultsArr={usabilityResultsArr} sectionApplicationArr={usabilityApplicationArr}/>
+  </div>
+</>
+}
+
   <h4 className="Row" style={textMarginStyleH4()}><TypographyIcon style={iconStyle()}/>
   Typography</h4>
 
   <div className={m?"Row":"Column"} style={textMarginStyleRows()}>
-    <div id="typography-col-1" style={colLarge()}>
+    <div id="typography-col-1" style={typographyEmphasis && colLarge()}>
         {typography.split("/").map((section)=>{
         return <>
 
@@ -149,10 +164,11 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
         </>
         })}
     </div>
-
+{typographyEmphasis &&
     <div id="typography-col-2" style={colHalf()}>
         <h5 style={{paddingTop:col2PaddingTop()}} ><em>{typographyEmphasis}</em></h5>
     </div>
+}
   </div>
 <Fade bottom>
   <div style={textMarginStyle()}>
@@ -212,6 +228,16 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
 
   </div>
 
+{designSystemImages && <>
+  <h4 className="Row" style={textMarginStyleH4()}><DesignSystemIcon style={iconStyle()}/>
+  Design System</h4>
+
+  <br></br>
+  <div className="RowCentered" style={overflowStyle()}>
+  <ImageOverflow m={m} height={l?"100vh":"85vh"} images={designSystemImages} titles={designSystemTitles} style={{filter:"saturate(0.8)"}}/>
+  </div>
+</>}
+
   <h4 className="Row" style={textMarginStyleH4()}><HifiIcon style={iconStyle()}/>
   High-fidelity Wireframes</h4>
 
@@ -224,24 +250,6 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
 </Fade>
   <br></br>
 
-  <div className={m?"Row":"Column"} style={textMarginStyleRows()} style={{background:"var(--midnight)",color:"var(--table-neutral)"}}>
-    <div id="design-direction-col-1" className="Column" style={colLarge()}>
-        <h6><strong>With the high fidelity wireframes ready, I had to return to my features map and begin the development process. However, the design process is far from over. Throughout development, I made changes and improvements to the design, such as stripping the navigation bar of its individual color and and making it blend in with the rest of the page. By doing so, I reinforced the single-page feeling that was a key target for the design.</strong></h6>
-
-        <div className="boxDecoration" style={{borderColor:"var(--table-neutral)"}}></div>
-
-        <h6><strong>hi</strong></h6>
-    </div>
-
-    <div id="design-direction-col-2" className="Column" style={colSmall()}>
-
-      <div className="overline" style={{paddingTop:col2PaddingTop()}}>DESIGN KEYWORDS:</div>
-      hi
-    </div>
-
-    <div style={{width:"0.1px",  borderLeft: "1.5px solid var(--neutral)", margin:"2rem"}}></div>
-
-  </div>
 </div>
     )
 }

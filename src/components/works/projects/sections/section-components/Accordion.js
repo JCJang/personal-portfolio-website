@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import AccordionLabel from './AccordionLabel'
-const Accordion = ({m, l, sectionTitles, sectionResultsArr, sectionApplicationArr, problemSolution=false, number}) => {
+const Accordion = ({m, l, sectionTitles=[], sectionResultsArr, sectionApplicationArr, problemSolution=false, number}) => {
 
 const [focus, setFocus] = useState()
 

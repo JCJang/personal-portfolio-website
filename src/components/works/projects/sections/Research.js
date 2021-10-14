@@ -1,13 +1,15 @@
 import ImageOverflow from './section-components/ImageOverflow'
 import Fade from 'react-reveal/Fade';
 
+import {IoPeopleOutline as UserStoriesIcon} from "react-icons/io5";
 import {IoLocateOutline as CompetitiveAnalysisIcon} from "react-icons/io5";
 import {IoNewspaperOutline as SurveyResultsIcon} from "react-icons/io5";
-import {IoNavigateOutline as DesignDirectionIcon} from "react-icons/io5";
 import {IoGridOutline as FinalScreensIcon} from "react-icons/io5";
 import {IoGitBranchOutline as UserFlowIcon} from "react-icons/io5";
+import {IoNavigateOutline as DesignDirectionIcon} from "react-icons/io5";
 
 import ScreensLabel from './section-components/ScreensLabel'
+import UserStoriesLabel from './section-components/UserStoriesLabel'
 import Accordion from './section-components/Accordion'
 
 const Research = ({
@@ -19,6 +21,14 @@ const Research = ({
   researchText,
   competitiveAnalysisEmphasis,
   competitiveAnalysis,
+  users,
+  userJourneys,
+  userJourneyTitles,
+  userProfileKeys,
+  userProfileValues,
+  userDetailsKeys,
+  userDetailsValues,
+  diversitySection,
   surveyResultsEmphasis,
   surveyResultsTitle,
   screenTitles,
@@ -144,6 +154,42 @@ const Research = ({
   <div className="body1" style={textMarginStyle()}>
           {researchText}
   </div>
+
+
+  {users && <>
+  <h4 className="Row" style={textMarginStyleH4()}><UserStoriesIcon style={iconStyle()}/>User Stories</h4>
+      <div className = {
+            l? "grid-container-screens-and-features":
+            m?"grid-container-screens-and-features-tablet":
+            "grid-container-screens-and-features-mobile"
+          } style={textMarginStyle()}>
+        {users.map((screen, i) => {
+              return <UserStoriesLabel m={m}
+              user={users[i]}
+              userProfileKeys={userProfileKeys}
+              userProfileValues={userProfileValues[i]}
+              userDetailsKeys={userDetailsKeys}
+              userDetailsValues={userDetailsValues[i]}/>
+            })}
+      </div>
+  </>}
+
+{userJourneys &&
+<Fade bottom>
+    <div className="RowCentered" style = {textMarginStyle()}>
+
+        <ImageOverflow height="80vh" images={[userJourneys]} titles={userJourneyTitles} style={{
+            filter: "saturate(0.5)",
+          }}/>
+
+      </div>
+
+</Fade>}
+
+
+<div className="body1" style={{background: "var(--midnight)",color: "var(--table-neutral)",margin:textMargin()}}>
+{diversitySection}
+</div>
 
 <h4 className="Row" style={textMarginStyleH4()}><CompetitiveAnalysisIcon style={iconStyle()}/>Competitive Analysis</h4>
 

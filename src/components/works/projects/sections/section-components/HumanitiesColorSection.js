@@ -50,9 +50,10 @@ if(number===1){
      position: "relative",
     }}>
 
-    <Fade bottom>
 
     <div className="image-col ColumnCentered">
+    <Fade bottom>
+
       <div  onMouseEnter={() => setHover(true)}
             onMouseLeave={() => {setHover(false)}}
             onClick={()=>{setOpenedLayout(!openedLayout)}}
@@ -78,13 +79,14 @@ if(number===1){
           </div>
         </div>
       </div>
+
+    </Fade>
     <div className="overline" style={{alignSelf:leftToRight()? "flex-start":"flex-end", justifySelf:"flex-start", paddingTop:"1rem",
     marginLeft:!l && leftToRight() && "5rem",
     marginRight:!l && rightToLeft() && "5rem"}}>
       moodboard
     </div>
     </div>
-    </Fade>
 
     <div id="description-col" className="Column" style={{
       width:l?"30vw":"80vw",

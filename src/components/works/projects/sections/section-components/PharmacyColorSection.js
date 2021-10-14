@@ -71,10 +71,10 @@ const col2PaddingTop = () => {
 
     <div id="pharmacy-color-col-1" style={colHalf()}>
 
-    <h4 className="h3" style={{
+    <div className="body1"  style={{
       margin:"1.5rem 0",
       fontSize:"1.2rem"}}>
-     {designDescription}</h4>
+     {designDescription}</div>
   </div>
 
   <Fade bottom>
@@ -87,6 +87,15 @@ const col2PaddingTop = () => {
   </div>
 
   <div className="Row" style={{justifyContent:"center", width:"100vw"}}><div className="boxDecoration" style={{width:"20vw", borderColor:"var(--velvet)"}}></div></div>
+  
+  <Fade bottom>
+  <div style={{ width:"100vw", background:"var(--table-light)"}}>
+      <ImageOverflow
+      m={m}
+      height={l?"110vh":"70vh"}
+      images={[colorWireframe]}/>
+  </div>
+  </Fade>
 
 <div id="opened-col-colorText" className="Row" style={textMarginStyle()}>
     <div style={colSmall()}>
@@ -121,14 +130,6 @@ const col2PaddingTop = () => {
     </div>
 </div>
 
-<Fade bottom>
-<div style={{ width:"100vw", background:"var(--table-light)"}}>
-    <ImageOverflow
-    m={m}
-    height={l?"110vh":"70vh"}
-    images={[colorWireframe]}/>
-</div>
-</Fade>
 
 </>
 

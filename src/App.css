@@ -847,7 +847,7 @@ line-height: 100%;
 }
 
 .ImageOverflowImg{
-  transition:filter linear 0.5s, scale ease 0.3s;
+  transition:filter linear 0.5s, transform ease 0.3s;
   filter:saturate(0.7);
 
 }
@@ -856,6 +856,6 @@ line-height: 100%;
   filter:saturate(0.9);
   transform-origin: center;
   cursor:zoom-in;
-  transition:filter linear 0.5s, scale ease 0.3s;
+  transition:filter linear 0.5s, transform ease 0.3s;
 
 }
