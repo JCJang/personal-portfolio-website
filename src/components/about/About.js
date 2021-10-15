@@ -48,116 +48,143 @@ const About = ({m, l, setRouteFocus}) => {
     };
 
 
-        const textMarginStyle=()=>{
-          if (m) return {
-            margin:"1rem 5rem",
-          }
-          return {margin:"1rem 2rem"}
-        }
+  const textMarginStyle=()=>{
+    if (l) return {
+      margin:"1rem 10rem",
+    }
+    if (m) return {
+      margin:"1rem 5rem",
+    }
+    return {margin:"1rem 2rem"}
+  }
 
-        const textMarginStyleLanding=()=>{
-          if (m) return {
-            padding:"1rem 5rem",
-            position:"relative",
-            color:"var(--highlight)",
-            gap:"5rem",
-            height:"var(--desktopheight)",
-            backgroundSize: "500px 500px",
-            backgroundImage:`linear-gradient(to right, rgba(97, 16, 22, 0.3) 0%, rgba(97, 16, 22, 0.3)), linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5)), url(${bg}) `
+  const textMarginStyleLanding=()=>{
+    if (l) return {
+      padding:"1rem 10rem",
+      position:"relative",
+      color:"var(--highlight)",
+      gap:"5rem",
+      height:"var(--desktopheight)",
+      backgroundSize: "500px 500px",
+      backgroundImage:`linear-gradient(to right, rgba(97, 16, 22, 0.3) 0%, rgba(97, 16, 22, 0.3)), linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5)), url(${bg}) `
+    }
+    if (m) return {
+      padding:"1rem 5rem",
+      position:"relative",
+      color:"var(--highlight)",
+      gap:"5rem",
+      height:"var(--desktopheight)",
+      backgroundSize: "500px 500px",
+      backgroundImage:`linear-gradient(to right, rgba(97, 16, 22, 0.3) 0%, rgba(97, 16, 22, 0.3)), linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5)), url(${bg}) `
 
-          }
-          return {
-          padding:"1rem 2rem",
-          position:"relative",
-          color:"var(--highlight)",
-          height:"var(--desktopheight)",
-          backgroundSize: "500px 500px",
-          backgroundImage:`linear-gradient(to right, rgba(97, 16, 22, 0.3) 0%, rgba(97, 16, 22, 0.3)), linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5)), url(${bg}) `
-          }
-        }
-
-
-        const textMarginStyleHeader=()=>{
-          if (m) return {
-            margin:"1rem 5rem",
-
-          }
-          return {margin:"1rem 2rem",fontSize:"2.5rem", textAlign:"center"}
-        }
-
-        const textMarginStyleH4=()=>{
-          if (m) return {
-            margin:"1rem 5rem",
-
-          }
-          return {margin:"1rem 2rem", fontSize:"1.8rem"}
-        }
+    }
+    return {
+    padding:"1rem 2rem",
+    position:"relative",
+    color:"var(--highlight)",
+    height:"var(--desktopheight)",
+    backgroundSize: "500px 500px",
+    backgroundImage:`linear-gradient(to right, rgba(97, 16, 22, 0.3) 0%, rgba(97, 16, 22, 0.3)), linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5)), url(${bg}) `
+    }
+  }
 
 
-        const textMargin = () => {
-          if (m) return "1rem 5rem"
-          return "1rem 2rem"
-        }
+  const textMarginStyleHeader=()=>{
+    if (l) return {
+      margin:"1rem 10rem",
+    }
+    if (m) return {
+      margin:"1rem 5rem",
+    }
+    return {margin:"1rem 2rem",fontSize:"2.5rem", textAlign:"center"}
+  }
 
-        const colLarge = () => {
-          if (m) return {
-              width:"calc(70vw - 7.5rem)"
-            }
-            return{
-              width:"80vw"
-            }
-        }
-        const colSmall = () => {
-          if (m) return {
-              width:"calc(30vw - 7.5rem)"
-            }
-            return{
-              width:"80vw"
-            }
-        }
+  const iconStyle = () => {
+    return{
+      alignSelf: "center",
+      marginRight: "0.8rem",
+      fontSize: "2.5rem",
+      minWidth:"2rem",
+      paddingBottom:"0.7rem"
+    }
+  }
 
-        const colHalf = () => {
-          if (m) return {
-              width:"calc(50vw - 7.5rem)"
-            }
-            return{
-              width:"80vw"
-            }
-        }
+  const textMarginStyleH4=()=>{
+    if (l) return {
+      margin:"1rem 10rem",
+    }
+    if (m) return {
+      margin:"1rem 5rem",
+    }
+    return {margin:"1rem 2rem", fontSize:"1.8rem"}
+  }
 
-        const iconStyle = () => {
-          return{
-            alignSelf: "center",
-            marginRight: "0.8rem",
-            fontSize: "2.5rem",
-            minWidth:"2rem",
-            paddingBottom:"0.7rem"
-          }
-        }
 
-        const gistStyle = () => {
-          const result = textMarginStyle()
-          return result
-        }
+  const textMarginStyleRows=()=>{
+    if (l) return {
+      margin:"1rem 10rem",
+      gap:"5rem"
+    }
+    if (m) return {
+      margin:"1rem 5rem",
+      gap:"5rem"
+    }
+    return {margin:"1rem 2rem"}
+  }
 
-        const overflowStyle = () => {
-          return {
-            width:"100vw",
-            background:"var(--table-light)"
-          }
-        }
+  const textMargin = () => {
+    if (l) return "1rem 10rem"
+    if (m) return "1rem 5rem"
+    return "1rem 2rem"
+  }
 
-        const col2PaddingTop = () => {
-          if (!m) return "2rem"
-        }
+  const colLarge = () => {
+    if (l) return {
+        width:"calc(70vw - 12.5rem)"
+      }
+    if (l) return {
+        width:"calc(70vw - 7.5rem)"
+      }
+      return{
+        width:"80vw"
+      }
+  }
+  const colSmall = () => {
+    if (l) return {
+        width:"calc(30vw - 12.5rem)"
+      }
+    if (l) return {
+        width:"calc(30vw - 7.5rem)"
+      }
+      return{
+        width:"80vw"
+      }
+  }
 
-        const textMarginStyleRows=()=>{
-          if (m) return {
-            margin:"3rem 5rem",
-            gap:"5rem"
-          }
-          return {margin:"2rem 2rem"}
-        }
+  const colHalf = () => {
+    if (l) return {
+        width:"calc(50vw - 12.5rem)"
+      }
+    if (m) return {
+        width:"calc(50vw - 7.5rem)"
+      }
+      return{
+        width:"80vw"
+      }
+  }
+
+ const overflowStyle = () => {
+   return {
+     width:"100vw",
+     background:"var(--table-light)"
+   }
+ }
+
+ const col2PaddingTop = () => {
+   if (!m) return "2rem"
+ }
+
+
   return (
     <div className="Column" style={aboutStyle()}>
 
@@ -184,7 +211,7 @@ const About = ({m, l, setRouteFocus}) => {
 
   </div>
 
-  <div id="summary-col-2" className="Column" style={{position:"absolute",right:m?"5rem":"0"}}>
+  <div id="summary-col-2" className="Column" style={{position:"absolute",right:l?"10rem":m?"5rem":"0"}}>
   <div style={{marginTop:"5rem"}}></div>
     <ImageFadeIn src={headshot} style={{minWidth:"200px", maxWidth:"400px", minHeight:"300px",maxHeight:"60vh",objectFit:"cover"}}/>
   </div>
@@ -285,6 +312,7 @@ const About = ({m, l, setRouteFocus}) => {
   <div  className="RowCentered body1" style={{
     paddingTop:"2rem",
     transform:
+    !l?"":
     hobbyFocus==="painting"?"translateX(-4rem)"
     :hobbyFocus==="travel"?"translateX(2rem)"
     :"translateX(-1rem)",

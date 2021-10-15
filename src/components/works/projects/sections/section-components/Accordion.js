@@ -12,7 +12,7 @@ useEffect(()=>{
 
     <div className="Row" style={{background:"var(--table-neutral)",paddingBottom:"3rem", paddingTop:!m && "3rem",color:"var(--occlusion)"}}>
 
-  <div className="subtitle1 transition selfCentered" style={{fontSize:"3.3rem",whiteSpace: "nowrap", width:l?"10vw":"20vw",transform:"rotate(-90deg)"}}>{problemSolution?"Finding Solutions":"Results"}</div>
+  <div className="subtitle1 transition selfCentered" style={{fontSize:"3.3rem",whiteSpace: "nowrap", justifySelf:"flex-start", width:l?"5vw":"20vw",marginRight:l && "10vw",transform:"rotate(-90deg)"}}>{problemSolution?"Finding Solutions":"Results"}</div>
 
         <div className="Column">
             <div>{sectionTitles.map((title, index)=>{

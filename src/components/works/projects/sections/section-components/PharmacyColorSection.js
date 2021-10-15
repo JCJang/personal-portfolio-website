@@ -55,10 +55,15 @@ const HumanitiesColorSection = ({textMargin, direction, colorTexture, colorText,
 const col2PaddingTop = () => {
   if (!m) return "2rem"
 }
+
+ const extraSpacing = () => {
+   if (l) return "5rem"
+   if (m) return "3rem"
+   return "2rem"
+ }
+ 
   return (
     <>
-      <br></br>
-
     <h4 className="Row"  style={{margin:m?"1rem 5rem 0 5rem":"1rem 2rem 0 2rem"}}>
     <ColorIcon style={{alignSelf: "center",
     marginRight: "0.8rem"}}/>
@@ -87,9 +92,9 @@ const col2PaddingTop = () => {
   </div>
 
   <div className="Row" style={{justifyContent:"center", width:"100vw"}}><div className="boxDecoration" style={{width:"20vw", borderColor:"var(--velvet)"}}></div></div>
-  
+
   <Fade bottom>
-  <div style={{ width:"100vw", background:"var(--table-light)"}}>
+  <div style={{ width:"100vw"}}>
       <ImageOverflow
       m={m}
       height={l?"110vh":"70vh"}
@@ -98,6 +103,9 @@ const col2PaddingTop = () => {
   </Fade>
 
 <div id="opened-col-colorText" className="Row" style={textMarginStyle()}>
+
+<div style={{paddingBottom:extraSpacing()}}></div>
+
     <div style={colSmall()}>
         <div className="Column" style={{
           margin:"0 0.5rem"
@@ -128,9 +136,8 @@ const col2PaddingTop = () => {
                   </>
               })}
     </div>
+    <div style={{paddingBottom:extraSpacing()}}></div>
 </div>
-
-
 </>
 
   )

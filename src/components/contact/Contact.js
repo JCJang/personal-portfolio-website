@@ -25,10 +25,18 @@ useEffect(()=>{
       background:"var(--contact-accent)",
       color: "var(--contact-text)",
       height:"var(--desktopheight)",
-      padding:"0 2rem",
+      padding:textMargin(),
       overflowY:"auto"
     }
   };
+
+
+
+  const textMargin = () => {
+    if (l) return "1rem 10rem"
+    if (m) return "1rem 5rem"
+    return "1rem 2rem"
+  }
 
   const inputWidth = (half) => {
     if(half){
@@ -55,7 +63,7 @@ useEffect(()=>{
 
     <div className={m?"Row noScrollBar":"Column noScrollBar"} style={{overflowY:"auto"}}>
 
-            <div className={m?"Column":"ColumnCentered"} style={{position:"relative",zIndex:"1", padding:m && "0 2rem", width:"inputWidth()", color:"var(--contact-text)"}}>
+            <div className={m?"Column":"ColumnCentered"} style={{position:"relative",zIndex:"1", paddingRight:m && "2rem", width:"inputWidth()", color:"var(--contact-text)"}}>
               <h2>Contact me</h2>
               <div className="boxDecoration" style={{ border:"1.5px solid var(--contact-text)", width:!l && "40vw"}}></div>
               <h5>You can also write to me directly at: inbox@jcjang.com</h5>

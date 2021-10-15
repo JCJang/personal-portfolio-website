@@ -11,6 +11,7 @@ import {IoNavigateOutline as DesignDirectionIcon} from "react-icons/io5";
 import ScreensLabel from './section-components/ScreensLabel'
 import UserStoriesLabel from './section-components/UserStoriesLabel'
 import Accordion from './section-components/Accordion'
+import Statistic from './section-components/Statistic'
 
 const Research = ({
   s,
@@ -28,7 +29,10 @@ const Research = ({
   userProfileValues,
   userDetailsKeys,
   userDetailsValues,
-  diversitySection,
+  userStories,
+  statisticTitles,
+  statisticTexts,
+  statisticSources,
   surveyResultsEmphasis,
   surveyResultsTitle,
   screenTitles,
@@ -154,9 +158,16 @@ const Research = ({
    if (!m) return "2rem"
  }
 
+ const extraSpacing = () => {
+   if (l) return "5rem"
+   if (m) return "3rem"
+   return "2rem"
+ }
+
   return (
 
-  <div className="Column" style={researchStyle()}>
+<div className="Column" style={researchStyle()}>
+
 
 <h2 className="ProjectSectionTitle" style={textMarginStyleHeader()}>Ideation</h2>
 
@@ -182,38 +193,43 @@ const Research = ({
 
   {users && <>
   <h4 className="Row" style={textMarginStyleH4()}><UserStoriesIcon style={iconStyle()}/>User Stories</h4>
-      <div className = {
-            l? "grid-container-screens-and-features":
-            m?"grid-container-screens-and-features-tablet":
-            "grid-container-screens-and-features-mobile"
-          } style={textMarginStyle()}>
-        {users.map((screen, i) => {
-              return <UserStoriesLabel m={m}
-              user={users[i]}
-              userProfileKeys={userProfileKeys}
-              userProfileValues={userProfileValues[i]}
-              userDetailsKeys={userDetailsKeys}
-              userDetailsValues={userDetailsValues[i]}/>
+        {users.map((user, i) => {
+              return <>
+
+              <div style={textMarginStyle()}>
+                <UserStoriesLabel m={m}
+                user={user}
+                userProfileKeys={userProfileKeys}
+                userProfileValues={userProfileValues}
+                userDetailsKeys={userDetailsKeys}
+                userDetailsValues={userDetailsValues}
+                userStories={userStories}/>
+              </div>
+                <div className="RowCentered" style = {{width:"100vw"}}>
+                    <ImageOverflow l={l} m={m}height="80vh" images={userJourneys[i]} titles={userJourneyTitles[i]} style={{
+                        filter: "saturate(0.5)",
+                      }}/>
+                </div>
+                <div style={{width:"100vw"}}>
+                  <Statistic m={m} l={l} title = {statisticTitles[i]} text={statisticTexts[i]} sources={statisticSources[i]}/>
+                </div>
+
+                <div style={{marginBottom:extraSpacing()}}></div>
+              </>
             })}
-      </div>
   </>}
 
-{userJourneys &&
-<Fade bottom>
-    <div className="RowCentered" style = {textMarginStyle()}>
 
-        <ImageOverflow height="80vh" images={[userJourneys]} titles={userJourneyTitles} style={{
-            filter: "saturate(0.5)",
-          }}/>
+{problemSolution && <>
+<h4 className="Row" style={textMarginStyleH4()}><SurveyResultsIcon style={iconStyle()}/> {surveyResultsTitle}</h4>
 
-      </div>
+<div style={{paddingBottom:extraSpacing()}}></div>
 
-</Fade>}
-
-
-<div className="body1" style={{background: "var(--midnight)",color: "var(--table-neutral)",margin:textMargin()}}>
-{diversitySection}
+<div style={textMarginStyle()}>
+<Accordion m={m} l={l} problemSolution={problemSolution} sectionTitles={sectionTitles} sectionResultsArr={sectionResultsArr} sectionApplicationArr={sectionApplicationArr}/>
 </div>
+</>
+}
 
 <h4 className="Row" style={textMarginStyleH4()}><CompetitiveAnalysisIcon style={iconStyle()}/>Competitive Analysis</h4>
 
@@ -229,11 +245,16 @@ const Research = ({
             }
   </div>
 
+{!problemSolution && <>
 <h4 className="Row" style={textMarginStyleH4()}><SurveyResultsIcon style={iconStyle()}/> {surveyResultsTitle}</h4>
+
+<div style={{paddingBottom:extraSpacing()}}></div>
 
 <div style={textMarginStyle()}>
 <Accordion m={m} l={l} problemSolution={problemSolution} sectionTitles={sectionTitles} sectionResultsArr={sectionResultsArr} sectionApplicationArr={sectionApplicationArr}/>
 </div>
+</>
+}
 
 <h4 className = "Row" style={textMarginStyleH4()}> <FinalScreensIcon style={iconStyle()}/>
         Screens and Features</h4>
@@ -249,6 +270,7 @@ const Research = ({
         }
     </div>
 
+<div style={{paddingBottom:extraSpacing()}}></div>
 
 <h4 className = "Row" style={textMarginStyle()} > <UserFlowIcon style={iconStyle()}/>
         User Flow</h4>
@@ -259,9 +281,9 @@ const Research = ({
 
 
 <Fade bottom>
-    <div className="RowCentered" style = {{margin:"1rem 0"}}>
+    <div className="RowCentered">
 
-        <ImageOverflow height="80vh" width="100vw" images={[userFlowImg]} style={{
+        <ImageOverflow l={l} m={m}height="80vh" width="100vw" images={[userFlowImg]} style={{
             filter: "saturate(0.5)",
           }}/>
 

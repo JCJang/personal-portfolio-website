@@ -40,14 +40,14 @@ const AccordionLabel = ({m, problemSolution, sectionResults, focus, setFocus, ti
 
               <div  className={m?"body1 Row transition":"body1 Column transition"}>
 
-              <div className="Column" style={{minWidth:"29vw"}}>
+              <div className="Column" style={{minWidth:"25vw"}}>
                 <h6>{problemSolution?"User Problems":"Solutions"}</h6>
                 <div style={{margin:"1rem"}}>{problemSolution ? <em style={{fontSize:"1.2rem"}}>{section}</em> : <div>{section}</div>}</div>
               </div>
 
             <div style={{width:m && "0.1px", height:!m && "0.1px", borderLeft:m && "1.5px solid var(--neutral)", borderTop:!m && "1.5px solid var(--neutral)", margin:"2rem"}}></div>
 
-              <div className="Column" style={{minWidth:"29vw"}}>
+              <div className="Column" style={{minWidth:"25vw"}}>
                 <h6>{problemSolution?"Solutions":"Results"}</h6>
                 <div style={{margin:"1rem"}}>{sectionApplication[i]}</div>
               </div>

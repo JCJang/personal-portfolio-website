@@ -6,7 +6,7 @@ import useClickOutside from '../../../../../customHooks/useClickOutside';
 import {useRef, useState,useEffect} from 'react'
 import ImageOverflowModal from './ImageOverflowModal'
 
-const ImageOverflow = ({m, images=[], height="50vh", style, titles}) => {
+const ImageOverflow = ({l, m, images=[], height="50vh", style, titles}) => {
 
   const draggableScrollRef = useRef(null);
   const { onMouseDown } = useDraggableScroll(draggableScrollRef);
@@ -21,21 +21,34 @@ const ImageOverflow = ({m, images=[], height="50vh", style, titles}) => {
   })
 
 
+  const textMargin = () => {
+    if (l) return "1rem 10rem"
+    if (m) return "1rem 5rem"
+    return "1rem 2rem"
+  }
+
+  const widthMarginLength = () => {
+    if (l) return "26rem"
+    if (m) return "18rem"
+    return "12rem"
+  }
+
+
   return (
     <div className={images.length===1?"Row":"Row"} ref={draggableScrollRef}
     onMouseDown={onMouseDown} style={{
       zIndex:"25",
       height:height,
       overflowX:"scroll",
-      padding:"4rem"}}>
+      padding:images.length===1 ? "3rem" : "4rem"}}>
 
       <ImageOverflowModal isOpen={isOpen} modalRef={modalRef} setIsOpen={setIsOpen} image={images[imageArrNumber]} onClose={() => setIsOpen(false)}>
       </ImageOverflowModal>
 
      {images && images.map((image, number)=>{
        return <>
-       <div className="overline" style={{alignSelf:"flex-start", justifySelf:"flex-start", paddingTop:"1rem", padding:"0 2rem"}}>
-         {titles && titles[number]}
+       <div className="overline" style={{alignSelf:"flex-start", justifySelf:"flex-start", paddingTop:"1rem", padding:images.length===1? "0 2rem 0 0": "0 2rem"}}>
+         {titles && <div style={{width:l?"25vw":m?"30vw":"50vw"}}>{titles[number]}</div>}
        </div>
        <div className="ImageOverflowImg" style={{
          display:"flex",
@@ -54,7 +67,8 @@ const ImageOverflow = ({m, images=[], height="50vh", style, titles}) => {
          position:"absolute",
          width: "fit-content",
          alignSelf:"center",
-         height: height,
+         maxHeight: images.length===1? `calc(${height} - 2rem)`:height,
+         maxWidth: images.length===1? `calc(${height} - ${widthMarginLength()})`:height,
          display: "block",
          objectFit:"cover"}} style={style}/>
          </div>

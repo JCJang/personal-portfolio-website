@@ -140,7 +140,7 @@ const Summary = ({
     <div className="Column" style={{
         position: "relative",
         zIndex: "29",
-        padding: textMargin(),
+        padding: m?"1rem 5rem":"1rem 2rem",
         height: m
           ? "20rem"
           : "25rem",

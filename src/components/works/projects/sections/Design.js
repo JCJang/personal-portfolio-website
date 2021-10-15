@@ -139,6 +139,12 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
        if (!m) return "2rem"
      }
 
+     const extraSpacing = () => {
+       if (l) return "5rem"
+       if (m) return "3rem"
+       return "2rem"
+     }
+
     return (
 <div className="Column" style={designStyle()}>
   <h2 className="ProjectSectionTitle" style={textMarginStyleHeader()}>Design Process</h2>
@@ -153,11 +159,11 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
   <Fade bottom>
 
   <div className="RowCentered" style={overflowStyle()}>
-    {lofiWireframesImage && <ImageOverflow m={m} height={l?"60vh":"75vh"} images={[lofiWireframesImage]} style={{filter:"saturate(0)"}}/>}
+    {lofiWireframesImage && <ImageOverflow l={l}m={m} height={l?"60vh":"75vh"} images={[lofiWireframesImage]} style={{filter:"saturate(0)"}}/>}
   </div>
   </Fade>
 
-  <br></br>
+  <div style={{marginBottom:extraSpacing()}}></div>
 
 {usability && <>
   <h4 className="Row" style={textMarginStyleH4()}>
@@ -196,10 +202,11 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
   </div>
 <Fade bottom>
   <div>
-    <ImageOverflow m={m} height="60vh" images={typographyRefImages} titles={typographyRefTitles} style={{filter:"saturate(0)"}}/>
+    <ImageOverflow l={l} m={m} height="60vh" images={typographyRefImages} titles={typographyRefTitles} style={{filter:"saturate(0)"}}/>
   </div>
 
-  <br></br>
+<div style={{marginBottom:extraSpacing()}}></div>
+
   <div className="RowCentered" style={textMarginStyle()}>
 
     {finalTypography.map((typography)=>{
@@ -214,13 +221,14 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
 
   </div>
 </Fade>
-  <br></br>
+
+<div style={{marginBottom:extraSpacing()}}></div>
 
   <div className="RowCentered" style={overflowStyle()}>
-      {typographyFinalImg && <ImageOverflow m={m} height="70vh" images={[typographyFinalImg]}/>}
+      {typographyFinalImg && <ImageOverflow l={l} m={m} height="70vh" images={[typographyFinalImg]}/>}
   </div>
   <div style={{width:"100vw", background:"var(--cinerous)", color:"var(--occlusion)"}}>
-
+  <div style={{paddingBottom:extraSpacing()}}></div>
       {colorSection==="Humanities"? colorWireframes.map((wireframe, number)=>{
         return <HumanitiesColorSection
               m={m}
@@ -249,8 +257,10 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
             designDescription={colorDescriptions}/>
         :""
       }
-
+  <div style={{paddingBottom:extraSpacing()}}></div>
   </div>
+
+  <div style={{paddingBottom:extraSpacing()}}></div>
 
 {designSystemImages && <>
   <h4 className="Row" style={textMarginStyleH4()}><DesignSystemIcon style={iconStyle()}/>
@@ -258,9 +268,11 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
 
   <br></br>
   <div className="RowCentered" style={overflowStyle()}>
-  <ImageOverflow m={m} height={l?"100vh":"85vh"} images={designSystemImages} titles={designSystemTitles} style={{filter:"saturate(0.8)"}}/>
+  <ImageOverflow l={l} m={m} height={l?"100vh":"85vh"} images={designSystemImages} titles={designSystemTitles} style={{filter:"saturate(0.8)"}}/>
   </div>
 </>}
+
+<div style={{paddingBottom:extraSpacing()}}></div>
 
   <h4 className="Row" style={textMarginStyleH4()}><HifiIcon style={iconStyle()}/>
   High-fidelity Wireframes</h4>
@@ -269,10 +281,11 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
 
 <Fade bottom>
   <div className="RowCentered" style={overflowStyle()}>
-    {hifiWireframesImages && <ImageOverflow m={m} height={l?"60vh":"75vh"} images={hifiWireframesImages} titles={hifiWireframesTitles} style={{filter:"saturate(0.8)"}}/>}
+    {hifiWireframesImages && <ImageOverflow l={l} m={m} height={l?"60vh":"75vh"} images={hifiWireframesImages} titles={hifiWireframesTitles} style={{filter:"saturate(0.8)"}}/>}
   </div>
 </Fade>
-  <br></br>
+
+<div style={{paddingBottom:extraSpacing()}}></div>
 
 </div>
     )

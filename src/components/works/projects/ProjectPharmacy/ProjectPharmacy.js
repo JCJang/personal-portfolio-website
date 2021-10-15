@@ -88,26 +88,33 @@ const ProjectPharmacy = ({m, l, setRouteFocus}) => {
         competitiveAnalysisEmphasis="I aimed to make my application's user navigation as 'flat' as possible, locating screen entrance points and endpoints where they logically belong."
 
         users={['Melissa', 'Jonathan']}
-        userJourneys={[melissa, jonathan]}
-        userJourneyTitles={["Melissa's typical experience at the pharmacy", "Jonathan's typical experience at the pharmacy"]}
+        userJourneys={[[melissa], [jonathan]]}
+        userJourneyTitles={[["Melissa's typical experience at the pharmacy"], ["Jonathan's typical experience at the pharmacy"]]}
         userProfileKeys={["Name", "Age", "Education", "Hometown", "Family", "Occupation"]}
-        userProfileValues={[["Melissa", "29", "Radiography Degree", "Boston, MA", "Husband and one dog", "Radiologic Technologist"],["Jonathan","70","PhD in Physics","Bangor, ME", "Wife and two cats", "Retired"]]}
+        userProfileValues={
+          ["Melissa", "29", "Radiography Degree", "Boston, MA", "Husband and one dog", "Radiologic Technologist"],["Jonathan","70","PhD in Physics","Bangor, ME", "Wife and two cats", "Retired"]
+        }
 
-        userDetailsKeys={["Story", "Goals", "Frustrations"]}
+        userDetailsKeys={["Goals", "Frustrations"]}
         userDetailsValues={[
-        ["Melissa started out in sales but did not feel fulfilled in her work. She began taking radiography courses at the local community college, and upon graduation, started working at the local hospital. She is known for her big heart and good humor. Although work at the hospital is tough and the shifts are long, she loves working with people and finds it rewarding. She saves on most things except healthy food, and wants to retire in Florida, where she would purchase a house near her parents’ winter home.",
-        ["Melissa’s parents are “snowbirds” that wait out Maine’s cold winter in sunny Florida. Melissa must get her parents’ prescriptions for them during this part of the year. Her parents prefer to have their medications labeled in Spanish."],
-        ["Told inconsistent information over the phone.","Cannot track or manage her parents’ medications."]],
+        [
+          ["Melissa’s parents are “snowbirds” that wait out Maine’s cold winter in sunny Florida. Melissa must get her parents’ prescriptions for them during this part of the year. Her parents prefer to have their medications labeled in Spanish."],
+          ["Told inconsistent information over the phone.","Cannot track or manage her parents’ medications."]
+        ],
 
+        [
+          ["Remember refills and medication directions","Track changes in dosage","Make sure the medication is ready for pickup"],
+          ["Cannot pronounce medication names","Assumes that pharmacy would call the doctor for refills","Lives 1 hour away from the pharmacy","The pharmacy takes hours to process and package medications"]
+        ]
+      ]}
 
-        ["Jonathan is a veteran who became a college professor in physics after 10 years in the navy. He enjoys reading history and taking care of his grandchildren in the house, often showering them with attention and gifts. He values education and practicality and feels frustrated and fearful of his deteriorating memory.",
-        ["Remember refills and medication directions","Track changes in dosage","Make sure the medication is ready for pickup"],
-        ["Cannot pronounce medication names","Assumes that pharmacy would call the doctor for refills","Lives 1 hour away from the pharmacy","The pharmacy takes hours to process and package medications"]
-        ]]}
+        userStories={["Melissa started out in sales but did not feel fulfilled in her work. She began taking radiography courses at the local community college, and upon graduation, started working at the local hospital. She is known for her big heart and good humor. Although work at the hospital is tough and the shifts are long, she loves working with people and finds it rewarding. She saves on most things except healthy food, and wants to retire in Florida, where she would purchase a house near her parents’ winter home.","Jonathan is a veteran who became a college professor in physics after 10 years in the navy. He enjoys reading history and taking care of his grandchildren in the house, often showering them with attention and gifts. He values education and practicality and feels frustrated and fearful of his deteriorating memory."]}
 
-        diversitySection={["Melissa’s case of needing medications labeled in a foreign language is hardly unique. According to Data USA, as of 2019, 6.87% of residents are foreign born, with the top three being Canada, followed by Vietnam, and unspecified African countries. At the pharmacy, users that require an interpreter communicate in Portuguese, French or Arabic, and occasionally, Spanish or Vietnamese. Although interpreter service is available free of charge, both in-person and over the phone, building a multilingual app hands users both control, independence, and a better user experience overall. sourcehttps://datausa.io/profile/geo/maine/","Maine is often ranked as one of the U.S. states with oldest population, and as of 2021, has a 23% population over 65. By 2026, this percentage is expected to grow to 26%. (https://www.maine.gov/dafs/economist/sites/maine.gov.dafs.economist/files/inline-files/Maine%20Population%20Outlook%20to%202026.pdf)As a pharmacy dedicated to community, its services need to be optimized for accessibility. Jonathan’s case of Alzheimer’s is hardly an isolated case in Maine. In 2021, there are 29,000 people aged over 65 with Alzheimer’s, and this is expected to grow to 35,000 by 2025. (https://www.alz.org/media/Documents/maine-alzheimers-facts-figures-2021.pdf)By integrating notifications and medication count into the app, users can have the information they need right in their pocket – a more optimal solution than over the phone communication with the pharmacy."]}
+        statisticTitles={["Diversity in Maine","Population Aging in Maine"]}
+        statisticTexts={["Melissa’s case of needing medications labeled in a foreign language is hardly unique. According to Data USA, as of 2019, 6.87% of residents are foreign born, with the top three being Canada, followed by Vietnam, and unspecified African countries. At the pharmacy, users that require an interpreter communicate in Portuguese, French or Arabic, and occasionally, Spanish or Vietnamese. Although interpreter service is available free of charge, both in-person and over the phone, building a multilingual app hands users both control, independence, and a better user experience overall.","Maine is often ranked as one of the U.S. states with the oldest population, and as of 2021, has a 23% population over 65. By 2026, this percentage is expected to grow to 26%. As a pharmacy dedicated to community, its services need to be optimized for accessibility. Jonathan’s case of Alzheimer’s is hardly an isolated case in Maine. In 2021, there are 29,000 people aged over 65 with Alzheimer’s, and this is expected to grow to 35,000 by 2025. By integrating notifications and medication count into the app, users can have the information they need right in their pocket – a more optimal solution than constant over-the-phone communication with the pharmacy."]}
 
-        title="My Accordion"
+        statisticSources={[["https://datausa.io/profile/geo/maine/"],["https://www.maine.gov/dafs/economist/sites/maine.gov.dafs.economist/files/inline-files/Maine%20Population%20Outlook%20to%202026.pdf","https://www.alz.org/media/Documents/maine-alzheimers-facts-figures-2021.pdf"]]}
+
         problemSolution={true}
         sectionTitles={[
          "Price Transparency",

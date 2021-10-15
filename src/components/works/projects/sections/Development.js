@@ -153,7 +153,12 @@ const Development = ({
  const gistStyle = () => {
    return textMarginStyle()
  }
-
+ 
+ const extraSpacing = () => {
+   if (l) return "5rem"
+   if (m) return "3rem"
+   return "2rem"
+ }
 
   return (
   <div className="Column" style={developmentStyle()}>
@@ -251,7 +256,7 @@ const Development = ({
 
     <Fade bottom>
         <div style={overflowStyle()}>
-          <ImageOverflow images={relationalSearchImages} titles={relationalSearchTitles}/>
+          <ImageOverflow l={l} m={m}images={relationalSearchImages} titles={relationalSearchTitles}/>
         </div>
     </Fade>
 
@@ -259,7 +264,7 @@ const Development = ({
 
     <Fade bottom>
     <div className="RowCentered">
-      <ImageOverflow images={relationalSearchResultImg} titles={relationalSearchResultTitle}
+      <ImageOverflow l={l} m={m}images={relationalSearchResultImg} titles={relationalSearchResultTitle}
       height="70vh"/>
     </div>
 </Fade>
@@ -278,7 +283,7 @@ const Development = ({
 <br></br>
 <Fade bottom>
     <div style={overflowStyle()}>
-      <ImageOverflow height="80vh" images={functionalProgrammingImages} titles={functionalProgrammingTitles}/>
+      <ImageOverflow l={l} m={m}height="80vh" images={functionalProgrammingImages} titles={functionalProgrammingTitles}/>
     </div>
 </Fade>
   </div>)
