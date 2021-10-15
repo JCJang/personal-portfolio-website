@@ -88,7 +88,7 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
         if (l) return {
             width:"calc(70vw - 12.5rem)"
           }
-        if (l) return {
+        if (m) return {
             width:"calc(70vw - 7.5rem)"
           }
           return{
@@ -99,7 +99,7 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
         if (l) return {
             width:"calc(30vw - 12.5rem)"
           }
-        if (l) return {
+        if (m) return {
             width:"calc(30vw - 7.5rem)"
           }
           return{

@@ -4,16 +4,34 @@ import { IoColorFilterOutline as ColorIcon } from "react-icons/io5";
 import Fade from 'react-reveal/Fade';
 
 
-const HumanitiesColorSection = ({textMargin, direction, colorTexture, colorText, colorWireframe, colorMoodboard, designColorLabels, designColorHexes, designDescription, designTitle, m, l, number}) => {
-
+const HumanitiesColorSection = ({direction, colorTexture, colorText, colorWireframe, colorMoodboard, designColorLabels, designColorHexes, designDescription, designTitle, m, l, number}) => {
 
   const textMarginStyle=()=>{
+    if (l) return {
+      margin:"1rem 10rem",
+    }
     if (m) return {
-      margin:"1rem 5rem",
+      margin:"1rem 5rem"
     }
     return {margin:"1rem 2rem"}
   }
+
+
+  const textMarginStyleH4=()=>{
+    if (l) return {
+      margin:"1rem 10rem",
+    }
+    if (m) return {
+      margin:"1rem 5rem",
+    }
+    return {margin:"1rem 2rem", fontSize:"1.8rem"}
+  }
+
+
   const colLarge = () => {
+    if (l) return {
+        width:"calc(70vw - 12.5rem)"
+      }
     if (m) return {
         width:"calc(70vw - 7.5rem)"
       }
@@ -21,16 +39,44 @@ const HumanitiesColorSection = ({textMargin, direction, colorTexture, colorText,
         width:"80vw"
       }
   }
-  const colSmall = () => {
+
+  const colLargeRef = () => {
+    if (l) return {
+        width:"calc(70vw - 12.5rem)"
+      }
     if (m) return {
-        width:"calc(30vw - 7.5rem)"
+        width:"calc(70vw - 7.5rem)"
       }
       return{
-        width:"80vw"
+        width:"100vw"
+      }
+  }
+  const colSmall = () => {
+    if (l) return {
+        width:"calc(30vw - 12.5rem)",
+        paddingRight:"4rem",
+        paddingTop:"5rem"
+
+      }
+    if (m) return {
+        width:"calc(30vw - 7.5rem)",
+        paddingRight:"4rem",
+        paddingTop:"5rem"
+
+
+      }
+      return{
+        width:"20vw",
+        paddingRight:"2rem",
+        paddingTop:"7rem"
+
       }
   }
 
   const colHalf = () => {
+    if (l) return {
+        width:"calc(50vw - 12.5rem)"
+      }
     if (m) return {
         width:"calc(50vw - 7.5rem)"
       }
@@ -42,9 +88,12 @@ const HumanitiesColorSection = ({textMargin, direction, colorTexture, colorText,
   const iconStyle = () => {
     return{
       alignSelf: "center",
-      marginRight: "0.8rem"
+      marginRight: "0.8rem",
+      fontSize: "2rem",
+      minWidth:"2rem"
     }
   }
+
  const overflowStyle = () => {
    return {
      width:"100vw",
@@ -52,21 +101,21 @@ const HumanitiesColorSection = ({textMargin, direction, colorTexture, colorText,
    }
  }
 
-const col2PaddingTop = () => {
-  if (!m) return "2rem"
-}
+ const col2PaddingTop = () => {
+   if (!m) return "2rem"
+ }
+
 
  const extraSpacing = () => {
    if (l) return "5rem"
    if (m) return "3rem"
    return "2rem"
  }
- 
+
   return (
     <>
-    <h4 className="Row"  style={{margin:m?"1rem 5rem 0 5rem":"1rem 2rem 0 2rem"}}>
-    <ColorIcon style={{alignSelf: "center",
-    marginRight: "0.8rem"}}/>
+    <h4 className="Row"  style={textMarginStyleH4()}>
+    <ColorIcon style={iconStyle()}/>
     Color</h4>
 
     <div className="subtitle1" style={textMarginStyle()}>
@@ -84,14 +133,16 @@ const col2PaddingTop = () => {
 
   <Fade bottom>
     <div className="image-col ColumnCentered">
-      <div style={colLarge()}>
-        <ImageOverflow height="60vh" images={[colorMoodboard]} style={{paddingTop:col2PaddingTop()}}/>
+      <div style={colLargeRef()}>
+        <ImageOverflow height={l?"60vh":"40vh"} images={[colorMoodboard]} style={{paddingTop:col2PaddingTop()}}/>
       </div>
     </div>
     </Fade>
   </div>
 
-  <div className="Row" style={{justifyContent:"center", width:"100vw"}}><div className="boxDecoration" style={{width:"20vw", borderColor:"var(--velvet)"}}></div></div>
+
+  <div className="Row" style={{justifyContent:"center", width:"100vw"}}><div className="boxDecoration" style={{width:"20vw", borderColor:"var(--velvet)",margin:""}}></div></div>
+
 
   <Fade bottom>
   <div style={{ width:"100vw"}}>
