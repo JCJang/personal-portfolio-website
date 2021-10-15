@@ -104,8 +104,7 @@ const About = ({m, l, setRouteFocus}) => {
       alignSelf: "center",
       marginRight: "0.8rem",
       fontSize: "2.5rem",
-      minWidth:"2rem",
-      paddingBottom:"0.7rem"
+      minWidth:"2rem"
     }
   }
 
@@ -146,7 +145,7 @@ const About = ({m, l, setRouteFocus}) => {
         width:"calc(70vw - 7.5rem)"
       }
       return{
-        width:"80vw"
+        width:"100%"
       }
   }
   const colSmall = () => {
@@ -157,7 +156,7 @@ const About = ({m, l, setRouteFocus}) => {
         width:"calc(30vw - 7.5rem)"
       }
       return{
-        width:"80vw"
+        width:"100%"
       }
   }
 
@@ -169,7 +168,7 @@ const About = ({m, l, setRouteFocus}) => {
         width:"calc(50vw - 7.5rem)"
       }
       return{
-        width:"80vw"
+        width:"100%"
       }
   }
 
@@ -184,6 +183,11 @@ const About = ({m, l, setRouteFocus}) => {
    if (!m) return "2rem"
  }
 
+ const extraSpacing = () => {
+   if (l) return "5rem"
+   if (m) return "3rem"
+   return "2rem"
+ }
 
   return (
     <div className="Column" style={aboutStyle()}>
@@ -191,9 +195,10 @@ const About = ({m, l, setRouteFocus}) => {
 
 <div className="Row" style={textMarginStyleLanding()}>
 
-  <div id="summary-col-1" className="Column" style={{width:"50%", height:l?"var(--desktopheight)":"60vh"}}>
+  <div id="summary-col-1" className="Column" style={{width:"50%", height:l?"var(--desktopheight)":"60vh", position:"relative",
+    zIndex:"4"}}>
 
-  <h2>Frontend Developer</h2>
+  <h2 style={{paddingTop:"0"}}>Frontend Developer</h2>
 
     <div className="boxDecoration" style={{
         borderColor: "var(--highlight)"
@@ -211,9 +216,9 @@ const About = ({m, l, setRouteFocus}) => {
 
   </div>
 
-  <div id="summary-col-2" className="Column" style={{position:"absolute",right:l?"10rem":m?"5rem":"0"}}>
-  <div style={{marginTop:"5rem"}}></div>
-    <ImageFadeIn src={headshot} style={{minWidth:"200px", maxWidth:"400px", minHeight:"300px",maxHeight:"60vh",objectFit:"cover"}}/>
+  <div id="summary-col-2" className="Column" style={{position:"absolute",right:m?"10rem":"0", bottom:m?"5rem":"", top:m?"5rem":"-1rem"}}>
+  <div></div>
+    <ImageFadeIn src={headshot} style={{minWidth:"200px", maxWidth:m?"400px":"70vw", minHeight:"300px",maxHeight:m?"60vh":"80vh",objectFit:"contain",zIndex:"1"}}/>
   </div>
 </div>
 
@@ -225,7 +230,10 @@ const About = ({m, l, setRouteFocus}) => {
     background: "var(--occlusion)",
     paddingBottom: "3rem",
     paddingTop: "3rem",
-    color: "var(--highlight)"
+    color: "var(--highlight)",
+    position:"relative",
+    zIndex:"4"
+
   }}>
 
   {
@@ -239,21 +247,25 @@ const About = ({m, l, setRouteFocus}) => {
 
   <div className={m
       ? "RowCentered"
-      : "Column"} style={{alignItems:"space-between"}}>
+      : "Column"} style={{alignItems:"space-between",  position:"relative",
+        zIndex:"4"}}>
     <TocLabel m={m} label="who i am" sublabel="background" about={true}/>
      <TocLabel m={m} label="what i love" sublabel="hobbies" about={true}/>
      <TocLabel m={m} label="how i can help" sublabel="skills and languages" about={true}/>
   </div>
 </div>
 
+<div style={{marginBottom:extraSpacing()}}></div>
+
 
 <div id="who%20i%20am" className={m
     ? "Row"
     : "Column"} style={textMarginStyleRows()}>
 
+
   <div id="summary-col-1" className="Column" style={colHalf()}>
 
-  <h1>Who I am</h1>
+  <h2 style={{paddingTop:"0"}}>Who I am</h2>
 
     <div className="boxDecoration" style={{
         borderColor: "var(--velvet)"
@@ -272,124 +284,148 @@ const About = ({m, l, setRouteFocus}) => {
   </div>
 </div>
 
+<div style={{marginBottom:extraSpacing()}}></div>
+
 
 <div style={{background:"var(--occlusion)", color:"var(--cinerous)"}}>
-<div id="what%20i%20love" className={m
+
+<div style={{marginBottom:extraSpacing()}}></div>
+
+<div id="what%20i%20love" className={l
     ? "Row"
-    : "Column"} style={textMarginStyleRows()}>
+    : "Column"} style={{margin:l?"1rem 10rem":m?"1rem 5rem":"1rem 2rem", gap:l&&"5rem"}}>
 
-  <div id="summary-col-1" className="Column" style={colHalf()}>
-
-  <h1 id="what i love">What I love</h1>
-
-    <div className="boxDecoration" style={{
-        borderColor: "var(--velvet)"
-      }}></div>
-      <h6>
-      Explore another hobby by clicking on it!
-      </h6>
+      <div id="summary-col-1" className={m?"Column":"Row"} style={{width:l?"calc(50vw - 12.5rem)":"100%"}}>
 
 
-  </div>
+      {
+        !m && <div className="subtitle1 selfCentered" style={{
+              fontSize: "3.3rem",
+              whiteSpace: "nowrap",
+              width: "30vw",
+              transform: "rotate(-90deg)",
+              color:"var(--highlight)"
+            }}>What I Love</div>
+      }
 
-  <div id="summary-col-2" style={colLarge()}>
+      {m && <h2 style={{paddingTop:"0",color:"var(--highlight)"}} id="what i love">What I Love</h2>}
 
-  <div className="RowCentered" style={{gap:"3rem", justifyContent:"center",paddingTop:col2PaddingTop()}}>
-    <h5 className="HobbyLabel RowCentered" onClick={()=>{if(hobbyFocus==='travel'){setHobbyFocus("")}else{setHobbyFocus('travel')}}} style={{
-      color:hobbyFocus==='travel' && "var(--highlight)"
-    }}>
-    <TravelingIcon style={iconStyle()}/>Travel</h5>
-    <h5 className="HobbyLabel RowCentered" onClick={()=>{if(hobbyFocus==='reading'){setHobbyFocus("")}else{setHobbyFocus('reading')}}} style={{
-      color:hobbyFocus==='reading' && "var(--highlight)"
-    }}>
-    <ReadingIcon style={iconStyle()}/>Reading</h5>
-    <h5 className="HobbyLabel RowCentered" onClick={()=>{if(hobbyFocus==='painting'){setHobbyFocus("")}else{setHobbyFocus('painting')}}} style={{
-      color:hobbyFocus==='painting' && "var(--highlight)"
-    }}>
-    <PaintingIcon style={iconStyle()}/>Painting</h5>
-  </div>
 
-  <div  className="RowCentered body1" style={{
-    paddingTop:"2rem",
-    transform:
-    !l?"":
-    hobbyFocus==="painting"?"translateX(-4rem)"
-    :hobbyFocus==="travel"?"translateX(2rem)"
-    :"translateX(-1rem)",
-    transitionDuration:"0.5s"}}>
-  {hobbyFocus==="travel"?
-  <div className="Column">
-  <div>
-  "This is what I love, traveling solo around the world, without a care in the world, suspending control to a world entirely foreign, immersing myself in somewhere different, exploring wonders and nature and speaking with people in different tongues, sharing experiences and stories."
-  </div>
+    {l && <div className="boxDecoration" style={{
+        borderColor: "var(--highlight)"
+      }}></div>}
 
-  </div>
-  :hobbyFocus==="painting"?
-  "My brain never rests, even when I wish it would. I am the kind of person that can never meditate, or even take a break in the afternoon. But when I am painting, I am humbled by the colors aof natures, I am somewhat mesmerized by color and light, and try to capture the effects I see to the best of my limited abilities. I love the pure concentration, and how time travels past me when I am in the zone."
-  :hobbyFocus==="reading"?
-  "There is no topic I love more than that of books. Although I made an entire web app dedicated to humanities books, what I love to discuss even more is literature. I love discovering new works and writing styles, or see the same narratives in two entirely different stories from different points on this globe."
-  :"Click on a hobby to see what I love!"}
-  </div>
+        <div className={l?"ColumnCentered":m? "RowCentered":"ColumnCentered"} style={{gap:"3rem", alignItems: l? "flex-start": !m? "flex-end":"", justifyContent:m && "space-between", marginTop:"2rem", width: !m && "calc(70vw - 3rem)"}}>
 
-  <div className="Row" style={{position:"relative",height:"50vh",justifyContent:"flex-end",
-    alignItems:"flex-end"}}>
+          <h5 className="HobbyLabel RowCentered" onClick={()=>{if(hobbyFocus==='travel'){setHobbyFocus("")}else{setHobbyFocus('travel')}}} style={{
+            color:hobbyFocus==='travel' && "var(--highlight)",
+            borderBottom:hobbyFocus==='travel' && "1.8px solid var(--highlight)"
 
-  <div className="Row" style={{
-    position:"absolute",
-    width:m?"calc(50vw - 7.5rem)":"80vw",
-    bottom:"1rem",
-    right:hobbyFocus==="painting"?"0px":"-60vw",
-    opacity:hobbyFocus==="painting"?"1":"0",
-    transition:"right ease 0.9s, opacity linear 1s"}}>
-
-      <div className="body2">
-        <Carousel carouselSlides={[snow,sunrise,plants,rooftop,jazz,yiping]}
-        height="40vh"
-        width={m?"42vw":"80vw"}/>
+          }}>
+          <TravelingIcon style={iconStyle()}/>Travel</h5>
+          <h5 className="HobbyLabel RowCentered" onClick={()=>{if(hobbyFocus==='reading'){setHobbyFocus("")}else{setHobbyFocus('reading')}}} style={{
+            color:hobbyFocus==='reading' && "var(--highlight)",
+            borderBottom:hobbyFocus==='reading' && "1.8px solid var(--highlight)"
+          }}>
+          <ReadingIcon style={iconStyle()}/>Reading</h5>
+          <h5 className="HobbyLabel RowCentered" onClick={()=>{if(hobbyFocus==='painting'){setHobbyFocus("")}else{setHobbyFocus('painting')}}} style={{
+            color:hobbyFocus==='painting' && "var(--highlight)",
+            borderBottom:hobbyFocus==='painting' && "1.8px solid var(--highlight)"
+          }}>
+          <PaintingIcon style={iconStyle()}/>Painting</h5>
+        </div>
       </div>
-    </div>
 
-  <div className="RowCentered" style={{
-    alignSelf:"flex-start",
-    justifySelf:"flex-start",
-    position:"absolute",width:m?"50vw":"80vw",
-    bottom:"0",
-    right:hobbyFocus==="travel"?"0px":"300px",
-    pointerEvents:hobbyFocus==="travel"?"":"none",
-    opacity:hobbyFocus==="travel"?"1":"0",
-    transition:"right ease 0.9s, opacity linear 0.8s"}}>
+      <div id="summary-col-2" style={{width:l?"calc(50vw - 12.5rem)":"100%"}}>
+
+
+      <div  className="RowCentered body1" style={{
+        paddingTop: !l && "2rem",
+        transform:
+        !l?"":
+        hobbyFocus==="painting"?"translateX(-1rem)"
+        :hobbyFocus==="travel"?"translateX(1rem)"
+        :"translateX(0)",
+        transitionDuration:"0.5s"}}>
+      {hobbyFocus==="travel"?
+      <div className="Column">
+      <div>
+      "This is what I love, traveling solo around the world, without a care in the world, suspending control to a world entirely foreign, immersing myself in somewhere different, exploring wonders and nature and speaking with people in different tongues, sharing experiences and stories."
+      </div>
+
+      </div>
+      :hobbyFocus==="painting"?
+      "My brain never rests, even when I wish it would. I am the kind of person that can never meditate, or even take a break in the afternoon. But when I am painting, I am humbled by the colors aof natures, I am somewhat mesmerized by color and light, and try to capture the effects I see to the best of my limited abilities. I love the pure concentration, and how time travels past me when I am in the zone."
+      :hobbyFocus==="reading"?
+      "There is no topic I love more than that of books. Although I made an entire web app dedicated to humanities books, what I love to discuss even more is literature. I love discovering new works and writing styles, or see the same narratives in two entirely different stories from different points on this globe."
+      :  <h6 style={{fontFamily:"La Belle Aurore"}}>
+        Explore another hobby by clicking on it!
+        </h6>}
+      </div>
+
+      <div className="RowCentered" style={{position:"relative"}}>
+
+      <div className="Row" style={{
+        position:"absolute",
+        width:l?"calc(50vw - 7.5rem)":"80vw",
+        bottom:"1rem",
+        right:hobbyFocus==="painting"?"0rem":"-60vw",
+        opacity:hobbyFocus==="painting"?"1":"0",
+        transition:"right ease 0.9s, opacity linear 1s"}}>
+            <Carousel carouselSlides={[snow,sunrise,plants,rooftop,jazz,yiping]}
+            height="30vh"
+            width={l?"calc(50vw - 7.5rem)":"80vw"}/>
+      </div>
+
+      <div className="ColumnCentered" style={{
+        position:"relative",
+        right:hobbyFocus==="travel"?"0px":"300px",
+        pointerEvents:hobbyFocus==="travel"?"":"none",
+        opacity:hobbyFocus==="travel"?"1":"0",
+        transition:"right ease 0.9s, opacity linear 0.8s"}}>
+        <div style={{order:l?"1":"2"}}>
+
+
+    <div className="RowCentered" style={{gap:"0.5rem",marginTop:"3rem"}}>
     <Fade bottom>
 
-    <ImageOverflow height="50vh" width="40vw" images={[map]} style={{
-        padding:"0",
-      }}/>
-
-    <div className="ColumnCentered" style={{gap:"0.5rem"}}>
-      <div className="Column" style={{alignItems:"center"}}>
-       <CircleFilled style={{height:l?"2rem":"3rem", width:l?"2rem":"3rem", color:"var(--highlight)", margin:"0.25rem 1.3rem"}}/>
-       <div style={{fontSize:"0.7rem", opacity:"0.8"}}>been a guest</div>
-       </div>
-       <div className="Column" style={{alignItems:"center"}}>
-        <CircleFilled style={{height:l?"2rem":"3rem", width:l?"2rem":"3rem", color:"var(--contact-bg)", margin:"0.25rem 1.3rem"}}/>
-        <div style={{fontSize:"0.7rem", opacity:"0.8"}}>to visit</div>
-        </div>
         <div className="Column" style={{alignItems:"center"}}>
-         <CircleFilled style={{height:l?"2rem":"3rem", width:l?"2rem":"3rem", color:"var(--lilac)", margin:"0.25rem 1.3rem"}}/>
-         <div style={{fontSize:"0.7rem", opacity:"0.8"}}>Home zone</div>
+         <CircleFilled style={{height:"2rem", width:"2rem", color:"var(--highlight)", margin:"0.25rem 1.3rem"}}/>
+         <div style={{fontSize:"0.7rem", opacity:"0.8"}}>been a guest</div>
          </div>
-      </div>
+         <div className="Column" style={{alignItems:"center"}}>
+          <CircleFilled style={{height:"2rem", width:"2rem",  color:"var(--contact-bg)", margin:"0.25rem 1.3rem"}}/>
+          <div style={{fontSize:"0.7rem", opacity:"0.8"}}>to visit</div>
+          </div>
+          <div className="Column" style={{alignItems:"center"}}>
+           <CircleFilled style={{height:"2rem", width:"2rem",  width:l?"2rem":"3rem", color:"var(--lilac)", margin:"0.25rem 1.3rem"}}/>
+           <div style={{fontSize:"0.7rem", opacity:"0.8"}}>Home zone</div>
+           </div>
+     </Fade>
+  </div>
 
-    </Fade>
+        <Fade bottom>
+        <div className="selfCentered" style={{width:l?"45vw":"100vw",height:"30vh"}}>
+        <ImageOverflow height="30vh" images={[map]} style={{
+            padding:"0"
+          }}/>
+        </div>
+        </Fade>
+  </div>
 
+
+        </div>
     </div>
+
+
+      </div>
+  </div>
+
+  <div style={{marginBottom:extraSpacing()}}></div>
+
 </div>
 
-
-  </div>
-  </div>
-</div>
-
-
+<div style={{marginBottom:extraSpacing()}}></div>
 
 <div id="how%20i%20can%20help" className={m
     ? "Row"
@@ -397,7 +433,7 @@ const About = ({m, l, setRouteFocus}) => {
 
   <div id="summary-col-1" className="Column" style={colHalf()}>
 
-  <h1>How I can help</h1>
+  <h2 style={{paddingTop:"0"}}>How I can help</h2>
 
     <div className="boxDecoration" style={{
         borderColor: "var(--velvet)"
@@ -416,9 +452,9 @@ const About = ({m, l, setRouteFocus}) => {
   </div>
 </div>
 
+<div style={{marginBottom:extraSpacing()}}></div>
 
-
-    </div>
+</div>
   )
 }
 

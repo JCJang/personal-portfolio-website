@@ -731,7 +731,8 @@ line-height: 100%;
 
 
 .HobbyLabel{
- font-family: "La Belle Aurore";
+ font-family: "Yaldevi";
+ padding:0.5rem;
  transition: transform ease 0.4s,  border-bottom ease 0.5s;
 
 }
@@ -740,7 +741,7 @@ line-height: 100%;
   color:var(--highlight);
   transform: scale(1.2);
   transition: transform ease 0.4s,  border-bottom ease 0.5s;
-
+  cursor:pointer;
 }
 
 .ProjectSectionTitle{
