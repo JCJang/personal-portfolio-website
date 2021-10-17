@@ -27,8 +27,12 @@ import textRef1 from './images/design/textRef-pharmacy.jpg'
 import typographyFinalImg from '../ProjectHumanities/images/design/typography-final.png'
 
 import moodboard from './images/design/color-ideation.png'
-import texturesSpring from './images/design/brand-color.png'
-import brandColorImg from './images/design/brand-color.png'
+import brandColor1 from './images/design/brand-color-1.png'
+import brandColor2 from './images/design/brand-color-2.png'
+import brandColor3 from './images/design/brand-color-3.png'
+
+import brandColorFinal from './images/design/brand-color-final.png'
+
 
 import stickerSheet1 from './images/design/sticker-sheet-1.png'
 import stickerSheet2 from './images/design/sticker-sheet-2.png'
@@ -206,8 +210,6 @@ const ProjectPharmacy = ({m, l, setRouteFocus}) => {
 
        finalTypography={["3-App Titles: Lora", "4-App Body: Quicksand"]}
 
-       typographyRefImages={[textRef1]}
-
        color="Now that I have a limited palette, I want to narrow my choices even further. Here I consider the hospital's architecture and interior design, looking for elements or recurring colors that might guide my color choices. I also look for existing brand colors on the hospital's website and campus. I asked myself what core values I wanted to convey to users, considering both the hospital's branding and design guidelines from the research stage."
 
        designSystemImages={[stickerSheet1, stickerSheet2, typographySystem]}
@@ -221,7 +223,8 @@ const ProjectPharmacy = ({m, l, setRouteFocus}) => {
        colorLabels={["ruby", "cast iron", "sprout","patina", "snow"]}
        colorHexes={["#CE3434","#111422","#B4CB59","#319AAC","#7DC1ED"
        ]}
-       colorWireframes={brandColorImg}
+       colorWireframes={[brandColor1, brandColor2, brandColor3]}
+
        colorText="I was inspired by the idea of coloring the application's user flow like an in-person trip to the outpatient pharmacy./First, bold black and red will be featured in the splash screen and login screen, reflecting the hospital's red logo and historical building materials. Transfer screens also use these colors, reinforcing the brand color as part of the transfer experience./A leaf green will be used for the add Rx screen and confirmation screens, reflecting the warm interiors of the hospital./Blue green and light blue will guide the rest of the user experience. These colors not only match the campus’s more modern glass exteriors, but also convey security, trust and reliability."
        colorMoodboards={moodboard} />
     </div>

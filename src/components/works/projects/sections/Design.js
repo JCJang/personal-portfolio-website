@@ -19,8 +19,38 @@ import transitional from './images/font-types/6-transitional.png'
 
 
 import Accordion from './section-components/Accordion'
-
-const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWireframesImage,usability, usabilityTitlesArr, usabilityResultsArr, usabilityApplicationArr, designSystemImages, designSystemTitles, hifiWireframesImages, hifiWireframesTitles, typographyRefImages,typographyRefTitles, typographyFinalImg,finalTypography, colorSection, colorWireframes, colorTextures, colorText, colorDescriptions, colorMoodboards,colorLabels, colorHexes, colorTitles}) => {
+const Design = ({
+  s,
+  m,
+  l,
+  lofi,
+  typography,
+  typographyEmphasis,
+  color,
+  lofiWireframesImage,
+  usability,
+  usabilityTitlesArr,
+  usabilityResultsArr,
+  usabilityApplicationArr,
+  designSystemImages,
+  designSystemTitles,
+  hifiWireframesImages,
+  hifiWireframesTitles,
+  typographyRefImages,
+  typographyRefTitles,
+  typographyFinalImg,
+  finalTypography,
+  colorSection,
+  colorWireframes,
+  brandColorFinal,
+  colorTextures,
+  colorText,
+  colorDescriptions,
+  colorMoodboards,
+  colorLabels,
+  colorHexes,
+  colorTitles
+}) => {
 
   const serifTypes = [handwriting, modern, oldStyle, sans, slab, transitional]
 
@@ -250,7 +280,8 @@ const Design = ({s, m, l, lofi, typography, typographyEmphasis, color, lofiWiref
             designColorHexes={colorHexes}
             designTitle={colorTitles}
             textMargin={textMargin}
-            colorWireframe={colorWireframes}
+            colorWireframes={colorWireframes}
+            brandColorFinal={brandColorFinal}
             colorText={colorText}
             colorTexture={colorTextures && colorTextures}
             colorMoodboard={colorMoodboards}

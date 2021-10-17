@@ -3,12 +3,19 @@ import ImageOverflow from '../works/projects/sections/section-components/ImageOv
 import Carousel from '../works/projects/sections/section-components/Carousel'
 import TocLabel from '../works/projects/sections/section-components/TocLabel'
 import Fade from 'react-reveal/Fade';
+import {Link} from 'react-router-dom'
+
 import { IoEllipseSharp as CircleFilled } from "react-icons/io5";
 
 import { IoColorPaletteSharp as PaintingIcon } from "react-icons/io5";
 import { IoAirplaneSharp as TravelingIcon } from "react-icons/io5";
 import { IoLibrarySharp as ReadingIcon } from "react-icons/io5";
 
+import { IoSendOutline as SendIcon } from "react-icons/io5";
+
+
+import bgL from '../../images/about-bg-l.jpg'
+import bgM from '../../images/about-bg-m.jpg'
 
 import headshot from '../../images/20211003_011146-01.jpeg'
 
@@ -18,12 +25,18 @@ import rooftop from '../../images/sketches/rooftop.jpg'
 import snow from '../../images/sketches/snow.jpeg'
 import sunrise from '../../images/sketches/sunrise.jpeg'
 import yiping from '../../images/sketches/yiping.jpg'
-import bg from '../../images/F592-min.jpg'
 
 import map from '../../images/traveled-countries-violet.svg'
 
 import { useEffect, useState} from 'react'
 import { useLocation } from "react-router-dom";
+
+// <h6><strong>Contract me as a freelancer -</strong></h6>
+//
+// A webpage is an opportunity that your potential client’s attention – and I can help you communicate the right message. You have the best of both worlds working with me. As a designer, I think of storytelling and user interaction. As a developer, I breathe logic and interactivity into the design.
+// You can expect a final product similar to this one, built in react with three to five pages and a fully responsive, user-friendly design. Tell me your story and target audience and I will craft a design that communicates your small business’s core values.
+//
+// <a>send me a message</a>
 
 const About = ({m, l, setRouteFocus}) => {
 
@@ -65,8 +78,7 @@ const About = ({m, l, setRouteFocus}) => {
       color:"var(--highlight)",
       gap:"5rem",
       height:"var(--desktopheight)",
-      backgroundSize: "500px 500px",
-      backgroundImage:`linear-gradient(to right, rgba(97, 16, 22, 0.3) 0%, rgba(97, 16, 22, 0.3)), linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5)), url(${bg}) `
+      zIndex:"10"
     }
     if (m) return {
       padding:"1rem 5rem",
@@ -74,17 +86,12 @@ const About = ({m, l, setRouteFocus}) => {
       color:"var(--highlight)",
       gap:"5rem",
       height:"var(--desktopheight)",
-      backgroundSize: "500px 500px",
-      backgroundImage:`linear-gradient(to right, rgba(97, 16, 22, 0.3) 0%, rgba(97, 16, 22, 0.3)), linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5)), url(${bg}) `
-
     }
     return {
     padding:"1rem 2rem",
     position:"relative",
     color:"var(--highlight)",
-    height:"var(--desktopheight)",
-    backgroundSize: "500px 500px",
-    backgroundImage:`linear-gradient(to right, rgba(97, 16, 22, 0.3) 0%, rgba(97, 16, 22, 0.3)), linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5)), url(${bg}) `
+    height:"var(--desktopheight)"
     }
   }
 
@@ -193,12 +200,17 @@ const About = ({m, l, setRouteFocus}) => {
     <div className="Column" style={aboutStyle()}>
 
 
-<div className="Row" style={textMarginStyleLanding()}>
+<div style={{height:"100vh",width:"100vw", position:"relative"}}>
+
+
+ <ImageFadeIn src={l?bgL:bgM} className="bgImage" style={{position:"absolute"}}/>
+
+<div className="Row AboutLanding" style={textMarginStyleLanding()}>
 
   <div id="summary-col-1" className="Column" style={{width:"50%", height:l?"var(--desktopheight)":"60vh", position:"relative",
     zIndex:"4"}}>
 
-  <h2 style={{paddingTop:"0"}}>Frontend Developer</h2>
+  <h2 style={{paddingTop:"0"}}>Designer & Frontend Developer</h2>
 
     <div className="boxDecoration" style={{
         borderColor: "var(--highlight)"
@@ -207,9 +219,7 @@ const About = ({m, l, setRouteFocus}) => {
     <h6 style={{flex:"1"}}>
 
     <Fade bottom>
-      <div><h5><strong>psychology</strong></h5></div>
-      <div><h5><strong>user experience</strong></h5></div>
-      <div><h5><strong>craft</strong></h5></div>
+      <div><h5><em>How can I benefit people’s lives by combining psychology with the power of technology?</em></h5></div>
       </Fade>
 
     </h6>
@@ -220,6 +230,8 @@ const About = ({m, l, setRouteFocus}) => {
   <div></div>
     <ImageFadeIn src={headshot} style={{minWidth:"200px", maxWidth:m?"400px":"70vw", minHeight:"300px",maxHeight:m?"60vh":"80vh",objectFit:"contain",zIndex:"1"}}/>
   </div>
+
+</div>
 </div>
 
 
@@ -250,7 +262,7 @@ const About = ({m, l, setRouteFocus}) => {
       : "Column"} style={{alignItems:"space-between",  position:"relative",
         zIndex:"4"}}>
     <TocLabel m={m} label="who i am" sublabel="background" about={true}/>
-     <TocLabel m={m} label="what i love" sublabel="hobbies" about={true}/>
+     <TocLabel m={m} label="what inspires me" sublabel="hobbies" about={true}/>
      <TocLabel m={m} label="how i can help" sublabel="skills and languages" about={true}/>
   </div>
 </div>
@@ -272,15 +284,20 @@ const About = ({m, l, setRouteFocus}) => {
       }}></div>
 
     <h6>
-      A psychology graduate that dislikes psychology.
+      How a psychology graduate went from writing papers to writing code.
     </h6>
 
   </div>
 
   <div id="summary-col-2" className="Column" style={colHalf()}>
   <div style={{paddingTop:col2PaddingTop()}}></div>
-    lorem ipsum Et qui possimus repellat soluta facilis. Aliquid tempore unde quasi sit ipsum doloribus dicta. Similique aut et voluptas maiores recusandae commodi fugiat. Provident facilis sunt officiis quo et ad iure.Et ipsum soluta voluptatem omnis. Ut aut facere quaerat quasi qui. Quia assumenda consequatur sed ducimus voluptas aut eaque.Rerum quam dolore vel aut perferendis. Ut quidem aliquam pariatur corrupti. Qui porro nemo ea in quibusdam. Iure incidunt tempora laudantium inventore numquam. Reiciendis fuga quis cupiditate ut dolor culpa quibusdam modi. Totam quis dignissimos atque sequi hic.
+  <div>
+  I got into psychology because I was passionate about asking ‘why’ – and I left it because I was also passionate about <Link className="AboutWorksLink" target="_blank" to="/works/pharmacy-concept-app">problem-solving for ‘how’</Link>. By learning UX design and frontend development, I explore both ‘Why’s and ‘How’s at the same time, providing solutions to real life problems. This continues to be my main drive even today, to ask myself: “How can I benefit people’s lives by combining psychology with the power of technology?”
 
+  <br></br>
+  <br></br>
+  currently <a className="AboutWorksLink" href="#how%20i%20can%20help" style={{textDecoration:"none"}}><em>available for hire</em></a>
+  </div>
   </div>
 </div>
 
@@ -291,7 +308,7 @@ const About = ({m, l, setRouteFocus}) => {
 
 <div style={{marginBottom:extraSpacing()}}></div>
 
-<div id="what%20i%20love" className={l
+<div id="what%20inspires%20me" className={l
     ? "Row"
     : "Column"} style={{margin:l?"1rem 10rem":m?"1rem 5rem":"1rem 2rem", gap:l&&"5rem"}}>
 
@@ -305,34 +322,42 @@ const About = ({m, l, setRouteFocus}) => {
               width: "30vw",
               transform: "rotate(-90deg)",
               color:"var(--highlight)"
-            }}>What I Love</div>
+            }}>What Inspires Me</div>
       }
 
-      {m && <h2 style={{paddingTop:"0",color:"var(--highlight)"}} id="what i love">What I Love</h2>}
+      {m && <h2 style={{paddingTop:"0",color:"var(--highlight)"}} id="what%20inspires%20me">What Inspires Me</h2>}
 
 
     {l && <div className="boxDecoration" style={{
         borderColor: "var(--highlight)"
       }}></div>}
 
+
         <div className={l?"ColumnCentered":m? "RowCentered":"ColumnCentered"} style={{gap:"3rem", alignItems: l? "flex-start": !m? "flex-end":"", justifyContent:m && "space-between", marginTop:"2rem", width: !m && "calc(70vw - 3rem)"}}>
 
-          <h5 className="HobbyLabel RowCentered" onClick={()=>{if(hobbyFocus==='travel'){setHobbyFocus("")}else{setHobbyFocus('travel')}}} style={{
+          <h5 className="HobbyLabel RowCentered" onClick={()=>{setHobbyFocus('travel')}} style={{
             color:hobbyFocus==='travel' && "var(--highlight)",
             borderBottom:hobbyFocus==='travel' && "1.8px solid var(--highlight)"
 
           }}>
-          <TravelingIcon style={iconStyle()}/>Travel</h5>
-          <h5 className="HobbyLabel RowCentered" onClick={()=>{if(hobbyFocus==='reading'){setHobbyFocus("")}else{setHobbyFocus('reading')}}} style={{
+          <TravelingIcon style={iconStyle()}/>
+          Travel
+          </h5>
+
+          <h5 className="HobbyLabel RowCentered" onClick={()=>{setHobbyFocus('reading')}} style={{
             color:hobbyFocus==='reading' && "var(--highlight)",
             borderBottom:hobbyFocus==='reading' && "1.8px solid var(--highlight)"
           }}>
-          <ReadingIcon style={iconStyle()}/>Reading</h5>
-          <h5 className="HobbyLabel RowCentered" onClick={()=>{if(hobbyFocus==='painting'){setHobbyFocus("")}else{setHobbyFocus('painting')}}} style={{
+          <ReadingIcon style={iconStyle()}/>
+          Reading
+          </h5>
+          <h5 className="HobbyLabel RowCentered" onClick={()=>{setHobbyFocus('painting')}} style={{
             color:hobbyFocus==='painting' && "var(--highlight)",
             borderBottom:hobbyFocus==='painting' && "1.8px solid var(--highlight)"
           }}>
-          <PaintingIcon style={iconStyle()}/>Painting</h5>
+          <PaintingIcon style={iconStyle()}/>
+          Painting
+          </h5>
         </div>
       </div>
 
@@ -350,14 +375,19 @@ const About = ({m, l, setRouteFocus}) => {
       {hobbyFocus==="travel"?
       <div className="Column">
       <div>
-      "This is what I love, traveling solo around the world, without a care in the world, suspending control to a world entirely foreign, immersing myself in somewhere different, exploring wonders and nature and speaking with people in different tongues, sharing experiences and stories."
+      Having grown up on a small island, it can be easy for me to forget how big the world is – but that I never forgot after traveling by myself with a 40-liter backpack. For me, travel is not just a puzzle that requires practical problem-solving, or a narrative of different perspectives and stories. Travel is a personal testimony that the world’s bigness is nothing in compared to the bigness of people’s hearts. I am grateful to all the countries that took me in as a temporary visitor, and the people and new friends that I met along the way.
       </div>
 
       </div>
-      :hobbyFocus==="painting"?
-      "My brain never rests, even when I wish it would. I am the kind of person that can never meditate, or even take a break in the afternoon. But when I am painting, I am humbled by the colors aof natures, I am somewhat mesmerized by color and light, and try to capture the effects I see to the best of my limited abilities. I love the pure concentration, and how time travels past me when I am in the zone."
       :hobbyFocus==="reading"?
-      "There is no topic I love more than that of books. Although I made an entire web app dedicated to humanities books, what I love to discuss even more is literature. I love discovering new works and writing styles, or see the same narratives in two entirely different stories from different points on this globe."
+      <div>
+      For me, writing will always be the most impressive technology of them all. While <Link className="AboutWorksLink" target="_blank" to="/works/humanities-book-database">humanities books</Link> have helped me develop my own opinions and values, there is nothing I love more than good literature - from Jorge Luis Borges to Donna Tartt. Works of literature that explores complex thoughts and feelings were formative to my understanding of people and my empathy.
+
+      </div>
+      :hobbyFocus==="painting"?
+      <div>
+      I am obsessed with capturing light, color, and mood in sketches, and enjoy the pure concentration that accompanies it. I find that many art concepts - such as composition, artistic styles, or even architectural styles – have become an arsenal for my design style.
+      </div>
       :  <h6 style={{fontFamily:"La Belle Aurore"}}>
         Explore another hobby by clicking on it!
         </h6>}
@@ -440,14 +470,28 @@ const About = ({m, l, setRouteFocus}) => {
       }}></div>
 
     <h6>
-    I can help with this
-    </h6>
+    I believe that listening and empathy are key to good design.   </h6>
 
   </div>
 
   <div id="summary-col-2" className="Column" style={colHalf()}>
   <div style={{paddingTop:col2PaddingTop()}}></div>
-    lorem ipsum Et qui possimus repellat soluta facilis. Aliquid tempore unde quasi sit ipsum doloribus dicta. Similique aut et voluptas maiores recusandae commodi fugiat. Provident facilis sunt officiis quo et ad iure.Et ipsum soluta voluptatem omnis. Ut aut facere quaerat quasi qui. Quia assumenda consequatur sed ducimus voluptas aut eaque.Rerum quam dolore vel aut perferendis. Ut quidem aliquam pariatur corrupti. Qui porro nemo ea in quibusdam. Iure incidunt tempora laudantium inventore numquam. Reiciendis fuga quis cupiditate ut dolor culpa quibusdam modi. Totam quis dignissimos atque sequi hic.
+
+  <h6><strong>Invite me to join your team -</strong></h6>
+
+  <em>currently available for full time positions</em>
+
+  I am an interdisciplinary learner that enjoys working at every stage of a product. What matters even more than the work itself is the work environment – working with people towards an aligned purpose or goal. My ideal company is a small sized startup uses technology to change people’s lives for the better.
+  I speak native English and Mandarin Chinese, as well as fluent Spanish, and excel at analytical and communicatory skills.
+
+
+  <button type="submit" className="RowCentered btn contactBtn">
+      <p className="selfCentered" style={{marginTop:"0.3rem"}}>Contact me</p>
+      <SendIcon style={{fontSize:"1.2rem", marginLeft:"1rem"}}/>
+  </button>
+
+
+  <em>Technology is a field that requires constant learning and evolving. A big thank you to all the wonderful people that selflessly share content online so that I could learn and evolve with them!</em>
 
   </div>
 </div>

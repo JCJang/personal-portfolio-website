@@ -4,7 +4,7 @@ import { IoColorFilterOutline as ColorIcon } from "react-icons/io5";
 import Fade from 'react-reveal/Fade';
 
 
-const HumanitiesColorSection = ({direction, colorTexture, colorText, colorWireframe, colorMoodboard, designColorLabels, designColorHexes, designDescription, designTitle, m, l, number}) => {
+const HumanitiesColorSection = ({direction, colorTexture, colorText, colorWireframes, brandColorFinal, colorMoodboard, designColorLabels, designColorHexes, designDescription, designTitle, m, l, number}) => {
 
   const textMarginStyle=()=>{
     if (l) return {
@@ -40,12 +40,12 @@ const HumanitiesColorSection = ({direction, colorTexture, colorText, colorWirefr
       }
   }
 
-  const colLargeRef = () => {
+  const colHalfRef = () => {
     if (l) return {
-        width:"calc(70vw - 12.5rem)"
+      width:"calc(50vw - 12.5rem)",
       }
     if (m) return {
-        width:"calc(70vw - 7.5rem)"
+        width:"calc(50vw - 7.5rem)"
       }
       return{
         width:"100vw"
@@ -123,7 +123,7 @@ const HumanitiesColorSection = ({direction, colorTexture, colorText, colorWirefr
 
   <div className={m?"Row":"Column"} style={textMarginStyle()}>
 
-    <div id="pharmacy-color-col-1" style={colHalf()}>
+    <div id="pharmacy-color-col-1" style={colLarge()}>
 
     <div className="body1"  style={{
       margin:"1.5rem 0",
@@ -133,8 +133,8 @@ const HumanitiesColorSection = ({direction, colorTexture, colorText, colorWirefr
 
   <Fade bottom>
     <div className="image-col ColumnCentered">
-      <div style={colLargeRef()}>
-        <ImageOverflow height={l?"60vh":"40vh"} images={[colorMoodboard]} style={{paddingTop:col2PaddingTop()}}/>
+      <div style={colHalfRef()}>
+        <ImageOverflow height={l?"70vh":"40vh"} images={[colorMoodboard]} style={{paddingTop:col2PaddingTop()}}/>
       </div>
     </div>
     </Fade>
@@ -148,8 +148,8 @@ const HumanitiesColorSection = ({direction, colorTexture, colorText, colorWirefr
   <div style={{ width:"100vw"}}>
       <ImageOverflow
       m={m}
-      height={l?"110vh":"70vh"}
-      images={[colorWireframe]}/>
+      height="70vh"
+      images={colorWireframes}/>
   </div>
   </Fade>
 

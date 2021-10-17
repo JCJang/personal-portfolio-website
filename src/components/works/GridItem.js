@@ -3,7 +3,7 @@ import ImageFadeIn from '../../customHooks/imageFadeIn'
 import Fade from 'react-reveal/Fade';
 
 import {useEffect, useState} from 'react';
-const GridItem = ({m, l, direction, routeName, image, role, title, subtitle, classes}) => {
+const GridItem = ({m, l, direction, routeName, image, role, title, subtitle, specs, introduction, classes}) => {
 
   const [hover, setHover] = useState(false)
 
@@ -88,11 +88,19 @@ const borderLeft = () => {
         <div style={{lineHeight:"1.5rem"}}>{role}</div>
     </Fade>
     <Fade>
-        <div style={{fontWeight:"300",font:"2.3rem/1.7 'Yaldevi',sans-serif", letterSpacing:"0.0156rem",textTransform:"uppercase"}}>{title}</div>
+        {hover?
+          <div style={{fontWeight:"300",font:"1.2rem/1.7 'Yaldevi',sans-serif", letterSpacing:"0.0156rem",textTransform:"uppercase"}}>Tools used: {specs}</div>
+          :
+          <div style={{fontWeight:"300",font:"2.3rem/1.7 'Yaldevi',sans-serif", letterSpacing:"0.0156rem",textTransform:"uppercase"}}>{title}</div>
+        }
     </Fade>
     <Fade bottom>
+        {hover?
+          <div className="body1">{introduction}</div>
+          :
         <div className="subtitle1" style={{lineHeight:"3rem"}}>{subtitle}</div>
-        </Fade>
+        }
+    </Fade>
 
     </div>
 

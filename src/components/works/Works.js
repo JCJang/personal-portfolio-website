@@ -55,18 +55,22 @@ const worksStyle = () => {
              classes = "grid-book"
              routeName = "/works/humanities-book-database"
              direction = "rl"
-             role = "UX Designer, full stack development"
+             role = "Ideation, UX Research, Design, full stack development"
              title = "Humanities Book Database"
-             subtitle = "How can I help readers find quality humanities books?" / >
+             subtitle = "How can I help readers find quality humanities books?"
+             specs = "Figma, React, Node.js, MongoDB"
+             introduction = "In this project I address the difficulty readers face when searching for humanities books. I surveyed readers to understand their book search process as well as what makes a good humanities book, then I created a full responsive web app using React and node.js, using data from Google Books API, Wikipedia API, and my multilingual MongoDB book database."/ >
 
              <GridItem
               image={projectPharmacyImg}
               s = {s}
               m = {m}
               l = {l}
+              specs = "hi"
+              introduction = "In this project I created a mobile app design and prototype that resolves the common complaints at the pharmacy - lack of transparency, such as medication packaging times, shipped medication status, wait line times - and common problems faced by Maine users, such as timing refills, remembering dosage changes, or making an order in a foreign language."
               routeName = "/works/pharmacy-concept-app"
               direction = "lr"
-              role = "UX Designer"
+              role = "Ideation, UX Research, UI and UX Design"
               title = "Pharmacy concept app"
               subtitle = "How can I simplify pharmacy trips?" / >
 

@@ -131,13 +131,13 @@ html{
   --main-headline4: 2.4rem/1.5 "Lusitana", serif;
   --main-headline5: 1.6rem/1.5 "Yaldevi", sans-serif;
   --main-headline6: 500 1.35rem/1.5 "Yaldevi", sans-serif;
-  --main-body1:  1rem/1.6 "Yaldevi", sans-serif;
-  --main-body2:  0.8rem/1.6 "Yaldevi", sans-serif;
+  --main-body1:  1rem/1.6 "IBM Plex Sans", sans-serif;
+  --main-body2:  0.8rem/1.6 "IBM Plex Sans", sans-serif;
   --main-subtitle1: 1.55rem/1.5 "La Belle Aurore", serif;
   --main-subtitle2: 500 0.95rem/1.5 "La Belle Aurore", serif;
   --main-button: 1.2rem/1.4 "La Belle Aurore", serif;
-  --main-overline:  1rem/1.5"Yaldevi", sans-serif;
-  --main-caption:  0.8rem/1.5 "Yaldevi", sans-serif;
+  --main-overline:  0.8rem/1.5"IBM Plex Sans", sans-serif;
+  --main-caption:  0.8rem/1.5 "IBM Plex Sans", sans-serif;
 
   --mobile-logo: 1.45rem/1.5 "La Belle Aurore", serif;
   --desktop-logo: 1.25rem/1.5 "La Belle Aurore", serif;
@@ -145,8 +145,8 @@ html{
 }
 
 
-.Yaldevi{
-  font-family: "Yaldevi";
+.IBM Plex Sans{
+  font-family: "IBM Plex Sans";
 }
 .Lusitana{
   font-family: "Lusitana";
@@ -345,6 +345,11 @@ text-transform: uppercase;
   cursor:pointer;
 }
 
+.AboutWorksLink{
+  color:inherit;
+}
+
+
 .transition{
     transition-duration: 0.3s;
 }
@@ -378,6 +383,20 @@ text-transform: uppercase;
   filter:saturate(0);
   mix-blend-mode:multiply;
   opacity:0.6;
+}
+
+
+.AboutLanding:after {
+  position: absolute;
+  bottom: 0;
+  left:0;
+  content:'';
+  height: 100%;
+  width: 100%;
+  opacity:0.85;
+  background: linear-gradient(to right, rgba(97, 16, 22, 0.3) 0%, rgba(97, 16, 22, 0.3)), linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5));
+  pointer-events: none;
+  mix-blend-mode:multiply;
 }
 
 .grid-container {
@@ -419,6 +438,7 @@ text-transform: uppercase;
   pointer-events: none;
   mix-blend-mode:multiply;
 }
+
 
 .grid-rl-hover:after{
   position: absolute;
@@ -731,7 +751,7 @@ line-height: 100%;
 
 
 .HobbyLabel{
- font-family: "Yaldevi";
+ font-family: "IBM Plex Sans";
  padding:0.5rem;
  transition: transform ease 0.4s,  border-bottom ease 0.5s;
 
@@ -859,4 +879,26 @@ line-height: 100%;
   cursor:zoom-in;
   transition:filter linear 0.5s, transform ease 0.3s;
 
+}
+
+
+@media screen and (max-width: 359px) {
+html { font-size: 13px;}
+}
+
+@media screen and (min-width: 600px) {
+html { font-size: 14px;}
+}
+
+@media screen and (min-width: 800px) {
+html { font-size: 15px;}
+}
+
+
+@media screen and (min-width: 1000px) {
+html { font-size: 17px;}
+}
+
+@media screen and (min-width: 1600px) {
+html { font-size: 20px;}
 }

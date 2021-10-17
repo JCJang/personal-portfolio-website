@@ -165,7 +165,7 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
          ]}
          screenTitles={[`primary screen - Search by central argument`, `primary screen - post-reading screen`,"user account screen", "Search by related authors and works", "literature map", "publisher board"]}
 
-         designKeywords={["single page", "cyclical flow", "minimalistic", "linear motif"]}
+         designKeywords={["single page", "cyclical flow", "minimalistic", "ink and paper"]}
          designTone={["serious", "concise", "rational", "neutral", "reputable", "academic"]}
 
          userFlowText = "With good user knowledge under my belt, I can now start planning the app layout. I enjoy starting with the information architecture to really lay out in the abstract what I am trying to accomplish."

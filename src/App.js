@@ -38,8 +38,7 @@ const App = () => {
         return {
           width:"100vw",
           overflowY:"auto",
-          overflowX:"hidden",
-          fontSize:xxs?"12px":xxl?"18px":xl?"15px":"13px"
+          overflowX:"hidden"
         }
     }
 
