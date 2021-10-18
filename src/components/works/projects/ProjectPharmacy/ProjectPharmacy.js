@@ -27,11 +27,7 @@ import textRef1 from './images/design/textRef-pharmacy.jpg'
 import typographyFinalImg from '../ProjectHumanities/images/design/typography-final.png'
 
 import moodboard from './images/design/color-ideation.png'
-import brandColor1 from './images/design/brand-color-1.png'
-import brandColor2 from './images/design/brand-color-2.png'
-import brandColor3 from './images/design/brand-color-3.png'
-
-import brandColorFinal from './images/design/brand-color-final.png'
+import brandColorFinal from './images/design/color-final.png'
 
 
 import stickerSheet1 from './images/design/sticker-sheet-1.png'
@@ -96,7 +92,7 @@ const ProjectPharmacy = ({m, l, setRouteFocus}) => {
         userJourneyTitles={[["Melissa's typical experience at the pharmacy"], ["Jonathan's typical experience at the pharmacy"]]}
         userProfileKeys={["Name", "Age", "Education", "Hometown", "Family", "Occupation"]}
         userProfileValues={
-          ["Melissa", "29", "Radiography Degree", "Boston, MA", "Husband and one dog", "Radiologic Technologist"],["Jonathan","70","PhD in Physics","Bangor, ME", "Wife and two cats", "Retired"]
+          [["Melissa", "29", "Radiography Degree", "Boston, MA", "Husband and one dog", "Radiologic Technologist"],["Jonathan","70","PhD in Physics","Bangor, ME", "Wife and two cats", "Retired"]]
         }
 
         userDetailsKeys={["Goals", "Frustrations"]}
@@ -223,7 +219,7 @@ const ProjectPharmacy = ({m, l, setRouteFocus}) => {
        colorLabels={["ruby", "cast iron", "sprout","patina", "snow"]}
        colorHexes={["#CE3434","#111422","#B4CB59","#319AAC","#7DC1ED"
        ]}
-       colorWireframes={[brandColor1, brandColor2, brandColor3]}
+       colorWireframes={[brandColorFinal]}
 
        colorText="I was inspired by the idea of coloring the application's user flow like an in-person trip to the outpatient pharmacy./First, bold black and red will be featured in the splash screen and login screen, reflecting the hospital's red logo and historical building materials. Transfer screens also use these colors, reinforcing the brand color as part of the transfer experience./A leaf green will be used for the add Rx screen and confirmation screens, reflecting the warm interiors of the hospital./Blue green and light blue will guide the rest of the user experience. These colors not only match the campus’s more modern glass exteriors, but also convey security, trust and reliability."
        colorMoodboards={moodboard} />

@@ -200,10 +200,10 @@ const Research = ({
                 <UserStoriesLabel m={m}
                 user={user}
                 userProfileKeys={userProfileKeys}
-                userProfileValues={userProfileValues}
+                userProfileValues={userProfileValues[i]}
                 userDetailsKeys={userDetailsKeys}
-                userDetailsValues={userDetailsValues}
-                userStories={userStories}/>
+                userDetailsValues={userDetailsValues[i]}
+                userStories={userStories[i]}/>
               </div>
                 <div className="RowCentered" style = {{width:"100vw"}}>
                     <ImageOverflow l={l} m={m}height="80vh" images={userJourneys[i]} titles={userJourneyTitles[i]} style={{

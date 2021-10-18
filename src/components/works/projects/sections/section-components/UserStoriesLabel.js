@@ -91,10 +91,10 @@ const ScreensLabel = ({m, user, userProfileKeys, userProfileValues, userDetailsK
         gridColumnGap: "0.4rem",
         }}
         >
-        {userDetailsKeys.map((key, userNum)=>{
+        {userDetailsKeys.map((key,keyNum)=>{
           return <>
           <p style={{color: "var(--works-text)"}}><strong>{key}: </strong></p>
-          <ul>{userDetailsValues[userNum].map((v,liNum)=><li style={{marginLeft:"2rem"}}>{v[liNum]}</li>)}</ul>
+          <ul>{userDetailsValues[keyNum].map((li)=><li style={{marginLeft:"2rem"}}>{li}</li>)}</ul>
 
         </>})}
         </div>

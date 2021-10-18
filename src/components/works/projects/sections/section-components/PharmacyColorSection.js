@@ -144,15 +144,6 @@ const HumanitiesColorSection = ({direction, colorTexture, colorText, colorWirefr
   <div className="Row" style={{justifyContent:"center", width:"100vw"}}><div className="boxDecoration" style={{width:"20vw", borderColor:"var(--velvet)",margin:""}}></div></div>
 
 
-  <Fade bottom>
-  <div style={{ width:"100vw"}}>
-      <ImageOverflow
-      m={m}
-      height="70vh"
-      images={colorWireframes}/>
-  </div>
-  </Fade>
-
 <div id="opened-col-colorText" className="Row" style={textMarginStyle()}>
 
 <div style={{paddingBottom:extraSpacing()}}></div>
@@ -189,6 +180,21 @@ const HumanitiesColorSection = ({direction, colorTexture, colorText, colorWirefr
     </div>
     <div style={{paddingBottom:extraSpacing()}}></div>
 </div>
+
+
+
+  <Fade bottom>
+  <div className="image-col ColumnCentered">
+      <ImageOverflow
+      m={m}
+      height="90vh"
+      images={colorWireframes}
+      style={{gap:"4rem"}}
+      />
+  </div>
+  </Fade>
+
+
 </>
 
   )
