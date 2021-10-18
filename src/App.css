@@ -66,6 +66,26 @@ html{
     scroll-behavior: smooth;
 }
 
+body{
+  font-size: 14px;
+}
+
+@media screen and (max-width: 359px) {
+html { font-size: 13px;}
+}
+
+@media screen and (min-width: 600px) {
+html { font-size: 14px;}
+}
+@media screen and (min-width: 1200px) {
+html { font-size: 16px;}
+}
+
+@media screen and (min-width: 1600px) {
+html { font-size: 18px;}
+}
+
+
 :root{
   --midnight: #2E3B4A;
   --velvet: #611016;
@@ -128,7 +148,7 @@ html{
   --main-headline1: 5rem/1.5 "Lusitana", serif;
   --main-headline2: 3.8rem/1.5 "Lusitana", serif;
   --main-headline3: 3.2rem/1.5 "Lusitana", serif;
-  --main-headline4: 2.4rem/1.5 "Lusitana", serif;
+  --main-headline4: 2.1rem/1.5 "Lusitana", serif;
   --main-headline5: 1.6rem/1.5 "Yaldevi", sans-serif;
   --main-headline6: 500 1.35rem/1.5 "Yaldevi", sans-serif;
   --main-body1:  1rem/1.6 "IBM Plex Sans", sans-serif;
@@ -136,8 +156,8 @@ html{
   --main-subtitle1: 1.55rem/1.5 "La Belle Aurore", serif;
   --main-subtitle2: 500 0.95rem/1.5 "La Belle Aurore", serif;
   --main-button: 1.2rem/1.4 "La Belle Aurore", serif;
-  --main-overline:  0.8rem/1.5"IBM Plex Sans", sans-serif;
-  --main-caption:  0.8rem/1.5 "IBM Plex Sans", sans-serif;
+  --main-overline:  1rem/1.5"Yaldevi", sans-serif;
+  --main-caption:  0.8rem/1.5 "Yaldevi", sans-serif;
 
   --mobile-logo: 1.45rem/1.5 "La Belle Aurore", serif;
   --desktop-logo: 1.25rem/1.5 "La Belle Aurore", serif;
