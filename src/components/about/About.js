@@ -46,6 +46,7 @@ const About = ({m, l, setRouteFocus}) => {
     },[])
 
     const [hobbyFocus, setHobbyFocus] = useState("travel")
+    const [btnHover, setBtnHover] = useState(false)
 
     const aboutStyle = () => {
       return {
@@ -473,19 +474,29 @@ const About = ({m, l, setRouteFocus}) => {
   <div id="summary-col-2" className="Column" style={colHalf()}>
   <div style={{paddingTop:col2PaddingTop()}}></div>
 
-  <h6><strong>Invite me to join your team -</strong></h6>
+  <em>currently available for full time positions.</em>
 
-  <em>currently available for full time positions</em>
-
-  I am an interdisciplinary learner that enjoys working at every stage of a product. My ideal company is a small sized startup uses technology to change people’s lives for the better. working with people towards an aligned purpose or goal.
-  I speak native English and Mandarin Chinese, as well as fluent Spanish, and excel at analytical and communicatory skills.
+My ideal company is a small sized startup uses technology to change people’s lives for the better. working with people towards an aligned purpose or goal. I am an interdisciplinary learner that enjoys working at every stage of a product. I speak native English and Mandarin Chinese, as well as fluent Spanish, and excel at analytical and communicatory skills.
 
 
-  <button type="submit" className="RowCentered btn contactBtn">
-      <p className="selfCentered" style={{marginTop:"0.3rem"}}>Contact me</p>
-      <SendIcon style={{fontSize:"1.2rem", marginLeft:"1rem"}}/>
-  </button>
+  <Link to="/contact"
+    className="RowCentered btn contactBtn"
+    onMouseEnter={() => setBtnHover(true)}
+    onMouseLeave={() => {setBtnHover(false)}}
+    onMouseDown={() => setBtnHover(true)}
+    onMouseUp={() => {setBtnHover(false)}}
 
+    style={{border:"none",
+     padding:"none",
+     background:btnHover?"var(--velvet)":"inherit",
+     color:btnHover?"var(--cinerous)":"inherit",
+     border:'5px double var(--velvet)',
+     padding:"0.5rem 1rem",
+     transition:"0.4s"}}>
+
+          <p className="selfCentered" style={{marginTop:"0.3rem"}}>Contact me</p>
+          <SendIcon style={{fontSize:"1.2rem", marginLeft:"1rem"}}/>
+    </Link>
 
   </div>
 </div>

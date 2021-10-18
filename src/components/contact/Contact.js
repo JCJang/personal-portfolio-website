@@ -15,6 +15,7 @@ const Contact = ({m, l, setRouteFocus}) => {
   const [sender, setSender] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
+  const [btnHover, setBtnHover] = useState(false)
 
 const location = useLocation();
 useEffect(()=>{
@@ -23,7 +24,7 @@ useEffect(()=>{
 
   const contactStyle = () => {
     return {
-      background:"var(--contact-accent)",
+      background:"var(--contact-bg)",
       color: "var(--contact-text)",
       height:"var(--desktopheight)",
       padding:textMargin(),
@@ -65,7 +66,7 @@ useEffect(()=>{
     <div className={m?"Row noScrollBar":"Column noScrollBar"} style={{overflowY:"auto"}}>
 
             <div className={m?"Column":"ColumnCentered"} style={{position:"relative",zIndex:"1", paddingRight:m && "2rem", width:"inputWidth()", color:"var(--contact-text)"}}>
-              <h2>Contact me</h2>
+              <h2 style={{padding:"0px"}}>Contact me</h2>
               <div className="boxDecoration" style={{ border:"1.5px solid var(--contact-text)", width:!l && "40vw"}}></div>
               <h5>You can also write to me directly at: inbox@jcjang.com</h5>
               <br></br>
@@ -97,7 +98,14 @@ useEffect(()=>{
                  <textarea onChange={(e)=>{setMessage(e.target.value)}} rows={m?"7":"10"} name="message" id="message" value={message} placeholder="Send me your idea! I can develop your design, or craft your idea into a website you'll love." style={{width:inputWidth()}}></textarea>
 
 
-                <button type="submit" className="RowCentered btn contactBtn" style={{width:inputWidth(true)}}>
+                <button  onMouseEnter={() => setBtnHover(true)}
+                    onMouseLeave={() => {setBtnHover(false)}}
+                    onMouseDown={() => setBtnHover(true)}
+                    onMouseUp={() => {setBtnHover(false)}}
+                    type="submit" className="RowCentered btn contactBtn" style={{
+                      width:inputWidth(true),
+                      background:btnHover?"var(--velvet)":"",
+                      transition:"0.4s"}}>
                     <p className="selfCentered" style={{marginTop:"0.3rem"}}>Send</p>
                     <SendIcon style={{fontSize:"1.2rem", marginLeft:"1rem"}}/>
                 </button>
@@ -106,11 +114,9 @@ useEffect(()=>{
 
       </div>
 
-      <div style={{position:"relative", zIndex:"1", background:"var(--contact-bg)", height:"1.1px",margin:"2rem 4rem 0 4rem",opacity:"0.8"}}></div>
-
-      <div style={{height:"100vh", opacity:"0.5",width:"100vw", top:"0px", left:"0px", position:"absolute",overflow:"hidden"}}>
+      <div style={{height:"100vh", opacity:"0.35",width:"100vw", top:"0px", left:"0px", position:"absolute",overflow:"hidden",mixBlendMode:"overlay"}}>
       <ImageFadeIn src={bgImage} className="bgImage"/>
-    </div>
+      </div>
 
     </div>
   )

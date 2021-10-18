@@ -89,7 +89,7 @@ const borderLeft = () => {
         <div style={{lineHeight:"1.5rem"}}>{role}</div>
     </Fade>
     <Fade>
-          <div style={{fontWeight:"300",font:"2.3rem/1.4 'Yaldevi',sans-serif", letterSpacing:"0.0156rem",textTransform:"uppercase"}}>{title}</div>
+          <div style={{fontWeight:"400",font:"2.3rem/1.4 'Yaldevi',sans-serif", letterSpacing:"0.0156rem",textTransform:"uppercase"}}>{title}</div>
     </Fade>
     <Fade bottom>
 

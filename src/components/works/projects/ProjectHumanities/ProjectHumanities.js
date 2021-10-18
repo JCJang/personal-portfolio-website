@@ -97,6 +97,7 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
          summary="Through a user survey of 50 humanities book readers, I established four key criteria for book selection - rationality, specificity, systematicity, and personality - and gleaned insight from readers’ book selection behavior. Then, I organized such information into a user flow, and created a responsive design for mobile, tablet, and desktop sizes. Finally, I created the web app using React and node.js, using data from Google Books API, Wikipedia API, and my MongoDB book database."
          challenge="How can I present quality humanities books to readers?"
          solution="By pairing reader-defined quality books with an interface that prioritizes valued book selection criteria."
+         websiteLink="humanitiesdatabase.com"
          />
 
          <span id="research"></span>

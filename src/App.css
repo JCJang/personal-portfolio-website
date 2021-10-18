@@ -287,6 +287,11 @@ text-transform: uppercase;
   font: var(--main-button);
 }
 
+.Aboutbtn:hover{
+  background-color: var(--velvet);
+  color:var(--cinerous);
+
+}
 
 .scrollIndicatorBio {
   width: 1.5px;
@@ -632,6 +637,7 @@ textarea::placeholder{
   border: 2px solid var(--highlight);
   outline: none !important;
 }
+
 
 .modalBtn{
 background:var(--table-neutral);

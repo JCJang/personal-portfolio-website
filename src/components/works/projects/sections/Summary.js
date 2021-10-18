@@ -18,6 +18,7 @@ const Summary = ({
   carouselSlides,
   carouselSlidesTitles,
   carousel,
+  websiteLink,
   background = false,
   research = false,
   design = false,
@@ -207,7 +208,7 @@ const Summary = ({
 
       <div className={m
           ? "Row"
-          : "Column"} style={textMarginStyle()}>
+          : "Column"} style={{margin:m?"1rem 5rem":"1rem 2rem"}}>
         {background && <TocLabel m={m} label="background" sublabel={background}/>}
         {research && <TocLabel m={m} label="research" sublabel={research}/>}
         {design && <TocLabel m={m} label="design" sublabel={design}/>}
@@ -244,23 +245,24 @@ const Summary = ({
       </div>
 
     </div>
+
+
     {carousel &&
 
-        <div className="body2" id="Final Screens" style={{margin:m?"3rem 0":"2rem 0"}}>
+        <div className="body2" id="Final Screens" style={{marginTop:m?"3rem":"2rem"}}>
           <Carousel carouselSlides={carouselSlides} carouselSlidesTitles={carouselSlidesTitles}/>
         </div>
     }
 
-    <div className="Column subtitle1" style={{
-        margin: textMargin(),
-        alignSelf: "flex-end"
+    {websiteLink && <div className="Column subtitle1" style={{
+        margin: m? "2rem 5rem": "2rem 2rem",
+        display: "inline",
+        alignSelf:"flex-end"
       }}>
-      Visit the Web App at
-      <a href="https://www.humanitiesdatabase.com" target="_blank" style={{
-          textDecoration: "none",
-          color: "inherit"
-        }}>www.humanitiesdatabase.com</a>.
-    </div>
+
+      Visit the Web App at <a href={`https://${websiteLink}`} target="_blank" className="AboutWorksLink">{websiteLink}</a>
+    </div>}
+
   </div>)
 }
 
