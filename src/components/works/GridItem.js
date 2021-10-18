@@ -81,28 +81,45 @@ const borderLeft = () => {
     color: "var(--works-bg)",
     lineHeight: "5rem",
     justifyContent: "center",
-    padding:direction==="lr"?"0 4rem 0 0":"0 0 0 4rem"
+    padding:direction==="lr"?"0 4rem 0 0":"0 0 0 4rem",
+    opacity:hover?"0":"1"
   }}
    >
    <Fade top>
         <div style={{lineHeight:"1.5rem"}}>{role}</div>
     </Fade>
     <Fade>
-        {hover?
-          <div style={{fontWeight:"300",font:"1.2rem/1.7 'Yaldevi',sans-serif", letterSpacing:"0.0156rem",textTransform:"uppercase"}}>Tools used: {specs}</div>
-          :
-          <div style={{fontWeight:"300",font:"2.3rem/1.7 'Yaldevi',sans-serif", letterSpacing:"0.0156rem",textTransform:"uppercase"}}>{title}</div>
-        }
+          <div style={{fontWeight:"300",font:"2.3rem/1.4 'Yaldevi',sans-serif", letterSpacing:"0.0156rem",textTransform:"uppercase"}}>{title}</div>
     </Fade>
     <Fade bottom>
-        {hover?
-          <div className="body1">{introduction}</div>
-          :
+
         <div className="subtitle1" style={{lineHeight:"3rem"}}>{subtitle}</div>
-        }
     </Fade>
 
     </div>
+    <div className="transition Column body2" style = {{
+  height: "100%",
+  width: "100%",
+  position: "absolute",
+  top:"0",
+  zIndex: "10",
+  textAlign:"left",
+  color: "var(--works-bg)",
+  justifyContent: "center",
+  opacity:hover?"1":"0",
+  overflowY:"auto"
+  }}
+  >
+
+  <Fade left>
+  <div className="overline" style={{marginTop:"1rem"}}><em>Click to see full case study.</em> <br></br>project uses {specs}.</div><br></br>
+  </Fade>
+
+  <Fade left>
+  <div className="body1">{introduction}</div>
+  </Fade>
+
+  </div>
 
     </Link>
 

@@ -8,7 +8,7 @@ import Works from './components/works/Works'
 
 import ProjectPharmacy from './components/works/projects/ProjectPharmacy/ProjectPharmacy'
 import ProjectHumanities from './components/works/projects/ProjectHumanities/ProjectHumanities'
-import WorksMore from './components/works/projects/WorksMore/WorksMore'
+import ProjectPersonal from './components/works/projects/ProjectPersonal/ProjectPersonal'
 
 import {useEffect, useState, useCallback} from 'react'
 import useMediaQuery from "./customHooks/useMediaQuery";
@@ -68,8 +68,8 @@ const App = () => {
     <ProjectPharmacy  m={m} l={l} setRouteFocus={setRouteFocus}/>
     </Route>
 
-    <Route path = "/works/more" exact>
-    <WorksMore  m={m} l={l} setRouteFocus={setRouteFocus}/>
+    <Route path = "/works/personal-website" exact>
+    <ProjectPersonal  m={m} l={l} setRouteFocus={setRouteFocus}/>
     </Route>
 
     </div>

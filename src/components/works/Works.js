@@ -42,7 +42,7 @@ const worksStyle = () => {
           <div className="boxDecoration"></div>
           <h5>some subtitles</h5>
           <br></br>
-          <div className="body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+          <div className="body2">Hover on Works for more.</div>
 
         </div>
         <div className={l?"grid-container":"grid-container-mobile"}>
@@ -59,15 +59,15 @@ const worksStyle = () => {
              title = "Humanities Book Database"
              subtitle = "How can I help readers find quality humanities books?"
              specs = "Figma, React, Node.js, MongoDB"
-             introduction = "In this project I address the difficulty readers face when searching for humanities books. I surveyed readers to understand their book search process as well as what makes a good humanities book, then I created a full responsive web app using React and node.js, using data from Google Books API, Wikipedia API, and my multilingual MongoDB book database."/ >
+             introduction = "In this project I addressed difficulties readers face when searching for humanities books by asking readers about their book search process. After analyzing user feedback, I created a full responsive web app by integrating data from Google Books API, Wikipedia API, and my multilingual MongoDB book database."/ >
 
              <GridItem
               image={projectPharmacyImg}
               s = {s}
               m = {m}
               l = {l}
-              specs = "hi"
-              introduction = "In this project I created a mobile app design and prototype that resolves the common complaints at the pharmacy - lack of transparency, such as medication packaging times, shipped medication status, wait line times - and common problems faced by Maine users, such as timing refills, remembering dosage changes, or making an order in a foreign language."
+              specs = "Figma"
+              introduction = "In this project I researched common complaints and problems faced by Maine pharmacy users, then created a mobile app design and prototype with solutions such as transparent pricing, medication packaging status, refill notifications, and foreign language options."
               routeName = "/works/pharmacy-concept-app"
               direction = "lr"
               role = "Ideation, UX Research, UI and UX Design"
@@ -78,10 +78,13 @@ const worksStyle = () => {
                 s = {s}
                 m = {m}
                 l = {l}
-               routeName = "/works/more"
+               routeName = "/works/personal-website"
                direction = "rl"
-               title = "Other projects"
-               subtitle = "Including this site" / >
+               title = "Personal Website"
+               specs = "Figma, React"
+               introduction = "In this project I created a personal portfolio to showcase my work and design process."
+               role = "Design and Development"
+              / >
         </div>
       </div>
 

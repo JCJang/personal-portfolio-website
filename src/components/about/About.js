@@ -7,9 +7,9 @@ import {Link} from 'react-router-dom'
 
 import { IoEllipseSharp as CircleFilled } from "react-icons/io5";
 
-import { IoColorPaletteSharp as PaintingIcon } from "react-icons/io5";
-import { IoAirplaneSharp as TravelingIcon } from "react-icons/io5";
-import { IoLibrarySharp as ReadingIcon } from "react-icons/io5";
+import { IoColorPaletteOutline as PaintingIcon } from "react-icons/io5";
+import { IoAirplaneOutline as TravelingIcon } from "react-icons/io5";
+import { IoLibraryOutline as ReadingIcon } from "react-icons/io5";
 
 import { IoSendOutline as SendIcon } from "react-icons/io5";
 
@@ -110,7 +110,7 @@ const About = ({m, l, setRouteFocus}) => {
     return{
       alignSelf: "center",
       marginRight: "0.8rem",
-      fontSize: "2.5rem",
+      fontSize: "1.7rem",
       minWidth:"2rem"
     }
   }
@@ -219,7 +219,7 @@ const About = ({m, l, setRouteFocus}) => {
     <h6 style={{flex:"1"}}>
 
     <Fade bottom>
-      <div><h5><em>How can I benefit people’s lives by combining psychology with the power of technology?</em></h5></div>
+      <div><h6><em>How can I benefit people’s lives by combining psychology with the power of technology?</em></h6></div>
       </Fade>
 
     </h6>
@@ -317,89 +317,56 @@ const About = ({m, l, setRouteFocus}) => {
 
       {
         !m && <div className="subtitle1 selfCentered" style={{
-              fontSize: "3.3rem",
+              fontSize: "2.3rem",
               whiteSpace: "nowrap",
-              width: "30vw",
+              width: "33vw",
+              alignSelf:"flex-end",
+              marginBottom:"4rem",
               transform: "rotate(-90deg)",
               color:"var(--highlight)"
-            }}>What Inspires Me</div>
+            }}>Inspirations</div>
       }
 
-      {m && <h2 style={{paddingTop:"0",color:"var(--highlight)"}} id="what%20inspires%20me">What Inspires Me</h2>}
+      {m && <h3 style={{paddingTop:"0",color:"var(--highlight)", fontFamily:"La Belle Aurore"}} id="what%20inspires%20me">What Inspires Me</h3>}
 
 
-    {l && <div className="boxDecoration" style={{
-        borderColor: "var(--highlight)"
-      }}></div>}
 
+        <div className={l?"ColumnCentered":m? "RowCentered":"ColumnCentered"} style={{gap:"1rem", alignItems: l? "flex-start": !m? "flex-end":"", justifyContent:m && "space-between", marginTop:"2rem", width: !m && "calc(70vw - 3rem)"}}>
 
-        <div className={l?"ColumnCentered":m? "RowCentered":"ColumnCentered"} style={{gap:"3rem", alignItems: l? "flex-start": !m? "flex-end":"", justifyContent:m && "space-between", marginTop:"2rem", width: !m && "calc(70vw - 3rem)"}}>
-
-          <h5 className="HobbyLabel RowCentered" onClick={()=>{setHobbyFocus('travel')}} style={{
+          <h6 className="HobbyLabel RowCentered" onClick={()=>{setHobbyFocus('travel')}} style={{
             color:hobbyFocus==='travel' && "var(--highlight)",
             borderBottom:hobbyFocus==='travel' && "1.8px solid var(--highlight)"
 
           }}>
           <TravelingIcon style={iconStyle()}/>
           Travel
-          </h5>
+          </h6>
 
-          <h5 className="HobbyLabel RowCentered" onClick={()=>{setHobbyFocus('reading')}} style={{
+          <h6 className="HobbyLabel RowCentered" onClick={()=>{setHobbyFocus('reading')}} style={{
             color:hobbyFocus==='reading' && "var(--highlight)",
             borderBottom:hobbyFocus==='reading' && "1.8px solid var(--highlight)"
           }}>
           <ReadingIcon style={iconStyle()}/>
           Reading
-          </h5>
-          <h5 className="HobbyLabel RowCentered" onClick={()=>{setHobbyFocus('painting')}} style={{
+          </h6>
+          <h6 className="HobbyLabel RowCentered" onClick={()=>{setHobbyFocus('painting')}} style={{
             color:hobbyFocus==='painting' && "var(--highlight)",
             borderBottom:hobbyFocus==='painting' && "1.8px solid var(--highlight)"
           }}>
           <PaintingIcon style={iconStyle()}/>
           Painting
-          </h5>
+          </h6>
         </div>
       </div>
 
       <div id="summary-col-2" style={{width:l?"calc(50vw - 12.5rem)":"100%"}}>
-
-
-      <div  className="RowCentered body1" style={{
-        paddingTop: !l && "2rem",
-        transform:
-        !l?"":
-        hobbyFocus==="painting"?"translateX(-1rem)"
-        :hobbyFocus==="travel"?"translateX(1rem)"
-        :"translateX(0)",
-        transitionDuration:"0.5s"}}>
-      {hobbyFocus==="travel"?
-      <div className="Column">
-      <div>
-      Having grown up on a small island, it can be easy for me to forget how big the world is – but that I never forgot after traveling by myself with a 40-liter backpack. For me, travel is not just a puzzle that requires practical problem-solving, or a narrative of different perspectives and stories. Travel is a personal testimony that the world’s bigness is nothing in compared to the bigness of people’s hearts. I am grateful to all the countries that took me in as a temporary visitor, and the people and new friends that I met along the way.
-      </div>
-
-      </div>
-      :hobbyFocus==="reading"?
-      <div>
-      For me, writing will always be the most impressive technology of them all. While <Link className="AboutWorksLink" target="_blank" to="/works/humanities-book-database">humanities books</Link> have helped me develop my own opinions and values, there is nothing I love more than good literature - from Jorge Luis Borges to Donna Tartt. Works of literature that explores complex thoughts and feelings were formative to my understanding of people and my empathy.
-
-      </div>
-      :hobbyFocus==="painting"?
-      <div>
-      I am obsessed with capturing light, color, and mood in sketches, and enjoy the pure concentration that accompanies it. I find that many art concepts - such as composition, artistic styles, or even architectural styles – have become an arsenal for my design style.
-      </div>
-      :  <h6 style={{fontFamily:"La Belle Aurore"}}>
-        Explore another hobby by clicking on it!
-        </h6>}
-      </div>
-
-      <div className="RowCentered" style={{position:"relative"}}>
+      <div className="RowCentered" style={{position:"relative",right:"0"}}>
 
       <div className="Row" style={{
         position:"absolute",
-        width:l?"calc(50vw - 7.5rem)":"80vw",
+        width:l?"calc(45vw - 7.5rem)":"80vw",
         bottom:"1rem",
-        right:hobbyFocus==="painting"?"0rem":"-60vw",
+        right:hobbyFocus==="painting"?"0":"-60vw",
         opacity:hobbyFocus==="painting"?"1":"0",
         transition:"right ease 0.9s, opacity linear 1s"}}>
             <Carousel carouselSlides={[snow,sunrise,plants,rooftop,jazz,yiping]}
@@ -420,32 +387,63 @@ const About = ({m, l, setRouteFocus}) => {
     <Fade bottom>
 
         <div className="Column" style={{alignItems:"center"}}>
-         <CircleFilled style={{height:"2rem", width:"2rem", color:"var(--highlight)", margin:"0.25rem 1.3rem"}}/>
+         <CircleFilled style={{height:"1.5rem", width:"1.5rem", color:"var(--highlight)", margin:"0.25rem 1.3rem"}}/>
          <div style={{fontSize:"0.7rem", opacity:"0.8"}}>been a guest</div>
          </div>
          <div className="Column" style={{alignItems:"center"}}>
-          <CircleFilled style={{height:"2rem", width:"2rem",  color:"var(--contact-bg)", margin:"0.25rem 1.3rem"}}/>
+          <CircleFilled style={{height:"1.5rem", width:"1.5rem",  color:"var(--contact-bg)", margin:"0.25rem 1.3rem"}}/>
           <div style={{fontSize:"0.7rem", opacity:"0.8"}}>to visit</div>
           </div>
           <div className="Column" style={{alignItems:"center"}}>
-           <CircleFilled style={{height:"2rem", width:"2rem",  width:l?"2rem":"3rem", color:"var(--lilac)", margin:"0.25rem 1.3rem"}}/>
+           <CircleFilled style={{height:"1.2rem", width:"2rem",  width:l?"2rem":"3rem", color:"var(--lilac)", margin:"0.25rem 1.3rem"}}/>
            <div style={{fontSize:"0.7rem", opacity:"0.8"}}>Home zone</div>
            </div>
      </Fade>
-  </div>
+    </div>
 
         <Fade bottom>
-        <div className="selfCentered" style={{width:l?"45vw":"100vw",height:"30vh"}}>
-        <ImageOverflow height="30vh" images={[map]} style={{
+        <div className="RowCentered" style={{width:l?"calc(45vw - 7.5rem)":"100vw",height:"30vh",overflow:"hidden"}}>
+        <ImageOverflow height="250px" images={[map]} style={{
             padding:"0"
           }}/>
         </div>
         </Fade>
-  </div>
+    </div>
 
 
         </div>
     </div>
+
+
+
+      <div  className="RowCentered body1" style={{
+        paddingTop: !l && "2rem",
+        transform:
+        !l?"":
+        hobbyFocus==="painting"?"translateX(-1rem)"
+        :hobbyFocus==="travel"?"translateX(1rem)"
+        :"translateX(0)",
+        transitionDuration:"0.5s"}}>
+      {hobbyFocus==="travel"?
+      <div className="Column">
+      <div>
+      Travel is not just a puzzle of practical problem-solving, or a window into diverse perspectives and stories, but also a personal testimony that the world’s vastness cannot compare to the vastness of people’s hearts. Although I travel by myself, I am never alone - I am grateful to all the countries that took me in as a temporary visitor, and the people and new friends that I met along the way.
+      </div>
+
+      </div>
+      :hobbyFocus==="reading"?
+      <div>
+      For me, writing will always be the most impressive technology of them all. While <Link className="AboutWorksLink" target="_blank" to="/works/humanities-book-database">humanities books</Link> have helped me develop my own opinions and values, there is nothing I love more than good literature - from Jorge Luis Borges to Donna Tartt. Works of literature that explores complex thoughts and feelings were formative to my empathy and understanding of people.
+
+      </div>
+      :hobbyFocus==="painting"?
+      <div>
+      I am obsessed with capturing light, color, and mood in sketches, and enjoy the pure concentration that accompanies it. I find that many art concepts - such as composition, artistic styles, or even architectural styles – have become an arsenal for my design style.
+      </div>
+      :  <h6 style={{fontFamily:"La Belle Aurore"}}>
+        Explore another hobby by clicking on it!
+        </h6>}
+      </div>
 
 
       </div>
@@ -457,9 +455,7 @@ const About = ({m, l, setRouteFocus}) => {
 
 <div style={{marginBottom:extraSpacing()}}></div>
 
-<div id="how%20i%20can%20help" className={m
-    ? "Row"
-    : "Column"} style={textMarginStyleRows()}>
+<div id="how%20i%20can%20help" className={m ? "Row" : "Column"} style={textMarginStyleRows()}>
 
   <div id="summary-col-1" className="Column" style={colHalf()}>
 
@@ -470,7 +466,7 @@ const About = ({m, l, setRouteFocus}) => {
       }}></div>
 
     <h6>
-    I believe that listening and empathy are key to good design.   </h6>
+    I believe that listening and empathy are key to design - and to teamwork.   </h6>
 
   </div>
 
@@ -481,7 +477,7 @@ const About = ({m, l, setRouteFocus}) => {
 
   <em>currently available for full time positions</em>
 
-  I am an interdisciplinary learner that enjoys working at every stage of a product. What matters even more than the work itself is the work environment – working with people towards an aligned purpose or goal. My ideal company is a small sized startup uses technology to change people’s lives for the better.
+  I am an interdisciplinary learner that enjoys working at every stage of a product. My ideal company is a small sized startup uses technology to change people’s lives for the better. working with people towards an aligned purpose or goal.
   I speak native English and Mandarin Chinese, as well as fluent Spanish, and excel at analytical and communicatory skills.
 
 
@@ -491,12 +487,17 @@ const About = ({m, l, setRouteFocus}) => {
   </button>
 
 
-  <em>Technology is a field that requires constant learning and evolving. A big thank you to all the wonderful people that selflessly share content online so that I could learn and evolve with them!</em>
-
   </div>
 </div>
 
 <div style={{marginBottom:extraSpacing()}}></div>
+
+
+<div style={textMarginStyle()}>  <em>Technology is a field that requires constant learning and evolving. A big thank you to all the wonderful people that selflessly share content online so that I could learn and evolve with them!</em></div>
+
+
+<div style={{marginBottom:extraSpacing()}}></div>
+
 
 </div>
   )

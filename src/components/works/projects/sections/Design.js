@@ -1,6 +1,7 @@
 import ImageOverflow from './section-components/ImageOverflow'
 import HumanitiesColorSection from './section-components/HumanitiesColorSection'
 import PharmacyColorSection from './section-components/PharmacyColorSection'
+import PersonalColorSection from './section-components/PersonalColorSection'
 import Fade from 'react-reveal/Fade';
 
 import { IoTextOutline as TypographyIcon } from "react-icons/io5";
@@ -244,7 +245,7 @@ const Design = ({
       <div>
       <img src={serifTypes[typography.slice(0,1)-1]} style={{height:"8vw",width:"auto"}}></img>
       </div>
-      <div className={`${typography.split(':')[1].split(/\s/).join(" ").trim()}`} style={{color:"var(--midnight)", fontSize:"1.2rem", width:m?"13vw":"28vw", marginLeft:"2rem", marginTop:!m&&"1rem"}}>
+      <div className={`${typography.split(':')[1].split(/\s/).join("").trim()}`} style={{color:"var(--midnight)", fontSize:"1.2rem", width:m?"13vw":"28vw", marginLeft:"2rem", marginTop:!m&&"1rem"}}>
       {typography.slice(2)}
       </div>
       </div>})}
@@ -272,8 +273,23 @@ const Design = ({
               colorTexture={colorTextures && colorTextures[number]}
               colorMoodboard={colorMoodboards[number]}
               designDescription={colorDescriptions[number]}/>
-      }):colorSection==="Pharmacy"?
+      })
+      :colorSection==="Pharmacy"?
        <PharmacyColorSection
+            m={m}
+            l={l}
+            designColorLabels={colorLabels}
+            designColorHexes={colorHexes}
+            designTitle={colorTitles}
+            textMargin={textMargin}
+            colorWireframes={colorWireframes}
+            brandColorFinal={brandColorFinal}
+            colorText={colorText}
+            colorTexture={colorTextures && colorTextures}
+            colorMoodboard={colorMoodboards}
+            designDescription={colorDescriptions}/>
+      :colorSection==="Personal"?
+       <PersonalColorSection
             m={m}
             l={l}
             designColorLabels={colorLabels}

@@ -145,13 +145,13 @@ html{
 }
 
 
-.IBM Plex Sans{
+.IBMPlexSans{
   font-family: "IBM Plex Sans";
 }
 .Lusitana{
   font-family: "Lusitana";
 }
-.La-Belle-Aurore{
+.LaBelleAurore{
   font-family: "La Belle Aurore";
 }
 
@@ -751,7 +751,7 @@ line-height: 100%;
 
 
 .HobbyLabel{
- font-family: "IBM Plex Sans";
+ font-family: "Yaldevi";
  padding:0.5rem;
  transition: transform ease 0.4s,  border-bottom ease 0.5s;
 
