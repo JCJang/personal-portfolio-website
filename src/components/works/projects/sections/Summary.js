@@ -19,6 +19,7 @@ const Summary = ({
   carouselSlidesTitles,
   carousel,
   websiteLink,
+  prototype = false,
   background = false,
   research = false,
   design = false,
@@ -212,6 +213,7 @@ const Summary = ({
         {background && <TocLabel m={m} label="background" sublabel={background}/>}
         {research && <TocLabel m={m} label="research" sublabel={research}/>}
         {design && <TocLabel m={m} label="design" sublabel={design}/>}
+        {prototype && <TocLabel m={m} label="prototype" sublabel={prototype}/>}
         {development && <TocLabel m={m} label="development" sublabel={development}/>}
         <TocLabel m={m} label="Final Screens" sublabel="click to view"/>
       </div>

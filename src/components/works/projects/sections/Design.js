@@ -9,6 +9,8 @@ import { IoAlbumsOutline as LofiIcon } from "react-icons/io5";
 import { IoAccessibilityOutline as UsabilityIcon } from "react-icons/io5";
 import { IoShapesOutline as DesignSystemIcon } from "react-icons/io5";
 import { IoPhonePortraitOutline as HifiIcon } from "react-icons/io5";
+import { IoGlassesOutline as PrototypeIcon } from "react-icons/io5";
+
 
 import handwriting from './images/font-types/1-handwriting.png'
 import modern from './images/font-types/2-modern.png'
@@ -50,7 +52,10 @@ const Design = ({
   colorMoodboards,
   colorLabels,
   colorHexes,
-  colorTitles
+  colorTitles,
+  prototype,
+  prototypeIllustration,
+  prototypeLink
 }) => {
 
   const serifTypes = [handwriting, modern, oldStyle, sans, slab, transitional]
@@ -176,6 +181,18 @@ const Design = ({
        return "2rem"
      }
 
+    const parseText = (text) =>{
+      if(!text) return
+      return text.split("/").map((section, num)=>{
+        return  <>
+        <div>
+        {section}
+        </div>
+        {num!==text.split("/").length && <br></br>}
+        </>
+      }
+     )}
+
     return (
 <div className="Column" style={designStyle()}>
   <h2 className="ProjectSectionTitle" style={textMarginStyleHeader()}>Design Process</h2>
@@ -184,7 +201,9 @@ const Design = ({
     <LofiIcon style={iconStyle()}/>
   Low-fidelity Wireframes</h4>
 
-  <div style={textMarginStyle()}>{lofi}</div>
+  <div style={textMarginStyle()}>
+  {parseText(lofi)}
+  </div>
   <br></br>
 
   <Fade bottom>
@@ -201,7 +220,9 @@ const Design = ({
     <UsabilityIcon style={iconStyle()}/>
   Usability study</h4>
 
-  <div style={textMarginStyle()}>{usability}</div>
+  <div style={textMarginStyle()}>
+    {parseText(usability)}
+    </div>
 
   <div style={textMarginStyle()}>
   <Accordion m={m} l={l} sectionTitles={usabilityTitlesArr} sectionResultsArr={usabilityResultsArr} sectionApplicationArr={usabilityApplicationArr}/>
@@ -214,17 +235,9 @@ const Design = ({
 
   <div className={m?"Row":"Column"} style={textMarginStyleRows()}>
     <div id="typography-col-1" style={typographyEmphasis && colLarge()}>
-        {typography.split("/").map((section)=>{
-        return <>
-
-            <div className="body1">
-            {section}
-            </div>
-
-            <br></br>
-        </>
-        })}
+    {parseText(typography)}
     </div>
+
 {typographyEmphasis &&
     <div id="typography-col-2" style={colHalf()}>
         <h5 style={{paddingTop:col2PaddingTop()}} ><em>{typographyEmphasis}</em></h5>
@@ -307,9 +320,10 @@ const Design = ({
   <div style={{paddingBottom:extraSpacing()}}></div>
   </div>
 
-  <div style={{paddingBottom:extraSpacing()}}></div>
 
 {designSystemImages && <>
+  <div style={{paddingBottom:extraSpacing()}}></div>
+
   <h4 className="Row" style={textMarginStyleH4()}><DesignSystemIcon style={iconStyle()}/>
   Design System</h4>
 
@@ -317,9 +331,11 @@ const Design = ({
   <div className="RowCentered" style={overflowStyle()}>
   <ImageOverflow l={l} m={m} height={l?"100vh":"85vh"} images={designSystemImages} titles={designSystemTitles} style={{filter:"saturate(0.8)"}}/>
   </div>
+  <div style={{paddingBottom:extraSpacing()}}></div>
+
 </>}
 
-<div style={{paddingBottom:extraSpacing()}}></div>
+<br></br>
 
   <h4 className="Row" style={textMarginStyleH4()}><HifiIcon style={iconStyle()}/>
   High-fidelity Wireframes</h4>
@@ -332,7 +348,34 @@ const Design = ({
   </div>
 </Fade>
 
-<div style={{paddingBottom:extraSpacing()}}></div>
+  {prototype && <>
+  <div style={{color:"var(--velvet)", background:"var(--cinerous)"}}>
+  <div style={{paddingBottom:extraSpacing()}}></div>
+
+  <h4 id="prototype"  className="Row" style={textMarginStyleH4()}><PrototypeIcon style={iconStyle()}/>
+  motion design and Prototype</h4>
+
+  <div style={textMarginStyle()}>
+  {parseText(prototype)}
+  </div>
+
+  <Fade>
+  <div className="RowCentered" style={{height:"60vh"}}>
+   <ImageOverflow l={l} m={m} height={l?"70vh":"75vh"} images={prototypeIllustration} style={{filter:"saturate(0.8)"}}/>
+  </div>
+  </Fade>
+  <div style={{paddingBottom:extraSpacing()}}></div>
+
+  <div className="selfCentered" style={{height:"800px", width:"100vw", overflowX:"auto", padding:textMargin()}}>
+      <div style={{paddingBottom:extraSpacing()}}></div>
+
+      <iframe width="400px" height="800px" style={{all:"inherit"}} src={prototypeLink} allowfullscreen></iframe>
+
+      <div style={{paddingBottom:extraSpacing()}}></div>
+
+  </div>
+</div>
+</>}
 
 </div>
     )

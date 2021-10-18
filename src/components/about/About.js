@@ -203,7 +203,7 @@ const About = ({m, l, setRouteFocus}) => {
 
 <div style={{height:"100vh",width:"100vw", position:"relative"}}>
 
-
+  <a href="https://www.freepik.com/mariadetarosarinda" target="_blank" className="AboutWorksLink overline" style={{textDecoration:"none", position:"absolute", bottom:"0.5rem", right:"1rem", color:"var(--highlight)", opacity:"0.5", zIndex:"20"}}>pattern by Maria Deta Rosarinda</a>
  <ImageFadeIn src={l?bgL:bgM} className="bgImage" style={{position:"absolute"}}/>
 
 <div className="Row AboutLanding" style={textMarginStyleLanding()}>
@@ -292,12 +292,14 @@ const About = ({m, l, setRouteFocus}) => {
 
   <div id="summary-col-2" className="Column" style={colHalf()}>
   <div style={{paddingTop:col2PaddingTop()}}></div>
-  <div>
-  I got into psychology because I was passionate about asking ‘why’ – and I left it because I was also passionate about <Link className="AboutWorksLink" target="_blank" to="/works/pharmacy-concept-app">problem-solving for ‘how’</Link>. By learning UX design and frontend development, I explore both ‘Why’s and ‘How’s at the same time, providing solutions to real life problems. This continues to be my main drive even today, to ask myself: “How can I benefit people’s lives by combining psychology with the power of technology?”
+  <div>Hello, my name is Jennifer Jang, and I'll be the first to admit it - I didn't always think of becoming a designer or developer. I first got into psychology because I was passionate about asking ‘why’ – but there I realized I was also passionate about <Link className="AboutWorksLink" target="_blank" to="/works/pharmacy-concept-app">problem-solving for ‘how’</Link>.
+  <br></br>
+  <br></br>
+  By stumbling across UX design, which led me to frontend development, I discovered a niche in which I can explore both ‘Why’s and ‘How’s, all the while providing solutions to real life problems. This continues to be my main drive even today, to ask myself: “How can I benefit people’s lives by combining psychology with the power of technology?”
 
   <br></br>
   <br></br>
-  currently <a className="AboutWorksLink" href="#how%20i%20can%20help" style={{textDecoration:"none"}}><em>available for hire</em></a>
+  <a className="AboutWorksLink" href="#how%20i%20can%20help" style={{textDecoration:"none"}}><em>currently available for full time positions</em></a>
   </div>
   </div>
 </div>
@@ -396,7 +398,7 @@ const About = ({m, l, setRouteFocus}) => {
           <div style={{fontSize:"0.7rem", opacity:"0.8"}}>to visit</div>
           </div>
           <div className="Column" style={{alignItems:"center"}}>
-           <CircleFilled style={{height:"1.2rem", width:"2rem",  width:l?"2rem":"3rem", color:"var(--lilac)", margin:"0.25rem 1.3rem"}}/>
+           <CircleFilled style={{height:"1.5rem", width:"1.5rem", color:"var(--lilac)", margin:"0.25rem 1.3rem"}}/>
            <div style={{fontSize:"0.7rem", opacity:"0.8"}}>Home zone</div>
            </div>
      </Fade>
@@ -418,8 +420,10 @@ const About = ({m, l, setRouteFocus}) => {
 
 
       <div  className="RowCentered body1" style={{
-        paddingTop: !l && "2rem",
+        paddingTop: !l && "1rem",
         transform:
+        l && hobbyFocus==="reading"?"translateY(-15vh)":
+        !l && hobbyFocus==="reading"?"translateY(-30vh)":
         !l?"":
         hobbyFocus==="painting"?"translateX(-1rem)"
         :hobbyFocus==="travel"?"translateX(1rem)"
@@ -473,11 +477,12 @@ const About = ({m, l, setRouteFocus}) => {
 
   <div id="summary-col-2" className="Column" style={colHalf()}>
   <div style={{paddingTop:col2PaddingTop()}}></div>
-
-  <em>currently available for full time positions.</em>
-
-My ideal company is a small sized startup uses technology to change people’s lives for the better. working with people towards an aligned purpose or goal. I am an interdisciplinary learner that enjoys working at every stage of a product. I speak native English and Mandarin Chinese, as well as fluent Spanish, and excel at analytical and communicatory skills.
-
+  <div style={{display:"inline"}}>
+  I am an interdisciplinary learner that enjoys working at every stage of a product. Being an INTJ personality type, my strengths lie in solving problems logically and systematically. If you haven’t already, take a look at my <Link className="AboutWorksLink" target="_blank" to="/works">case studies</Link> that follow my comprehensive design process, from research, design, to development of the final product.
+  <br></br>
+  <br></br>
+   My ideal company is a small sized startup that uses technology to change people’s lives for the better. If this sounds like your team, I would love to hear from you!
+  </div>
 
   <Link to="/contact"
     className="RowCentered btn contactBtn"
@@ -504,7 +509,7 @@ My ideal company is a small sized startup uses technology to change people’s l
 <div style={{marginBottom:extraSpacing()}}></div>
 
 
-<div style={textMarginStyle()}>  <em>Technology is a field that requires constant learning and evolving. A big thank you to all the wonderful people that selflessly share content online so that I could learn and evolve with them!</em></div>
+<div style={textMarginStyle()}><em>A big thank you to all the wonderful people that selflessly share content online so that I could learn from and level up with you.</em></div>
 
 
 <div style={{marginBottom:extraSpacing()}}></div>

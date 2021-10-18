@@ -60,6 +60,7 @@ import influencedResult from './images/development/influenced-result.jpg'
 import filteredBg from './images/development/filtered-bg.jpg'
 import filteredPublished from './images/development/filtered-published.jpg'
 
+import Footer from '../sections/Footer'
 
 const ProjectHumanities = ({m, l, setRouteFocus}) => {
 
@@ -89,7 +90,7 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
 
          research="Ideation, Research, and user flow"
          design="color, typography, and wireframes"
-         development="defining resources, database design, and problem-solving"
+         development="defining resources, database design, and problem-solving in React"
 
          title="Humanities Book Database"
          roles="Ideation, Design, Full Stack Development"
@@ -248,10 +249,11 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
          functionalText="Another feature I was excited to implement was a historical timeline for each author. Since the flow of time in biographies varies in accordance with the density of the author's life events, it may be helpful to include  linear historical time to situate an author in history./Taking Wikipedia’s ‘historical timeline of…’ several countries, I parsed each timeline into a simple data object, with dates as keys, and events as values. Using author birth and death dates, I was able to filter through the object, returning a bracketed piece of history in which the author lived (or continues to live in)."
 
          functionalCode="JCJang/2bcdfa5f86b85269fac053ad0caf3ec1"
-         functionalProgrammingImages={[filteredBg, filteredPublished]}
-         functionalProgrammingTitles={["result for filterAroundPublicationDate()", "result for filterAroundLifetime()"]}
+         functionalProgrammingImages={[filteredPublished, filteredBg]}
+         functionalProgrammingTitles={["filtering for dates around a book's publication date", "filtering for dates in an author's lifespan"]}
         />
 
+        <Footer m={m} l={l}  websiteLink="humanitiesdatabase.com"/>
       </div>
     )
 }

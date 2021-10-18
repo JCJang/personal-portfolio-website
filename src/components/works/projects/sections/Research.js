@@ -164,6 +164,19 @@ const Research = ({
    return "2rem"
  }
 
+ const parseText = (text) =>{
+   if(!text) return
+   return text.split("/").map((section, num)=>{
+     return  <>
+     <div>
+     {section}
+     </div>
+     {num!==text.split("/").length && <br></br>}
+     </>
+   }
+  )}
+
+
   return (
 
 <div className="Column" style={researchStyle()}>
@@ -176,7 +189,7 @@ const Research = ({
         : "Column"} style={textMarginStyleRows()}>
 
       <div id="summary-col-1" className="Column body1" style={colLarge()}>
-          {ideationText}
+        {parseText(ideationText)}
       </div>
 
       <div id="summary-col-2" className="Column" style={colHalf()}>
@@ -187,7 +200,7 @@ const Research = ({
 <h2 className="ProjectSectionTitle" style={textMarginStyleHeader()}>Research</h2>
 
   <div className="body1" style={textMarginStyle()}>
-          {researchText}
+  {parseText(researchText)}
   </div>
 
 
@@ -234,15 +247,7 @@ const Research = ({
 <h4 className="Row" style={textMarginStyleH4()}><CompetitiveAnalysisIcon style={iconStyle()}/>Competitive Analysis</h4>
 
   <div style={textMarginStyle()}>
-            {competitiveAnalysis.split("/").map((section) => {
-                return <> <div className = "body1" > {
-                  section
-                } </div>
-
-                  <br></br >
-                </>
-              })
-            }
+  {parseText(competitiveAnalysis)}
   </div>
 
 {!problemSolution && <>
@@ -276,7 +281,7 @@ const Research = ({
         User Flow</h4>
 
   <div className = "body1" style={textMarginStyle()}>
-    {userFlowText}
+  {parseText(userFlowText)}
   </div>
 
 

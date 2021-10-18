@@ -8,6 +8,7 @@ import displayImage2 from './images/design/7-transfer-flow.jpg'
 import displayImage3 from './images/design/9-add-rx-flow.jpg'
 import displayImage4 from './images/design/motion-design-short.jpg'
 
+import motionDesignImg from './images/design/motion-design.png'
 
 //research
 import Research from '../sections/Research'
@@ -41,6 +42,8 @@ import hifiImg3 from './images/design/registration-screens.png'
 import hifiImg4 from './images/design/refill-user-flow.png'
 import hifiImg5 from './images/design/transfer-and-add-screens.png'
 
+import Footer from '../sections/Footer'
+
 
 const ProjectPharmacy = ({m, l, setRouteFocus}) => {
 
@@ -62,7 +65,7 @@ const ProjectPharmacy = ({m, l, setRouteFocus}) => {
 
         research="Ideation, Research, and user flow"
         design="color, typography, and wireframes"
-
+        prototype = "motion design"
         title="Pharmacy Concept App"
         roles="Ideation, UI and UX design"
         summary="As a former employee of a hospital outpatient pharmacy in Maine, I had first-hand experience working with pharmacy users, through which I understood many recurring user pain points. In this project I address common complaints at the pharmacy - lack of transparency, such as medication packaging times, shipped medication status, wait line times - and common problems faced by Maine users, such as timing refills, remembering dosage changes, or making an order in a foreign language. This conceptual app remedies pain points by including order processing time estimates, order live status, wait line times, and answers to common questions. The app also has built-in notifications, medication details, transfer assistance, and multilingual support. Setting user expectations beforehand minimizes frustration, and more importantly, empowers users to plan their day and feel in control of something so personal - one's health and wellbeing."
@@ -222,7 +225,12 @@ const ProjectPharmacy = ({m, l, setRouteFocus}) => {
        colorWireframes={[brandColorFinal]}
 
        colorText="I was inspired by the idea of coloring the application's user flow like an in-person trip to the outpatient pharmacy./First, bold black and red will be featured in the splash screen and login screen, reflecting the hospital's red logo and historical building materials. Transfer screens also use these colors, reinforcing the brand color as part of the transfer experience./A leaf green will be used for the add Rx screen and confirmation screens, reflecting the warm interiors of the hospital./Blue green and light blue will guide the rest of the user experience. These colors not only match the campus’s more modern glass exteriors, but also convey security, trust and reliability."
-       colorMoodboards={moodboard} />
+       colorMoodboards={moodboard}
+
+       prototype="lorem ipsum"
+       prototypeIllustration={[motionDesignImg]}
+       prototypeLink="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F4kEUnH9BBuB7MCdCdqSyP1%2FPharmacy-Concept-App-Prototype%3Fnode-id%3D399%253A29340%26scaling%3Dscale-down%26page-id%3D399%253A27182%26starting-point-node-id%3D399%253A29340"/>
+       <Footer m={m} l={l}/>
     </div>
   )
 }

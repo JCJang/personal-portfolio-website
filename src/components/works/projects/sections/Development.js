@@ -160,6 +160,19 @@ const Development = ({
    return "2rem"
  }
 
+ const parseText = (text) =>{
+   if(!text) return
+   return text.split("/").map((section, num)=>{
+     return  <>
+     <div>
+     {section}
+     </div>
+     {num!==text.split("/").length && <br></br>}
+     </>
+   }
+  )}
+
+
   return (
   <div className="Column" style={developmentStyle()}>
     <h2 style={textMarginStyleHeader()}>Development</h2>
@@ -173,7 +186,7 @@ const Development = ({
 
         <br></br>
         <div className="body1">
-          {developmentText}
+          {parseText(developmentText)}
         </div>
       </div>
 
@@ -188,7 +201,8 @@ const Development = ({
 
 
   <div className="body1" style={textMarginStyle()}>
-          {resourcesText}</div>
+  {parseText(resourcesText)}
+  </div>
 
 
   <h4 className = "Row" style = {textMarginStyleH4()} > <ScreensIcon style={iconStyle()}/>
@@ -202,7 +216,7 @@ const Development = ({
             screen = {screen}
             features = {screenFeatures[i]}/>
 
-            <div>{screenDescriptions[i]}</div>
+            <div>{parseText(screenDescriptions[i])}</div>
             </Fade>
           </>
           })
@@ -212,7 +226,10 @@ const Development = ({
 <h4 className = "Row" style = {textMarginStyleH4()} >
   <DatabaseIcon style={iconStyle()}/> Database Design</h4>
 
-<div className = "body1"  style = {textMarginStyle()}> {databaseText}</div>
+<div className = "body1"  style = {textMarginStyle()}>
+{parseText(databaseText)}
+</div>
+
 
 <div style={gistStyle()}>
   <ReactEmbedGist contentClass ="gistStyles" titleClass="displayNone"  gist={databaseCode}/>
@@ -220,7 +237,9 @@ const Development = ({
 
 <h4 className = "Row" style = {textMarginStyleH4()} >
   <ServerIcon style={iconStyle()}/>Server</h4>
-    <div className = "body1"  style = {textMarginStyle()}> {serverText}</div>
+    <div className = "body1"  style = {textMarginStyle()}>
+    {parseText(serverText)}
+    </div>
 
       <div style={gistStyle()}>
         <ReactEmbedGist contentClass ="gistStyles" titleClass="displayNone"  gist={serverCode}/>
@@ -233,7 +252,7 @@ const Development = ({
         Implementing Search by Related Authors</h4>
 
   <div className="body1" style={textMarginStyle()}>
-    {relationalSearchText}
+  {parseText(relationalSearchText)}
   </div>
 
 
@@ -273,7 +292,9 @@ const Development = ({
         <FunctionalIcon style={iconStyle()}/>
         Customizing Timelines with Functional programming </h4>
 
-        < div className = "body1" style={textMarginStyle()}> {functionalText}</div>
+        < div className = "body1" style={textMarginStyle()}>
+        {parseText(functionalText)}
+        </div>
 
 
       <div style={gistStyle()}>
