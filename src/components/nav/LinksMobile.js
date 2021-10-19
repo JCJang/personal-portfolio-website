@@ -3,7 +3,7 @@ import ImageFadeIn from '../../customHooks/imageFadeIn'
 import { useState} from 'react';
 
 
-const LinksMobile = ({m, l, direction, setNavShelf, setRouteFocus,routeName, boxDecorationTop, boxDecorationBottom, Icon, image, title, subtitle, classes}) => {
+const LinksMobile = ({m, l, direction, setNavShelf, setRouteFocus,routeName, boxDecorationTop, boxDecorationBottom, icon, hoverIcon, image, title, subtitle, classes}) => {
 
   const [hover, setHover] = useState(false)
 
@@ -44,8 +44,14 @@ const gradientSetting = () =>{
     padding:direction==="lr"?"0 4rem 0 0":"0 0 0 4rem"
   }}
    >
-        <div style={{fontWeight:"300",font:"4.3rem/1.7 'Yaldevi',sans-serif", letterSpacing:"0.0156rem",textTransform:"uppercase"}}><Icon/>{title}</div>
-        <div className="subtitle1" style={{lineHeight:"3rem"}}></div>
+        <div style={{fontWeight:"300",
+        font:"3rem/1.7 'Yaldevi',sans-serif",
+        display:"flex",
+        justifyContent: direction === "lr" ? "flex-start" : "flex-end",
+        alignItems:"center",
+        letterSpacing:"0.0156rem",
+        textTransform:"uppercase"}}>
+        <img src={hover?hoverIcon:icon} style={{padding:"0.5rem"}}/>{title}</div>
         {boxDecorationTop && <div className="boxDecoration-navMobileTop"></div>}
         {boxDecorationBottom && <div className="boxDecoration-navMobileBottom"></div>}
 

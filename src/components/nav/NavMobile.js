@@ -1,14 +1,19 @@
 import LinksMobile from './LinksMobile'
 import {useState,useEffect} from 'react'
 import useDebounce from '../../customHooks/useDebounce'
-import { IoBookOutline as AboutIcon } from "react-icons/io5";
-import { IoCubeOutline as WorksIcon } from "react-icons/io5";
-import { IoMailOutline as ContactIcon } from "react-icons/io5";
 import { IoTriangleOutline as BackIcon } from "react-icons/io5";
 
 import { IoBookOutline as AboutIconLogo } from "react-icons/io5";
 import { IoCubeOutline as WorksIconLogo } from "react-icons/io5";
 import { IoMailOpenOutline as ContactIconLogo } from "react-icons/io5";
+
+import aboutIcon from '../../images/mobileNavIcons/book-outline.svg'
+import aboutHover from '../../images/mobileNavIcons/book-outline-hover.svg'
+import worksIcon from '../../images/mobileNavIcons/cube-outline.svg'
+import worksHover from '../../images/mobileNavIcons/cube-outline-hover.svg'
+import contactIcon from '../../images/mobileNavIcons/mail-outline.svg'
+import contactHover from '../../images/mobileNavIcons/mail-outline-hover.svg'
+
 
 import { IoCaretDownOutline} from 'react-icons/io5';
 import { IoCaretUpOutline} from 'react-icons/io5';
@@ -119,9 +124,8 @@ const iconLogoOptions = () => {
   };
 
   return (
-
-    <div className="Column" style={worksStyle()}>
-      <nav className="Column" style={{flex:"1", overflowY:"auto"}}>
+    <>
+      <nav className="Column" style={worksStyle()}>
 
         <div className="desktop-logo transition RowCentered" style={{height:"5rem",margin:"0 1.5rem"}}>
           <div className="ColumnCentered" onClick={()=>{setNavShelf(!navShelf)}}  style={{color:colorForNav()}}>
@@ -134,6 +138,7 @@ const iconLogoOptions = () => {
           </div>
           <div className="mobile-logo" style={{marginTop:"8.6px"}}>Jang</div>
         </div>
+        </nav>
 
 
         <div className="grid-container-mobile transition" style = {{
@@ -150,7 +155,8 @@ const iconLogoOptions = () => {
         setNavShelf={setNavShelf}
         routeFocus={routeFocus}
         setRouteFocus={setRouteFocus}
-        Icon={WorksIcon}
+        icon={worksIcon}
+        hoverIcon={worksHover}
         m = {m}
         l = {l}
         direction = "rl"
@@ -165,7 +171,8 @@ const iconLogoOptions = () => {
         setNavShelf={setNavShelf}
         routeFocus={routeFocus}
         setRouteFocus={setRouteFocus}
-        Icon={AboutIcon}
+        icon={aboutIcon}
+        hoverIcon={aboutHover}
         m = {m}
         l = {l}
         direction = "lr"
@@ -181,7 +188,8 @@ const iconLogoOptions = () => {
         setNavShelf={setNavShelf}
         colorForNav={colorForNav}
         setRouteFocus={setRouteFocus}
-        Icon={ContactIcon}
+        icon={contactIcon}
+        hoverIcon={contactHover}
         m = {m}
         l = {l}
         direction = "rl"
@@ -192,8 +200,7 @@ const iconLogoOptions = () => {
 
         </div>
 
-  </nav>
-</div>
+</>
   )
 }
 

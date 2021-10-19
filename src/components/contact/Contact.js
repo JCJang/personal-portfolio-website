@@ -64,11 +64,11 @@ useEffect(()=>{
 
   return (
     <div className="Column noScrollBar" style={contactStyle()}>
-      <div className={l?"Row":"Column"} style={{ padding:textMargin()}}>
+      <div className={l?"Row":"Column"} style={{ padding:textMargin(), zIndex:"10"}}>
         <div className= {l?"Column":"ColumnCentered"} style={{flex:"1", paddingRight:l && "5rem"}}>
         <h2 style={{padding:"0px"}}>Contact me</h2>
         <div className="boxDecoration" style={{borderColor:"var(--contact-text)"}}></div>
-        <h5 style={{maxWidth:l?"":inputWidth()}}>You can also write to me directly at: inbox@jcjang.com</h5>
+        <h5 style={{maxWidth:l?"":inputWidth()}}>You can also write to me at: jennifer@jenniferjang.dev</h5>
 
         </div>
         <div>
