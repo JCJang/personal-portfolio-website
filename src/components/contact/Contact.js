@@ -78,7 +78,7 @@ useEffect(()=>{
             name="contact"
             method="POST"
             style={{position:"relative", zIndex:"1", paddingTop:col2PaddingTop()}}>
-            <input type="hidden" name="contact-form" value="contact" />
+            <input type="hidden" name="form-name" value="contact" />
 
                 <div className="Row">
 
