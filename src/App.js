@@ -10,6 +10,8 @@ import ProjectPharmacy from './components/works/projects/ProjectPharmacy/Project
 import ProjectHumanities from './components/works/projects/ProjectHumanities/ProjectHumanities'
 import ProjectPersonal from './components/works/projects/ProjectPersonal/ProjectPersonal'
 
+import NotFound from './components/404/NotFound'
+
 import {useEffect, useState, useCallback} from 'react'
 import useMediaQuery from "./customHooks/useMediaQuery";
 import {Route, BrowserRouter as Router} from 'react-router-dom'
@@ -72,6 +74,9 @@ const App = () => {
     <ProjectPersonal  m={m} l={l} setRouteFocus={setRouteFocus}/>
     </Route>
 
+    <Route path="*">
+      <NotFound m={m} l={l} setRouteFocus={setRouteFocus}/>
+    </Route>
     </div>
     </Router>
   )
