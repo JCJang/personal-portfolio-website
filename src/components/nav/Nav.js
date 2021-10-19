@@ -130,7 +130,7 @@ const iconLogoOptions = () => {
   }
   {routeFocus==="/contact" &&
     <div className="RowCentered" style={{height:"1.5rem", justifyContent:"space-between",margin:"0 4rem"}}>
-    <div style={{font:"0.8rem/1.5 'Lusitana'"}}> My quote: "" - favorite author</div>
+    <div style={{font:"0.8rem/1.5 'Lusitana'", opacity:"0.7"}}></div>
     </div>
   }
 </div>
