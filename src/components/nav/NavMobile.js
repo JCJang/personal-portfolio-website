@@ -134,9 +134,9 @@ const iconLogoOptions = () => {
           </div>
           <p className="overline">{navShelf?"BACK":"MENU"}</p>
           </div>
-          <div className="selfCentered" style={{height:"1rem",marginTop:"0.8rem",borderBottom:`1.5px solid ${colorForNav()}`,width:"65vw"}}>{navText?navText:<div style={{visibility:"hidden"}}>?</div>}
+          <div className="selfCentered" style={{height:"1rem",marginTop:"0.8rem",borderBottom:m?`1.4px solid ${colorForNav()}`:`1px solid ${colorForNav()}`,width:"65vw"}}>{navText?navText:<div style={{visibility:"hidden"}}>?</div>}
           </div>
-          <div className="mobile-logo" style={{marginTop:"8.6px"}}>Jang</div>
+          <div className="mobile-logo" style={{marginTop:m?"7.4px":"5.7px"}}>Jang</div>
         </div>
         </nav>
 

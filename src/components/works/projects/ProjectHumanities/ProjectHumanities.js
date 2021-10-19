@@ -4,11 +4,6 @@ import Summary from '../sections/Summary'
 import mainImageV from './images/user-with-iphone-V.jpg'
 import mainImageH from './images/preview-page-H.jpg'
 
-import displayImage1 from './images/top-view-author-mockup-H.jpg'
-import displayImage2 from './images/user-with-iphone-V.jpg'
-import displayImage3 from './images/woman-using-laptop-V.jpg'
-import displayImage4 from './images/front-view-mockup-H.jpg'
-
 import topView1 from './images/top-view/searchview-history.jpg'
 import topView2 from './images/top-view/shelfview-historianscraft.jpg'
 import topView3 from './images/top-view/detailsviewhistorianscraft.jpg'

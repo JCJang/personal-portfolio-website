@@ -52,9 +52,9 @@ const About = ({m, l, setRouteFocus}) => {
       return {
         background:"var(--cinerous)",
         color: "var(--velvet)",
-        height:"100vh",
+        height:"var(--desktopheight)",
         width:"100vw",
-        overflowY:m?"auto":"hidden",
+        overflowY:"auto",
         overflowX:"hidden",
         scrollBehavior: "smooth",
 

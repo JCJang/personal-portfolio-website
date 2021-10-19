@@ -115,8 +115,8 @@ if(number===1){
         position:"relative",
         marginLeft:!m && leftToRight() && "2rem",
         marginRight:!m && rightToLeft() && "2rem",
-        left: leftToRight() && openedLayout ? "75vw" : leftToRight() ? "1px" : "",
-        right: rightToLeft() && openedLayout ? "75vw" : rightToLeft() ? "1px" : "",
+        left: leftToRight() && openedLayout ? "100vw" : leftToRight() ? "1px" : "",
+        right: rightToLeft() && openedLayout ? "100vw" : rightToLeft() ? "1px" : "",
         opacity: openedLayout? "0" : "1",
         transition: "left ease 0.9s, right ease 0.9s, opacity linear 0.6s"}}>
        {designDescription}</h4>

@@ -51,7 +51,7 @@ const gradientSetting = () =>{
         alignItems:"center",
         letterSpacing:"0.0156rem",
         textTransform:"uppercase"}}>
-        <img src={hover?hoverIcon:icon} style={{padding:"0.5rem"}}/>{title}</div>
+        <img src={hover?hoverIcon:icon} style={{height:"3.4rem",width:"3.4rem", padding:"0.5rem"}}/>{title}</div>
         {boxDecorationTop && <div className="boxDecoration-navMobileTop"></div>}
         {boxDecorationBottom && <div className="boxDecoration-navMobileBottom"></div>}
 
