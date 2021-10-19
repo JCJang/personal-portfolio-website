@@ -110,11 +110,11 @@ html { font-size: 18px;}
 
 
   --works-gradient-rl:
-  linear-gradient(to left, rgba(46, 59, 74, 0.7),rgba(46, 59, 74, 0.3)),
+  linear-gradient(to left, rgba(46, 59, 74, 0.5),rgba(46, 59, 74, 0.3)),
   linear-gradient(to left, rgba(106, 123, 130, 0.8) 0%, rgba(142, 149, 180, 0) 100%);
 
   --works-gradient-lr:
-   linear-gradient(to right, rgba(46, 59, 74, 0.7),rgba(46, 59, 74, 0.3)),
+   linear-gradient(to right, rgba(46, 59, 74, 0.5),rgba(46, 59, 74, 0.3)),
    linear-gradient(to right, rgba(106, 123, 130, 0.8) 0%, rgba(142, 149, 180, 0) 100%);
 
   --works-hover-gradient-rl:

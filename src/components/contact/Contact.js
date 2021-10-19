@@ -28,8 +28,9 @@ useEffect(()=>{
       background:"var(--contact-bg)",
       color: "var(--contact-text)",
       height:"var(--desktopheight)",
-      padding:textMargin(),
-      overflowY:"auto"
+      overflowY:"auto",
+      width:"100vw",
+      padding:l && "1.5rem 0"
     }
   };
 
@@ -62,67 +63,83 @@ useEffect(()=>{
   }
 
   return (
-    <div className="ColumnCentered noScrollBar" style={contactStyle()}>
+    <div className="Column noScrollBar" style={contactStyle()}>
+      <div className={l?"Row":"Column"} style={{ padding:textMargin()}}>
+        <div className= {l?"Column":"ColumnCentered"} style={{flex:"1", paddingRight:l && "5rem"}}>
+        <h2 style={{padding:"0px"}}>Contact me</h2>
+        <div className="boxDecoration" style={{borderColor:"var(--contact-text)"}}></div>
+        <h5 style={{maxWidth:l?"":inputWidth()}}>You can also write to me directly at: inbox@jcjang.com</h5>
 
-    <div className={m?"Row noScrollBar":"Column noScrollBar"} style={{overflowY:"auto"}}>
+        </div>
+        <div>
 
-            <div className={m?"Column":"ColumnCentered"} style={{position:"relative",zIndex:"1", paddingRight:m && "2rem", width:"inputWidth()", color:"var(--contact-text)"}}>
-              <h2 style={{padding:"0px"}}>Contact me</h2>
-              <div className="boxDecoration" style={{ border:"1.5px solid var(--contact-text)", width:!l && "40vw"}}></div>
-              <h5>You can also write to me directly at: inbox@jcjang.com</h5>
-              <br></br>
-              <div className="body2">I am currently available for both freelance projects and full-time oppurtunities. Don't hesitate to reach out to me if my skills are a good fit for your project!
-              </div>
-              </div>
-
-            <form className="ColumnCentered"
-            name="contact"
-            method="POST"
-            style={{position:"relative", zIndex:"1", paddingTop:col2PaddingTop()}}>
-            <input type="hidden" name="form-name" value="contact" />
-
-                <div className="Row">
-
-                <div className="Column" style={{width:inputWidth(true), marginRight:"1rem"}}>
-                <label for="name">From:</label>
-                <input onChange={(e)=>{setSender(e.target.value)}} type="text" id="name" name="name" value={sender} placeholder="your name" autofocus required />
-                </div>
-
-                <div className="Column" style={{width:inputWidth(true)}}>
-                <label> To:</label>
-                <input type="text" value=" Jennifer" inactive/>
-                </div>
-
-                </div>
-
-                <label for="email">Email:</label>
-                <input onChange={(e)=>{setEmail(e.target.value)}} placeholder="I will reach out to this inbox" type="email" id="email" name="email" value={email} style={{width:inputWidth()}} required />
-                <br></br>
-
-                <label for="message" className="RowCentered"><WorksIconLogo style={{fontSize:"1.2rem", marginRight:"0.5rem"}}/> Let's collaborate:</label>
-                 <textarea onChange={(e)=>{setMessage(e.target.value)}} rows={m?"7":"10"} name="message" id="message" value={message} placeholder="Send me your idea! I can develop your design, or craft your idea into a website you'll love." style={{width:inputWidth()}} required ></textarea>
+                <form className="ColumnCentered"
+                name="contact"
+                method="POST"
+                style={{position:"relative", zIndex:"1", paddingTop:col2PaddingTop()}}>
 
 
-                <button  onMouseEnter={() => setBtnHover(true)}
-                    onMouseLeave={() => {setBtnHover(false)}}
-                    onMouseDown={() => setBtnHover(true)}
-                    onMouseUp={() => {setBtnHover(false)}}
-                    type="submit" className="RowCentered btn contactBtn" style={{
-                      width:inputWidth(true),
-                      background:btnHover?"var(--velvet)":"",
-                      transition:"0.4s"}}>
-                    <p className="selfCentered" style={{marginTop:"0.3rem"}}>Send</p>
-                    <SendIcon style={{fontSize:"1.2rem", marginLeft:"1rem"}}/>
-                </button>
 
-            </form>
+                <input type="hidden" name="form-name" value="contact" />
 
+                    <div className="Row">
+
+                <Fade bottom delay={400}>
+                    <div className="Column" style={{width:inputWidth(true), marginRight:"1rem"}}>
+                    <label for="name">From:</label>
+                    <input onChange={(e)=>{setSender(e.target.value)}} type="text" id="name" name="name" value={sender} placeholder="your name" autofocus required />
+                    </div>
+                </Fade>
+
+                <Fade bottom delay={600}>
+
+                    <div className="Column" style={{width:inputWidth(true)}}>
+                    <label> To:</label>
+                    <input type="text" value=" Jennifer" inactive/>
+                    </div>
+                </Fade>
+                    </div>
+
+                <Fade bottom delay={900}>
+                    <div className="Column" style={{width:inputWidth()}}>
+                    <label for="email">Email:</label>
+                    <input onChange={(e)=>{setEmail(e.target.value)}} placeholder="I will reach out to this inbox" type="email" id="email" name="email" value={email} required />
+                    </div>
+                    <br></br>
+                </Fade>
+
+                <Fade bottom delay={1200}>
+                <div className="Column" style={{width:inputWidth()}}>
+                    <label for="message" className="RowCentered"><WorksIconLogo style={{fontSize:"1.2rem", marginRight:"0.5rem"}}/> Let's collaborate:</label>
+                     <textarea onChange={(e)=>{setMessage(e.target.value)}} rows={m?"7":"10"} name="message" id="message" value={message} placeholder="Send me your idea! I can develop your design, or craft your idea into a website you'll love."  required ></textarea>
+                  </div>
+                </Fade>
+
+                <Fade bottom delay={1500}>
+                    <button  onMouseEnter={() => setBtnHover(true)}
+                        onMouseLeave={() => {setBtnHover(false)}}
+                        onMouseDown={() => setBtnHover(true)}
+                        onMouseUp={() => {setBtnHover(false)}}
+                        type="submit" className="RowCentered btn contactBtn" style={{
+                          width:inputWidth(true),
+                          background:btnHover?"var(--velvet)":"",
+                          transition:"0.4s"}}>
+                        <p className="selfCentered" style={{marginTop:"0.3rem"}}>Send</p>
+                        <SendIcon style={{fontSize:"1.2rem", marginLeft:"1rem"}}/>
+                    </button>
+                </Fade>
+
+                </form>
+
+        </div>
       </div>
+
+      {l && <div style={{background:"var(--contact-text)", height:"1.1px",margin:"2rem 4rem 0 4rem",opacity:"0.8"}}></div>}
+
 
       <div style={{height:"var(--desktopheight)", opacity:"0.15",width:"100vw", bottom:"0px", left:"0px", position:"absolute",overflow:"hidden",mixBlendMode:"overlay"}}>
       <ImageFadeIn src={bgImage} className="bgImage"/>
       </div>
-
     </div>
   )
 }
