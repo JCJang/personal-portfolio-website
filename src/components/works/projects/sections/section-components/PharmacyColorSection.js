@@ -134,7 +134,7 @@ const HumanitiesColorSection = ({direction, colorTexture, colorText, colorWirefr
   <Fade bottom>
     <div className="image-col ColumnCentered">
       <div style={colHalfRef()}>
-        <ImageOverflow height={l?"70vh":"40vh"} images={[colorMoodboard]} style={{paddingTop:col2PaddingTop()}}/>
+        <ImageOverflow height={l?"70vh":m?"40vh":"60vh"} images={[colorMoodboard]} style={{paddingTop:col2PaddingTop()}}/>
       </div>
     </div>
     </Fade>
@@ -187,7 +187,7 @@ const HumanitiesColorSection = ({direction, colorTexture, colorText, colorWirefr
   <div className="image-col ColumnCentered">
       <ImageOverflow
       m={m}
-      height="90vh"
+      height={l?"90vh":m?"50vh":"40vh"}
       images={colorWireframes}
       style={{gap:"4rem"}}
       />

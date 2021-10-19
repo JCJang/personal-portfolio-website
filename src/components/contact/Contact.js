@@ -30,7 +30,7 @@ useEffect(()=>{
       height:"var(--desktopheight)",
       overflowY:"auto",
       width:"100vw",
-      padding:l && "1.5rem 0"
+      padding: textMargin(),
     }
   };
 
@@ -58,20 +58,50 @@ useEffect(()=>{
   }
   }
 
+  const colLarge = () => {
+    if (l) return {
+        width:"calc(60vw - 12.5rem)"
+      }
+    if (m) return {
+        width:"calc(60vw - 7.5rem)"
+      }
+      return{
+        width:"80vw"
+      }
+}
+  const colHalf = () => {
+    if (l) return {
+        width:"calc(40vw - 12.5rem)",
+        marginRight: "5rem"
+      }
+    if (m) return {
+        width:"calc(40vw - 7.5rem)",
+        marginRight: "5rem"
+      }
+      return{
+        width:"80vw"
+      }
+  }
   const col2PaddingTop = () => {
     if (!m) return "2rem"
   }
 
   return (
     <div className="Column noScrollBar" style={contactStyle()}>
-      <div className={l?"Row":"Column"} style={{ padding:textMargin(), zIndex:"10"}}>
-        <div className= {l?"Column":"ColumnCentered"} style={{flex:"1", paddingRight:l && "5rem"}}>
+      <div className={l?"Row":"Column"} style={{zIndex:"10"}}>
+        <div className= {l?"Column":"ColumnCentered"}  style={colHalf()}>
         <h2 style={{padding:"0px"}}>Contact me</h2>
         <div className="boxDecoration" style={{borderColor:"var(--contact-text)"}}></div>
-        <h5 style={{maxWidth:l?"":inputWidth()}}>You can also write to me at: jennifer@jenniferjang.dev</h5>
+        <h6 style={{maxWidth:l?"":inputWidth()}}>Or write to:
+        <Fade delay={500}>
+        <div style={{fontSize:"1rem", paddingTop:"1rem"}}>
+        jennifer@jenniferjang.dev
+        </div>
+        </Fade>
+        </h6>
 
         </div>
-        <div>
+        <div style={colLarge()}>
 
                 <form className="ColumnCentered"
                 name="contact"

@@ -246,19 +246,19 @@ const Design = ({
   </div>
 <Fade bottom>
   <div>
-    <ImageOverflow l={l} m={m} height="60vh" images={typographyRefImages} titles={typographyRefTitles} style={{filter:"saturate(0)"}}/>
+    <ImageOverflow l={l} m={m} height={l?"60vh":"40vh"} images={typographyRefImages} titles={typographyRefTitles} style={{filter:"saturate(0)"}}/>
   </div>
 
 <div style={{marginBottom:extraSpacing()}}></div>
 
-  <div className="RowCentered" style={textMarginStyle()}>
+  <div className={m?"RowCentered":"ColumnCentered"} style={textMarginStyle()}>
 
     {finalTypography.map((typography)=>{
-      return <div className={m?"RowCentered":"ColumnCentered"} style={{padding:"0 2rem", width:"28vw", justifyContent:"flex-start", height:!m && "15vh"}}>
+      return <div className={m?"RowCentered":"ColumnCentered"} style={{padding:m?"0 2rem":"2rem", width:"28vw", justifyContent:"flex-start"}}>
       <div>
-      <img src={serifTypes[typography.slice(0,1)-1]} style={{height:"8vw",width:"auto"}}></img>
+      <img src={serifTypes[typography.slice(0,1)-1]} style={{height:m?"8vw":"100px",width:"auto"}}></img>
       </div>
-      <div className={`${typography.split(':')[1].split(/\s/).join("").trim()}`} style={{color:"var(--midnight)", fontSize:"1.2rem", width:m?"13vw":"28vw", marginLeft:"2rem", marginTop:!m&&"1rem"}}>
+      <div className={`${typography.split(':')[1].split(/\s/).join("").trim()}`} style={{color:"var(--midnight)", fontSize:"1.2rem", width:m?"13vw":"28vw", marginLeft:m&&"2rem", marginTop:!m&&"1rem", textAlign:!m && "center"}}>
       {typography.slice(2)}
       </div>
       </div>})}

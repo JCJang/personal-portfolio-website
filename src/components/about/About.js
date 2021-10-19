@@ -219,18 +219,21 @@ const About = ({m, l, setRouteFocus}) => {
 
     <h6 style={{flex:"1"}}>
 
-    <Fade bottom>
+    <Fade bottom delay={500}>
       <div><h6><em>How can I benefit people’s lives by combining psychology with the power of technology?</em></h6></div>
       </Fade>
 
     </h6>
 
   </div>
+  <Fade bottom delay={700}>
 
-  <div id="summary-col-2" className="Column" style={{position:"absolute",right:m?"10rem":"0", bottom:m?"5rem":"", top:m?"5rem":"-1rem"}}>
+  <div id="summary-col-2" className="Column" style={{position:"absolute",zIndex:"4",right:m?"10rem":"0", bottom:m?"5rem":"", top:m?"5rem":"-1rem"}}>
   <div></div>
     <ImageFadeIn src={headshot} style={{minWidth:"200px", maxWidth:m?"400px":"70vw", minHeight:"300px",maxHeight:m?"60vh":"80vh",objectFit:"contain",zIndex:"1"}}/>
+
   </div>
+  </Fade>
 
 </div>
 </div>
@@ -262,9 +265,15 @@ const About = ({m, l, setRouteFocus}) => {
       ? "RowCentered"
       : "Column"} style={{alignItems:"space-between",  position:"relative",
         zIndex:"4"}}>
+    <Fade bottom delay={300}>
     <TocLabel m={m} label="who i am" sublabel="background" about={true}/>
+    </Fade>
+    <Fade bottom delay={450}>
      <TocLabel m={m} label="what inspires me" sublabel="hobbies" about={true}/>
+     </Fade>
+     <Fade bottom delay={700}>
      <TocLabel m={m} label="how i can help" sublabel="skills and languages" about={true}/>
+     </Fade>
   </div>
 </div>
 
@@ -284,9 +293,11 @@ const About = ({m, l, setRouteFocus}) => {
         borderColor: "var(--velvet)"
       }}></div>
 
+    <Fade bottom>
     <h6>
       How a psychology graduate went from writing papers to writing code.
     </h6>
+    </Fade>
 
   </div>
 
@@ -336,6 +347,7 @@ const About = ({m, l, setRouteFocus}) => {
 
         <div className={l?"ColumnCentered":m? "RowCentered":"ColumnCentered"} style={{gap:"1rem", alignItems: l? "flex-start": !m? "flex-end":"", justifyContent:m && "space-between", marginTop:"2rem", width: !m && "calc(70vw - 3rem)"}}>
 
+  <Fade bottom>
           <h6 className="HobbyLabel RowCentered" onClick={()=>{setHobbyFocus('travel')}} style={{
             color:hobbyFocus==='travel' && "var(--highlight)",
             borderBottom:hobbyFocus==='travel' && "1.8px solid var(--highlight)"
@@ -344,7 +356,8 @@ const About = ({m, l, setRouteFocus}) => {
           <TravelingIcon style={iconStyle()}/>
           Travel
           </h6>
-
+  </Fade>
+  <Fade bottom delay={150}>
           <h6 className="HobbyLabel RowCentered" onClick={()=>{setHobbyFocus('reading')}} style={{
             color:hobbyFocus==='reading' && "var(--highlight)",
             borderBottom:hobbyFocus==='reading' && "1.8px solid var(--highlight)"
@@ -352,6 +365,8 @@ const About = ({m, l, setRouteFocus}) => {
           <ReadingIcon style={iconStyle()}/>
           Reading
           </h6>
+  </Fade>
+  <Fade bottom delay={300}>
           <h6 className="HobbyLabel RowCentered" onClick={()=>{setHobbyFocus('painting')}} style={{
             color:hobbyFocus==='painting' && "var(--highlight)",
             borderBottom:hobbyFocus==='painting' && "1.8px solid var(--highlight)"
@@ -359,6 +374,7 @@ const About = ({m, l, setRouteFocus}) => {
           <PaintingIcon style={iconStyle()}/>
           Painting
           </h6>
+  </Fade>
         </div>
       </div>
 
@@ -470,9 +486,12 @@ const About = ({m, l, setRouteFocus}) => {
         borderColor: "var(--velvet)"
       }}></div>
 
+  <Fade bottom delay={300}>
     <h6>
-    I believe that listening and empathy are key to design - and to teamwork.   </h6>
-
+    I believe that listening and empathy are key to design - and to teamwork.
+    </h6>
+  </Fade>
+  
   </div>
 
   <div id="summary-col-2" className="Column" style={colHalf()}>

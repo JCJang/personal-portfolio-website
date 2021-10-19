@@ -172,7 +172,8 @@ const Summary = ({
         : "mainImage-mobile"} style={{
         position: "relative",
         height: "100vh",
-        width: "100vw"
+        width: "100vw",
+        background: "var(--table-neutral)"
       }}>
       <Fade bottom>
       <ImageFadeIn src={mainImage} style={{
