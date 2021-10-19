@@ -74,13 +74,17 @@ useEffect(()=>{
               </div>
               </div>
 
-            <form className="ColumnCentered" name="contact" method="POST" data-netlify="true" style={{position:"relative", zIndex:"1", paddingTop:col2PaddingTop()}}>
+            <form className="ColumnCentered"
+            name="contact"
+            method="POST"
+            style={{position:"relative", zIndex:"1", paddingTop:col2PaddingTop()}}>
+            <input type="hidden" name="contact-form" value="contact" />
 
                 <div className="Row">
 
                 <div className="Column" style={{width:inputWidth(true), marginRight:"1rem"}}>
                 <label for="name">From:</label>
-                <input onChange={(e)=>{setSender(e.target.value)}} type="text" id="name" name="name" value={sender} placeholder="your name" autofocus/>
+                <input onChange={(e)=>{setSender(e.target.value)}} type="text" id="name" name="name" value={sender} placeholder="your name" autofocus required />
                 </div>
 
                 <div className="Column" style={{width:inputWidth(true)}}>
@@ -91,11 +95,11 @@ useEffect(()=>{
                 </div>
 
                 <label for="email">Email:</label>
-                <input onChange={(e)=>{setEmail(e.target.value)}} placeholder="I will reach out to this inbox" type="email" id="email" name="email" value={email} style={{width:inputWidth()}}/>
+                <input onChange={(e)=>{setEmail(e.target.value)}} placeholder="I will reach out to this inbox" type="email" id="email" name="email" value={email} style={{width:inputWidth()}} required />
                 <br></br>
 
                 <label for="message" className="RowCentered"><WorksIconLogo style={{fontSize:"1.2rem", marginRight:"0.5rem"}}/> Let's collaborate:</label>
-                 <textarea onChange={(e)=>{setMessage(e.target.value)}} rows={m?"7":"10"} name="message" id="message" value={message} placeholder="Send me your idea! I can develop your design, or craft your idea into a website you'll love." style={{width:inputWidth()}}></textarea>
+                 <textarea onChange={(e)=>{setMessage(e.target.value)}} rows={m?"7":"10"} name="message" id="message" value={message} placeholder="Send me your idea! I can develop your design, or craft your idea into a website you'll love." style={{width:inputWidth()}} required ></textarea>
 
 
                 <button  onMouseEnter={() => setBtnHover(true)}

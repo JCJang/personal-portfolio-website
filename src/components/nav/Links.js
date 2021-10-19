@@ -12,21 +12,11 @@ const background = () =>{
 }
 
 const color = () =>{
-  if (routeFocus.slice(0,7)==="/works/"){
-    if(hover || routeName==="/works"){
+  if(hover || routeFocus===routeName){
+      if(routeFocus==="/about") return "var(--desert-rose)"
+      if (routeFocus==="/contact") return "var(--highlight)"
       return "var(--velvet)"
-    }
- }else if(hover || routeFocus===routeName){
-      if(routeFocus==="/about"){
-        return "var(--desert-rose)"
-      }else if (routeFocus==="/works") {
-        return "var(--velvet)"
-      }else if (routeFocus==="/contact") {
-        return "var(--highlight)"
-      }else{
-        return "var(--velvet)"
-      }
-    }
+  }
 }
 
   return (

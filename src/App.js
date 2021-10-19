@@ -56,19 +56,19 @@ const App = () => {
     <Route path = "/contact" exact>
     <Contact  m={m} l={l} setRouteFocus={setRouteFocus}/>
     </Route>
-    <Route path = "/works" exact>
+    <Route path = "/" exact>
     <Works s={s} m={m} l={l} setRouteFocus={setRouteFocus}/>
     </Route>
 
-    <Route path = "/works/humanities-book-database" exact>
+    <Route path = "/humanities-book-database" exact>
       <ProjectHumanities  m={m} l={l} setRouteFocus={setRouteFocus}/>
     </Route>
 
-    <Route path = "/works/pharmacy-concept-app" exact>
+    <Route path = "/pharmacy-concept-app" exact>
     <ProjectPharmacy  m={m} l={l} setRouteFocus={setRouteFocus}/>
     </Route>
 
-    <Route path = "/works/personal-website" exact>
+    <Route path = "/personal-website" exact>
     <ProjectPersonal  m={m} l={l} setRouteFocus={setRouteFocus}/>
     </Route>
 

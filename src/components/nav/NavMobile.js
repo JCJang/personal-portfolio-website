@@ -46,7 +46,7 @@ const backgroundForNav = () => {
     return "var(--desert-rose)";
   }else if(routeFocus==="/about"){
     return "var(--cinerous)"
-  }else if (routeFocus==="/works") {
+  }else if (routeFocus==="/") {
     return "var(--works-accent)"
   }else if (routeFocus==="/contact") {
     return "var(--contact-bg)"
@@ -60,7 +60,7 @@ const colorForNav = () => {
     return "var(--highlight)";
   }else if(routeFocus==="/about"){
     return "var(--velvet)"
-  }else if (routeFocus==="/works") {
+  }else if (routeFocus==="/") {
     return "var(--midnight)"
   }else if (routeFocus==="/contact") {
     return "var(--contact-text)"
@@ -75,7 +75,7 @@ const textForNav = () => {
     return "";
   }else if(routeFocus==="/about"){
     return "About"
-  }else if (routeFocus==="/works") {
+  }else if (routeFocus==="/") {
     return "Works by"
   }else if (routeFocus==="/contact") {
     return "Contact"
@@ -90,7 +90,7 @@ const iconLogoOptions = () => {
     return <BackIcon style={{transform:"rotate(-90deg)"}}/>
   }else if(routeFocus==="/about"){
     return <AboutIconLogo/>
-  }else if (routeFocus==="/works") {
+  }else if (routeFocus==="/") {
     return <WorksIconLogo/>
   }else if (routeFocus==="/contact") {
     return <ContactIconLogo/>
@@ -155,7 +155,7 @@ const iconLogoOptions = () => {
         l = {l}
         direction = "rl"
         title = "Works"
-        routeName="/works"
+        routeName="/"
         subtitle = "How can I help readers find quality humanities books?"
         />
 

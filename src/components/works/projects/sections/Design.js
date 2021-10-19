@@ -330,7 +330,7 @@ const Design = ({
   <br></br>
   <div className="RowCentered" style={overflowStyle()}>
   <ImageOverflow l={l} m={m} height={l?"100vh":"85vh"} images={designSystemImages} titles={designSystemTitles} style={{filter:"saturate(0.8)"}}/>
-  
+
   </div>
   <div style={{paddingBottom:extraSpacing()}}></div>
 

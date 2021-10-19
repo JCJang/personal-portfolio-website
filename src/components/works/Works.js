@@ -53,7 +53,7 @@ const worksStyle = () => {
              m = {m}
              l = {l}
              classes = "grid-book"
-             routeName = "/works/humanities-book-database"
+             routeName = "/humanities-book-database"
              direction = "rl"
              role = "Ideation, UX Research, Design, full stack development"
              title = "Humanities Book Database"
@@ -68,7 +68,7 @@ const worksStyle = () => {
               l = {l}
               specs = "Figma"
               introduction = "In this project I researched common complaints and problems faced by Maine pharmacy users, then created a mobile app design and prototype with solutions such as transparent pricing, medication packaging status, refill notifications, and foreign language options."
-              routeName = "/works/pharmacy-concept-app"
+              routeName = "/pharmacy-concept-app"
               direction = "lr"
               role = "Ideation, UX Research, UI and UX Design"
               title = "Pharmacy concept app"
@@ -78,11 +78,11 @@ const worksStyle = () => {
                 s = {s}
                 m = {m}
                 l = {l}
-               routeName = "/works/personal-website"
+               routeName = "/"
                direction = "rl"
                title = "Personal Website"
                specs = "Figma, React"
-               introduction = "In this project I created a personal portfolio to showcase my work and design process."
+               introduction = "page in development. In this project I created a personal portfolio to showcase my work and design process."
                role = "Design and Development"
               / >
         </div>

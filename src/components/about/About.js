@@ -211,7 +211,7 @@ const About = ({m, l, setRouteFocus}) => {
   <div id="summary-col-1" className="Column" style={{width:"50%", height:l?"var(--desktopheight)":"60vh", position:"relative",
     zIndex:"4"}}>
 
-  <h2 style={{paddingTop:"0"}}>Designer & Frontend Developer</h2>
+  <h2 style={{paddingTop:"1rem"}}>Designer & Frontend Developer</h2>
 
     <div className="boxDecoration" style={{
         borderColor: "var(--highlight)"
@@ -292,7 +292,7 @@ const About = ({m, l, setRouteFocus}) => {
 
   <div id="summary-col-2" className="Column" style={colHalf()}>
   <div style={{paddingTop:col2PaddingTop()}}></div>
-  <div>Hello, my name is Jennifer Jang, and I'll be the first to admit it - I didn't always think of becoming a designer or developer. I first got into psychology because I was passionate about asking ‘why’ – but there I realized I was also passionate about <Link className="AboutWorksLink" target="_blank" to="/works/pharmacy-concept-app">problem-solving for ‘how’</Link>.
+  <div>Hi, my name is Jennifer Jang, and I'll be the first to admit it - I didn't always think of becoming a designer or developer. I first got into psychology because I was passionate about asking ‘why’ – but there I realized I was also passionate about <Link className="AboutWorksLink" target="_blank" to="/pharmacy-concept-app">problem-solving for ‘how’</Link>.
   <br></br>
   <br></br>
   By stumbling across UX design, which led me to frontend development, I discovered a niche in which I can explore both ‘Why’s and ‘How’s, all the while providing solutions to real life problems. This continues to be my main drive even today, to ask myself: “How can I benefit people’s lives by combining psychology with the power of technology?”
@@ -438,7 +438,7 @@ const About = ({m, l, setRouteFocus}) => {
       </div>
       :hobbyFocus==="reading"?
       <div>
-      For me, writing will always be the most impressive technology of them all. While <Link className="AboutWorksLink" target="_blank" to="/works/humanities-book-database">humanities books</Link> have helped me develop my own opinions and values, there is nothing I love more than good literature - from Jorge Luis Borges to Donna Tartt. Works of literature that explores complex thoughts and feelings were formative to my empathy and understanding of people.
+      For me, writing will always be the most impressive technology of them all. While <Link className="AboutWorksLink" target="_blank" to="/humanities-book-database">humanities books</Link> have helped me develop my own opinions and values, there is nothing I love more than good literature - from Jorge Luis Borges to Donna Tartt. Works of literature that explores complex thoughts and feelings were formative to my empathy and understanding of people.
 
       </div>
       :hobbyFocus==="painting"?
@@ -478,7 +478,7 @@ const About = ({m, l, setRouteFocus}) => {
   <div id="summary-col-2" className="Column" style={colHalf()}>
   <div style={{paddingTop:col2PaddingTop()}}></div>
   <div style={{display:"inline"}}>
-  I am an interdisciplinary learner that enjoys working at every stage of a product. Being an INTJ personality type, my strengths lie in solving problems logically and systematically. If you haven’t already, take a look at my <Link className="AboutWorksLink" target="_blank" to="/works">case studies</Link> that follow my comprehensive design process, from research, design, to development of the final product.
+  I am an interdisciplinary learner that enjoys working at every stage of a product. Being an INTJ personality type, my strengths lie in solving problems logically and systematically. If you haven’t already, take a look at my <Link className="AboutWorksLink" target="_blank" to="/">case studies</Link> that follow my comprehensive design process, from research, design, to development of the final product.
   <br></br>
   <br></br>
    My ideal company is a small sized startup that uses technology to change people’s lives for the better. If this sounds like your team, I would love to hear from you!

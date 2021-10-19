@@ -4,15 +4,18 @@ import useDebounce from '../../../../../customHooks/useDebounce'
 
 import { IoEllipseOutline as Circle } from "react-icons/io5";
 import { IoEllipseSharp as CircleFilled } from "react-icons/io5";
-import { IoCaretBackOutline as Prev } from "react-icons/io5";
-import { IoCaretForwardOutline as Next } from "react-icons/io5";
+import { IoChevronBackSharp as Prev } from "react-icons/io5";
+import { IoChevronForwardSharp as Next } from "react-icons/io5";
 import { IoPauseOutline as Pause } from "react-icons/io5";
 import { IoPlayOutline as Play } from "react-icons/io5";
 
 
 
-import {useEffect, useState} from 'react'
-const Carousel = ({carouselSlides, carouselSlidesTitles}) => {
+import {useEffect, useState, useRef} from 'react'
+import useClickOutside from '../../../../../customHooks/useClickOutside';
+import ImageOverflowModal from './ImageOverflowModal'
+
+const Carousel = ({carouselSlides, carouselSlidesTitles, height="100vh", width="100vw"}) => {
 
   const [slideNumber, setSlideNumber] = useState(0)
   const [autoPlay, setAutoPlay] = useState(true)
@@ -28,14 +31,14 @@ const Carousel = ({carouselSlides, carouselSlidesTitles}) => {
 
 
   useTimeout(()=>{
-      if(autoPlay){
+      if(!isOpen && autoPlay){
         setSlideNumber(1)
       }
     },4000)
 
 
   useDebounce(()=>{
-    if(autoPlay){
+    if(!isOpen && autoPlay){
       if(slideNumber===carouselSlides.length-1){
         setSlideNumber(0)
       }else{
@@ -44,23 +47,42 @@ const Carousel = ({carouselSlides, carouselSlidesTitles}) => {
     }
   },3500,[slideNumber])
 
+//modal
+  const [imageArrNumber, setImageArrNumber] = useState(0)
+  const [isOpen, setIsOpen] = useState(false)
+
+
+  const modalRef = useRef()
+  useClickOutside(modalRef, ()=>{
+    if (isOpen) setIsOpen (false)
+  })
 
   return (
-    <div className="Row" style={{position:"relative",height:"100vh",width:"100vw",background:"var(--velvet)"}}>
+    <div className="Row" style={{position:"relative",height:height,width:width,background:"var(--velvet)",overflow:"hidden"}}>
+
+          <ImageOverflowModal isOpen={isOpen} modalRef={modalRef} setIsOpen={setIsOpen} image={carouselSlides[imageArrNumber]} onClose={() => setIsOpen(false)}>
+          </ImageOverflowModal>
 
       {carouselSlides.map((slide)=>{
-      return  <div  className="carousel-gradient" style={{
+      return  <div  className="carousel-gradient ImageOverflowImg" style={{
         position:"absolute",
         top:"0",
         left:slideLeft(slide),
-        transition:"opacity linear 1s, left ease 0.7s",
+        transition:"opacity linear 1s, left ease 0.7s, transform ease 0.7s",
         opacity:carouselSlides.indexOf(slide)!==slideNumber && "0"
       }}>
 
-      <ImageFadeIn src={slide} key={carouselSlides.indexOf(slide)} style={{
-        filter:"saturate(0.5)",
-        width: "100vw",
-        height:"100vh",
+      <ImageFadeIn src={slide}
+      dragabble="false"
+      onClick={(e) => {
+        e.stopPropagation();
+          setImageArrNumber(carouselSlides.indexOf(slide));
+          setIsOpen(true)
+        }
+      }
+      key={carouselSlides.indexOf(slide)} style={{
+        width: width,
+        height:height,
         display: "block",
         objectFit:"cover"}}/>
 
@@ -80,42 +102,42 @@ const Carousel = ({carouselSlides, carouselSlidesTitles}) => {
           position:"absolute",
           bottom:"0",
           left:"0",
-          color:"var(--table-neutral)"
         }} >
 
 
 
-    <div className="ColumnCentered" onClick={()=>{if(slideNumber===0){  setSlideNumber(carouselSlides.length-1) }else{setSlideNumber(slideNumber-1)}}}
+    <button className="ColumnCentered carouselBtn" onClick={()=>{if(slideNumber===0){  setSlideNumber(carouselSlides.length-1) }else{setSlideNumber(slideNumber-1)}}}
      style={{
        position:"absolute",
        bottom:"0",
        left:"0",
-       fontSize:"1.5rem"}}>
+       height:height,
+       fontSize:"2rem",
+      }}>
        <Prev/>
-       prev
-       </div>
+       </button>
 
 
-        <div className="Column" style={{justifyContent:"center",alignItems:"center"}}>
+        <div className="Column" style={{justifyContent:"flex-end", alignItems:"center", position:"absolute", bottom:"0", color:"var(--cinerous)",height:"30vh"}}>
 
 {carouselSlidesTitles &&
-          <div className="overline-details">
+          <div className="body1" style={{width:"50vw", textAlign:"center"}}>
           {carouselSlidesTitles[slideNumber]}
           </div>}
 
-          <div>{carouselSlides.map((slide)=>{if(slideNumber===carouselSlides.indexOf(slide)){return <CircleFilled style={{margin:"0.1rem"}}/>}else{return <Circle style={{margin:"0.1rem"}}/>}})}</div>
+          <div style={{padding:"0.5rem 0"}}>{carouselSlides.map((slide)=>{if(slideNumber===carouselSlides.indexOf(slide)){return <CircleFilled style={{margin:"0.1rem", fontSize:"0.5rem"}}/>}else{return <CircleFilled style={{opacity:"0.6", fontSize:"0.5rem", margin:"0.1rem"}}/>}})}</div>
         </div>
 
-        <div className="ColumnCentered" onClick={()=>{if(slideNumber===carouselSlides.length-1){ setSlideNumber(0)
+        <button className="ColumnCentered carouselBtn" onClick={()=>{if(slideNumber===carouselSlides.length-1){ setSlideNumber(0)
 }else{setSlideNumber(slideNumber+1)}}}
         style={{
           position:"absolute",
           bottom:"0",
           right:"0",
-          fontSize:"1.5rem"}}>
+          height:height,
+          fontSize:"2rem"}}>
           <Next/>
-          next
-          </div>
+          </button>
 
         </div>
 

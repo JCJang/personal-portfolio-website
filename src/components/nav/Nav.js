@@ -38,7 +38,7 @@ const [logoRotation, setLogoRotation] = useState("")
 const backgroundForNav = () => {
   if(routeFocus==="/about"){
     return "var(--cinerous)"
-  }else if (routeFocus==="/works") {
+  }else if (routeFocus==="/") {
     return "var(--works-accent)"
   }else if (routeFocus==="/contact") {
     return "var(--contact-bg)"
@@ -50,7 +50,7 @@ const backgroundForNav = () => {
 const colorForNav = () => {
   if(routeFocus==="/about"){
     return "var(--velvet)"
-  }else if (routeFocus==="/works") {
+  }else if (routeFocus==="/") {
     return "var(--midnight)"
   }else if (routeFocus==="/contact") {
     return "var(--contact-text)"
@@ -62,7 +62,7 @@ const colorForNav = () => {
 const iconLogoOptions = () => {
   if(routeFocus==="/about"){
     return <AboutIconLogo/>
-  }else if (routeFocus==="/works") {
+  }else if (routeFocus==="/") {
     return <WorksIconLogo/>
   }else if (routeFocus==="/contact") {
     return <ContactIconLogo/>
@@ -110,7 +110,7 @@ const iconLogoOptions = () => {
 
 
         <div className="RowCentered">
-        <Links routeName="/works" label="Works" routeFocus={routeFocus} colorForNav={colorForNav} setRouteFocus={setRouteFocus} Icon={WorksIcon} />
+        <Links routeName="/" label="Works" routeFocus={routeFocus} colorForNav={colorForNav} setRouteFocus={setRouteFocus} Icon={WorksIcon} />
         <Links routeName="/about" label="About" routeFocus={routeFocus} colorForNav={colorForNav}  setRouteFocus={setRouteFocus} Icon={AboutIcon} />
 
         <Links routeName="/contact" label="Contact" routeFocus={routeFocus} colorForNav={colorForNav}  setRouteFocus={setRouteFocus} Icon={ContactIcon} />
@@ -118,7 +118,7 @@ const iconLogoOptions = () => {
 
   </nav>
   <div style={{background:colorForNav(),height:"1.1px",margin:"0 2rem",opacity:"0.8"}}></div>
-  {routeFocus==="/works" &&
+  {routeFocus==="/" &&
     <div className="RowCentered" style={{height:"1.5rem", justifyContent:"space-between",margin:"0 4rem"}}>
     <div style={{font:"0.8rem/1.5 'Lusitana'"}}> Winter 2021</div>
     <div style={{height:"1.5rem", font:"0.8rem/1.5 'Lusitana'"}}>Issue <strong>#15</strong></div>
