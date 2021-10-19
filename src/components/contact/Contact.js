@@ -1,6 +1,7 @@
 import ImageFadeIn from '../../customHooks/imageFadeIn'
 import { IoSendOutline as SendIcon } from "react-icons/io5";
 import { IoCubeOutline as WorksIconLogo } from "react-icons/io5";
+import Fade from 'react-reveal/Fade';
 
 
 import {useState, useEffect} from 'react';
@@ -118,7 +119,7 @@ useEffect(()=>{
 
       </div>
 
-      <div style={{height:"100vh", opacity:"0.35",width:"100vw", top:"0px", left:"0px", position:"absolute",overflow:"hidden",mixBlendMode:"overlay"}}>
+      <div style={{height:"var(--desktopheight)", opacity:"0.15",width:"100vw", bottom:"0px", left:"0px", position:"absolute",overflow:"hidden",mixBlendMode:"overlay"}}>
       <ImageFadeIn src={bgImage} className="bgImage"/>
       </div>
 

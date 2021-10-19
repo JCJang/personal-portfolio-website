@@ -29,6 +29,7 @@ const worksStyle = () => {
     color: "var(--midnight)",
     height:"var(--desktopheight)",
     overflowY:"auto",
+    width:"100vw",
     padding:l && "1.5rem 0"
 
   }
@@ -36,13 +37,12 @@ const worksStyle = () => {
 
   return (
     <div className="Column" style={worksStyle()}>
-      <div className={l?"Row":"Column"} style={{flex:"1", overflowY:"auto"}}>
-        <div className= {l?"Column":"ColumnCentered"} style={{padding:"2rem", width:"30vw", display:!l && "none"}}>
+      <div className={l?"Row":"Column"} style={{flex:"1"}}>
+        <div className= {l?"Column":"ColumnCentered"} style={{padding:"2rem", flex:"1", display:!l && "none"}}>
           <h2>Works</h2>
           <div className="boxDecoration"></div>
-          <h5>some subtitles</h5>
           <br></br>
-          <div className="body2">Hover on Works for more.</div>
+          <h5>Hover on each Work for details.</h5>
 
         </div>
         <div className={l?"grid-container":"grid-container-mobile"}>

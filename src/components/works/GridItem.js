@@ -78,20 +78,20 @@ const borderLeft = () => {
     position: "relative",
     zIndex: "10",
     textAlign: direction === "lr" ? "left" : "right",
-    color: "var(--works-bg)",
+    color: "var(--table-neutral)",
     lineHeight: "5rem",
     justifyContent: "center",
     padding:direction==="lr"?"0 4rem 0 0":"0 0 0 4rem",
     opacity:hover?"0":"1"
   }}
    >
-   <Fade top>
+   <Fade top delay={500}>
         <div style={{lineHeight:"1.5rem"}}>{role}</div>
     </Fade>
-    <Fade>
+    <Fade delay={700}>
           <div style={{fontWeight:"400",font:"2.3rem/1.4 'Yaldevi',sans-serif", letterSpacing:"0.0156rem",textTransform:"uppercase"}}>{title}</div>
     </Fade>
-    <Fade bottom>
+    <Fade bottom delay={900}>
 
         <div className="subtitle1" style={{lineHeight:"3rem"}}>{subtitle}</div>
     </Fade>
@@ -107,7 +107,6 @@ const borderLeft = () => {
   color: "var(--works-bg)",
   justifyContent: "center",
   opacity:hover?"1":"0",
-  overflowY:"auto"
   }}
   >
 
