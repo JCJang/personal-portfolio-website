@@ -54,7 +54,7 @@ const About = ({m, l, setRouteFocus}) => {
         color: "var(--velvet)",
         height:"100vh",
         width:"100vw",
-        overflowY:"auto",
+        overflowY:m?"auto":"hidden",
         overflowX:"hidden",
         scrollBehavior: "smooth",
 
@@ -228,9 +228,9 @@ const About = ({m, l, setRouteFocus}) => {
   </div>
   <Fade bottom delay={700}>
 
-  <div id="summary-col-2" className="Column" style={{position:"absolute",zIndex:"4",right:m?"10rem":"0", bottom:m?"5rem":"", top:m?"5rem":"-1rem"}}>
+  <div id="summary-col-2" className="Column" style={{position:"absolute",zIndex:"3",right:m?"10rem":"0", bottom:m?"5rem":"", top:m?"5rem":"2rem"}}>
   <div></div>
-    <ImageFadeIn src={headshot} style={{minWidth:"200px", maxWidth:m?"400px":"70vw", minHeight:"300px",maxHeight:m?"60vh":"80vh",objectFit:"contain",zIndex:"1"}}/>
+    <ImageFadeIn src={headshot} style={{minWidth:"200px", maxWidth:m?"400px":"70vw", minHeight:"300px",maxHeight:m?"60vh":"65vh",objectFit:"contain",zIndex:"1"}}/>
 
   </div>
   </Fade>
@@ -491,7 +491,7 @@ const About = ({m, l, setRouteFocus}) => {
     I believe that listening and empathy are key to design - and to teamwork.
     </h6>
   </Fade>
-  
+
   </div>
 
   <div id="summary-col-2" className="Column" style={colHalf()}>
