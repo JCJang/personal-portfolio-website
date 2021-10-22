@@ -1,10 +1,17 @@
 import { IoEllipseSharp as CircleFilled } from "react-icons/io5";
-import ImageOverflow from './ImageOverflow'
 import { IoColorFilterOutline as ColorIcon } from "react-icons/io5";
 import Fade from 'react-reveal/Fade';
+import {useState} from 'react'
+
+import ImageFadeIn from '../../../../../customHooks/imageFadeIn'
+import ImageOverflow from './ImageOverflow'
 
 
-const PersonalColorSection = ({direction, colorTexture, colorText, colorWireframes, brandColorFinal, colorMoodboard, designColorLabels, designColorHexes, designDescription, designTitle, m, l, number}) => {
+const PersonalColorSection = ({direction, colorTexture, colorText, colorWireframes, brandColorFinal, colorMoodboard, moodboardText, designColorLabels, designColorHexes,finalColorLabels, finalColorHexes, designDescription, designTitle, m, l, number}) => {
+
+const [openedLayout, setOpenedLayout] = useState(false)
+const [hover, setHover] = useState(false)
+
 
   const textMarginStyle=()=>{
     if (l) return {
@@ -118,28 +125,146 @@ const PersonalColorSection = ({direction, colorTexture, colorText, colorWirefram
     <ColorIcon style={iconStyle()}/>
     Color</h4>
 
-    <div className="subtitle1" style={textMarginStyle()}>
-      {designTitle}</div>
+    <div className="body1" style={textMarginStyle()}>
+    {designDescription}
+    </div>
 
-  <div className={m?"Row":"Column"} style={textMarginStyle()}>
+  <div className={l?"Row":"Column"} style={{
+    flexDirection: !l && "column-reverse",
+    margin:l? "2.5rem":"2.5rem 0",
+    position:"relative",
+    height:"fit-content",
+    overflow:!l && "hidden",
+    width:l?"calc(100vw - 5rem)":"100vw",
+   color:"var(--occlusion)",
+   position: "relative",
+  }}>
 
-    <div id="pharmacy-color-col-1" style={colLarge()}>
 
-    <div className="body1"  style={{
-      margin:"1.5rem 0",
-      fontSize:"1.2rem"}}>
-     {designDescription}</div>
-  </div>
-
+  <div className="image-col ColumnCentered">
   <Fade bottom>
-    <div className="image-col ColumnCentered">
-      <div style={colHalfRef()}>
-        <ImageOverflow height={l?"70vh":"40vh"} images={[colorMoodboard]} style={{paddingTop:col2PaddingTop()}}/>
+
+    <div  onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => {setHover(false)}}
+          onClick={()=>{setOpenedLayout(!openedLayout)}}
+        style={{
+          position: "relative",
+          left: !l? "0rem": openedLayout ? "-20vw" : "0rem",
+          transition: "left ease 0.7s, right ease 0.7s",
+          cursor:"pointer",
+          background: "var(--works-bg)",
+          top:!l && openedLayout && "0px",
+          marginLeft:l && "5rem",
+          marginTop: !l && "2rem"
+}}>
+      <div
+            style={{margin:l?"3rem":openedLayout?"0rem":"2rem", objectFit:"cover", transition:"margin linear 0.4s, transform ease 0.6s",
+        transform: l && hover? "scale(1.2)":l? "": openedLayout ?"scale(1.5)":"scale(1)", background: "var(--table-light)"}}>
+        <div style={{opacity:openedLayout && "0.4", transition: "opacity ease 0.9s"}}>
+            <ImageFadeIn style={{
+              transition: "filter linear 0.5s",
+              height:l?"30vw":"70vw",
+              width:l?"30vw":"70vw",
+              filter:openedLayout && "saturate(0)"
+            }} src={colorMoodboard}/>
+        </div>
       </div>
     </div>
-    </Fade>
+
+  </Fade>
+  <div className="overline" style={{
+  alignSelf:"flex-start",
+  justifySelf:"flex-start",
+  paddingTop:"1rem",
+  marginLeft:"5rem",
+  position:"relative",
+  bottom: openedLayout ? "-3rem" : "1px",
+  opacity: openedLayout? "0" : "1",
+  transition: "bottom ease 0.7s, opacity linear 0.4s"
+}}>
+    click moodboard for color keywords
+  </div>
   </div>
 
+  <div id="description-col" className="Column" style={{
+    width:l?"30vw":"80vw",
+    marginLeft:l && "4rem",
+  }}>
+
+    <div className="subtitle1" style={{
+      fontSize:"3rem",
+      position:"relative",
+      marginLeft:!m && "2rem",
+      left: !l? "": openedLayout ? "55vw" : "1px",
+      opacity: !l? "1" : openedLayout? "0" : "1",
+      transition: "left ease 0.7s, right ease 0.7s, opacity linear 0.5s"}}>
+      {designTitle}</div>
+
+    <Fade bottom>
+    <div className="body2" style={{
+      margin:"1.5rem 0",
+      position:"relative",
+      marginLeft:!m && "2rem",
+      left: openedLayout ? "100vw" : "1px",
+      opacity: openedLayout? "0" : "1",
+      transition: "left ease 0.9s, right ease 0.9s, opacity linear 0.6s"}}>
+     {moodboardText}</div>
+
+
+    <div className="Row" style={{
+      margin:"0 0.5rem",
+      flex:"1",
+      position:"relative",
+      left: openedLayout ? "95vw" : "1px",
+      opacity: openedLayout? "0" : "1",
+      transition: "left ease 0.9s, right ease 0.9s, opacity linear 0.6s"}}>
+          {designColorHexes.map((hex, number)=>{
+            return <div className="Column" style={{alignItems:"center"}}>
+             <div style={{height:l?"1.5rem":"2rem", width:l?"1.5rem":"2rem", background:hex, margin:"0.25rem 1.3rem",  borderRadius:"2px"}}></div>
+             <div>{designColorLabels && designColorLabels[number]}</div>
+             <div style={{fontSize:"0.7rem", opacity:"0.8"}}>{hex}</div>
+             </div>
+          })}
+    </div>
+    </Fade>
+
+
+  </div>
+
+    <Fade bottom>
+  <div id="opened-col-colorWireframe"
+  className="Column"
+  onClick={()=>{if(l) return
+    setOpenedLayout(!openedLayout)}}
+  style={{
+    position:"absolute",
+    height:l?"100%":"fit-content",
+    width:"fit-content",
+    right: openedLayout && l? "10vw" : openedLayout? "0rem": "-105vw",
+    justifyContent:"flex-end",
+    top: l?"0rem":"20rem",
+    alignItems:"flex-end",
+    transition: "left ease 0.6s, right ease 0.6s",
+  }}>
+  <div>
+  <ImageFadeIn style={{
+    transition: "filter linear 0.5s",
+    height:l?"30vw":"60vw",
+    width:"auto",
+    marginRight:l?"3rem":"2rem"
+  }} src={colorTexture}/>
+
+  <ImageFadeIn style={{
+    transition: "filter linear 0.5s",
+    height:l?"40vw":"70vw",
+    width:"auto",
+  }} src={colorWireframes}/>
+
+  </div>
+  </div>
+  </Fade>
+
+  </div>
 
   <div className="Row" style={{justifyContent:"center", width:"100vw"}}><div className="boxDecoration" style={{width:"20vw", borderColor:"var(--velvet)",margin:""}}></div></div>
 
@@ -152,11 +277,11 @@ const PersonalColorSection = ({direction, colorTexture, colorText, colorWirefram
         <div className="Column" style={{
           margin:"0 0.5rem"
         }}>
-              {designColorHexes.map((hex, number)=>{
+              {finalColorHexes.map((hex, number)=>{
                 return <Fade bottom>
                 <div className="Column" style={{alignItems:"center"}}>
-                 <CircleFilled style={{height:l?"2rem":"3rem", width:l?"2rem":"3rem", color:hex, margin:"0.25rem 1.3rem"}}/>
-                 <div><strong> {designColorLabels && designColorLabels[number]}</strong></div>
+                 <div style={{height:l?"1.5rem":"2rem", width:l?"1.5rem":"2rem", background:hex, margin:"0.5rem 1.3rem", border:"1.5px solid var(--midnight)", borderRadius:"2px"}}></div>
+                 <div><strong> {finalColorLabels && finalColorLabels[number]}</strong></div>
                  <div style={{fontSize:"0.7rem", opacity:"0.8"}}>{hex}</div>
                  </div>
                  </Fade>
@@ -183,16 +308,7 @@ const PersonalColorSection = ({direction, colorTexture, colorText, colorWirefram
 
 
 
-  <Fade bottom>
-  <div className="image-col ColumnCentered">
-      <ImageOverflow
-      m={m}
-      height="90vh"
-      images={colorWireframes}
-      style={{gap:"4rem"}}
-      />
-  </div>
-  </Fade>
+
 
 
 </>

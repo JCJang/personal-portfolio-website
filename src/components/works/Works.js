@@ -78,7 +78,7 @@ const worksStyle = () => {
                 s = {s}
                 m = {m}
                 l = {l}
-               routeName = "/"
+               routeName = "/personal-website"
                direction = "rl"
                title = "Personal Website"
                specs = "Figma, React"

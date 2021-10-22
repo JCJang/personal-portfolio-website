@@ -230,7 +230,7 @@ const App = () => {
         </AnimatePresence>
 
 </Route>
-<Route path="*">
+<Route path="/*">
         <AnimatePresence>
           <motion.div
           key="404"

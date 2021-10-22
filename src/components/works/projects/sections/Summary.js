@@ -49,7 +49,11 @@ const Summary = ({
           if (m) return {
             margin:"1rem 5rem",
           }
-          return {margin:"1rem 2rem", fontSize:"2.5rem", textAlign:"center"}
+          return {
+            margin:"1rem 2rem",
+            fontSize:"2.5rem",
+            textAlign:"center"
+          }
         }
 
         const textMarginStyleH4=()=>{
@@ -59,9 +63,11 @@ const Summary = ({
           if (m) return {
             margin:"1rem 5rem",
           }
-          return {margin:"1rem 2rem", fontSize:"1.8rem"}
+          return {
+            margin:"1rem 2rem",
+            fontSize:"1.8rem"
+          }
         }
-
 
         const textMarginStyleRows=()=>{
           if (l) return {
@@ -72,7 +78,9 @@ const Summary = ({
             margin:"1rem 5rem",
             gap:"5rem"
           }
-          return {margin:"1rem 2rem"}
+          return {
+            margin:"1rem 2rem"
+          }
         }
 
         const textMargin = () => {
@@ -135,6 +143,12 @@ const Summary = ({
        const col2PaddingTop = () => {
          if (!m) return "2rem"
        }
+
+        const extraSpacing = () => {
+          if (l) return "5rem"
+          if (m) return "3rem"
+          return "2rem"
+        }
 
 
   return (<div className="Column" id="summary" style={summaryStyle()}>
@@ -249,6 +263,7 @@ const Summary = ({
 
     </div>
 
+    {!carousel &&  <div style={{marginBottom:extraSpacing()}}></div>}
 
     {carousel &&
 

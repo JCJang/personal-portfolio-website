@@ -182,7 +182,8 @@ const Research = ({
 <div className="Column" style={researchStyle()}>
 
 
-<h2 className="ProjectSectionTitle" style={textMarginStyleHeader()}>Ideation</h2>
+
+{ideationText && <h2 className="ProjectSectionTitle" style={textMarginStyleHeader()}>Ideation</h2>}
 
     <div className={m
         ? "Row"
@@ -233,7 +234,7 @@ const Research = ({
   </>}
 
 
-{problemSolution && <>
+{problemSolution && sectionTitles &&  <>
 <h4 className="Row" style={textMarginStyleH4()}><SurveyResultsIcon style={iconStyle()}/> {surveyResultsTitle}</h4>
 
 <div style={{paddingBottom:extraSpacing()}}></div>
@@ -250,7 +251,7 @@ const Research = ({
   {parseText(competitiveAnalysis)}
   </div>
 
-{!problemSolution && <>
+{!problemSolution && sectionTitles &&  <>
 <h4 className="Row" style={textMarginStyleH4()}><SurveyResultsIcon style={iconStyle()}/> {surveyResultsTitle}</h4>
 
 <div style={{paddingBottom:extraSpacing()}}></div>
@@ -261,8 +262,8 @@ const Research = ({
 </>
 }
 
-<h4 className = "Row" style={textMarginStyleH4()}> <FinalScreensIcon style={iconStyle()}/>
-        Screens and Features</h4>
+{screenTitles && <h4 className = "Row" style={textMarginStyleH4()}> <FinalScreensIcon style={iconStyle()}/>
+        Screens and Features</h4>}
 
     <div className = {
           l? "grid-container-screens-and-features":
@@ -277,13 +278,15 @@ const Research = ({
 
 <div style={{paddingBottom:extraSpacing()}}></div>
 
-<h4 className = "Row" style={textMarginStyle()} > <UserFlowIcon style={iconStyle()}/>
-        User Flow</h4>
+{userFlowText && <h4 className = "Row" style={textMarginStyle()} > <UserFlowIcon style={iconStyle()}/>
+        User Flow</h4>}
 
   <div className = "body1" style={textMarginStyle()}>
   {parseText(userFlowText)}
   </div>
 
+
+{userFlowImg &&
 
 <Fade bottom>
     <div className="RowCentered">
@@ -295,6 +298,7 @@ const Research = ({
       </div>
 
 </Fade>
+}
 
 
 <div style={{background: "var(--midnight)",

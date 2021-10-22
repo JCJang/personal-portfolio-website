@@ -50,8 +50,11 @@ const Design = ({
   colorText,
   colorDescriptions,
   colorMoodboards,
+  moodboardText,
   colorLabels,
   colorHexes,
+  finalColorLabels,
+  finalColorHexes,
   colorTitles,
   prototype,
   prototypeIllustration,
@@ -194,8 +197,11 @@ const Design = ({
      )}
 
     return (
+
 <div className="Column" style={designStyle()}>
   <h2 className="ProjectSectionTitle" style={textMarginStyleHeader()}>Design Process</h2>
+
+{lofi && <>
 
   <h4 className="Row" style={textMarginStyleH4()}>
     <LofiIcon style={iconStyle()}/>
@@ -214,6 +220,8 @@ const Design = ({
   </Fade>
 
   <div style={{marginBottom:extraSpacing()}}></div>
+
+  </>}
 
 {usability && <>
   <h4 className="Row" style={textMarginStyleH4()}>
@@ -291,6 +299,7 @@ const Design = ({
        <PharmacyColorSection
             m={m}
             l={l}
+            textMargin={textMargin}
             designColorLabels={colorLabels}
             designColorHexes={colorHexes}
             designTitle={colorTitles}
@@ -302,19 +311,23 @@ const Design = ({
             colorMoodboard={colorMoodboards}
             designDescription={colorDescriptions}/>
       :colorSection==="Personal"?
-       <PersonalColorSection
-            m={m}
-            l={l}
-            designColorLabels={colorLabels}
-            designColorHexes={colorHexes}
-            designTitle={colorTitles}
-            textMargin={textMargin}
-            colorWireframes={colorWireframes}
-            brandColorFinal={brandColorFinal}
-            colorText={colorText}
-            colorTexture={colorTextures && colorTextures}
-            colorMoodboard={colorMoodboards}
-            designDescription={colorDescriptions}/>
+      <PersonalColorSection
+           m={m}
+           l={l}
+           textMargin={textMargin}
+           designColorLabels={colorLabels}
+           designColorHexes={colorHexes}
+           finalColorLabels = {finalColorLabels}
+           finalColorHexes ={finalColorHexes}
+           designTitle={colorTitles}
+           textMargin={textMargin}
+           colorWireframes={colorWireframes}
+           brandColorFinal={brandColorFinal}
+           colorText={colorText}
+           colorTexture={colorTextures}
+           colorMoodboard={colorMoodboards}
+           moodboardText={moodboardText}
+           designDescription={colorDescriptions}/>
         :""
       }
   <div style={{paddingBottom:extraSpacing()}}></div>
