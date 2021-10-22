@@ -1,10 +1,10 @@
 import ImageFadeIn from '../../../../../customHooks/imageFadeIn';
-import  useDraggableScroll from 'use-draggable-scroll';
+import useDraggableScroll from 'use-draggable-scroll';
 import useDebounce from '../../../../../customHooks/useDebounce'
 import useClickOutside from '../../../../../customHooks/useClickOutside';
 
 import {useRef, useState,useEffect} from 'react'
-import ImageOverflowModal from './ImageOverflowModal'
+import ImageModal from './ImageModal'
 
 const ImageOverflow = ({l, m, images=[], height="50vh", style, titles}) => {
 
@@ -42,8 +42,8 @@ const ImageOverflow = ({l, m, images=[], height="50vh", style, titles}) => {
       overflowX:"scroll",
       padding:images.length===1 ? "3rem" : "4rem"}}>
 
-      <ImageOverflowModal isOpen={isOpen} modalRef={modalRef} setIsOpen={setIsOpen} image={images[imageArrNumber]} onClose={() => setIsOpen(false)}>
-      </ImageOverflowModal>
+      <ImageModal isOpen={isOpen} modalRef={modalRef} setIsOpen={setIsOpen} image={images[imageArrNumber]} onClose={() => setIsOpen(false)}>
+      </ImageModal>
 
      {images && images.map((image, number)=>{
        return <>

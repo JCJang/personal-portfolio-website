@@ -874,6 +874,14 @@ line-height: 100%;
 .gistStyles{
   height:70vh;
   overflow: auto;
+  border-radius:10px;
+}
+
+.gistStyles > * {
+  outline:none;
+  border:none;
+  border-radius:10px;
+
 }
 
 .gist-meta{

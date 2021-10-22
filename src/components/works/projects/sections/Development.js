@@ -37,7 +37,14 @@ const Development = ({
   functionalText,
   functionalCode,
   functionalProgrammingImages,
-  functionalProgrammingTitles
+  functionalProgrammingTitles,
+
+  organizationText,
+  organizationImages,
+  organizationTitles,
+  resourcefulProblemSolvingText,
+  carouselCode,
+  modalCode
 }) => {
 
   const developmentStyle = () => {
@@ -197,15 +204,20 @@ const Development = ({
     </div>
     </div>
 
-    <h3 style={textMarginStyleHeader()}>Resources and Backend</h3>
+{resourcesText &&  <>
 
+  <h3 style={textMarginStyleHeader()}>Resources and Backend</h3>
 
   <div className="body1" style={textMarginStyle()}>
   {parseText(resourcesText)}
   </div>
 
+    </>}
 
-  <h4 className = "Row" style = {textMarginStyleH4()} > <ScreensIcon style={iconStyle()}/>
+
+{screenTitles && <>
+
+   <h4 className = "Row" style = {textMarginStyleH4()} > <ScreensIcon style={iconStyle()}/>
         Planning and Defining Resources</h4>
 
 
@@ -223,7 +235,12 @@ const Development = ({
         }
 </div>
 
-<h4 className = "Row" style = {textMarginStyleH4()} >
+  </>}
+
+
+{databaseText && <>
+
+  <h4 className = "Row" style = {textMarginStyleH4()} >
   <DatabaseIcon style={iconStyle()}/> Database Design</h4>
 
 <div className = "body1"  style = {textMarginStyle()}>
@@ -244,9 +261,12 @@ const Development = ({
       <div style={gistStyle()}>
         <ReactEmbedGist contentClass ="gistStyles" titleClass="displayNone"  gist={serverCode}/>
       </div>
+  </>
+}
 
-    <h3 className="Column" style={textMarginStyleHeader()}>Frontend and problem-solving</h3>
+<h3 className="Column" style={textMarginStyleHeader()}>Frontend and problem-solving</h3>
 
+{functionalText && <>
     <h4 className="Row" style={textMarginStyleH4()}>
         <RelationIcon style={iconStyle()}/>
         Implementing Search by Related Authors</h4>
@@ -287,7 +307,9 @@ const Development = ({
       height="70vh"/>
     </div>
 </Fade>
+  </>}
 
+{functionalText && <>
  <h4 className = "Row" style = {textMarginStyleH4()} >
         <FunctionalIcon style={iconStyle()}/>
         Customizing Timelines with Functional programming </h4>
@@ -307,6 +329,60 @@ const Development = ({
       <ImageOverflow l={l} m={m}height="80vh" images={functionalProgrammingImages} titles={functionalProgrammingTitles}/>
     </div>
 </Fade>
+
+  </>}
+
+
+  {organizationText && <>
+      <h4 className="Row" style={textMarginStyleH4()}>
+          <RelationIcon style={iconStyle()}/>
+          Organizing more maintainable code</h4>
+
+    <div className="body1" style={textMarginStyle()}>
+    {parseText(organizationText)}
+    </div>
+
+      <br></br>
+
+      <Fade bottom>
+          <div style={overflowStyle()}>
+            <ImageOverflow l={l} m={m}images={organizationImages} titles={organizationTitles}/>
+          </div>
+      </Fade>
+
+    </>}
+
+
+{organizationText && <>
+
+  <h4 className="Row" style={textMarginStyleH4()}>
+        <RelationIcon style={iconStyle()}/>
+        Resourceful problem solving text</h4>
+
+  <div className="body1" style={textMarginStyle()}>
+  {parseText(resourcefulProblemSolvingText)}
+  </div>
+
+
+  <div>
+
+      <div style={gistStyle()}>
+        <ReactEmbedGist contentClass ="gistStyles" titleClass="displayNone" gist={carouselCode}/>
+      </div>
+
+<br></br>
+
+      <div style={gistStyle()}>
+        <ReactEmbedGist contentClass ="gistStyles" titleClass="displayNone" gist={modalCode}/>
+      </div>
+
+<br></br>
+
+  </div>
+
+  </>}
+
+
   </div>)
 }
 

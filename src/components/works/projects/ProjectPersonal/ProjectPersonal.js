@@ -28,6 +28,10 @@ import wireframe from './images/photo-desaturated.jpg'
 //Development
 import Development from '../sections/Development'
 
+import inlineCSSFunctions from './images/organization-inline-CSS-style-functions.jpg'
+import sectionLayout from './images/organization-layout.jpg'
+import projectParentText from './images/organization-text-only-project-files.jpg'
+
 
 import Footer from '../sections/Footer'
 
@@ -120,6 +124,26 @@ const ProjectPersonal = ({m, l, setRouteFocus}) => {
         colorMoodboards={moodboard}
 
      />
+     <span id="development"></span>
+    <Development
+      m={m}
+      l={l}
+
+      developmentText="With so many screens and features decided on in the research stage, I needed to decide what to focus on for the first iteration – what is my minimum viable product? To me it was clear that the core value of the database was: the query screen and the further reading screen, which form the bottom right enclosed cycle in the user flow. With this in mind, I revisited the screens and features page and began gathering resources for the development plan."
+
+      finalStack="Development technology stack: React."
+
+      frontendText="With database and API set up, I began developing the main screens of the web app in React. By reusing logic from the private screen, most of the public screen logic is easily completed. I used flexbox and inline CSS for the styling, and useState to hold data and manage DOM interactions."
+      organizationText="One of the things I wished I learned for my first project was how to plan and organize code.   For instance, I used too much inline css in that project and had to deal with it. I l now have a better understanding of react components and how to reuse them. Since I will be creating many pages for projects, I wanted to create ‘template-like’ sections for me to resuse, so that when I upload future projects, I only have to populate the text areas. In this project, I strived to separate text, inline css, and layout for a cleaner, more maintainable system."
+      organizationImages={[inlineCSSFunctions, sectionLayout, projectParentText]}
+      organizationTitles={["responsive inline CSS functions", "using CSS functions eliminates clutter from page structure", "parent component passes down text and images"]}
+
+      resourcefulProblemSolvingText="Another skill I practiced in this project is being resourceful and really utilizing open source code and components. Reading documentation and installing npm modules can save myself a lot of time than coding everything myself. After all, the end goal was to make things work. For instance, I to create the Carousel component, I utilized react portal, custom hooks such as useDebounce, useTimeout, and useClickOutside, useClickOutside, ImageFadeIn, react portal, react-zoom-pan-pinch, and a modal tutorial to assemble the carousel and modal."
+
+      carouselCode="JCJang/bff02d9a762c95dfd8b41cabfb937ae7"
+      modalCode="JCJang/81b00d9a0f737891b7c3eb666f38f0c4"
+         />
+
         <Footer m={m} l={l}/>
 
       </div>
