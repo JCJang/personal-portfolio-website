@@ -130,9 +130,9 @@ const ProjectPersonal = ({m, l, setRouteFocus}) => {
       m={m}
       l={l}
 
-      developmentText="With so many screens and features decided on in the research stage, I needed to decide what to focus on for the first iteration – what is my minimum viable product? To me it was clear that the core value of the database was: the query screen and the further reading screen, which form the bottom right enclosed cycle in the user flow. With this in mind, I revisited the screens and features page and began gathering resources for the development plan."
+      developmentText=""
 
-      finalStack="Development technology stack: React."
+      finalStack=""
 
       frontendText=""
       organizationText="One of the things I wished I learned for my first project was how to plan and organize code.   For instance, I used too much inline css in that project and had to deal with it. I l now have a better understanding of react components and how to reuse them. Since I will be creating many pages for projects, I wanted to create ‘template-like’ sections for me to resuse, so that when I upload future projects, I only have to populate the text areas. In this project, I strived to separate text, inline css, and layout for a cleaner, more maintainable system."
