@@ -3,7 +3,8 @@ import {useState, useEffect} from 'react';
 
 //summary
 import Summary from '../sections/Summary'
-
+import mainImageV from './images/main-v.jpg'
+import mainImageH from './images/main-h.jpg'
 
 //research
 import Research from '../sections/Research'
@@ -56,7 +57,7 @@ const ProjectPersonal = ({m, l, setRouteFocus}) => {
         <Summary
           m={m}
           l={l}
-
+          mainImage={m?mainImageH:mainImageV}
          research="Ideation, Research, and user flow"
          design="color, typography, and wireframes"
          development = "defining resources and problem-solving in React"
@@ -66,7 +67,7 @@ const ProjectPersonal = ({m, l, setRouteFocus}) => {
 
          challenge="How can I design a scalable and maintainable portfolio website?"
          solution="By using a design system and creating reusable sections and components."
-         summary="Welcome to a very self-referential case study. With the established contents of the standard portfolio website structure allowed me to focus more on design rather than research, and I experimented with concurrent design and development after establishing a design system. By creating reusable components and keeping the development process organized, I was able to design and launch my react website in 20 days."
+         summary="Welcome to a very self-referential case study. In this project I scoped out what portfolio website requirements are. These established constraints on content allowed me to put more time into design rather than research, and also freed me to jump into development after I establishing a design system. By creating reusable components and keeping the development process organized, I was able to design and launch my react website in 20 days."
          />
 
          <span id="research"></span>
@@ -75,9 +76,9 @@ const ProjectPersonal = ({m, l, setRouteFocus}) => {
          l={l}
 
 
-         researchText="As a hybrid designer/developer, I had to figure out how to present information in my portfolio and how. Many other designer-developers organize their projects according to their roles, but since all of my projects thus far are solo projects, and they are few in count, I felt that there is no need to separate them by category. Instead, I can list the roles on each. "
+         researchText="As a hybrid designer/developer, I had to figure out what and how to present information in my portfolio website. In my research, I looked at Google's UX design course criteria for online portfolios, portfolios by other designers, and junior web developer portfolio reviews. Using multiple sources, I organized common portfolio criteria for both UX designers and frontend developers."
 
-         competitiveAnalysis="The Google UX design certificate for ux portfolio guidelines – at least 3 projects, ‘Clear and concise’ and ‘skimmable’. Online articles suggest that each case study should include a summary section, and I later expanded into a table of contents in the case that recruiters are more interested in one section than the other. I also looked at many web developer portfolio reviews to see what I should or should not include. Many key words that came up include ‘thought process’ and ‘actual code,’ so I needed to incorporate these elements. For this reason, my case studies are on the wordier side when compared to other UX portfolios, but I also included many visuals for each page to be easy to skim. For code, I created gist samples that are clear and succinct and demonstrate problem solving. /I viewed many portfolios online, and noticed that most are minimalistic but on the masculine side, with bold black and white, background-removed photos, and all sans serif, they convey big tech companies or sports brands.Although I tried this layout at first, I decided to scrap that design direction and go for something that is more reflective of my design taste. I wanted an elegant design that is more feminine, with bold but tasteful colors, and a handwritten font for a personal touch. For the tone a straightforward, succinct, but so informative and reflective of my that communication style."
+         competitiveAnalysis="The Google UX design course on coursera states that ux portfolio should containt at least 3 projects, each being ‘Clear and concise’ and ‘skimmable’. Online articles suggest that each case study should include a summary section, and I later expanded into a table of contents in the case that recruiters are more interested in one section than the other./ I also looked at many web developer portfolio reviews to see what I should or should not include. Many key words that came up include ‘thought process’ and ‘actual code,’ so I needed to incorporate these elements. For this reason, my case studies are on the wordier side when compared to other UX portfolios, but I also included many visuals for each page to be easy to skim. For code, I created gist samples that are clear and succinct and demonstrate problem solving. /I viewed many portfolios online, and noticed that most are minimalistic but on the masculine side, with bold black and white, background-removed photos, and all sans serif, they convey big tech companies or sports brands.Although I tried this layout at first, I decided to scrap that design direction and go for something that is more reflective of my design taste. I wanted an elegant design that is more feminine, with bold but tasteful colors, and a handwritten font for a personal touch. Many other designer-developers organize their projects according to their roles, but since all of my projects thus far are solo projects, I felt that there is no need to separate them by category. Instead, I listed the roles on each. I chose a straightforward and informative tone for the content that reflects my communication style."
 
          competitiveAnalysisEmphasis="I wanted an elegant design that is more feminine, with bold but tasteful colors, and a handwritten font for a personal touch."
 
@@ -133,7 +134,7 @@ const ProjectPersonal = ({m, l, setRouteFocus}) => {
 
       finalStack="Development technology stack: React."
 
-      frontendText="With database and API set up, I began developing the main screens of the web app in React. By reusing logic from the private screen, most of the public screen logic is easily completed. I used flexbox and inline CSS for the styling, and useState to hold data and manage DOM interactions."
+      frontendText=""
       organizationText="One of the things I wished I learned for my first project was how to plan and organize code.   For instance, I used too much inline css in that project and had to deal with it. I l now have a better understanding of react components and how to reuse them. Since I will be creating many pages for projects, I wanted to create ‘template-like’ sections for me to resuse, so that when I upload future projects, I only have to populate the text areas. In this project, I strived to separate text, inline css, and layout for a cleaner, more maintainable system."
       organizationImages={[inlineCSSFunctions, sectionLayout, projectParentText]}
       organizationTitles={["responsive inline CSS functions", "using CSS functions eliminates clutter from page structure", "parent component passes down text and images"]}

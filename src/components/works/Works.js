@@ -2,6 +2,7 @@ import GridItem from './GridItem'
 
 import projectBookImg from '../../images/woman-using-laptop-V.jpg'
 import projectPharmacyImg from '../../images/5-order-screen.jpg'
+import projectPersonalImg from '../../images/project-personal-thumbnail.jpg'
 
 
 import { IoAlbumsOutline as LofiIcon} from 'react-icons/io5/index.esm.js';
@@ -78,6 +79,7 @@ const worksStyle = () => {
                 s = {s}
                 m = {m}
                 l = {l}
+                image={projectPersonalImg}
                routeName = "/personal-website"
                direction = "rl"
                title = "Personal Website"
