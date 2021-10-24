@@ -91,7 +91,7 @@ const ProjectPersonal = ({m, l, setRouteFocus}) => {
           ]}
 
          designKeywords={["elegant", "tailored", "simplistic", "magazine-style"]}
-         designTone={["straightforward", "succinct", "genuine", "informative"]}
+         designTone={["straightforward", "genuine", "insightful"]}
         />
 
         <span id="design"></span>
@@ -106,7 +106,7 @@ const ProjectPersonal = ({m, l, setRouteFocus}) => {
 
         finalColorLabels={["velvet", "cinereous", "neutral"]}
         finalColorHexes ={["#611016", "#C1BEBE","#DDE1E4"]}
-        colorLabels={["rose", "highlight","celadon", "lilac", "midnight"]}
+        colorLabels={["rose", "highlight","celadon", "lavender", "midnight"]}
         colorHexes ={["#A94758","#e7b1a7","#A8B4B6","#79839C", "#2E3B4A"]}
 
         designTitle ="Color Ideation"
@@ -145,7 +145,9 @@ const ProjectPersonal = ({m, l, setRouteFocus}) => {
       modalCode="JCJang/81b00d9a0f737891b7c3eb666f38f0c4"
          />
 
-        <Footer m={m} l={l}/>
+        <Footer m={m} l={l}
+      impact="lorem ipsum"
+      learned="lorem ipsum"/>
 
       </div>
     )

@@ -230,7 +230,10 @@ const ProjectPharmacy = ({m, l, setRouteFocus}) => {
        prototype="lorem ipsum"
        prototypeIllustration={[motionDesignImg]}
        prototypeLink="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F4kEUnH9BBuB7MCdCdqSyP1%2FPharmacy-Concept-App-Prototype%3Fnode-id%3D399%253A29340%26scaling%3Dscale-down%26page-id%3D399%253A27182%26starting-point-node-id%3D399%253A29340"/>
-       <Footer m={m} l={l}/>
+       <Footer m={m} l={l}
+       impact="I hope this app will one day be developed and used in the pharmacy where I worked. This is especially true since accessibility and pharmacy-related problems sometimes even concerns life and death.
+"
+       learned=""/>
     </div>
   )
 }

@@ -5,7 +5,9 @@ import Fade from 'react-reveal/Fade';
 const Footer = ({
   m,
   l,
-  websiteLink
+  websiteLink,
+  impact,
+  learned
 }) => {
 
   const footerStyle = () => {
@@ -124,7 +126,42 @@ const Footer = ({
 
   return (<div className="Column" id="summary" style={footerStyle()}>
 
+<div style={{background:"var(--works-bg)", color:"--works-text"}}>
+
+<h2 style={textMarginStyleHeader()}>Takeaways</h2>
+
   <div style={{marginBottom:extraSpacing()}}></div>
+
+
+      <div className={m
+          ? "Row"
+          : "Column"} style={textMarginStyleRows()}>
+
+        <div id="summary-col-1" className="Column" style={colHalf()}>
+          <h5>
+            <em>Impact:</em>
+          </h5>
+          <div className="body1" style={{paddingTop:col2PaddingTop()}}>
+            {impact}
+          </div>
+
+
+        </div>
+
+        <div id="summary-col-2" className="Column" style={colHalf()}>
+        <h5>
+          <em>What I Learned:</em>
+        </h5>
+          <div className="body1" style={{paddingTop:col2PaddingTop()}}>
+            {learned}
+          </div>
+        </div>
+
+      </div>
+
+      <div style={{marginBottom:extraSpacing()}}></div>
+
+</div>
 
         {websiteLink && <h6 className="Column" style={{
             margin: m? "3rem 5rem": "3rem 2rem",
@@ -135,6 +172,16 @@ const Footer = ({
 
           Visit the Web App at <a href={`https://${websiteLink}`} target="_blank" className="AboutWorksLink">{websiteLink}</a>
         </h6>}
+
+        <h5 className="Column" style={{
+            margin: m? "3rem 5rem": "3rem 2rem",
+            display: "inline",
+            alignSelf:"center",
+            color:"var(--velvet)"
+          }}>
+
+        Thank you for your time.
+        </h5>
 
 
     <div className={m
