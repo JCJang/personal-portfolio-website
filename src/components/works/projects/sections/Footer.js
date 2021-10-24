@@ -124,6 +124,7 @@ const Footer = ({
 
   return (<div className="Column" id="summary" style={footerStyle()}>
 
+  <div style={{marginBottom:extraSpacing()}}></div>
 
         {websiteLink && <h6 className="Column" style={{
             margin: m? "3rem 5rem": "3rem 2rem",
@@ -144,8 +145,6 @@ const Footer = ({
         color: "var(--velvet)"
       }}>
 
-
-      <div style={{marginBottom:extraSpacing()}}></div>
 
       {
         !m && <div className="subtitle1 selfCentered" style={{

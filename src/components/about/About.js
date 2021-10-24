@@ -13,6 +13,9 @@ import { IoLibraryOutline as ReadingIcon } from "react-icons/io5";
 
 import { IoSendOutline as SendIcon } from "react-icons/io5";
 
+import { IoLogoGithub as GithubIcon } from "react-icons/io5"
+import { IoLogoLinkedin as LinkedinIcon } from "react-icons/io5"
+import { IoDownloadOutline as DownloadIcon } from "react-icons/io5"
 
 import bgL from '../../images/about-bg-l.jpg'
 import bgM from '../../images/about-bg-m.jpg'
@@ -272,7 +275,10 @@ const About = ({m, l, setRouteFocus}) => {
      <TocLabel m={m} label="what inspires me" sublabel="hobbies" about={true}/>
      </Fade>
      <Fade bottom delay={700}>
-     <TocLabel m={m} label="how i can help" sublabel="skills and languages" about={true}/>
+     <TocLabel m={m} label="how i can help" sublabel="strengths and company fit" about={true}/>
+     </Fade>
+     <Fade bottom delay={700}>
+     <TocLabel m={m} label="links" sublabel="Github, LinkedIn, resume" about={true}/>
      </Fade>
   </div>
 </div>
@@ -523,16 +529,40 @@ const About = ({m, l, setRouteFocus}) => {
     </Link>
 
   </div>
+
 </div>
 
 <div style={{marginBottom:extraSpacing()}}></div>
 
+
+<div style={{background:"var(--occlusion)", color:"var(--cinerous)"}}>
+
+<div style={{marginBottom:extraSpacing()}}></div>
+
+<div id="links" className={m ? "Row" : "Column"} style={textMarginStyleRows()}>
+
+  <div id="summary-col-1" className="Column" style={colHalf()}>
+
+  <h3 style={{paddingTop:"0", fontFamily:"La Belle Aurore"}}>Links</h3>
+  </div>
+
+  <div id="summary-col-2" className={l?"Row":"Column"} style={colHalf()}>
+  <div style={{paddingTop:col2PaddingTop()}}></div>
+  <a className="AboutWorksLink HobbyLabel selfCentered" style={{whiteSpace:"nowrap", fontSize:"1.4rem", textDecoration:"none",  alignSelf: "flex-start"
+}} target="_blank" href="https://github.com/JCJang"><GithubIcon style={iconStyle()}/> Github</a>
+  <a className="AboutWorksLink HobbyLabel selfCentered" style={{whiteSpace:"nowrap", fontSize:"1.4rem", textDecoration:"none",alignSelf: "flex-start"}} target="_blank" href="https://www.linkedin.com/in/jennifer-jang"><LinkedinIcon style={iconStyle()}/> LinkedIn</a>
+  <Link to="./jennifer-jang-resume.pdf" className="AboutWorksLink HobbyLabel selfCentered" style={{whiteSpace:"nowrap", fontSize:"1.4rem", textDecoration:"none",alignSelf: "flex-start"}} target="_blank" download><DownloadIcon style={iconStyle()}/>Download CV</Link>
+  </div>
+
+  <br></br>
+  </div>
 
 <div style={textMarginStyle()}><em>A big thank you to all the wonderful people that selflessly share content online so that I could learn from and level up with you.</em></div>
 
 
 <div style={{marginBottom:extraSpacing()}}></div>
 
+</div>
 
 </div>
   )
