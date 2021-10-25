@@ -43,7 +43,7 @@ const Statistic = ({l, m, title, text, sources}) => {
 
         <div className="Column" style={{alignItems:"flex-end", textAlign:"right",opacity:"0.8"}}>
             <div style={{padding:"1rem 0 0.5rem 0"}}><em>Source:</em></div>
-            <div>{sources.map((source)=>{return <div className="overline" style={{marginTop:"0.8rem",fontSize:"0.7rem"}}><a href={source} target="_BLANK" style={{all:"inherit", display:"inline", cursor:"pointer"}}>{source}</a></div>})}
+            <div>{sources.map((source)=>{return <div className="overline" style={{marginTop:"0.8rem",fontSize:"0.7rem"}}><a href={source} target="_BLANK" style={{color:"inherit", display:"inline", cursor:"pointer"}}>{source}</a></div>})}
             </div>
         </div>
         </div>

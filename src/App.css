@@ -99,7 +99,7 @@ html { font-size: 18px;}
   --works-accent:#A8B4B6;
   --works-bg:#DDE1E2;
 
-  --contact-text: #D4BAC1;
+  --contact-text: #f4cdd8;
   --contact-accent: #4F577F;
   --contact-bg: #79839C;
   --contact-dark:#3b4760;
@@ -610,8 +610,12 @@ form  input{
   background: var(--cinerous);
   text-align: left;
   height: 1.8rem;
-  color:var(--midnight);
+  color:var(--contact-accent);
   padding: 0 0.5rem;
+}
+
+a:focus {
+  text-decoration: underline;
 }
 
 form  input::placeholder{
@@ -621,8 +625,9 @@ form  input::placeholder{
 
 
 form  input:focus{
-  border: 2px solid var(--highlight);
-  outline: none !important;
+  border: 1.5px solid var(--highlight);
+  outline-offset:3.5px;
+  outline: 1.5px solid var(--highlight);
 }
 
 textarea{
@@ -637,13 +642,15 @@ textarea{
 }
 
 textarea:focus{
-  border: 2px solid var(--highlight);
-  outline: none !important;
+  border: 1.5px solid var(--highlight);
+  outline-offset:3.5px;
+  outline: 1.5px solid var(--highlight);
 }
 
 textarea::placeholder{
   padding: 0.3rem 0.5rem;
   outline: none !important;
+  opacity:0.6;
 }
 
 .contactBtn{

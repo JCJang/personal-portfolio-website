@@ -54,8 +54,16 @@ if(number===1){
     <div className="image-col ColumnCentered">
     <Fade bottom>
 
-      <div  onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => {setHover(false)}}
+      <div tabindex = "0"
+            onFocus={() => setHover(true)}
+            onBlur={() => setHover(false)}
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+            onMouseDown={() => setHover(true)}
+            onMouseUp={() => setHover(false)}
+            onClick={()=> setOpenedLayout(!openedLayout)}
+            onKeyPress={(e)=>{
+              if (e.which === 13)  setOpenedLayout(!openedLayout)}}
             onClick={()=>{setOpenedLayout(!openedLayout)}}
           style={{
             position: "relative",

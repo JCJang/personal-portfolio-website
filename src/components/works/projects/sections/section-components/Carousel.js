@@ -21,12 +21,29 @@ const Carousel = ({
   const [slideNumber, setSlideNumber] = useState(0)
 
   const slidePosition = (slide) => {
-    if (slideNumber - carouselSlides.indexOf(slide) > 1) {
-      return `${ 105 * (slideNumber - carouselSlides.indexOf(slide))}vw`
+    const num = carouselSlides.indexOf(slide)
+    if (slideNumber - num > 1) {
+      return `${ 105 * (slideNumber - num)}vw`
     } else {
-      return `${ - 105 * (slideNumber - carouselSlides.indexOf(slide))}vw`
+      return `${ - 105 * (slideNumber - num)}vw`
     }
   }
+
+  const nextSlide = () => {
+      if (slideNumber === carouselSlides.length - 1) {
+        setSlideNumber(0)
+      } else {
+        setSlideNumber(slideNumber + 1)
+      }
+    }
+
+  const prevSlide = () => {
+      if (slideNumber === 0) {
+        setSlideNumber(carouselSlides.length - 1)
+      } else {
+        setSlideNumber(slideNumber - 1)
+      }
+    }
 
   //triggers slideNumber change after 4 seconds after page loads
   useTimeout(() => {
@@ -66,20 +83,21 @@ const Carousel = ({
     <ImageModal isOpen={isOpen} modalRef={modalRef} setIsOpen={setIsOpen} image={carouselSlides[imageArrNumber]} onClose={() => setIsOpen(false)}></ImageModal>
 
     {
-      carouselSlides.map((slide) => {
+      carouselSlides.map((slide, num) => {
         return <div className="carousel-gradient ImageOverflowImg" style={{
             position: "absolute",
             top: "0",
             left: slidePosition(slide),
             transition: "opacity linear 1s, left ease 0.7s, transform ease 0.7s",
-            opacity: carouselSlides.indexOf(slide) !== slideNumber && "0"
+            opacity: num !== slideNumber && "0"
           }}>
 
-          <ImageFadeIn src={slide} dragabble="false" onClick={(e) => {
+          <ImageFadeIn src={slide} dragabble="false"
+            onClick={(e) => {
               e.stopPropagation();
-              setImageArrNumber(carouselSlides.indexOf(slide));
+              setImageArrNumber(num);
               setIsOpen(true)
-            }} key={carouselSlides.indexOf(slide)} style={{
+            }} key={num} style={{
               width: width,
               height: height,
               display: "block",
@@ -101,14 +119,7 @@ const Carousel = ({
         left: "0"
       }}>
 
-      <button className="ColumnCentered carouselBtn" onClick={() => {
-          if (slideNumber === 0) {
-            setSlideNumber(carouselSlides.length - 1)
-          } else {
-            setSlideNumber(slideNumber - 1)
-          }
-        }
-} style={{
+      <button className="ColumnCentered carouselBtn" onClick={prevSlide} style={{
           position: "absolute",
           bottom: "0",
           left: "0",
@@ -139,8 +150,8 @@ const Carousel = ({
         <div style={{
             padding: "0.5rem 0"
           }}>{
-            carouselSlides.map((slide) => {
-              if (slideNumber === carouselSlides.indexOf(slide)) {
+            carouselSlides.map((slide, num) => {
+              if (slideNumber === num) {
                 return <CircleFilled style={{
                     margin: "0.1rem",
                     fontSize: "0.5rem"
@@ -156,13 +167,7 @@ const Carousel = ({
           }</div>
       </div>
 
-      <button className="ColumnCentered carouselBtn" onClick={() => {
-          if (slideNumber === carouselSlides.length - 1) {
-            setSlideNumber(0)
-          } else {
-            setSlideNumber(slideNumber + 1)
-          }
-        }} style={{
+      <button className="ColumnCentered carouselBtn" onClick={nextSlide} style={{
           position: "absolute",
           bottom: "0",
           right: "0",

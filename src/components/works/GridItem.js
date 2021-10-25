@@ -61,9 +61,13 @@ const borderLeft = () => {
 
   return (
 
-    <Link to={routeName} className={gradientSetting()} onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => {setHover(false)}} onMouseDown={() => setHover(true)}
-        onMouseUp={() => {setHover(false)}}  style = {{ textDecoration: "none",
+    <Link to={routeName} className={gradientSetting()}
+      onFocus={() => setHover(true)}
+      onBlur={() => setHover(false)}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      onMouseDown={() => setHover(true)}
+      onMouseUp={() => setHover(false)}  style = {{ textDecoration: "none",
     overflow: "hidden",
     borderRight: borderRight(),
     borderLeft: borderLeft()

@@ -1,7 +1,7 @@
 //combining and referencing code from 'react-zoom-pan-pinch' by Maciej Pyrc, 'react-image-fade-in' by Patrick Tran, react portal tutorial by Kyle Cook (WebDevSimplified)
 
 import ImageFadeIn from '../../../../../customHooks/imageFadeIn';
-import React from 'react'
+import React, {useEffect} from 'react'
 import ReactDom from 'react-dom'
 import {TransformWrapper, TransformComponent} from "react-zoom-pan-pinch";
 
@@ -39,15 +39,20 @@ export default function ImageModal({
   onClose,
   image
 }) {
+
+
   if (!isOpen)
     return null
+
 
   return ReactDom.createPortal(<> < div style = {
     overlayStyle
   }
   onClick = {
     (event) => event.stopPropagation()
-  } /> <div style={modalStyle} ref={modalRef}>
+  }
+
+   /> <div style={modalStyle} ref={modalRef}>
     <TransformWrapper>
       {
         ({

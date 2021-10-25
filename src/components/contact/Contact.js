@@ -74,13 +74,8 @@ useEffect(()=>{
         width:"calc(40vw - 12.5rem)",
         marginRight: "5rem"
       }
-    if (m) return {
-        width:"calc(40vw - 7.5rem)",
-        marginRight: "5rem"
-      }
-      return{
-        width:"80vw"
-      }
+      return { display:"none" }
+
   }
   const col2PaddingTop = () => {
     if (!m) return "2rem"
@@ -102,7 +97,7 @@ useEffect(()=>{
 
         </div>
         <div style={colLarge()}>
-
+          {!l && "send me a message below or write to me at jennifer@jenniferjang.dev"}
                 <form className="ColumnCentered"
                 name="contact"
                 method="POST"
@@ -141,7 +136,7 @@ useEffect(()=>{
                 <Fade bottom delay={1200}>
                 <div className="Column" style={{width:inputWidth()}}>
                     <label for="message" className="RowCentered"><WorksIconLogo style={{fontSize:"1.2rem", marginRight:"0.5rem"}}/> Let's collaborate:</label>
-                     <textarea onChange={(e)=>{setMessage(e.target.value)}} rows={m?"7":"10"} name="message" id="message" value={message} placeholder="Send me your idea! I can develop your design, or craft your idea into a website you'll love."  required ></textarea>
+                     <textarea onChange={(e)=>{setMessage(e.target.value)}} rows={m?"7":"10"} name="message" id="message" value={message} placeholder="I would love to hear from you. Collaboration? Work? Constructive feedback? Send your thoughts my way!"  required ></textarea>
                   </div>
                 </Fade>
 
@@ -167,7 +162,7 @@ useEffect(()=>{
       {l && <div style={{background:"var(--contact-text)", height:"1.1px",margin:"2rem 4rem 0 4rem",opacity:"0.8"}}></div>}
 
 
-      <div style={{height:"var(--desktopheight)", opacity:"0.15",width:"100vw", bottom:"0px", left:"0px", position:"absolute",overflow:"hidden",mixBlendMode:"overlay"}}>
+      <div style={{height:"var(--desktopheight)", opacity:"0.23",width:"100vw", bottom:"0px", left:"0px", position:"absolute",overflow:"hidden",mixBlendMode:"overlay"}}>
       <ImageFadeIn src={bgImage} className="bgImage"/>
       </div>
     </div>
