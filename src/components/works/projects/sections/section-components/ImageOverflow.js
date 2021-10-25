@@ -48,7 +48,7 @@ const ImageOverflow = ({l, m, images=[], height="50vh", style, titles}) => {
      {images && images.map((image, number)=>{
        return <>
        <div className="overline" style={{paddingTop:"1rem"}}>
-         {titles && <div  style={{minWidth:"120px", width:l?"20vw":"35vw",textAlign:"left",padding:images.length===1? "0 2rem 0 0": "0 1rem 0 3rem", alignSelf:"flex-start", justifySelf:"flex-start"}}>{titles[number]}</div>}
+         {titles && <div  style={{minWidth:"120px", width:l?"180px":"180px",textAlign:"left",padding:images.length===1? "0 2rem 0 0": "0 1rem 0 3rem", alignSelf:"flex-start", justifySelf:"flex-start"}}>{titles[number]}</div>}
        </div>
        <div className="ImageOverflowImg" style={{
          display:"flex",
@@ -65,7 +65,7 @@ const ImageOverflow = ({l, m, images=[], height="50vh", style, titles}) => {
          pointerEvents:"none",
          zIndex:"25",
          position:"absolute",
-         width: "fit-content",
+         width: "intrinsic",
          alignSelf:"center",
          maxHeight: images.length===1? `calc(${height} - 2rem)`:height,
          maxWidth: images.length===1? `calc(${height} - ${widthMarginLength()})`:height,

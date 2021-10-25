@@ -1,5 +1,6 @@
 import ImageOverflow from './section-components/ImageOverflow'
 import Fade from 'react-reveal/Fade';
+import { IoLogoGithub as GithubIcon } from "react-icons/io5"
 
 import {IoTerminalOutline as ScreensIcon} from "react-icons/io5";
 import {IoServerOutline as DatabaseIcon} from "react-icons/io5";
@@ -19,6 +20,7 @@ const Development = ({
   l,
   developmentText,
   finalStack,
+  githubRepository,
   resourcesText,
   screenTitles,
   screenFeatures,
@@ -198,9 +200,20 @@ const Development = ({
       </div>
 
     <div id="summary-col-2" className="Column" style={colHalf()}>
-        <h5 style={{paddingTop:col2PaddingTop()}}>
+        <h5><a className="AboutWorksLink" href={githubRepository} target="_blank" style={{textDecoration:"none"}}><GithubIcon style={{  alignSelf: "center",
+          marginRight: "0.8rem",
+          fontSize: "1.6rem",
+          minWidth:"1.6rem"}}/>click here for github repository</a></h5>
+
+
+        <div className="boxDecoration" style={{
+            borderColor: "var(--works-text)"
+          }}></div>
+
+
+        <h6 style={{paddingTop:col2PaddingTop()}}>
           <strong>{finalStack}</strong>
-        </h5>
+        </h6>
     </div>
     </div>
 
