@@ -6,7 +6,18 @@ const AccordionLabel = ({m, sectionResults, focus, setFocus, title, sectionAppli
 
   return (
         <div>
-        <div className="AccordionLabel" onClick={()=>{
+        <div className="AccordionLabel"
+        tabindex="0"
+        onFocus={() => setHover(true)}
+        onBlur={() => setHover(false)}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        onMouseDown={() => setHover(true)}
+        onMouseUp={() => setHover(false)}
+        onClick={()=> setOpenedLayout(!openedLayout)}
+        onKeyPress={(e)=>{
+          if (e.which === 13)  setOpenedLayout(!openedLayout)}}
+        onClick={()=>{
           if(focus===title){
             setFocus("")
           }else{

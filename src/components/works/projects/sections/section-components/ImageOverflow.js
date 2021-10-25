@@ -52,9 +52,9 @@ const ImageOverflow = ({l, m, images=[], height="50vh", style, titles, alt}) => 
 
      {images && images.map((image, number)=>{
        return <>
-       <div className="overline" style={{paddingTop:"1rem"}}>
-         {titles && <label for={titles[number]} style={{minWidth:"120px", width:l?"180px":"180px",textAlign:"left",padding:images.length===1? "0 2rem 0 0": "0 1rem 0 3rem", alignSelf:"flex-start", justifySelf:"flex-start"}}>{titles[number]}</label>}
-       </div>
+       {titles && <div style={{minWidth:"120px", width:l?"180px":"180px",textAlign:"left",margin:images.length===1? "1rem 2rem 0 0": "1rem 1rem 0 3rem", alignSelf:"flex-start", justifySelf:"flex-start"}}>
+         <label for={titles[number]} style={{font:"1rem/1.5 'Yaldevi'", textTransform:"uppercase"}}>{titles[number]}</label>
+       </div>}
        <div className="ImageOverflowImg" style={{
          display:"flex",
          flexDirection:images.length===1 ? "reverse-column" : "row"
