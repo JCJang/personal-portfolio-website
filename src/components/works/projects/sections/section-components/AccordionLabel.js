@@ -18,7 +18,7 @@ const AccordionLabel = ({m, sectionResults, focus, setFocus, title, sectionAppli
             return;
           }
         }
-            onClick={()=>{
+        onClick={()=>{
           if(focus===title){
             setFocus("")
           }else{
