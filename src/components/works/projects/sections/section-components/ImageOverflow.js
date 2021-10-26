@@ -72,14 +72,14 @@ const ImageOverflow = ({l, m, images=[], height="50vh", style, titles, alt}) => 
            setIsOpen(true)
          }
        }
-        draggable="false" tabindex = "0" style={{
+        draggable="false" tabindex = "0"
+        style={{
          pointerEvents:"none",
          zIndex:"25",
          position:"absolute",
          width: "intrinsic",
          alignSelf:"center",
-         maxHeight: images.length===1? `calc(${height} - 2rem)`:height,
-         maxWidth: images.length===1? `calc(${height} - ${widthMarginLength()})`:height,
+         height: images.length===1? `calc(${height} - 2rem)`:height,
          display: "block",
          objectFit:"cover"}} style={style}/>
          </div>

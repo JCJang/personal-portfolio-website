@@ -20,6 +20,7 @@ const Development = ({
   l,
   developmentText,
   finalStack,
+  stackMemo,
   githubRepository,
   resourcesText,
   screenTitles,
@@ -203,7 +204,7 @@ const Development = ({
         <h5><a className="AboutWorksLink" href={githubRepository} target="_blank" style={{textDecoration:"none"}}><GithubIcon style={{  alignSelf: "center",
           marginRight: "0.8rem",
           fontSize: "1.6rem",
-          minWidth:"1.6rem"}}/>click here for github repository</a></h5>
+          minWidth:"1.6rem"}}/>click here for repository link</a></h5>
 
 
         <div className="boxDecoration" style={{
@@ -212,8 +213,10 @@ const Development = ({
 
 
         <h6 style={{paddingTop:col2PaddingTop()}}>
-          <strong>{finalStack}</strong>
+         Final stack: {finalStack}
         </h6>
+        <br></br>
+        <div><strong>{stackMemo}</strong></div>
     </div>
     </div>
 
@@ -237,10 +240,12 @@ const Development = ({
   <div className = {m?"grid-container-resources":"grid-container-resources-mobile"} style = {textMarginStyle()}>
           {screenTitles.map((screen, i) => {
             return <>
-            <Fade bottom><ScreensLabel m = {m}
+            <Fade bottom>
+            <ScreensLabel m = {m}
             screen = {screen}
             features = {screenFeatures[i]}/>
-
+            </Fade>
+            <Fade>
             <div>{parseText(screenDescriptions[i])}</div>
             </Fade>
           </>
@@ -306,7 +311,7 @@ const Development = ({
 
     <br></br>
 
-    <Fade bottom>
+    <Fade>
         <div style={overflowStyle()}>
           <ImageOverflow l={l} m={m}images={relationalSearchImages} titles={relationalSearchTitles}/>
         </div>
@@ -314,7 +319,7 @@ const Development = ({
 
     <br></br>
 
-    <Fade bottom>
+    <Fade>
     <div className="RowCentered">
       <ImageOverflow l={l} m={m}images={relationalSearchResultImg} titles={relationalSearchResultTitle}
       height="70vh"/>
@@ -337,7 +342,7 @@ const Development = ({
       </div>
 
 <br></br>
-<Fade bottom>
+<Fade>
     <div style={overflowStyle()}>
       <ImageOverflow l={l} m={m}height="80vh" images={functionalProgrammingImages} titles={functionalProgrammingTitles}/>
     </div>
@@ -357,7 +362,7 @@ const Development = ({
 
       <br></br>
 
-      <Fade bottom>
+      <Fade>
           <div style={overflowStyle()}>
             <ImageOverflow l={l} m={m}images={organizationImages} titles={organizationTitles}/>
           </div>

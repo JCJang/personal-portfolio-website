@@ -57,7 +57,8 @@ const ProjectPersonal = ({m, l, setRouteFocus}) => {
         <Summary
           m={m}
           l={l}
-          mainImage={m?mainImageH:mainImageV}
+        finalScreens={false}
+        mainImage={m?mainImageH:mainImageV}
          research="Ideation, Research, and user flow"
          design="color, typography, and wireframes"
          development = "defining resources and problem-solving in React"
@@ -67,7 +68,7 @@ const ProjectPersonal = ({m, l, setRouteFocus}) => {
 
          challenge="How can I design a scalable and maintainable portfolio website?"
          solution="By using a design system and creating reusable sections and components."
-         summary="Welcome to a very self-referential case study. In this project I scoped out what portfolio website requirements are. These established constraints on content allowed me to put more time into design rather than research, and also freed me to jump into development after I establishing a design system. By creating reusable components and keeping the development process organized, I was able to design and launch my react website in 20 days."
+         summary="In this project I scoped out portfolio content constraints for both UX designers and junior frontend developers, then established a design system so that my website can scale consistently. Finally, I experimented with a new workflow that involves simultaneous design and development. By designing and developing reusable components in React and keeping organized, I was able to launch my react website in 20 days."
          />
 
          <span id="research"></span>
@@ -76,18 +77,18 @@ const ProjectPersonal = ({m, l, setRouteFocus}) => {
          l={l}
 
 
-         researchText="As a hybrid designer/developer, I had to figure out what and how to present information in my portfolio website. In my research, I looked at Google's UX design course criteria for online portfolios, portfolios by other designers, and junior web developer portfolio reviews. Using multiple sources, I organized common portfolio criteria for both UX designers and frontend developers."
+         researchText="As the first step of design, I looked at common portfolio content and structure, referencing Google's UX design course for UX portfolio criteria, and junior web developer portfolio reviews for frontend developer portfolio criteria."
 
-         competitiveAnalysis="The Google UX design course on coursera states that ux portfolio should containt at least 3 projects, each being ‘Clear and concise’ and ‘skimmable’. Online articles suggest that each case study should include a summary section, and I later expanded into a table of contents in the case that recruiters are more interested in one section than the other./ I also looked at many web developer portfolio reviews to see what I should or should not include. Many key words that came up include ‘thought process’ and ‘actual code,’ so I needed to incorporate these elements. For this reason, my case studies are on the wordier side when compared to other UX portfolios, but I also included many visuals for each page to be easy to skim. For code, I created gist samples that are clear and succinct and demonstrate problem solving. /I viewed many portfolios online, and noticed that most are minimalistic but on the masculine side, with bold black and white, background-removed photos, and all sans serif, they convey big tech companies or sports brands.Although I tried this layout at first, I decided to scrap that design direction and go for something that is more reflective of my design taste. I wanted an elegant design that is more feminine, with bold but tasteful colors, and a handwritten font for a personal touch. Many other designer-developers organize their projects according to their roles, but since all of my projects thus far are solo projects, I felt that there is no need to separate them by category. Instead, I listed the roles on each. I chose a straightforward and informative tone for the content that reflects my communication style."
+         competitiveAnalysis="The Google UX design course on Coursera recommends that UX portfolios be consistent in tone, and have a minimum of three projects. Each case study should be illustrative of design thinking and process, and provide context, roles, takeaways, and a lot of visuals to make the case study skimmable. The tone should be clear and concise./Junior developer portfolios that received positive feedback shows the developer’s problem-solving skills and thought process, and include a link to the final project and repository. Sections such as ‘Skills’ are discouraged, since evaluators prefer to see how developers apply those skills. Users should have the ability to read about projects before clicking into one, and a summary section should be included at the top of each case study./I began structuring my case study contents according to this criteria. I included many visuals, and I tried to show my trials and errors, and how I solved the situation in each case. I also included many visuals and animations, as well as a table of contents and summary. To illustrate my development process, I created gist samples that demonstrate problem solving and included visuals."
 
-         competitiveAnalysisEmphasis="I wanted an elegant design that is more feminine, with bold but tasteful colors, and a handwritten font for a personal touch."
+         competitiveAnalysisEmphasis="Each case study should be illustrative of design thinking and process, and provide context, roles, takeaways, and a lot of visuals to make the case study skimmable... ... Sections such as ‘Skills’ are discouraged, since evaluators prefer to see how developers apply those skills."
 
 
          screenTitles={[`Works`, "About", `Contact`, 'nice to have']}
          screenFeatures={[
-           ["Works minimum of three projects, with summary", "photo"], ["personal story", "values", "hobbies", "CV link"],
-           ["email","contact form", "social medial links"], ["data visualization - book and spokes", "filter by referenced works/their authors"],
-           ["page transition animations", "custom 404 page", "loading animation", "nav and logo animation"]
+           ["Works minimum of three projects, each with table of contents, summary, context, takeaways", "consistent tone","research", "information architecture","clear navigation","final polished designs"], ["personal story", "photo", "values", "hobbies", "CV link"],
+           ["email","contact form", "relevant links", "downloadable resume"],
+           ["page transition animations", "custom 404 page", "loading animation", "microinteractions"]
           ]}
 
          designKeywords={["elegant", "tailored", "simplistic", "magazine-style"]}
@@ -96,8 +97,9 @@ const ProjectPersonal = ({m, l, setRouteFocus}) => {
 
         <span id="design"></span>
         <Design m={m} l={l}
+        design="While looking at many web developer and web designer portfolios as part of my project research, I noticed that many portfolio designs lean towards the image of “big tech” or “sports” brands, using bold black and white, background-removed photos, and bold sans serif fonts or all-caps text. Although I tried this layout at first, it was ultimately not reflective of my design style or personality; I needed a visual style reflective of my brand identity./By brainstorming on some qualities that make me and my designs unique, and decided on an elegant design, with bold but tasteful colors and a handwritten font that emphasizes craft."
 
-        typography="I wanted fonts that are elegant and approachable. I first decided on a serif font for headers, a handwritten font for details and styling, and a sans serif font for the body text./With this general idea in mind, I began browsing Google fonts for the header font. At first I considered modern serifs, but due to the feeling of unapproachability they convey, I turned to old-style serifs that never fail to convey craft and timelessness. I wanted one with a tall, elongated stem, and found two that are to my liking. I found three that I liked and noted them down, but there were numerous sans serif fonts that are similar to the header font, a similar shape and feeling, elongated and slim with a longer stem./I created a table of each header and body combination, then assigned each combination the most complementary handwritten font, leaving me with over a dozen choices. I finally decided on Lusitana for the header, Yaldevi for the subtitles, and La Belle Aurore for the handwritten font./Later in the development process I realized that Yaldevi can be quite difficult to read, so I brought in IBM Plex Sans to replace Yaldevi as the font, keeping Yaldevi for subtitles only, for I still is the best match for my headings font."
+        typography="With that starting point, I began looking at fonts. I wanted to find elegant and approachable fonts, more rectangular than boxed, and with an elongated stem. After briefly considering modern serifs, I decided that they tend to feel unapproachable, and turned to old-style serifs instead. I picked two serif fonts for the header, five sans serif ones for the body, and three for the handwritten decorative font. Then, I created a table of each header and body combination, assigned each combination the most complementary handwritten, then compared each before finally settling on ‘Lusitana’ for the header, ‘Yaldevi’ for the subtitles, and ‘La Belle Aurore’ for the handwritten font./Later in the development process I realized that Yaldevi can be quite difficult to read, so I brought in IBM Plex Sans to replace Yaldevi as the body font, keeping Yaldevi for subtitles."
 
         finalTypography={["1-Logo & Decoration: La Belle Aurore", "3-App Headings: Lusitana", "4-Subtitles: Yaldevi", "4-body: IBM Plex Sans"]}
         typographyRefImages={[textRefHandwritten, textRefAllOptions,textRefBodyText]}
@@ -112,16 +114,17 @@ const ProjectPersonal = ({m, l, setRouteFocus}) => {
         designTitle ="Color Ideation"
         colorSection="Personal"
 
+        hifi="After viewing my high-fidelity design, a friend noted that the works design has a magazine-like quality to it. I decided to play with this design motif in my layout, adding elements such as dual columns, linear separators, and italics."
         hifiWireframesImages={[hifiMobile, hifiDesktop]}
         hifiWireframesTitles={["Mobile screens", "Desktop screens"]}
 
         colorTitles="Color as Personality"
         colorDescriptions="Since I consider color choices one of my design strengths, I wanted my portfolio to have exceptional colors."
         colorWireframes={wireframe}
-        moodboardText="Using Pexels.com, I found various images which color palette really speak to me, most of which have desaturated colors except for a dark pink color. The colors convey very different messages on their own, and together, really speak to me."
+        moodboardText="Using Pexels.com, I found various images which colors really speak to me, most of which have desaturated colors."
 
         colorTextures={texture}
-        colorText="Noticing that the colors in the moodboard alone are too dreamy and unrooted, I added a bold and timeless burgundy. Greys are also key. In art I have learned that greys are the key to guiding the eye on the canvas and making saturated colors stand out. In fashion, greys not only convey professionality, but also elegance. / To neutralize the pastel-like colors, I added a warm mid-dark grey, and by desaturating my photo elements, brought out many neutral greys. Adding subtle gradients to the design language adds groundedness. A friend noted that the works design has a magazine-like quality in it, which I decided to playout in my layout, adding elements such as dual columns, linear separators, and italics. I even included a tiny banner in the works section"
+        colorText="Noticing that the colors on the moodboard feel a bit too dreamy and eccentric, I added a bold and timeless burgundy./I also sought to add many greys, which not only convey professionality and elegance, but also make saturated colors stand out. The first grey I added to my website was a warm mid-dark grey, which really helped anchor the more vibrant colors on my existing palette. Desaturating photo elements also brought out many neutral greys to work with, while adding subtle gradients over them created further rootedness."
         colorMoodboards={moodboard}
 
      />
@@ -130,16 +133,18 @@ const ProjectPersonal = ({m, l, setRouteFocus}) => {
       m={m}
       l={l}
 
-      developmentText=""
+      developmentText="One of the things I wished I learned for my humanities database project was how to plan and organize code. For instance, I used too much inline CSS, which lead to readability issues whenever I needed to adjust the layout. Learning from that experience, I resolved to clearly plan my development folder tree."
 
-      finalStack=""
+      finalStack="HTML, CSS, JavaScript, React, HTML, CSS, JavaScript, React, Framer Motion."
+      stackMemo="Hosted on Netlify"
       githubRepository="https://github.com/JCJang/personal-portfolio-website"
-      frontendText=""
-      organizationText="One of the things I wished I learned for my first project was how to plan and organize code.   For instance, I used too much inline css in that project and had to deal with it. I l now have a better understanding of react components and how to reuse them. Since I will be creating many pages for projects, I wanted to create ‘template-like’ sections for me to resuse, so that when I upload future projects, I only have to populate the text areas. In this project, I strived to separate text, inline css, and layout for a cleaner, more maintainable system."
+
+      organizationText="I started out my development process with pen and paper, writing down what template-like components I can create and reuse. As I began development, however, I encountered the same problem as I did before - the clutter of inline CSS. This is because I use a useMediaQuery hook for my responsive design, and cannot define styling classes in a separate file. To solve this problem, I developed class-like styling functions at the top of each component that I can add to elements. My final code separated text, inline CSS, and layout for a cleaner, more maintainable system."
+
       organizationImages={[inlineCSSFunctions, sectionLayout, projectParentText]}
       organizationTitles={["responsive inline CSS functions", "using CSS functions eliminates clutter from page structure", "parent component passes down text and images"]}
 
-      resourcefulProblemSolvingText="Another skill I practiced in this project is being resourceful and really utilizing open source code and components. Reading documentation and installing npm modules can save myself a lot of time than coding everything myself. After all, the end goal was to make things work. For instance, I to create the Carousel component, I utilized react portal, custom hooks such as useDebounce, useTimeout, and useClickOutside, useClickOutside, ImageFadeIn, react portal, react-zoom-pan-pinch, and a modal tutorial to assemble the carousel and modal."
+      resourcefulProblemSolvingText="Another skill I practiced while working on this project is being resourceful and really utilizing open source code and components. Although initially I thought that using and referencing too many exterior tools is 'cheating', I realized that my goal was not to make everything from scratch, but to make a functional, responsive website that delivers a high-quality user experience. By reading documentation and installing npm modules, I saved myself a lot of time and energy. For instance, to create the Carousel component and modal, I utilized react portal, code from a modal tutorial, custom hooks such as useDebounce, useTimeout, and useClickOutside, and useful packages like react-image-fade-in, react portal, and react-zoom-pan-pinch."
 
       carouselCode="JCJang/bff02d9a762c95dfd8b41cabfb937ae7"
       modalCode="JCJang/81b00d9a0f737891b7c3eb666f38f0c4"

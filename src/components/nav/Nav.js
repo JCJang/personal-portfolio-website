@@ -96,7 +96,7 @@ const iconLogoOptions = () => {
     height:"calc(5rem - 1.1px - 1.5rem)"
   }}>
 
-        <div className="desktop-logo RowCentered" style={{opacity:0.8}}>
+        <div className="desktop-logo RowCentered" style={{opacity:0.9}}>
 
           <div className="selfCentered transition" style={{marginRight:"2rem", fontSize:"1.5rem",opacity:logoOpacity,transformOrigin:"center",transform:logoRotation}}>
               {iconLogo}

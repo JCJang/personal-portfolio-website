@@ -23,7 +23,6 @@ import bgM from '../../images/about-bg-m.jpg'
 import headshot from '../../images/20211003_011146-01.jpeg'
 
 import jazz from '../../images/sketches/jazz.jpg'
-import plants from '../../images/sketches/plants.jpg'
 import rooftop from '../../images/sketches/rooftop.jpg'
 import snow from '../../images/sketches/snow.jpeg'
 import sunrise from '../../images/sketches/sunrise.jpeg'
@@ -207,7 +206,7 @@ const About = ({m, l, setRouteFocus}) => {
 <div style={{height:"100vh",width:"100vw", position:"relative"}}>
 
   <a href="https://www.freepik.com/mariadetarosarinda" target="_blank" className="AboutWorksLink overline" style={{textDecoration:"none", position:"absolute", bottom:"0.5rem", right:"1rem", color:"var(--highlight)", opacity:"0.5", zIndex:"20"}}>pattern by Maria Deta Rosarinda</a>
- <ImageFadeIn src={l?bgL:bgM} className="bgImage" style={{position:"absolute"}}/>
+ <ImageFadeIn src={l?bgL:bgM} role="none" className="bgImage" style={{position:"absolute"}}/>
 
 <div className="Row AboutLanding" style={textMarginStyleLanding()}>
 
@@ -233,7 +232,7 @@ const About = ({m, l, setRouteFocus}) => {
 
   <div id="summary-col-2" className="Column" style={{position:"absolute",zIndex:"3",right:m?"10rem":"0", bottom:m?"5rem":"", top:m?"5rem":"2rem"}}>
   <div></div>
-    <ImageFadeIn src={headshot} style={{minWidth:"200px", maxWidth:m?"400px":"70vw", minHeight:"300px",maxHeight:m?"60vh":"65vh",objectFit:"contain",zIndex:"1"}}/>
+    <ImageFadeIn src={headshot} alt="Jennifer Jang" style={{minWidth:"200px", maxWidth:m?"400px":"70vw", minHeight:"300px",maxHeight:m?"60vh":"65vh",objectFit:"contain",zIndex:"1"}}/>
 
   </div>
   </Fade>
@@ -409,7 +408,9 @@ const About = ({m, l, setRouteFocus}) => {
         right:hobbyFocus==="painting"?"0":"-60vw",
         opacity:hobbyFocus==="painting"?"1":"0",
         transition:"right ease 0.9s, opacity linear 1s"}}>
-            <Carousel  tabindex={hobbyFocus==="painting"?"0":"-1"}  carouselSlides={[snow,sunrise,plants,rooftop,jazz,yiping]}
+            <Carousel  tabindex={hobbyFocus==="painting"?"0":"-1"}  carouselSlides={[snow,sunrise,rooftop,jazz,yiping]}
+            carouselSlidesTitles={["frosty road trip", "Hehuang mountain sunrise", "rooftop golden hour","jazz drummer","blue hour at the bookstore"]}
+            hideTitles={true}
             height="30vh"
             width={l?"calc(50vw - 7.5rem)":"80vw"}/>
       </div>
@@ -443,7 +444,7 @@ const About = ({m, l, setRouteFocus}) => {
 
         <Fade bottom>
         <div className="RowCentered"  tabindex={hobbyFocus==="travel"?"0":"-1"}  style={{width:l?"calc(45vw - 7.5rem)":"100vw",height:"30vh",overflow:"hidden"}}>
-        <ImageOverflow height="250px" images={[map]} style={{
+        <ImageOverflow height="250px" alt="world map that highlights traveled countries: Japan, Nepal, India, Mexico, Colombia, Peru, Canada, Jordan, Palestine, Israel, Lebanon, Germany. Home countries are also  highlighted: USA and Taiwan." images={[map]} style={{
             padding:"0"
           }}/>
         </div>

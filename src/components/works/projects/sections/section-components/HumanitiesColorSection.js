@@ -78,7 +78,7 @@ if(number===1){
               style={{margin:l?"3rem":openedLayout?"0rem":"2rem", objectFit:"cover", transition:"margin linear 0.4s, transform ease 0.6s",
           transform: l && hover? "scale(1.2)":l? "": openedLayout ?"scale(1.5)":"scale(1)", background: "var(--table-light)"}}>
           <div style={{opacity:openedLayout && "0.4", transition: "opacity ease 0.9s"}}>
-              <ImageFadeIn style={{
+              <ImageFadeIn alt="moodboard" style={{
                 transition: "filter linear 0.5s",
                 height:l?"30vw":"70vw",
                 width:l?"30vw":"70vw",
@@ -146,8 +146,9 @@ if(number===1){
                </div>
             })}
       </div>
-
+      </Fade>
       <div className="subtitle1" style={{
+        opacity: openedLayout? "0" : "1",
         position:"relative",
         paddingTop:!l && "4rem",
         marginLeft:!m && leftToRight() && "2rem",
@@ -155,14 +156,12 @@ if(number===1){
         alignSelf:l?"flex-end":"center",
         justifySelf:l?"flex-end":"center",
         bottom: openedLayout ? "-3rem" : "1px",
-        opacity: openedLayout? "0" : "1",
         transition: "bottom ease 0.7s, opacity linear 0.4s"
       }}>
             {!l? "Click moodboard below to view color concept":
             leftToRight()?"<= Click moodboard to view color concept":
             "Click moodboard to view color concept =>"}
       </div>
-      </Fade>
     </div>
 
   <div id="opened-col-colorTextures" className="Row" style={{
@@ -178,7 +177,7 @@ if(number===1){
           }}>
             <div style={{transform:"rotate(90deg)",
                 width:l?"40vw":"70vw"}}>
-            <ImageFadeIn style={{
+            <ImageFadeIn alt="photo textures that inspired color choices" style={{
               transition: "filter linear 0.5s",
               height:l?"40vw":"70vw",
               width:"auto",
@@ -208,7 +207,8 @@ if(number===1){
       transition: "left ease 0.6s, right ease 0.6s",
     }}>
     <div>
-    <ImageFadeIn style={{
+    <ImageFadeIn
+      alt="wireframe inspired by moodboard and textures" style={{
       transition: "filter linear 0.5s",
       height:l?"30vw":"60vw",
       width:"auto",

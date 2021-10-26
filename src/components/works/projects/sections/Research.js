@@ -288,16 +288,13 @@ const Research = ({
 
 {userFlowImg &&
 
-<Fade bottom>
     <div className="RowCentered">
 
-        <ImageOverflow l={l} m={m}height="80vh" width="100vw" images={[userFlowImg]} style={{
+        <ImageOverflow l={l} m={m}height="80vh" width="100vw" images={[userFlowImg]} alt="user flow" style={{
             filter: "saturate(0.5)",
           }}/>
 
       </div>
-
-</Fade>
 }
 
 

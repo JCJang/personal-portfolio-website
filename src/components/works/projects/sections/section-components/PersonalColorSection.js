@@ -168,7 +168,9 @@ const [hover, setHover] = useState(false)
             style={{margin:l?"3rem":openedLayout?"0rem":"2rem", objectFit:"cover", transition:"margin linear 0.4s, transform ease 0.6s",
         transform: l && hover? "scale(1.2)":l? "": openedLayout ?"scale(1.5)":"scale(1)", background: "var(--table-light)"}}>
         <div style={{opacity:openedLayout && "0.4", transition: "opacity ease 0.9s"}}>
-            <ImageFadeIn style={{
+            <ImageFadeIn
+              alt="moodboard"
+              style={{
               transition: "filter linear 0.5s",
               height:l?"30vw":"70vw",
               width:l?"30vw":"70vw",
@@ -254,14 +256,18 @@ const [hover, setHover] = useState(false)
     transition: "left ease 0.6s, right ease 0.6s",
   }}>
   <div>
-  <ImageFadeIn style={{
+  <ImageFadeIn
+  alt="selected moodboard colors that are grouped into three collections. Group one consists of pebble greys and feel organic, rhythmic, fluid, and pensive. Group two consists of shades of lilac and lavender, and convey keywords of calm, dusk, peaceful, and mysterious. Group three consists od8f peaches, browns, and shades of pink, and feel energetic, vibrant, and vivacious." 
+  style={{
     transition: "filter linear 0.5s",
     height:l?"30vw":"60vw",
     width:"auto",
     marginRight:l?"3rem":"2rem"
   }} src={colorTexture}/>
 
-  <ImageFadeIn style={{
+  <ImageFadeIn
+  alt="half desaturated, half full-color image"
+  style={{
     transition: "filter linear 0.5s",
     height:l?"40vw":"70vw",
     width:"auto",

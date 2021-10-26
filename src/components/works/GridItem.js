@@ -73,7 +73,7 @@ const borderLeft = () => {
     borderLeft: borderLeft()
   }}>
 
-      <ImageFadeIn className="gridImage transition" src={image} style={{ filter:hover?"saturate(0.6)":"saturate(0.1) opacity(0.8)"
+      <ImageFadeIn role="presentation" className="gridImage transition" src={image} style={{ filter:hover?"saturate(0.6)":"saturate(0.1) opacity(0.8)"
 }}/>
 
       <div className="transition Column" style = {{
@@ -82,7 +82,7 @@ const borderLeft = () => {
     position: "relative",
     zIndex: "10",
     textAlign: direction === "lr" ? "left" : "right",
-    color: "var(--table-neutral)",
+    color: "var(--lilac)",
     lineHeight: "5rem",
     justifyContent: "center",
     padding:direction==="lr"?"0 4rem 0 0":"0 0 0 4rem",
@@ -93,11 +93,11 @@ const borderLeft = () => {
         <div style={{lineHeight:"1.5rem"}}>{role}</div>
     </Fade>
     <Fade delay={700}>
-          <div style={{fontWeight:"400",font:"2.3rem/1.4 'Yaldevi',sans-serif", letterSpacing:"0.0156rem",textTransform:"uppercase"}}>{title}</div>
+          <div style={{fontWeight:"400",font:m?"2.3rem/1.7 'Yaldevi',sans-serif":"1.6rem/1.2 'Yaldevi',sans-serif", letterSpacing:"0.0156rem",textTransform:"uppercase", margin:!m && "1.2rem 0"}}>{title}</div>
     </Fade>
     <Fade bottom delay={900}>
 
-        <div className="subtitle1" style={{lineHeight:"3rem"}}>{subtitle}</div>
+        <div className="subtitle1" style={{lineHeight:m?"3rem":"1.6rem",fontSize:!m && "1.2rem"}}>{subtitle}</div>
     </Fade>
 
     </div>

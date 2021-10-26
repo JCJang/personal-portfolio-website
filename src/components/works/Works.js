@@ -43,7 +43,8 @@ const worksStyle = () => {
           <h2>Works</h2>
           <div className="boxDecoration"></div>
           <br></br>
-          <h5>Hover on each Work for details.</h5>
+          <div>View case studies that follow my comprehensive design process, from research, design, to development of the final product.</div>
+
 
         </div>
         <div className={l?"grid-container":"grid-container-mobile"}>

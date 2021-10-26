@@ -23,7 +23,8 @@ const Summary = ({
   background = false,
   research = false,
   design = false,
-  development = false
+  development = false,
+  finalScreens = true
 }) => {
 
   const summaryStyle = () => {
@@ -190,7 +191,7 @@ const Summary = ({
         background: "var(--table-neutral)"
       }}>
       <Fade bottom>
-      <ImageFadeIn src={mainImage} style={{
+      <ImageFadeIn src={mainImage} alt="final product" style={{
           filter: "saturate(0)",
           background: "var(--velvet)",
           position: "relative",
@@ -230,7 +231,7 @@ const Summary = ({
         {design && <TocLabel m={m} label="design" sublabel={design}/>}
         {prototype && <TocLabel m={m} label="prototype" sublabel={prototype}/>}
         {development && <TocLabel m={m} label="development" sublabel={development}/>}
-        <TocLabel m={m} label="Final Screens" sublabel="click to view"/>
+        {finalScreens && <TocLabel m={m} label="Final Screens" sublabel="click to view"/>}
       </div>
     </div>
 

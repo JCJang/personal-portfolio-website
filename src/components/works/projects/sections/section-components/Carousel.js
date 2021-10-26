@@ -15,6 +15,7 @@ const Carousel = ({
   tabindex = "0",
   carouselSlides,
   carouselSlidesTitles,
+  hideTitles = false,
   height = "100vh",
   width = "100vw"
 }) => {
@@ -73,7 +74,9 @@ const Carousel = ({
       setIsOpen(false)
   })
 
-  return (<div className="Row" style={{
+  return (<div className="Row"
+      id="carousel"
+      style={{
       position: "relative",
       height: height,
       width: width,
@@ -93,7 +96,7 @@ const Carousel = ({
             opacity: num !== slideNumber && "0"
           }}>
 
-          <ImageFadeIn src={slide} dragabble="false"
+          <ImageFadeIn src={slide} alt={carouselSlidesTitles && carouselSlidesTitles[num]} dragabble="false"
             onClick={(e) => {
               e.stopPropagation();
               setImageArrNumber(num);
@@ -128,9 +131,10 @@ const Carousel = ({
           bottom: "0",
           left: "0",
           height: height,
-          fontSize: "2rem"
+          fontSize: "0.65rem"
         }}>
-        <Prev/>
+        <Prev style={{width:"2rem", height:"2rem"}}/>
+        PREVIOUS<br></br>SLIDE
       </button>
 
       <div className="Column" style={{
@@ -139,11 +143,11 @@ const Carousel = ({
           position: "absolute",
           bottom: "0",
           color: "var(--cinerous)",
-          height: "30vh"
+          height: "50px"
         }}>
 
         {
-          carouselSlidesTitles && <div className="body1" style={{
+          carouselSlidesTitles && !hideTitles && <div className="body1" style={{
                 width: "50vw",
                 textAlign: "center"
               }}>
@@ -171,7 +175,7 @@ const Carousel = ({
           }</div>
       </div>
 
-      <button className="ColumnCentered carouselBtn"
+      <button for="carousel" className="ColumnCentered carouselBtn"
       onClick={nextSlide}
       tabindex={tabindex}
       style={{
@@ -179,9 +183,10 @@ const Carousel = ({
           bottom: "0",
           right: "0",
           height: height,
-          fontSize: "2rem"
+          fontSize: "0.65rem"
         }}>
-        <Next/>
+        <Next style={{width:"2rem", height:"2rem"}}/>
+      NEXT<br></br>SLIDE
       </button>
 
     </div>

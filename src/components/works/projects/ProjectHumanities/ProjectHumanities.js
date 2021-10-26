@@ -184,7 +184,7 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
         typographyFinalImg={typographyFinalImg}
 
         hifiWireframesImages={[hifiMobile, hifiTablet, hifiDesktop]}
-        hifiWireframesTitles={["Mobile screens", "Tablet screens", "Desktop screens"]}
+        hifiWireframesTitles={["Mobile wireframes", "Tablet wireframes", "Desktop wireframes"]}
 
         colorSection="Humanities"
         colorColors
@@ -206,7 +206,8 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
 
          developmentText="With so many screens and features decided on in the research stage, I needed to decide what to focus on for the first iteration – what is my minimum viable product? To me it was clear that the core value of the database was: the query screen and the further reading screen, which form the bottom right enclosed cycle in the user flow. With this in mind, I revisited the screens and features page and began gathering resources for the development plan."
 
-         finalStack="Development technology stack: React, Axios, Express, Mongoose, MongoDB."
+         finalStack="HTML, CSS, JavaScript, React, Axios, Node.js, Express, MongoDB."
+         stackMemo="Server hosted on Heroku, Frontend hosted on Netlify."
          githubRepository="https://github.com/JCJang/Humanities-book-database/tree/aug-4-merged-with-main"
 
          screenDescriptions={["By the time I decided to begin the project, I already have fifty or so books that I read or were recommended to me. After counting reader recommendations from the survey, the list grew to around a hundred. I used the four selection criteria to filter through the list, then analyzed each book’s table of contents and content to summarize a central thesis question. For books which thesis share core ideas, I grouped together under the same question.",

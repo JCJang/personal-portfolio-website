@@ -212,12 +212,11 @@ const Design = ({
   </div>
   <br></br>
 
-  <Fade bottom>
-
+<Fade>
   <div className="RowCentered" style={overflowStyle()}>
-    {lofiWireframesImage && <ImageOverflow l={l}m={m} height={l?"60vh":"75vh"} images={[lofiWireframesImage]} style={{filter:"saturate(0)"}}/>}
+    {lofiWireframesImage && <ImageOverflow l={l}m={m} height={l?"60vh":"75vh"} alt="low fidelity wireframes" images={[lofiWireframesImage]} style={{filter:"saturate(0)"}}/>}
   </div>
-  </Fade>
+</Fade>
 
   <div style={{marginBottom:extraSpacing()}}></div>
 
@@ -252,7 +251,7 @@ const Design = ({
     </div>
 }
   </div>
-<Fade bottom>
+<Fade>
   <div>
     <ImageOverflow l={l} m={m} height={l?"60vh":"40vh"} images={typographyRefImages} titles={typographyRefTitles} style={{filter:"saturate(0)"}}/>
   </div>
@@ -264,7 +263,7 @@ const Design = ({
     {finalTypography.map((typography)=>{
       return <div className={m?"RowCentered":"ColumnCentered"} style={{padding:m?"0 2rem":"2rem", width:"28vw", justifyContent:"flex-start"}}>
       <div>
-      <img src={serifTypes[typography.slice(0,1)-1]} style={{height:m?"8vw":"100px",width:"auto"}}></img>
+      <img src={serifTypes[typography.slice(0,1)-1]} alt={`${serifTypes[typography.slice(0,1)-1]} serif`} style={{height:m?"8vw":"100px",width:"auto"}}></img>
       </div>
       <div className={`${typography.split(':')[1].split(/\s/).join("").trim()}`} style={{color:"var(--midnight)", fontSize:"1.2rem", width:m?"13vw":"28vw", marginLeft:m&&"2rem", marginTop:!m&&"1rem", textAlign:!m && "center"}}>
       {typography.slice(2)}
@@ -277,7 +276,7 @@ const Design = ({
 <div style={{marginBottom:extraSpacing()}}></div>
 
   <div className="RowCentered" style={overflowStyle()}>
-      {typographyFinalImg && <ImageOverflow l={l} m={m} height="70vh" images={[typographyFinalImg]}/>}
+      {typographyFinalImg && <ImageOverflow l={l} m={m} height="70vh" alt="final typography choices" images={[typographyFinalImg]}/>}
   </div>
   <div style={{width:"100vw", background:"var(--cinerous)", color:"var(--occlusion)"}}>
   <div style={{paddingBottom:extraSpacing()}}></div>
@@ -342,7 +341,7 @@ const Design = ({
 
   <br></br>
   <div className="RowCentered" style={overflowStyle()}>
-  <ImageOverflow l={l} m={m} height={l?"100vh":"85vh"} images={designSystemImages} titles={designSystemTitles} style={{filter:"saturate(0.8)"}}/>
+  <ImageOverflow l={l} m={m} height={l?"100vh":"85vh"} images={designSystemImages} titles={designSystemTitles} alt="design system" style={{filter:"saturate(0.8)"}}/>
 
   </div>
   <div style={{paddingBottom:extraSpacing()}}></div>
@@ -355,13 +354,11 @@ const Design = ({
   High-fidelity Wireframes</h4>
 
   <br></br>
-
-<Fade bottom>
+<Fade>
   <div className="RowCentered" style={overflowStyle()}>
-    {hifiWireframesImages && <ImageOverflow l={l} m={m} height={l?"60vh":"75vh"} images={hifiWireframesImages} titles={hifiWireframesTitles} style={{filter:"saturate(0.8)"}}/>}
+    {hifiWireframesImages && <ImageOverflow l={l} m={m} height={l?"60vh":"75vh"} images={hifiWireframesImages} titles={hifiWireframesTitles} alt="high fidelity wireframes" style={{filter:"saturate(0.8)"}}/>}
   </div>
 </Fade>
-
   {prototype && <>
   <div style={{color:"var(--velvet)", background:"var(--cinerous)"}}>
   <div style={{paddingBottom:extraSpacing()}}></div>
@@ -375,7 +372,7 @@ const Design = ({
 
   <Fade>
   <div className="RowCentered" style={{height:"60vh"}}>
-   <ImageOverflow l={l} m={m} height={l?"70vh":"75vh"} images={prototypeIllustration} style={{filter:"saturate(0.8)"}}/>
+   <ImageOverflow l={l} m={m} height={l?"70vh":"75vh"} images={prototypeIllustration} alt="motion design hierarchy of prototype" style={{filter:"saturate(0.8)"}}/>
   </div>
   </Fade>
   <div style={{paddingBottom:extraSpacing()}}></div>
@@ -383,7 +380,7 @@ const Design = ({
   <div className="selfCentered" style={{height:"800px", width:"100vw", overflowX:"auto", padding:textMargin()}}>
       <div style={{paddingBottom:extraSpacing()}}></div>
 
-      <iframe width="400px" height="800px" style={{all:"inherit"}} src={prototypeLink} allowfullscreen></iframe>
+      <iframe title="prototype" width="400px" height="800px" style={{all:"inherit"}} src={prototypeLink} allowfullscreen></iframe>
 
       <div style={{paddingBottom:extraSpacing()}}></div>
 
