@@ -143,7 +143,7 @@ const App = () => {
              transition={pageTransition}
              className="about"
            >
-            <About  m={m} l={l} setRouteFocus={setRouteFocus}/>
+            <About s={s} m={m} l={l} setRouteFocus={setRouteFocus}/>
             </motion.div>
         </AnimatePresence>
         </Route>

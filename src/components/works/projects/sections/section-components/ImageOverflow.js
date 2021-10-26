@@ -59,7 +59,7 @@ const ImageOverflow = ({l, m, images=[], height="50vh", style, titles, alt}) => 
          display:"flex",
          flexDirection:images.length===1 ? "reverse-column" : "row"
        }}>
-       <ImageFadeIn alt={titles && titles[number] || alt} src={image}
+       <ImageFadeIn alt={titles && titles[number] || alt} role={!titles && "presentation"} src={image}
        onKeyPress={(e)=>{
          if (e.which === 13) {
              setImageArrNumber(number);

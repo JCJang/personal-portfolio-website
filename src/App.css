@@ -595,6 +595,7 @@ text-transform: uppercase;
   height:0.6rem;
   width:4rem;
   margin:1.5rem 0;
+  flex-shrink: 0;
 }
 
 label{

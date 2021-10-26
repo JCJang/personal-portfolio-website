@@ -20,7 +20,7 @@ import { IoDownloadOutline as DownloadIcon } from "react-icons/io5"
 import bgL from '../../images/about-bg-l.jpg'
 import bgM from '../../images/about-bg-m.jpg'
 
-import headshot from '../../images/20211003_011146-01.jpeg'
+import headshot from '../../images/about-monochrome.png'
 
 import jazz from '../../images/sketches/jazz.jpg'
 import rooftop from '../../images/sketches/rooftop.jpg'
@@ -40,7 +40,7 @@ import { useLocation } from "react-router-dom";
 //
 // <a>send me a message</a>
 
-const About = ({m, l, setRouteFocus}) => {
+const About = ({s, m, l, setRouteFocus}) => {
 
     const location = useLocation();
     useEffect(()=>{
@@ -210,19 +210,19 @@ const About = ({m, l, setRouteFocus}) => {
 
 <div className="Row AboutLanding" style={textMarginStyleLanding()}>
 
-  <div id="summary-col-1" className="Column" style={{width:"50%", height:l?"var(--desktopheight)":"60vh", position:"relative",
+  <div id="summary-col-1" className="Column" style={{height:l?"var(--desktopheight)":"60vh", position:"relative",
     zIndex:"4"}}>
 
-  <h2 style={{paddingTop:"1rem"}}>Designer & Frontend Developer</h2>
+  <h2 style={{paddingTop:"1rem", width:"50%"}}>Designer & Frontend Developer</h2>
 
     <div className="boxDecoration" style={{
         borderColor: "var(--highlight)"
       }}></div>
 
-    <h6 style={{flex:"1"}}>
+    <h6 style={{flex:"1", width:s?"50%":"100%"}}>
 
     <Fade bottom delay={500}>
-      <div><h6><em>How can I benefit people’s lives by combining psychology with the power of technology?</em></h6></div>
+      <div style={{fontSize:!s && "1.1 rem"}}><h6><em>How can I benefit people’s lives by combining psychology with the power of technology?</em></h6></div>
       </Fade>
 
     </h6>
