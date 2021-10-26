@@ -20,7 +20,7 @@ import { IoDownloadOutline as DownloadIcon } from "react-icons/io5"
 import bgL from '../../images/about-bg-l.jpg'
 import bgM from '../../images/about-bg-m.jpg'
 
-import headshot from '../../images/about-monochrome.png'
+import headshot from '../../images/20211003_011146-01.jpeg'
 
 import jazz from '../../images/sketches/jazz.jpg'
 import rooftop from '../../images/sketches/rooftop.jpg'
