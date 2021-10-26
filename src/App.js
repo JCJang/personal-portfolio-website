@@ -116,7 +116,7 @@ const App = () => {
           zIndex:"50",
           width:"100vw",
           height:"100vh",
-          position:"absolute",}} exit={{y:-1000, transition:{duration:3}}}><Loader/></motion.div>}
+          position:"absolute",}} exit={{y:-1000, transition:{duration:2}}}><Loader/></motion.div>}
     </AnimatePresence>
 
     {m? <Nav m={m} l={l} routeFocus={routeFocus} setRouteFocus={setRouteFocus}/>

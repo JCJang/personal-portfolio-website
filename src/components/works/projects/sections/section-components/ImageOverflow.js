@@ -45,7 +45,7 @@ const ImageOverflow = ({l, m, images=[], height="50vh", style, titles, alt}) => 
       zIndex:"25",
       height:height,
       overflowX:"scroll",
-      padding:images.length===1 ? "3rem" : "4rem"}}>
+      padding:"3rem"}}>
 
       <ImageModal isOpen={isOpen} modalRef={modalRef} setIsOpen={setIsOpen} image={images[imageArrNumber]} onClose={() => setIsOpen(false)}>
       </ImageModal>
@@ -66,10 +66,9 @@ const ImageOverflow = ({l, m, images=[], height="50vh", style, titles, alt}) => 
        }
         draggable="false" style={{
           minWidth:"150px",
-          maxWidth:"100vw",
+          maxWidth:"170vw",
           minHeight:"150px",
           maxHeight:l?`calc(${height} - 6rem)`:`calc(${height} - 8rem)`,
-         pointerEvents:"none",
          zIndex:"25",
          display: "block",
          objectFit:"contain"}}/>

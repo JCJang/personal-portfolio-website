@@ -1,3 +1,7 @@
+import ProjectLoader from '../sections/ProjectLoader'
+import {motion, AnimatePresence} from 'framer-motion'
+import useDebounce from '../../../../customHooks/useDebounce'
+
 import Summary from '../sections/Summary'
 
 import mainImageV from './images/design/1-pain-point-of-counting.jpg'
@@ -45,6 +49,7 @@ import hifiImg5 from './images/design/transfer-and-add-screens.png'
 import Footer from '../sections/Footer'
 
 
+
 const ProjectPharmacy = ({m, l, setRouteFocus}) => {
 
   const location = useLocation();
@@ -52,8 +57,29 @@ const ProjectPharmacy = ({m, l, setRouteFocus}) => {
     setRouteFocus(location.pathname)
   },[])
 
+  const [loading, setLoading] = useState(true);
+  const [domLoaded, setDomLoaded] = useState(false);
+
+  useEffect(()=>{
+     setDomLoaded(true)
+  },[])
+
+  useDebounce(()=>{
+     setLoading(false)
+  },1000, [domLoaded])
+
+
   return (
   <div style={{width:"100vw", height:"var(--desktopheight)", overflowY:"auto", overflowX:"hidden", scrollBehavior: "smooth"}}>
+
+  <AnimatePresence>
+  {loading && <motion.div key="loader" style={{
+        zIndex:"50",
+        width:"100vw",
+        height:"100vh",
+        position:"absolute",}} exit={{y:1000, transition:{duration:1.2}}}><ProjectLoader/></motion.div>}
+  </AnimatePresence>
+
       <Summary
         m={m}
         l={l}

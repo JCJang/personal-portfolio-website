@@ -21,33 +21,50 @@ import { IoCaretUpOutline} from 'react-icons/io5';
 
 const NavMobile = ({m, l, routeFocus, setRouteFocus}) => {
 
-const [navShelf, setNavShelf] = useState(false)
+const [navShelfOpen, setNavShelfOpen] = useState(false)
 const [navText, setNavText] = useState(false)
 
 const [logoOpacity, setLogoOpacity] = useState(1)
 const [iconLogo, setIconLogo] = useState("")
 const [logoRotation, setLogoRotation] = useState("")
 
-  useEffect(()=>{
-    setLogoRotation("rotateY(70deg)")
-    setLogoOpacity(0)
-  },[routeFocus,navShelf])
+useEffect(()=>{
+ setTimeout(()=>{
+   setLogoRotation("rotateY(70deg)")
+   setLogoOpacity(0)}, 800);
+},[routeFocus])
+
+useDebounce(()=>{
+  setLogoRotation("")
+  setIconLogo(iconLogoOptions())
+  setNavText(textForNav())
+  setLogoOpacity(1)
+}, 1000, [routeFocus])
+
+useEffect(()=>{
+   setLogoRotation("rotateY(70deg)")
+   setLogoOpacity(0)
+  },[navShelfOpen])
 
   useDebounce(()=>{
     setLogoRotation("")
     setIconLogo(iconLogoOptions())
     setNavText(textForNav())
     setLogoOpacity(1)
-  }, 200, [routeFocus,navShelf])
+  }, 200, [navShelfOpen])
 
   useEffect(()=>{
     setIconLogo(iconLogoOptions())
     setNavText(textForNav())
   },[])
 
+  useDebounce(()=>{
+    setNavShelfOpen(false)
+  }, 800, [routeFocus])
+
 
 const backgroundForNav = () => {
-  if(navShelf===true){
+  if(navShelfOpen===true){
     return "var(--desert-rose)";
   }else if(routeFocus==="/about"){
     return "var(--cinerous)"
@@ -61,7 +78,7 @@ const backgroundForNav = () => {
 }
 
 const colorForNav = () => {
-  if(navShelf===true){
+  if(navShelfOpen===true){
     return "var(--highlight)";
   }else if(routeFocus==="/about"){
     return "var(--velvet)"
@@ -76,7 +93,7 @@ const colorForNav = () => {
 
 
 const textForNav = () => {
-  if(navShelf===true){
+  if(navShelfOpen===true){
     return "";
   }else if(routeFocus==="/about"){
     return "About"
@@ -91,7 +108,7 @@ const textForNav = () => {
 
 
 const iconLogoOptions = () => {
-  if(navShelf){
+  if(navShelfOpen){
     return <BackIcon style={{transform:"rotate(-90deg)"}}/>
   }else if(routeFocus==="/about"){
     return <AboutIconLogo/>
@@ -128,13 +145,13 @@ const iconLogoOptions = () => {
       <nav className="Column" style={worksStyle()}>
 
         <div className="desktop-logo transition RowCentered" style={{height:"5rem",margin:"0 1.5rem"}}>
-          <div className="ColumnCentered" onClick={()=>{setNavShelf(!navShelf)}}  style={{color:colorForNav()}}>
+          <div className="ColumnCentered" onClick={()=>{setNavShelfOpen(!navShelfOpen)}}  style={{color:colorForNav()}}>
           <div className="transition selfCentered" style={{fontSize:"1.5rem", opacity:logoOpacity,transformOrigin:"center",transform:logoRotation}}>
               {iconLogo}
           </div>
-          <p className="overline">{navShelf?"BACK":"MENU"}</p>
+          <p className="overline">{navShelfOpen?"BACK":"MENU"}</p>
           </div>
-          <div className="selfCentered" style={{height:"1rem",marginTop:"0.8rem",borderBottom:`1.4px solid ${colorForNav()}`,width:"65vw"}}>{navText?navText:<div style={{visibility:"hidden"}}>?</div>}
+          <div className="selfCentered" style={{height:"1rem",marginTop:"0.8rem",borderBottom:`1.4px solid ${colorForNav()}`,width:"65vw"}}>{navText?<div style={{opacity:logoOpacity, transitionDuration:"0.5s"}}>{navText}</div>:<div style={{visibility:"hidden"}}>?</div>}
           </div>
           <div className="mobile-logo" style={{marginTop:m?"7.4px":"5.7px"}}>Jang</div>
         </div>
@@ -147,14 +164,15 @@ const iconLogoOptions = () => {
     position: "absolute",
     zIndex:"20",
     left: "0",
-    top:navShelf?"5rem":"-100vh"
+    transition: "top ease 0.7s",
+    top:navShelfOpen?"5rem":"-100vh"
   }} >
         <LinksMobile
         boxDecorationTop={false}
         boxDecorationBottom={true}
-        setNavShelf={setNavShelf}
+        setNavShelfOpen={setNavShelfOpen}
+        navShelfOpen={navShelfOpen}
         routeFocus={routeFocus}
-        setRouteFocus={setRouteFocus}
         icon={worksIcon}
         hoverIcon={worksHover}
         m = {m}
@@ -168,9 +186,9 @@ const iconLogoOptions = () => {
         <LinksMobile
         boxDecorationTop={true}
         boxDecorationBottom={true}
-        setNavShelf={setNavShelf}
+        setNavShelfOpen={setNavShelfOpen}
+        navShelfOpen={navShelfOpen}
         routeFocus={routeFocus}
-        setRouteFocus={setRouteFocus}
         icon={aboutIcon}
         hoverIcon={aboutHover}
         m = {m}
@@ -185,9 +203,9 @@ const iconLogoOptions = () => {
         boxDecorationTop={true}
         boxDecorationBottom={false}
         routeFocus={routeFocus}
-        setNavShelf={setNavShelf}
+        navShelfOpen={navShelfOpen}
         colorForNav={colorForNav}
-        setRouteFocus={setRouteFocus}
+        routeFocus={routeFocus}
         icon={contactIcon}
         hoverIcon={contactHover}
         m = {m}

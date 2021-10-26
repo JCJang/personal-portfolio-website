@@ -1,3 +1,7 @@
+import ProjectLoader from '../sections/ProjectLoader'
+import {motion, AnimatePresence} from 'framer-motion'
+import useDebounce from '../../../../customHooks/useDebounce'
+
 //summary
 import Summary from '../sections/Summary'
 
@@ -64,6 +68,18 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
     setRouteFocus(location.pathname)
   },[])
 
+  const [loading, setLoading] = useState(true);
+  const [domLoaded, setDomLoaded] = useState(false);
+
+  useEffect(()=>{
+     setDomLoaded(true)
+  },[])
+
+  useDebounce(()=>{
+     setLoading(false)
+  },1000, [domLoaded])
+
+
     return (
       <div style={{
       color:"var(--works-text)",
@@ -73,6 +89,14 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
       overflowX:"hidden",
       scrollBehavior: "smooth"}}>
 
+
+    <AnimatePresence>
+    {loading && <motion.div key="loader" style={{
+          zIndex:"50",
+          width:"100vw",
+          height:"100vh",
+          position:"absolute",}} exit={{y:1000, transition:{duration:1.2}}}><ProjectLoader/></motion.div>}
+    </AnimatePresence>
 
         <Summary
           mainImage={m? mainImageH : mainImageV}
