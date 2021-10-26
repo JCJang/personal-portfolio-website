@@ -55,33 +55,24 @@ const ImageOverflow = ({l, m, images=[], height="50vh", style, titles, alt}) => 
        {titles && <div style={{minWidth:"120px", width:l?"180px":"180px",textAlign:"left",margin:images.length===1? "1rem 2rem 0 0": "1rem 1rem 0 3rem", alignSelf:"flex-start", justifySelf:"flex-start"}}>
          <label for={titles[number]} style={{font:"1rem/1.5 'Yaldevi'", textTransform:"uppercase"}}>{titles[number]}</label>
        </div>}
-       <div className="ImageOverflowImg" style={{
-         display:"flex",
-         flexDirection:images.length===1 ? "reverse-column" : "row"
-       }}>
-       <ImageFadeIn alt={titles && titles[number] || alt} role={!titles && "presentation"} src={image}
-       onKeyPress={(e)=>{
-         if (e.which === 13) {
-             setImageArrNumber(number);
-             setIsOpen(true)
-        }
-        }}
+       <div className="ImageOverflowImg Row">
+       <ImageFadeIn src={image}
        onClick={(e) => {
          e.stopPropagation();
            setImageArrNumber(number);
            setIsOpen(true)
          }
        }
-        draggable="false" tabindex = "0"
-        style={{
+        draggable="false" style={{
          pointerEvents:"none",
          zIndex:"25",
          position:"absolute",
-         width: "intrinsic",
+         width: "auto",
          alignSelf:"center",
-         height: images.length===1? `calc(${height} - 2rem)`:height,
+         maxHeight: images.length===1? `calc(${height} - 2rem)`:height,
+         maxWidth: images.length===1? `calc(${height} - ${widthMarginLength()})`:height,
          display: "block",
-         objectFit:"cover"}} style={style}/>
+         objectFit:"contain"}} style={style}/>
          </div>
          </>
      })}
