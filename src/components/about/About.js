@@ -354,7 +354,12 @@ const About = ({m, l, setRouteFocus}) => {
         <div className={l?"ColumnCentered":m? "RowCentered":"ColumnCentered"} style={{gap:"1rem", alignItems: l? "flex-start": !m? "flex-end":"", justifyContent:m && "space-between", marginTop:"2rem", width: !m && "calc(70vw - 3rem)"}}>
 
   <Fade bottom>
-          <h6 className="HobbyLabel RowCentered" onClick={()=>{setHobbyFocus('travel')}} style={{
+          <h6 className="HobbyLabel RowCentered"
+          tabindex="0"
+          onKeyPress={(e)=>{
+            if (e.which === 13) setHobbyFocus('travel')
+           }}
+          onClick={()=>{setHobbyFocus('travel')}} style={{
             color:hobbyFocus==='travel' && "var(--highlight)",
             borderBottom:hobbyFocus==='travel' && "1.8px solid var(--highlight)"
 
@@ -364,7 +369,12 @@ const About = ({m, l, setRouteFocus}) => {
           </h6>
   </Fade>
   <Fade bottom delay={150}>
-          <h6 className="HobbyLabel RowCentered" onClick={()=>{setHobbyFocus('reading')}} style={{
+          <h6 className="HobbyLabel RowCentered"
+          tabindex="0"
+          onKeyPress={(e)=>{
+            if (e.which === 13) setHobbyFocus('reading')
+           }}
+          onClick={()=>{setHobbyFocus('reading')}} style={{
             color:hobbyFocus==='reading' && "var(--highlight)",
             borderBottom:hobbyFocus==='reading' && "1.8px solid var(--highlight)"
           }}>
@@ -373,7 +383,12 @@ const About = ({m, l, setRouteFocus}) => {
           </h6>
   </Fade>
   <Fade bottom delay={300}>
-          <h6 className="HobbyLabel RowCentered" onClick={()=>{setHobbyFocus('painting')}} style={{
+          <h6 className="HobbyLabel RowCentered"
+          tabindex="0"
+          onKeyPress={(e)=>{
+            if (e.which === 13) setHobbyFocus('painting')
+           }}
+          onClick={()=>{setHobbyFocus('painting')}} style={{
             color:hobbyFocus==='painting' && "var(--highlight)",
             borderBottom:hobbyFocus==='painting' && "1.8px solid var(--highlight)"
           }}>
@@ -394,7 +409,7 @@ const About = ({m, l, setRouteFocus}) => {
         right:hobbyFocus==="painting"?"0":"-60vw",
         opacity:hobbyFocus==="painting"?"1":"0",
         transition:"right ease 0.9s, opacity linear 1s"}}>
-            <Carousel carouselSlides={[snow,sunrise,plants,rooftop,jazz,yiping]}
+            <Carousel  tabindex={hobbyFocus==="painting"?"0":"-1"}  carouselSlides={[snow,sunrise,plants,rooftop,jazz,yiping]}
             height="30vh"
             width={l?"calc(50vw - 7.5rem)":"80vw"}/>
       </div>
@@ -427,7 +442,7 @@ const About = ({m, l, setRouteFocus}) => {
     </div>
 
         <Fade bottom>
-        <div className="RowCentered" style={{width:l?"calc(45vw - 7.5rem)":"100vw",height:"30vh",overflow:"hidden"}}>
+        <div className="RowCentered"  tabindex={hobbyFocus==="travel"?"0":"-1"}  style={{width:l?"calc(45vw - 7.5rem)":"100vw",height:"30vh",overflow:"hidden"}}>
         <ImageOverflow height="250px" images={[map]} style={{
             padding:"0"
           }}/>
@@ -551,7 +566,7 @@ const About = ({m, l, setRouteFocus}) => {
   <a className="AboutWorksLink HobbyLabel selfCentered" style={{whiteSpace:"nowrap", fontSize:"1.4rem", textDecoration:"none",  alignSelf: "flex-start"
 }} target="_blank" href="https://github.com/JCJang"><GithubIcon style={iconStyle()}/> Github</a>
   <a className="AboutWorksLink HobbyLabel selfCentered" style={{whiteSpace:"nowrap", fontSize:"1.4rem", textDecoration:"none",alignSelf: "flex-start"}} target="_blank" href="https://www.linkedin.com/in/jennifer-jang"><LinkedinIcon style={iconStyle()}/> LinkedIn</a>
-  <Link to="./jennifer-jang-resume.pdf" className="AboutWorksLink HobbyLabel selfCentered" style={{whiteSpace:"nowrap", fontSize:"1.4rem", textDecoration:"none",alignSelf: "flex-start"}} target="_blank" download><DownloadIcon style={iconStyle()}/>Download CV</Link>
+  <Link to="./files/jennifer-jang-resume.pdf" className="AboutWorksLink HobbyLabel selfCentered" style={{whiteSpace:"nowrap", fontSize:"1.4rem", textDecoration:"none",alignSelf: "flex-start"}} target="_blank" download><DownloadIcon style={iconStyle()}/> Download CV</Link>
   </div>
 
   <br></br>

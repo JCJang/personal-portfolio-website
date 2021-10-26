@@ -12,6 +12,7 @@ import {IoChevronForwardSharp as Next} from "react-icons/io5";
 import ImageModal from './ImageModal'
 
 const Carousel = ({
+  tabindex = "0",
   carouselSlides,
   carouselSlidesTitles,
   height = "100vh",
@@ -119,7 +120,10 @@ const Carousel = ({
         left: "0"
       }}>
 
-      <button className="ColumnCentered carouselBtn" onClick={prevSlide} style={{
+      <button className="ColumnCentered carouselBtn"
+         tabindex={tabindex}
+         onClick={prevSlide}
+         style={{
           position: "absolute",
           bottom: "0",
           left: "0",
@@ -167,7 +171,10 @@ const Carousel = ({
           }</div>
       </div>
 
-      <button className="ColumnCentered carouselBtn" onClick={nextSlide} style={{
+      <button className="ColumnCentered carouselBtn"
+      onClick={nextSlide}
+      tabindex={tabindex}
+      style={{
           position: "absolute",
           bottom: "0",
           right: "0",
