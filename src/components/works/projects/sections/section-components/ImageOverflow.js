@@ -69,6 +69,7 @@ const ImageOverflow = ({l, m, images=[], height="50vh", style, titles, alt}) => 
          zIndex:"25",
          position:"absolute",
          width: "auto",
+         width: "intrinsic",
          alignSelf:"flex-start",
          height:height,
          display: "block",
