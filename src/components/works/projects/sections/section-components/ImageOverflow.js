@@ -70,8 +70,7 @@ const ImageOverflow = ({l, m, images=[], height="50vh", style, titles, alt}) => 
          position:"absolute",
          width: "auto",
          alignSelf:"flex-start",
-         maxHeight: images.length===1? `calc(${height} - 2rem)`:height,
-         maxWidth: images.length===1? `calc(${height} - ${widthMarginLength()})`:height,
+         height:height,
          display: "block",
          objectFit:"cover"}} style={style}/>
          </div>
