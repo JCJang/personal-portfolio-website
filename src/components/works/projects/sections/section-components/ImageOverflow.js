@@ -67,8 +67,9 @@ const ImageOverflow = ({l, m, images=[], height="50vh", style, titles, alt}) => 
          pointerEvents:"none",
          zIndex:"25",
          position:"absolute",
+         width: "auto",
          width: "intrinsic",
-         maxHeight: images.length===1? `calc(${height} - 2rem)`:height,
+         height: images.length===1? `calc(${height} - 2rem)`:height,
          display: "block",
          objectFit:"contain"}} style={style}/>
          </div>
