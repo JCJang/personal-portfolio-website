@@ -288,9 +288,9 @@ const Research = ({
 
 {userFlowImg &&
 
-    <div className="RowCentered">
+    <div className="RowCentered" style={{width:l?"calc(100vw - 20rem)":"100vw",height:"80vh",overflow:"hidden"}}>
 
-        <ImageOverflow l={l} m={m}height="80vh" width="100vw" images={[userFlowImg]} alt="user flow" style={{
+        <ImageOverflow l={l} m={m}height="80vh" width="100vw"  images={[userFlowImg]} alt="user flow" style={{
             filter: "saturate(0.5)",
           }}/>
 

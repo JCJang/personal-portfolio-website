@@ -55,8 +55,11 @@ const ImageOverflow = ({l, m, images=[], height="50vh", style, titles, alt}) => 
        {titles && <div style={{minWidth:"120px", width:l?"180px":"180px",textAlign:"left",margin:images.length===1? "1rem 2rem 0 0": "1rem 1rem 0 3rem", alignSelf:"flex-start", justifySelf:"flex-start"}}>
          <label for={titles[number]} style={{font:"1rem/1.5 'Yaldevi'", textTransform:"uppercase"}}>{titles[number]}</label>
        </div>}
-
-       <div className="ImageOverflowImg Row">
+  
+       <div className="ImageOverflowImg" style={{
+         display:"flex",
+         flexDirection:images.length===1 ? "reverse-column" : "row"
+       }}>
        <ImageFadeIn src={image}
        onClick={(e) => {
          e.stopPropagation();
@@ -68,10 +71,10 @@ const ImageOverflow = ({l, m, images=[], height="50vh", style, titles, alt}) => 
          pointerEvents:"none",
          zIndex:"25",
          position:"absolute",
-         width: "auto",
-         width: "intrinsic",
-         alignSelf:"flex-start",
-         height:height,
+         width: "fit-content",
+         alignSelf:"center",
+         maxHeight: images.length===1? `calc(${height} - 2rem)`:height,
+         maxWidth: images.length===1? `calc(${height} - ${widthMarginLength()})`:height,
          display: "block",
          objectFit:"cover"}} style={style}/>
          </div>
