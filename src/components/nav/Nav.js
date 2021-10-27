@@ -51,11 +51,24 @@ const colorForNav = () => {
   if(routeFocus==="/about"){
     return "var(--velvet)"
   }else if (routeFocus==="/") {
-    return "var(--midnight)"
+    return "var(--works-text)"
   }else if (routeFocus==="/contact") {
     return "var(--contact-text)"
   }else{
     return "var(--occlusion)"
+  }
+}
+
+
+const colorForDivider = () => {
+  if(routeFocus==="/about"){
+    return "var(--desert-rose)"
+  }else if (routeFocus==="/") {
+    return "var(--works-text)"
+  }else if (routeFocus==="/contact") {
+    return "var(--contact-text)"
+  }else{
+    return "var(--cinerous)"
   }
 }
 
@@ -117,7 +130,7 @@ const iconLogoOptions = () => {
         </div>
 
   </nav>
-  <div style={{background:colorForNav(), height:"1.2px",margin:"0 2rem",opacity:"0.8"}}></div>
+  <div style={{background:colorForDivider(), height:"1.2px",margin:"0 0rem",opacity:"0.8"}}></div>
 </div>
   )
 }
