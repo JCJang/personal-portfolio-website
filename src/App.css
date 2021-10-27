@@ -140,9 +140,8 @@ html { font-size: 18px;}
   --carousel-gradient:
     linear-gradient(to top, rgba(49, 39, 39, 0.8) 0%,rgba(349, 39, 39, 0) 50%);
 
-
---mobileheight:calc(100vh - 5rem);
---desktopheight:calc(100vh - 5rem);
+--mobileheight:calc(100vh - 3.5rem);
+--desktopheight:calc(100vh - 3.5rem);
 --grid-image-width:calc(50vw - 3rem);
 
   --main-headline1: 5rem/1.5 "Lusitana", serif;
@@ -428,8 +427,8 @@ text-transform: uppercase;
   width:calc(80vw - 4rem);
   display: grid;
   grid-template-columns: auto auto;
-  grid-row-gap: 2rem;
-  grid-column-gap: 2.5rem;
+  grid-row-gap: 1.6rem;
+  grid-column-gap: 1.9rem;
 
 }
 

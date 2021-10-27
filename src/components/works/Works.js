@@ -29,16 +29,14 @@ const worksStyle = () => {
     background:"var(--works-accent)",
     color: "var(--midnight)",
     height:"var(--desktopheight)",
-    overflowY:"auto",
     width:"100vw",
-    padding:l && "1.5rem 0"
-
   }
 };
 
   return (
     <div className="Column" style={worksStyle()}>
-      <div className={l?"Row":"Column"} style={{flex:"1"}}>
+
+      <div className={l?"Row":"Column"} style={{flex:"1", margin:l && "1.6rem 0"}}>
         <div className= {l?"Column":"ColumnCentered"} style={{padding:"2rem", flex:"1", display:!l && "none"}}>
           <h2>Works</h2>
           <div className="boxDecoration"></div>
@@ -91,7 +89,7 @@ const worksStyle = () => {
         </div>
       </div>
 
-      {l && <div style={{background:"var(--midnight)", height:"1.1px",margin:"2rem 4rem 0 4rem",opacity:"0.8"}}></div>}
+
     </div>
   )
 }

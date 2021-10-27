@@ -100,7 +100,6 @@ const App = () => {
       }
     };
     const pageTransition = {
-      ease: "easeOut",
       duration: 0.4
     };
 

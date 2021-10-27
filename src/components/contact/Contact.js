@@ -85,7 +85,7 @@ useEffect(()=>{
     <div className="Column noScrollBar" style={contactStyle()}>
       <div className={l?"Row":"Column"} style={{zIndex:"10"}}>
         <div className= {l?"Column":"ColumnCentered"}  style={colHalf()}>
-        <h2 style={{padding:"0px"}}>Contact me</h2>
+        <h2 style={{padding:"0"}}>Contact me</h2>
         <div className="boxDecoration" style={{borderColor:"var(--contact-text)"}}></div>
         <h6 style={{maxWidth:l?"":inputWidth()}}>Or write to:
         <Fade delay={500}>
@@ -148,6 +148,7 @@ useEffect(()=>{
                         type="submit" className="RowCentered btn contactBtn" style={{
                           width:inputWidth(true),
                           background:btnHover?"var(--velvet)":"",
+                          boxShadow:"rgba(79, 87, 127, 0.25) 0px 6px 12px -2px, rgba(79, 87, 127, 0.3) 0px 3px 7px -3px",
                           transition:"0.4s"}}>
                         <p className="selfCentered" style={{marginTop:"0.3rem"}}>Send</p>
                         <SendIcon style={{fontSize:"1.2rem", marginLeft:"1rem"}}/>
@@ -159,12 +160,13 @@ useEffect(()=>{
         </div>
       </div>
 
-      {l && <div style={{background:"var(--contact-text)", height:"1.1px",margin:"2rem 4rem 0 4rem",opacity:"0.8"}}></div>}
 
 
       <div style={{height:"var(--desktopheight)", opacity:"0.23",width:"100vw", bottom:"0px", left:"0px", position:"absolute",overflow:"hidden",mixBlendMode:"overlay"}}>
       <ImageFadeIn src={bgImage} className="bgImage"/>
       </div>
+      {l && <div style={{background:"var(--contact-text)", height:"1.1px",marginTop:"2rem",opacity:"1"}}></div>}
+
     </div>
   )
 }

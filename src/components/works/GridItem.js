@@ -28,9 +28,9 @@ const borderRight = () => {
 
   if(l){
     if(hover){
-      return "2px solid var(--desert-rose)"
+      return "3px solid var(--desert-rose)"
       } else {
-    return "8px solid var(--midnight)"
+    return "3px solid var(--midnight)"
     }
   }else{
     if(hover){
@@ -46,9 +46,9 @@ const borderLeft = () => {
 
   if(l){
     if(hover){
-      return "2px solid var(--desert-rose)"
+      return "3px solid var(--desert-rose)"
       } else {
-    return "8px solid var(--midnight)"
+    return "3px solid var(--midnight)"
     }
   }else{
     if(hover){
@@ -68,6 +68,8 @@ const borderLeft = () => {
       onMouseLeave={() => setHover(false)}
       onMouseDown={() => setHover(true)}
       onMouseUp={() => setHover(false)}  style = {{ textDecoration: "none",
+
+    boxShadow:hover?"rgba(60, 84, 82, 0.05) 0px 1px 0px, rgba(60, 84, 82, 0.1) 0px 0px 8px":"rgba(60, 84, 82, 0.25) 0px 6px 12px -2px, rgba(60, 84, 82, 0.3) 0px 3px 7px -3px",
     overflow: "hidden",
     borderRight: borderRight(),
     borderLeft: borderLeft()
@@ -85,31 +87,32 @@ const borderLeft = () => {
     color: "var(--lilac)",
     lineHeight: "5rem",
     justifyContent: "center",
-    padding:direction==="lr"?"0 4rem 0 0":"0 0 0 4rem",
+    padding:direction==="lr"?"0 4rem 0 0.5rem":"0 0.5rem 0 4rem",
     opacity:hover?"0":"1"
   }}
    >
    <Fade top delay={500}>
-        <div style={{lineHeight:"1.5rem"}}>{role}</div>
+        <div style={{lineHeight:"1.3rem", marginTop:"0.2rem"}}>{role}</div>
     </Fade>
     <Fade delay={700}>
-          <div style={{fontWeight:"400",font:m?"2.3rem/1.7 'Yaldevi',sans-serif":"1.6rem/1.2 'Yaldevi',sans-serif", letterSpacing:"0.0156rem",textTransform:"uppercase", margin:!m && "1.2rem 0"}}>{title}</div>
+          <div style={{fontWeight:"400",font:m?"3rem/1.3 'Lusitana',sans-serif":"2.4rem/1.2 'Lusitana',sans-serif", letterSpacing:"0.0156rem",textTransform:"", margin:"1rem 0"}}>{title}</div>
     </Fade>
     <Fade bottom delay={900}>
 
-        <div className="subtitle1" style={{lineHeight:m?"3rem":"1.6rem",fontSize:!m && "1.2rem"}}>{subtitle}</div>
+        <div className="subtitle1" style={{lineHeight:m?"2.4rem":"1.6rem",fontSize:!m && "1.2rem", marginBottom:"0.2rem"}}>{subtitle}</div>
     </Fade>
 
     </div>
     <div className="transition Column body2" style = {{
   height: "100%",
-  width: "100%",
+  width: "calc(40vw - 3.25rem)",
   position: "absolute",
   top:"0",
   zIndex: "10",
   textAlign:"left",
   color: "var(--works-bg)",
   justifyContent: "center",
+  padding:"0.5rem",
   opacity:hover?"1":"0",
   }}
   >

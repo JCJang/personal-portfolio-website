@@ -88,12 +88,12 @@ const iconLogoOptions = () => {
     padding: "0 3rem",
     color: colorForNav(),
     zIndex:"40",
-    height: "5rem"}}>
+    height: "3.5rem"}}>
 
     <nav className="Row transition" style={{
     alignItems: "center",
     justifyContent:"space-between",
-    height:"calc(5rem - 1.1px - 1.5rem)"
+    height:"calc(3.5rem - 1.2px)"
   }}>
 
         <div className="desktop-logo RowCentered" style={{opacity:0.9}}>
@@ -117,22 +117,7 @@ const iconLogoOptions = () => {
         </div>
 
   </nav>
-  <div style={{background:colorForNav(),height:"1.1px",margin:"0 2rem",opacity:"0.8"}}></div>
-  {routeFocus==="/" &&
-    <div className="RowCentered" style={{height:"1.5rem", justifyContent:"space-between",margin:"0 4rem"}}>
-    <div style={{font:"0.8rem/1.5 'Lusitana'"}}> Winter 2021</div>
-    <div style={{height:"1.5rem", font:"0.8rem/1.5 'Lusitana'"}}>Issue <strong>#15</strong></div>
-    </div>
-  }
-  {routeFocus==="/about" &&
-    <div className="RowCentered" style={{height:"1.5rem", justifyContent:"space-between",margin:"0 4rem"}}>
-    </div>
-  }
-  {routeFocus==="/contact" &&
-    <div className="RowCentered" style={{height:"1.5rem", justifyContent:"space-between",margin:"0 4rem"}}>
-    <div style={{font:"0.8rem/1.5 'Lusitana'", opacity:"0.7"}}></div>
-    </div>
-  }
+  <div style={{background:colorForNav(), height:"1.2px",margin:"0 2rem",opacity:"0.8"}}></div>
 </div>
   )
 }

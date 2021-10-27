@@ -162,7 +162,8 @@ const [hover, setHover] = useState(false)
           background: "var(--works-bg)",
           top:!l && openedLayout && "0px",
           marginLeft:l && "5rem",
-          marginTop: !l && "2rem"
+          marginTop: !l && "2rem",
+          boxShadow: openedLayout?"rgba(17, 17, 26, 0.1) 0px 1px 0px": "rgba(0, 0, 0, 0.15) 0px 3px 3px 0px"
 }}>
       <div
             style={{margin:l?"3rem":openedLayout?"0rem":"2rem", objectFit:"cover", transition:"margin linear 0.4s, transform ease 0.6s",
@@ -257,7 +258,7 @@ const [hover, setHover] = useState(false)
   }}>
   <div>
   <ImageFadeIn
-  alt="selected moodboard colors that are grouped into three collections. Group one consists of pebble greys and feel organic, rhythmic, fluid, and pensive. Group two consists of shades of lilac and lavender, and convey keywords of calm, dusk, peaceful, and mysterious. Group three consists od8f peaches, browns, and shades of pink, and feel energetic, vibrant, and vivacious." 
+  alt="selected moodboard colors that are grouped into three collections. Group one consists of pebble greys and feel organic, rhythmic, fluid, and pensive. Group two consists of shades of lilac and lavender, and convey keywords of calm, dusk, peaceful, and mysterious. Group three consists od8f peaches, browns, and shades of pink, and feel energetic, vibrant, and vivacious."
   style={{
     transition: "filter linear 0.5s",
     height:l?"30vw":"60vw",

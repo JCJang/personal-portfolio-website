@@ -69,10 +69,11 @@ if(number===1){
             position: "relative",
             right: !l? "0rem": rightToLeft() && openedLayout ? "-20vw" : rightToLeft() ? "0rem" : "",
             left: !l? "0rem": leftToRight() && openedLayout ? "-20vw" : leftToRight() ? "0rem" : "",
-            transition: "left ease 0.7s, right ease 0.7s",
+            transition: "left ease 0.7s, right ease 0.7s, box-shadow ease 0.5s",
             cursor:"pointer",
             background: "var(--works-bg)",
             top:!l && openedLayout && "0px",
+            boxShadow: openedLayout?"rgba(17, 17, 26, 0.1) 0px 1px 0px": "rgba(0, 0, 0, 0.15) 0px 3px 3px 0px"
 }}>
         <div
               style={{margin:l?"3rem":openedLayout?"0rem":"2rem", objectFit:"cover", transition:"margin linear 0.4s, transform ease 0.6s",

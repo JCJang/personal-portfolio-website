@@ -232,7 +232,8 @@ const About = ({s, m, l, setRouteFocus}) => {
 
   <div id="summary-col-2" className="Column" style={{position:"absolute",zIndex:"3",right:m?"10rem":"0", bottom:m?"5rem":"", top:m?"5rem":"2rem"}}>
   <div></div>
-    <ImageFadeIn src={headshot} alt="Jennifer Jang" style={{minWidth:"200px", maxWidth:m?"400px":"70vw", minHeight:"300px",maxHeight:m?"60vh":"65vh",objectFit:"contain",zIndex:"1"}}/>
+    <ImageFadeIn src={headshot} alt="Jennifer Jang" style={{minWidth:"200px", maxWidth:m?"400px":"70vw", minHeight:"300px",maxHeight:m?"60vh":"65vh",objectFit:"contain",zIndex:"1"
+  }}/>
 
   </div>
   </Fade>
