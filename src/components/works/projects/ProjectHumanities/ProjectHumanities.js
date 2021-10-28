@@ -273,7 +273,9 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
          functionalProgrammingTitles={["filtering for dates around a book's publication date", "filtering for dates in an author's lifespan"]}
         />
 
-        <Footer m={m} l={l}  websiteLink="humanitiesdatabase.com"/>
+        <Footer m={m} l={l}  websiteLink="humanitiesdatabase.com"
+        nextSteps={["implement a Chinese version using i18next","conduct user testing", "add profile functionality with OAuth and a simple RESTful API", "include data visualization of author relationships and book referential relationships - probably using D3.js"]}
+        learned="Developing this project pushed me to discover and learn many technologies, from REST APIs to DNS configuration for my custom domain. One thing I did well was to create a roadmap of what I needed to do at each step, so that slowly and surely, I could complete the minimum viable product. Some things I wish I did or knew: guidelines or best practices on how to write organizable code – I can already foresee the headaches when I can jump back into the code. The more I learn about frontend development, the more I am aware of things that I still need to learn. I am very excited to equip myself with all the skills that will enable me to become a better developer."/>
       </div>
     )
 }

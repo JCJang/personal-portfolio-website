@@ -87,15 +87,15 @@ const borderLeft = () => {
     color: "var(--lilac)",
     lineHeight: "5rem",
     justifyContent: "center",
-    padding:direction==="lr"?"0 4rem 0 0.5rem":"0 0.5rem 0 4rem",
+    padding:direction==="lr"?"1rem 4rem 0 1rem":"1rem 1rem 0 4rem",
     opacity:hover?"0":"1"
   }}
    >
    <Fade top delay={500}>
-        <div style={{lineHeight:"1.3rem", marginTop:"0.2rem"}}>{role}</div>
+        <div style={{lineHeight:"1.3rem", marginTop:"0.5rem"}}>{role}</div>
     </Fade>
     <Fade delay={700}>
-          <div style={{fontWeight:"400",font:m?"3rem/1.3 'Lusitana',sans-serif":"2.4rem/1.2 'Lusitana',sans-serif", letterSpacing:"0.0156rem",textTransform:"", margin:"1rem 0"}}>{title}</div>
+          <div style={{fontWeight:"400",font:m?"3rem/1.3 'Lusitana',sans-serif":"2.4rem/1.2 'Lusitana',sans-serif", letterSpacing:"0.0156rem",textTransform:"", margin:"0.6rem 0"}}>{title}</div>
     </Fade>
     <Fade bottom delay={900}>
 

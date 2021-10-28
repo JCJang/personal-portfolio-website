@@ -83,7 +83,7 @@ useEffect(()=>{
 
   return (
     <div className="Column noScrollBar" style={contactStyle()}>
-      <div className={l?"Row":"Column"} style={{zIndex:"10"}}>
+      <div className={l?"Row":"ColumnCentered"} style={{zIndex:"10"}}>
         <div className= {l?"Column":"ColumnCentered"}  style={colHalf()}>
         <h2 style={{padding:"0"}}>Contact me</h2>
         <div className="boxDecoration" style={{borderColor:"var(--contact-text)"}}></div>

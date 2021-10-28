@@ -158,7 +158,7 @@ const iconLogoOptions = () => {
         </nav>
 
 
-        <div className="grid-container-mobile transition" style = {{
+        <div className="grid-container-nav transition" style = {{
     background: "var(--desert-rose)",
     height: "var(--mobileheight)",
     position: "absolute",

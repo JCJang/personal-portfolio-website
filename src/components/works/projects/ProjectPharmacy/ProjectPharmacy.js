@@ -257,9 +257,7 @@ const ProjectPharmacy = ({m, l, setRouteFocus}) => {
        prototypeIllustration={[motionDesignImg]}
        prototypeLink="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F4kEUnH9BBuB7MCdCdqSyP1%2FPharmacy-Concept-App-Prototype%3Fnode-id%3D399%253A29340%26scaling%3Dscale-down%26page-id%3D399%253A27182%26starting-point-node-id%3D399%253A29340"/>
        <Footer m={m} l={l}
-       impact="I hope this app will one day be developed and used in the pharmacy where I worked. This is especially true since accessibility and pharmacy-related problems sometimes even concerns life and death.
-"
-       learned=""/>
+       learned="In this project, I implemented the design process and learned to empathize with users and gain insights that lead to problem-solving. It is thrilling to see something through from start to finish, and I am very grateful to Google’s certificate program on Coursera, and its instructors who guided me through every step of the design process."/>
     </div>
   )
 }

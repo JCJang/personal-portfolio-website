@@ -30,7 +30,7 @@ const color = () =>{
     onMouseLeave={() => setHover(false)}
     onMouseDown={() => setHover(true)}
     onMouseUp={() => setHover(false)}
-      style={{color:"inherit",textDecoration: "none", font:hover?"0.9rem/1.5 'Yaldevi', serif":"0.85rem/1.5 'Yaldevi', serif"}}>
+      style={{color:"inherit",textDecoration: "none", font:hover?"0.9rem/1.5 'Yaldevi', serif":"0.85rem/1.5 'Yaldevi', serif", letterSpacing: "0.2px", textTransform:"uppercase"}}>
       <div className="desktopNavLink RowCentered transition"
         style={{height:"3.5rem", whiteSpace:"nowrap", background:background(),color:color(), cursor:routeFocus===routeName?"default":"pointer"}}>
 

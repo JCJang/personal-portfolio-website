@@ -51,7 +51,7 @@ const colorForNav = () => {
   if(routeFocus==="/about"){
     return "var(--velvet)"
   }else if (routeFocus==="/") {
-    return "var(--works-text)"
+    return "var(--midnight)"
   }else if (routeFocus==="/contact") {
     return "var(--contact-text)"
   }else{
@@ -64,7 +64,7 @@ const colorForDivider = () => {
   if(routeFocus==="/about"){
     return "var(--desert-rose)"
   }else if (routeFocus==="/") {
-    return "var(--works-text)"
+    return "var(--midnight)"
   }else if (routeFocus==="/contact") {
     return "var(--contact-text)"
   }else{

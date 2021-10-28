@@ -6,7 +6,7 @@ const Footer = ({
   m,
   l,
   websiteLink,
-  impact,
+  nextSteps,
   learned
 }) => {
 
@@ -114,6 +114,19 @@ const Footer = ({
          }
        }
 
+       const parseText = (text) =>{
+         if(!text) return
+         return text.split("/").map((section, num)=>{
+           return  <>
+           <div>
+           {section}
+           </div>
+           {num!==text.split("/").length && <br></br>}
+           </>
+         }
+        )}
+
+
        const col2PaddingTop = () => {
          if (!m) return "2rem"
        }
@@ -130,30 +143,30 @@ const Footer = ({
 
 <h2 style={textMarginStyleHeader()}>Takeaways</h2>
 
-  <div style={{marginBottom:extraSpacing()}}></div>
-
-
       <div className={m
           ? "Row"
           : "Column"} style={textMarginStyleRows()}>
 
+        {nextSteps &&
+
         <div id="summary-col-1" className="Column" style={colHalf()}>
-          <h5>
-            <em>Impact:</em>
+
+          <h5 style={{marginBottom:"1rem"}}>
+            Next Steps:
           </h5>
           <div className="body1" style={{paddingTop:col2PaddingTop()}}>
-            {impact}
+            <div>{nextSteps.map((li)=><div><strong>-</strong> {li}</div>)}</div>
           </div>
 
-
         </div>
+      }
 
-        <div id="summary-col-2" className="Column" style={colHalf()}>
-        <h5>
-          <em>What I Learned:</em>
-        </h5>
+        <div id="summary-col-2" className="Column" style={nextSteps && colHalf()}>
+        {nextSteps && <h5 style={{marginBottom:"1rem"}}>
+          What I Learned:
+        </h5>}
           <div className="body1" style={{paddingTop:col2PaddingTop()}}>
-            {learned}
+            {parseText(learned)}
           </div>
         </div>
 
@@ -163,25 +176,25 @@ const Footer = ({
 
 </div>
 
-        {websiteLink && <h6 className="Column" style={{
+<div style={{marginBottom:extraSpacing()}}></div>
+
+
+        <h4 className="Column" style={{
             margin: m? "3rem 5rem": "3rem 2rem",
             display: "inline",
+            textAlign: "center",
             alignSelf:"center",
             color:"var(--velvet)"
-          }}>
-
-          Visit the Web App at <a href={`https://${websiteLink}`} target="_blank" className="AboutWorksLink">{websiteLink}</a>
-        </h6>}
-
-        <h5 className="Column" style={{
-            margin: m? "3rem 5rem": "3rem 2rem",
+          }}><p>Thank you for your time.</p>
+        {websiteLink && <p style={{
             display: "inline",
-            alignSelf:"center",
-            color:"var(--velvet)"
-          }}>
+            fontFamily: "Yaldevi",
+            fontSize:"1rem"
+          }}>Visit the Web App at <a href={`https://${websiteLink}`} target="_blank" className="AboutWorksLink">{websiteLink}</a>
+        </p>}
 
-        Thank you for your time.
-        </h5>
+        </h4>
+
 
 
     <div className={m

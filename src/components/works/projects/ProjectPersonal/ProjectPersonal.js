@@ -160,7 +160,7 @@ const ProjectPersonal = ({m, l, setRouteFocus}) => {
 
       developmentText="One of the things I wished I learned for my humanities database project was how to plan and organize code. For instance, I used too much inline CSS, which lead to readability issues whenever I needed to adjust the layout. Learning from that experience, I resolved to clearly plan my development folder tree."
 
-      finalStack="HTML, CSS, JavaScript, React, HTML, CSS, JavaScript, React, Framer Motion."
+      finalStack="HTML, CSS, JavaScript, React, Framer Motion."
       stackMemo="Hosted on Netlify"
       githubRepository="https://github.com/JCJang/personal-portfolio-website"
 
@@ -176,8 +176,7 @@ const ProjectPersonal = ({m, l, setRouteFocus}) => {
          />
 
         <Footer m={m} l={l}
-      impact="lorem ipsum"
-      learned="lorem ipsum"/>
+      learned="I learned so much from this project, from tab navigation, integrating Netlify with react, debugging across browsers. I also had fun working on ‘finishing touch’ features like a custom 404 page, loaders, and nav bar animations. What would I do differently for my next project? enhance the vanilla CSS that I've been using thus far with tools like tailwind, with which I can manage ‘hover’ states. I also need to learn more about accessibility and how to solve related problems, like how to implement tab navigation inside modals./If you are reading this paragraph, thank you so much for following my journey. If you have any ideas or feedback about what I can do better, feel free to send me your thoughts in the 'contact' page! Your input would help me learn and grow as a designer and developer."/>
 
       </div>
     )

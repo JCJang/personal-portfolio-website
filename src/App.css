@@ -110,12 +110,12 @@ html { font-size: 18px;}
 
 
   --works-gradient-rl:
-  linear-gradient(to left, rgba(46, 59, 74, 0.5),rgba(46, 59, 74, 0.3)),
-  linear-gradient(to left, rgba(106, 123, 130, 0.8) 0%, rgba(142, 149, 180, 0) 100%);
+  linear-gradient(to left, rgba(46, 59, 74, 0.4),rgba(46, 59, 74, 0.2)),
+  linear-gradient(to left, rgba(106, 123, 130, 0.9) 0%, rgba(142, 149, 180, 0) 100%);
 
   --works-gradient-lr:
-   linear-gradient(to right, rgba(46, 59, 74, 0.5),rgba(46, 59, 74, 0.3)),
-   linear-gradient(to right, rgba(106, 123, 130, 0.8) 0%, rgba(142, 149, 180, 0) 100%);
+   linear-gradient(to right, rgba(46, 59, 74, 0.4),rgba(46, 59, 74, 0.2)),
+   linear-gradient(to right, rgba(106, 123, 130, 0.9) 0%, rgba(142, 149, 180, 0) 100%);
 
   --works-hover-gradient-rl:
    linear-gradient(to left, rgba(46, 59, 74, 0.5),rgba(46, 59, 74, 0.3)),
@@ -433,6 +433,15 @@ text-transform: uppercase;
 }
 
 .grid-container-mobile {
+  width:100vw;
+  display: grid;
+  grid-row-gap: 1.6rem;
+  grid-template-columns: 3;
+  align-content: stretch;
+  height:var(--mobileheight);
+}
+
+.grid-container-nav {
   width:100vw;
   display: grid;
   grid-template-columns: 3;

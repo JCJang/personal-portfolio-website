@@ -159,7 +159,7 @@ if(number===1){
         bottom: openedLayout ? "-3rem" : "1px",
         transition: "bottom ease 0.7s, opacity linear 0.4s"
       }}>
-            {!l? "Click moodboard below to view color concept":
+            {!l? "Tap moodboard below to view color concept":
             leftToRight()?"<= Click moodboard to view color concept":
             "Click moodboard to view color concept =>"}
       </div>

@@ -36,7 +36,7 @@ const worksStyle = () => {
   return (
     <div className="Column" style={worksStyle()}>
 
-      <div className={l?"Row":"Column"} style={{flex:"1", margin:l && "1.6rem 0"}}>
+      <div className={l?"Row":"Column"} style={{flex:"1", margin:l && "0.8rem 0"}}>
         <div className= {l?"Column":"ColumnCentered"} style={{padding:"2rem", flex:"1", display:!l && "none"}}>
           <h2>Works</h2>
           <div className="boxDecoration"></div>

@@ -264,7 +264,9 @@ const Summary = ({
 
     </div>
 
-    {!carousel &&  <div style={{marginBottom:extraSpacing()}}></div>}
+    {!carousel || !l &&  <div style={{marginBottom:extraSpacing()}}></div>}
+
+{!l && <h6 className="ColumnCentered"><strong>Tap on images to see them in full size</strong></h6>}
 
     {carousel &&
 
