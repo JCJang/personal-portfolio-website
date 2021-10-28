@@ -18,18 +18,21 @@ const Loader = () => {
   const loaderTextArr = [
     "Interviewing users",
     "Compiling insights",
-    "Be right there! Sorry for the delay",
     "Sketching wireframes",
     "Taking an espresso shot",
-
+    "Analyzing research data",
+    "Brainstorming ideas",
+    "Fixing a bug"
   ]
-  const [arrNum, setArrNum] = useState(0)
-
-
+  const [arrNum, setArrNum] = useState(Math.floor((Math.random() * loaderTextArr.length)))
 
   useTimeout(()=>{
-        setArrNum(1)
-    },3000)
+    if(arrNum===loaderTextArr.length-1){
+      setArrNum(0)
+    }else{
+      setArrNum(arrNum+1)
+    }
+    },2500)
 
 
   useDebounce(()=>{
@@ -39,7 +42,7 @@ const Loader = () => {
       setArrNum(arrNum+1)
     }
 
-  },4500,[arrNum])
+  },2000,[arrNum])
 
 
   const loaderStyle = () => {

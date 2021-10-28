@@ -89,7 +89,7 @@ useEffect(()=>{
         <div className="boxDecoration" style={{borderColor:"var(--contact-text)"}}></div>
         <h6 style={{maxWidth:l?"":inputWidth()}}>Or write to:
         <Fade delay={500}>
-        <div style={{fontSize:"1rem", paddingTop:"1rem"}}>
+        <div style={{fontSize:"1rem", paddingTop:m?"1rem":"3rem"}}>
         jennifer@jenniferjang.dev
         </div>
         </Fade>
