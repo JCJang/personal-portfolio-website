@@ -1,8 +1,25 @@
 import {useState} from 'react'
 
-const AccordionLabel = ({m, sectionResults, focus, setFocus, title, sectionApplication}) => {
+const AccordionLabel = ({m, sectionResults, focus, setFocus, title, sectionApplication, problemSolution}) => {
 
-  const [resultsOrApplication, setResultsOrApplication] = useState(true)
+
+  const parseText = (text) =>{
+    if(!text) return
+    return text.split("/").map((section, num)=>{
+      return  <>
+      <div>
+      {
+        section.split("$").map((titleSection, num) => {
+          if (num % 2 === 1 ) return <strong > {titleSection}< /strong>
+          if (titleSection.split("{=").length === 1) return titleSection
+          return titleSection.split("•").slice(1).map(
+                (sec, num) => <div>- {sec}</div>)})
+
+                } < /div>
+      {num!==text.split("/").length && <br></br>}
+      </>
+    }
+   )}
 
   return (
         <div>
@@ -44,15 +61,15 @@ const AccordionLabel = ({m, sectionResults, focus, setFocus, title, sectionAppli
               <div  className={m?"body2 Row transition":"body2 Column Transition"}>
 
               <div className="Column" style={{minWidth:"30vw"}}>
-                <h6>Results</h6>
-                <div style={{margin:"1rem"}}>{section}</div>
+                <h6>{problemSolution?"Pain Points":"Results"}</h6>
+                <div style={{margin:"1rem"}}>{parseText(section)}</div>
               </div>
 
             <div style={{width:m && "0.1px", height:!m && "0.1px", borderLeft:m && "1.5px solid var(--neutral)", borderTop:!m && "1.5px solid var(--neutral)", margin:"2rem"}}></div>
 
               <div className="Column" style={{minWidth:"30vw"}}>
-                <h6>Application</h6>
-                <div style={{margin:"1rem"}}>{sectionApplication[i]}</div>
+                <h6>{problemSolution?"Solutions":"Application"}</h6>
+                <div style={{margin:"1rem"}}>{parseText(sectionApplication[i])}</div>
               </div>
             </div>
           </>})}

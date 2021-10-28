@@ -360,13 +360,12 @@ const Development = ({
     {parseText(organizationText)}
     </div>
 
-      <br></br>
-
       <Fade>
           <div style={overflowStyle()}>
             <ImageOverflow l={l} m={m}images={organizationImages} titles={organizationTitles}/>
           </div>
       </Fade>
+      <br></br>
 
     </>}
 

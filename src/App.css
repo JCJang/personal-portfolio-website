@@ -427,8 +427,8 @@ text-transform: uppercase;
   width:calc(80vw - 4rem);
   display: grid;
   grid-template-columns: auto auto;
-  grid-row-gap: 1.6rem;
-  grid-column-gap: 1.9rem;
+  grid-row-gap: 1.7rem;
+  grid-column-gap: 1.7rem;
 
 }
 

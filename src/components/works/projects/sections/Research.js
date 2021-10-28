@@ -164,18 +164,24 @@ const Research = ({
    return "2rem"
  }
 
- const parseText = (text) =>{
-   if(!text) return
-   return text.split("/").map((section, num)=>{
-     return  <>
-     <div>
-     {section}
-     </div>
-     {num!==text.split("/").length && <br></br>}
-     </>
-   }
-  )}
 
+  const parseText = (text) =>{
+    if(!text) return
+    return text.split("/").map((section, num)=>{
+      return  <>
+      <div>
+      {
+        section.split("$").map((titleSection, num) => {
+          if (num % 2 === 1 ) return <strong > {titleSection}< /strong>
+          if (titleSection.split("{=").length === 1) return titleSection
+          return titleSection.split("•").slice(1).map(
+                (sec, num) => <div>- {sec}</div>)})
+
+                } < /div>
+      {num!==text.split("/").length && <br></br>}
+      </>
+    }
+   )}
 
   return (
 
@@ -308,7 +314,7 @@ const Research = ({
           }}/>
         Design Direction</h4>
 
-<div className={m? "Row" : "Column"} style={textMarginStyle()}>
+<div className={m? "Row" : "Column"} style={textMarginStyleRows()}>
 
     <div id="design-direction-col-1" className="Column" style={colHalf()}>
 
@@ -347,17 +353,18 @@ const Research = ({
         </div>
 
       </div>
-      <div id="design-direction-col-2" className="Column" style={colHalf()}>
+      <div id="design-direction-col-2" className="Column" style={colLarge()}>
 
-        <h6 style={{paddingTop:col2PaddingTop()}}>
+        <h6 style={{paddingTop:col2PaddingTop(), textAlign:"right", fontSize:"1rem"}}>
           <em>{competitiveAnalysisEmphasis}</em>
         </h6>
 
         <div className="boxDecoration" style={{
-            borderColor: "var(--table-neutral)"
+            borderColor: "var(--table-neutral)",
+            alignSelf:"flex-end"
           }}></div>
 
-        <h6>
+        <h6 style={{ textAlign:"right",fontSize:"1rem"}}>
           <em>{surveyResultsEmphasis}</em>
         </h6>
       </div>

@@ -30,13 +30,13 @@ const borderRight = () => {
     if(hover){
       return "3px solid var(--desert-rose)"
       } else {
-    return "3px solid var(--midnight)"
+    return "6px solid var(--cinerous)"
     }
   }else{
     if(hover){
       return "4px solid var(--desert-rose)"
       } else {
-    return "4px solid var(--midnight)"
+    return "6px solid var(--cinerous)"
     }
   }
 }
@@ -48,13 +48,13 @@ const borderLeft = () => {
     if(hover){
       return "3px solid var(--desert-rose)"
       } else {
-    return "3px solid var(--midnight)"
+    return "8px solid var(--cinerous)"
     }
   }else{
     if(hover){
       return "4px solid var(--desert-rose)"
       } else {
-    return "4px solid var(--midnight)"
+    return "8px solid var(--cinerous)"
     }
   }
 }
@@ -67,7 +67,7 @@ const borderLeft = () => {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onMouseDown={() => setHover(true)}
-      onMouseUp={() => setHover(false)}  style = {{ textDecoration: "none",
+      onMouseUp={() => setHover(false)}  style = {{textDecoration: "none", borderRadius: hover?"0px":"8px",
 
     boxShadow:hover?"rgba(60, 84, 82, 0.05) 0px 1px 0px, rgba(60, 84, 82, 0.1) 0px 0px 8px":"rgba(60, 84, 82, 0.25) 0px 6px 12px -2px, rgba(60, 84, 82, 0.3) 0px 3px 7px -3px",
     overflow: "hidden",
@@ -75,7 +75,8 @@ const borderLeft = () => {
     borderLeft: borderLeft()
   }}>
 
-      <ImageFadeIn role="presentation" className="gridImage transition" src={image} style={{ filter:hover?"saturate(0.6)":"saturate(0.1) opacity(0.8)"
+
+      <ImageFadeIn role="presentation" className="gridImage transition" src={image} style={{ filter:hover?"saturate(0.6)":"saturate(0.1) opacity(0.8)",
 }}/>
 
       <div className="transition Column" style = {{
