@@ -435,6 +435,7 @@ text-transform: uppercase;
 .grid-container-mobile {
   width:100vw;
   display: grid;
+  padding: 1rem;
   grid-row-gap: 1.6rem;
   grid-template-columns: 3;
   align-content: stretch;

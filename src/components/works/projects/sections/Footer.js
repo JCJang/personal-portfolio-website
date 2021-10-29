@@ -151,10 +151,10 @@ const Footer = ({
 
         <div id="summary-col-1" className="Column" style={colHalf()}>
 
-          <h5 style={{marginBottom:"1rem"}}>
+          <h5>
             Next Steps:
           </h5>
-          <div className="body1" style={{paddingTop:col2PaddingTop()}}>
+          <div className="body1" style={{marginTop:"1rem"}}>
             <div>{nextSteps.map((li)=><div><strong>-</strong> {li}</div>)}</div>
           </div>
 
@@ -162,10 +162,10 @@ const Footer = ({
       }
 
         <div id="summary-col-2" className="Column" style={nextSteps && colHalf()}>
-        {nextSteps && <h5 style={{marginBottom:"1rem"}}>
+        {nextSteps && <h5 style={{paddingTop:col2PaddingTop()}}>
           What I Learned:
         </h5>}
-          <div className="body1" style={{paddingTop:col2PaddingTop()}}>
+          <div className="body1" style={{marginTop:"1rem"}}>
             {parseText(learned)}
           </div>
         </div>

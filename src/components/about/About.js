@@ -268,16 +268,16 @@ const About = ({s, m, l, setRouteFocus}) => {
       ? "RowCentered"
       : "Column"} style={{alignItems:"space-between",  position:"relative",
         zIndex:"4"}}>
-    <Fade bottom delay={300}>
+    <Fade bottom delay={100}>
     <TocLabel m={m} label="who i am" sublabel="background" about={true}/>
     </Fade>
-    <Fade bottom delay={450}>
+    <Fade bottom delay={200}>
      <TocLabel m={m} label="what inspires me" sublabel="hobbies" about={true}/>
      </Fade>
-     <Fade bottom delay={700}>
+     <Fade bottom delay={300}>
      <TocLabel m={m} label="how i can help" sublabel="strengths and company fit" about={true}/>
      </Fade>
-     <Fade bottom delay={700}>
+     <Fade bottom delay={400}>
      <TocLabel m={m} label="links" sublabel="Github, LinkedIn, resume" about={true}/>
      </Fade>
   </div>
