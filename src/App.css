@@ -76,7 +76,7 @@ body{
   --velvet: #611016;
   --cinerous: #C1BEBE;
   --desert-rose:#A94758;
-  --lilac: #f4f4f4;
+  --lilac: #DDDFE9;
   --occlusion: #312727;
   --highlight: #E7B1A7;
   --neutral: #B4B4B4;
@@ -135,8 +135,8 @@ body{
   --main-headline4: 2.3rem/1.5 "Lusitana", serif;
   --main-headline5: 1.6rem/1.5 "Yaldevi", sans-serif;
   --main-headline6: 500 1.35rem/1.5 "Yaldevi", sans-serif;
-  --main-body1:  1.2rem/1.6 "IBM Plex Sans", sans-serif;
-  --main-body2:  1rem/1.6 "IBM Plex Sans", sans-serif;
+  --main-body1:  1.1rem/1.4 "IBM Plex Sans", sans-serif;
+  --main-body2:  1rem/1.4 "IBM Plex Sans", sans-serif;
   --main-subtitle1: 1.55rem/1.5 "La Belle Aurore", serif;
   --main-subtitle2: 500 0.95rem/1.5 "La Belle Aurore", serif;
   --main-button: 1.35rem/1.4 "La Belle Aurore", serif;
