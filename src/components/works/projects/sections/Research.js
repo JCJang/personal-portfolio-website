@@ -30,6 +30,7 @@ const Research = ({
   userDetailsKeys,
   userDetailsValues,
   userStories,
+  singleStatistic,
   statisticTitles,
   statisticTexts,
   statisticSources,
@@ -189,7 +190,7 @@ const Research = ({
 
 
 
-{ideationText && <h2 className="ProjectSectionTitle" style={textMarginStyleHeader()}>Ideation</h2>}
+{ideationText && <><h2 className="ProjectSectionTitle" style={textMarginStyleHeader()}>Ideation</h2>
 
     <div className={m
         ? "Row"
@@ -203,6 +204,7 @@ const Research = ({
         <h5 style={{paddingTop:col2PaddingTop()}}><em>{ideationEmphasis}</em></h5>
       </div>
     </div>
+    </>}
 
 <h2 className="ProjectSectionTitle" style={textMarginStyleHeader()}>Research</h2>
 
@@ -239,7 +241,18 @@ const Research = ({
             })}
   </>}
 
+{ singleStatistic &&  <div style={{width:"100vw"}}>
+<div style={{marginBottom:extraSpacing()}}></div>
 
+                  <Statistic m={m} l={l} title = {statisticTitles} text={statisticTexts} sources={statisticSources}/>
+
+              <br></br>
+                </div>
+        }
+
+
+
+        
 {problemSolution && sectionTitles &&  <>
 <h4 className="Row" style={textMarginStyleH4()}><SurveyResultsIcon style={iconStyle()}/> {surveyResultsTitle}</h4>
 
@@ -251,11 +264,13 @@ const Research = ({
 </>
 }
 
+{competitiveAnalysis && <>
 <h4 className="Row" style={textMarginStyleH4()}><CompetitiveAnalysisIcon style={iconStyle()}/>Competitive Analysis</h4>
 
   <div style={textMarginStyle()}>
   {parseText(competitiveAnalysis)}
   </div>
+  </>}
 
 {!problemSolution && sectionTitles &&  <>
 <h4 className="Row" style={textMarginStyleH4()}><SurveyResultsIcon style={iconStyle()}/> {surveyResultsTitle}</h4>
@@ -268,8 +283,9 @@ const Research = ({
 </>
 }
 
-{screenTitles && <h4 className = "Row" style={textMarginStyleH4()}> <FinalScreensIcon style={iconStyle()}/>
-        Screens and Features</h4>}
+{screenTitles && <>
+<h4 className = "Row" style={textMarginStyleH4()}> <FinalScreensIcon style={iconStyle()}/>
+        Screens and Features</h4>
 
     <div className = {
           l? "grid-container-screens-and-features":
@@ -281,8 +297,10 @@ const Research = ({
           })
         }
     </div>
+    <div style={{paddingBottom:extraSpacing()}}></div>
 
-<div style={{paddingBottom:extraSpacing()}}></div>
+    </>}
+
 
 {userFlowText && <h4 className = "Row" style={textMarginStyle()} > <UserFlowIcon style={iconStyle()}/>
         User Flow</h4>}

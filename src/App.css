@@ -70,21 +70,6 @@ body{
   font-size: 14px;
 }
 
-@media screen and (max-width: 359px) {
-html { font-size: 13px;}
-}
-
-@media screen and (min-width: 600px) {
-html { font-size: 14px;}
-}
-@media screen and (min-width: 1200px) {
-html { font-size: 16px;}
-}
-
-@media screen and (min-width: 1600px) {
-html { font-size: 18px;}
-}
-
 
 :root{
   --midnight: #2E3B4A;
@@ -145,21 +130,21 @@ html { font-size: 18px;}
 --grid-image-width:calc(50vw - 3rem);
 
   --main-headline1: 5rem/1.5 "Lusitana", serif;
-  --main-headline2: 3.8rem/1.5 "Lusitana", serif;
-  --main-headline3: 3.2rem/1.5 "Lusitana", serif;
-  --main-headline4: 2.1rem/1.5 "Lusitana", serif;
+  --main-headline2: 4rem/1.5 "Lusitana", serif;
+  --main-headline3: 2.6rem/1.5 "Lusitana", serif;
+  --main-headline4: 2.3rem/1.5 "Lusitana", serif;
   --main-headline5: 1.6rem/1.5 "Yaldevi", sans-serif;
   --main-headline6: 500 1.35rem/1.5 "Yaldevi", sans-serif;
-  --main-body1:  1rem/1.6 "IBM Plex Sans", sans-serif;
-  --main-body2:  0.8rem/1.6 "IBM Plex Sans", sans-serif;
+  --main-body1:  1.2rem/1.6 "IBM Plex Sans", sans-serif;
+  --main-body2:  1rem/1.6 "IBM Plex Sans", sans-serif;
   --main-subtitle1: 1.55rem/1.5 "La Belle Aurore", serif;
   --main-subtitle2: 500 0.95rem/1.5 "La Belle Aurore", serif;
-  --main-button: 1.2rem/1.4 "La Belle Aurore", serif;
-  --main-overline:  1rem/1.5"Yaldevi", sans-serif;
-  --main-caption:  0.8rem/1.5 "Yaldevi", sans-serif;
+  --main-button: 1.35rem/1.4 "La Belle Aurore", serif;
+  --main-overline:  1.2rem/1.5"Yaldevi", sans-serif;
+  --main-caption:  1rem/1.5 "Yaldevi", sans-serif;
 
-  --mobile-logo: 1.45rem/1.5 "La Belle Aurore", serif;
-  --desktop-logo: 1.25rem/1.5 "La Belle Aurore", serif;
+  --mobile-logo: 1.6rem/1.5 "La Belle Aurore", serif;
+  --desktop-logo: 1.4rem/1.5 "La Belle Aurore", serif;
 
 }
 
@@ -978,29 +963,29 @@ line-height: 100%;
 }
 
 @media screen and (max-width: 359px) {
-html { font-size: 13px;}
+html { font-size: 11px;}
 }
 
 @media screen and (min-width: 600px) {
-html { font-size: 14px;}
+html { font-size: 12px;}
 }
 
 @media screen and (min-width: 800px) {
-html { font-size: 15px;}
+html { font-size: 13px;}
 }
 
 
 @media screen and (min-width: 1000px) {
-html { font-size: 17px;}
+html { font-size: 14px;}
 }
 
 @media screen and (min-width: 1600px) {
-html { font-size: 22px;}
+html { font-size: 18px;}
 }
 
 @media screen and (min-width: 2000px) {
-html { font-size: 26px;}
+html { font-size: 23px;}
 
 }@media screen and (min-width: 2400px) {
-html { font-size: 30px;}
+html { font-size: 28px;}
 }

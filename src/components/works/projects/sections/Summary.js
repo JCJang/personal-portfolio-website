@@ -281,7 +281,7 @@ const Summary = ({
         alignSelf:"flex-end"
       }}>
 
-      Visit the Web App at <a href={`https://${websiteLink}`} target="_blank" className="AboutWorksLink">{websiteLink}</a>
+      Click here to visit  <a href={`https://${websiteLink}`} target="_blank" className="AboutWorksLink"> {websiteLink}</a>
     </div>}
 
   </div>)

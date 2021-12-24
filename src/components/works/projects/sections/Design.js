@@ -2,6 +2,7 @@ import ImageOverflow from './section-components/ImageOverflow'
 import HumanitiesColorSection from './section-components/HumanitiesColorSection'
 import PharmacyColorSection from './section-components/PharmacyColorSection'
 import PersonalColorSection from './section-components/PersonalColorSection'
+import TrekinnColorSection from './section-components/TrekinnColorSection'
 import Fade from 'react-reveal/Fade';
 
 import { IoTextOutline as TypographyIcon } from "react-icons/io5";
@@ -327,7 +328,25 @@ const Design = ({
            colorMoodboard={colorMoodboards}
            moodboardText={moodboardText}
            designDescription={colorDescriptions}/>
-        :""
+        :colorSection==="Trekinn"?
+        <TrekinnColorSection
+             m={m}
+             l={l}
+             textMargin={textMargin}
+             designColorLabels={colorLabels}
+             designColorHexes={colorHexes}
+             finalColorLabels = {finalColorLabels}
+             finalColorHexes ={finalColorHexes}
+             designTitle={colorTitles}
+             textMargin={textMargin}
+             colorWireframes={colorWireframes}
+             brandColorFinal={brandColorFinal}
+             colorText={colorText}
+             colorTexture={colorTextures}
+             colorMoodboard={colorMoodboards}
+             moodboardText={moodboardText}
+             designDescription={colorDescriptions}/>
+             :""
       }
   <div style={{paddingBottom:extraSpacing()}}></div>
   </div>

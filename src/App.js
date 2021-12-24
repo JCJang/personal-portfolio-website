@@ -9,6 +9,7 @@ import Works from './components/works/Works'
 import ProjectPharmacy from './components/works/projects/ProjectPharmacy/ProjectPharmacy'
 import ProjectHumanities from './components/works/projects/ProjectHumanities/ProjectHumanities'
 import ProjectPersonal from './components/works/projects/ProjectPersonal/ProjectPersonal'
+import ProjectTrekinn from './components/works/projects/ProjectTrekinn/ProjectTrekinn'
 
 import NotFound from './components/nav/NotFound'
 import Loader from './components/nav/Loader'
@@ -110,148 +111,57 @@ const App = () => {
   return (
     <Router>
     <div className="rootContainer" style={desktopStyle()}>
-    <AnimatePresence>
     {loading && <motion.div key="loader" style={{
           zIndex:"50",
           width:"100vw",
           height:"100vh",
           position:"absolute",}} exit={{y:-1000, transition:{duration:2}}}><Loader/></motion.div>}
-    </AnimatePresence>
 
     {m? <Nav m={m} l={l} routeFocus={routeFocus} setRouteFocus={setRouteFocus}/>
     :
     <NavMobile m={m} l={l} routeFocus={routeFocus} setRouteFocus={setRouteFocus}/>}
-    <AnimatePresence >
-    <motion.div
-      variants={route}
-      initial="hidden"
-      animate="show"
-      key="route"
-      style={{ background:"var(--velvet)"}}>
-      <AnimatePresence >
+  
     <Switch>
         <Route path = "/about" exact>
-        <AnimatePresence>
-            <motion.div
-            key="about"
-             style={pageStyle}
-             initial="initial"
-             animate="in"
-             exit="out"
-             variants={pageVariants}
-             transition={pageTransition}
-             className="about"
-           >
+        
+
             <About s={s} m={m} l={l} setRouteFocus={setRouteFocus}/>
-            </motion.div>
-        </AnimatePresence>
+
         </Route>
         <Route path = "/contact" exact>
-        <AnimatePresence>
-          <motion.div
-           key="contact"
-           style={pageStyle}
-           initial="initial"
-           animate="in"
-           exit="out"
-           variants={pageVariants}
-           transition={pageTransition}
-           className="contact"
-         >
+
             <Contact  m={m} l={l} setRouteFocus={setRouteFocus}/>
-          </motion.div>
-          </AnimatePresence>
+
         </Route>
         <Route path = "/" exact>
-        <AnimatePresence>
-          <motion.div
-          key="works"
-           style={pageStyle}
-           initial="initial"
-           animate="in"
-           exit="out"
-           variants={pageVariants}
-           transition={pageTransition}
-           className="works"
-         >
+
             <Works s={s} m={m} l={l} setRouteFocus={setRouteFocus}/>
-          </motion.div>
-          </AnimatePresence>
+
         </Route>
 
         <Route path = "/humanities-book-database" exact>
-        <AnimatePresence>
-          <motion.div
-          key="humanities"
-           style={pageStyle}
-           initial="initial"
-           animate="in"
-           exit="out"
-           variants={pageVariants}
-           transition={pageTransition}
-           className="projectPage"
-         >
+
 <ProjectHumanities  m={m} l={l} setRouteFocus={setRouteFocus}/>
-          </motion.div>
-          </AnimatePresence>
+
 </Route>
 <Route path = "/pharmacy-concept-app" exact>
-        <AnimatePresence>
-        <motion.div
-         key="pharmacy"
-         style={pageStyle}
-         initial="initial"
-         animate="in"
-         exit="out"
-         variants={pageVariants}
-         transition={pageTransition}
-         className="projectPage"
 
-       >
 <ProjectPharmacy  m={m} l={l} setRouteFocus={setRouteFocus}/>
-        </motion.div>
-        </AnimatePresence>
+
+</Route>
+<Route path = "/trekinn" exact>
+
+<ProjectTrekinn  m={m} l={l} setRouteFocus={setRouteFocus}/>
 </Route>
 <Route path = "/personal-website" exact>
-        <AnimatePresence>
-        <motion.div
-         key="personal"
-         style={pageStyle}
-         initial="initial"
-         animate="in"
-         exit="out"
-         variants={pageVariants}
-         transition={pageTransition}
-         className="projectPage"
-       >
+        
 <ProjectPersonal  m={m} l={l} setRouteFocus={setRouteFocus}/>
-        </motion.div>
-        </AnimatePresence>
-
 </Route>
 <Route path="/*">
-        <AnimatePresence>
-          <motion.div
-          key="404"
-           style={pageStyle}
-           initial="initial"
-           animate="in"
-           exit="out"
-           variants={pageVariants}
-           transition={pageTransition}
-           className="projectPage"
-         >
-<NotFound m={m} l={l} setRouteFocus={setRouteFocus}/>
-          </motion.div>
-          </AnimatePresence>
-
-</Route>
+        <NotFound m={m} l={l} setRouteFocus={setRouteFocus}/>
+        </Route>
     </Switch>
-    </AnimatePresence>
-
-    </motion.div>
-    </AnimatePresence>
-    </div>
+      </div>
 
     </Router>
   )

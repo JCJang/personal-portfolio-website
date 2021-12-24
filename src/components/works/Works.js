@@ -61,6 +61,19 @@ const worksStyle = () => {
              specs = "Figma, React, Node.js, MongoDB"
              introduction = "In this project I addressed difficulties readers face when searching for humanities books by asking readers about their book search process. After analyzing user feedback, I created a full responsive web app by integrating data from Google Books API, Wikipedia API, and my multilingual MongoDB book database."/ >
 
+              <GridItem
+              image={projectPharmacyImg}
+              s = {s}
+              m = {m}
+              l = {l}
+              specs = "Figma, React, Node.js"
+              introduction = "In this project I helped a client reorganize website content and create a responsive design true to the original tone."
+              routeName = "/trekinn"
+              direction = "lr"
+              role = "UI and UX Design, Development, Internationalization"
+              title = "Trekinn Website"
+              subtitle = "How can I reorganize a website without losing its brand image?" / >
+
              <GridItem
               image={projectPharmacyImg}
               s = {s}
@@ -73,6 +86,7 @@ const worksStyle = () => {
               role = "Ideation, UX Research, UI and UX Design"
               title = "Pharmacy concept app"
               subtitle = "How can I simplify pharmacy trips?" / >
+
 
               <GridItem
                 s = {s}

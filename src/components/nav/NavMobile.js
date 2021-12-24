@@ -162,7 +162,7 @@ const iconLogoOptions = () => {
     background: "var(--desert-rose)",
     height: "var(--mobileheight)",
     position: "absolute",
-    zIndex:"20",
+    zIndex:"30",
     left: "0",
     transition: "top ease 0.7s",
     top:navShelfOpen?"5rem":"-100vh"

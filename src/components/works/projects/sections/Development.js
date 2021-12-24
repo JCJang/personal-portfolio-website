@@ -5,7 +5,7 @@ import { IoLogoGithub as GithubIcon } from "react-icons/io5"
 import {IoTerminalOutline as ScreensIcon} from "react-icons/io5";
 import {IoServerOutline as DatabaseIcon} from "react-icons/io5";
 import {IoCloudUploadOutline as ServerIcon} from "react-icons/io5";
-
+import {IoLanguageOutline as InternationalizationIcon} from "react-icons/io5";
 import {IoLinkOutline as RelationIcon} from "react-icons/io5";
 import {IoCodeOutline as FunctionalIcon} from "react-icons/io5";
 
@@ -47,7 +47,12 @@ const Development = ({
   organizationTitles,
   resourcefulProblemSolvingText,
   carouselCode,
-  modalCode
+  modalCode,
+
+  internationalizationText,
+  i18nJsonCode,
+  i18nTemplateCode
+
 }) => {
 
   const developmentStyle = () => {
@@ -374,7 +379,7 @@ const Development = ({
 
   <h4 className="Row" style={textMarginStyleH4()}>
         <RelationIcon style={iconStyle()}/>
-        Resourceful problem solving text</h4>
+        Resourceful problem solving</h4>
 
   <div className="body1" style={textMarginStyle()}>
   {parseText(resourcefulProblemSolvingText)}
@@ -391,6 +396,36 @@ const Development = ({
 
       <div style={gistStyle()}>
         <ReactEmbedGist contentClass ="gistStyles" titleClass="displayNone" gist={modalCode}/>
+      </div>
+
+<br></br>
+
+  </div>
+
+  </>}
+
+
+{internationalizationText && <>
+
+  <h4 className="Row" style={textMarginStyleH4()}>
+        <InternationalizationIcon style={iconStyle()}/>
+        Internationalization</h4>
+
+  <div className="body1" style={textMarginStyle()}>
+  {parseText(internationalizationText)}
+  </div>
+
+
+  <div>
+
+      <div style={gistStyle()}>
+        <ReactEmbedGist contentClass ="gistStyles" titleClass="displayNone" gist={i18nTemplateCode}/>
+      </div>
+
+<br></br>
+
+      <div style={gistStyle()}>
+        <ReactEmbedGist contentClass ="gistStyles" titleClass="displayNone" gist={i18nJsonCode}/>
       </div>
 
 <br></br>

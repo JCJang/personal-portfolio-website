@@ -7,7 +7,7 @@ import ImageFadeIn from '../../../../../customHooks/imageFadeIn'
 import ImageOverflow from './ImageOverflow'
 
 
-const PersonalColorSection = ({direction, colorTexture, colorText, colorWireframes, brandColorFinal, colorMoodboard, moodboardText, designColorLabels, designColorHexes,finalColorLabels, finalColorHexes, designDescription, designTitle, m, l, number}) => {
+const TrekinnColorSection = ({direction, colorTexture, colorText, colorWireframes, brandColorFinal, colorMoodboard, moodboardText, designColorLabels, designColorHexes,finalColorLabels, finalColorHexes, designDescription, designTitle, m, l, number}) => {
 
 const [openedLayout, setOpenedLayout] = useState(false)
 const [hover, setHover] = useState(false)
@@ -192,7 +192,7 @@ const [hover, setHover] = useState(false)
   opacity: openedLayout? "0" : "1",
   transition: "bottom ease 0.7s, opacity linear 0.4s"
 }}>
-    click moodboard for color keywords
+    click moodboard for selection process
   </div>
   </div>
 
@@ -253,27 +253,19 @@ const [hover, setHover] = useState(false)
     width:"fit-content",
     right: openedLayout && l? "10vw" : openedLayout? "0rem": "-105vw",
     justifyContent:"flex-end",
-    top: l?"0rem":"20rem",
+    top: l?"0":"10rem",
     alignItems:"flex-end",
     transition: "left ease 0.6s, right ease 0.6s",
   }}>
   <div>
   <ImageFadeIn
-  alt="selected moodboard colors that are grouped into three collections. Group one consists of pebble greys and feel organic, rhythmic, fluid, and pensive. Group two consists of shades of lilac and lavender, and convey keywords of calm, dusk, peaceful, and mysterious. Group three consists od8f peaches, browns, and shades of pink, and feel energetic, vibrant, and vivacious."
+  alt=""
   style={{
     transition: "filter linear 0.5s",
-    height:l?"30vw":"60vw",
+    height:l?"40vw":"75vw",
     width:"auto",
     marginRight:l?"3rem":"2rem"
   }} src={colorTexture}/>
-
-  <ImageFadeIn
-  alt="half desaturated, half full-color image"
-  style={{
-    transition: "filter linear 0.5s",
-    height:l?"40vw":"70vw",
-    width:"auto",
-  }} src={colorWireframes}/>
 
   </div>
   </div>
@@ -289,13 +281,11 @@ const [hover, setHover] = useState(false)
 <div style={{paddingBottom:extraSpacing()}}></div>
 
     <div style={colSmall()}>
-        <div className="Column" style={{
-          margin:"0 0.5rem"
-        }}>
+        <div className="Column">
               {finalColorHexes.map((hex, number)=>{
                 return <Fade bottom>
                 <div className="Column" style={{alignItems:"center"}}>
-                 <div style={{height:l?"1.5rem":"2rem", width:l?"1.5rem":"2rem", background:hex, margin:"0.5rem 1.3rem", border:"1.5px solid var(--midnight)", borderRadius:"2px"}}></div>
+                 <div style={{height:l?"1.5rem":"2rem", width:l?"1.5rem":"2rem", background:hex, margin:"0.5rem 1.3rem", borderRadius:"2px"}}></div>
                  <div><strong> {finalColorLabels && finalColorLabels[number]}</strong></div>
                  <div style={{fontSize:"0.7rem", opacity:"0.8"}}>{hex}</div>
                  </div>
@@ -307,7 +297,7 @@ const [hover, setHover] = useState(false)
     <div className="body1" style={colLarge()}>
           <div className="subtitle1" style={{
                   fontSize:"3rem"}}>
-                  Final Colors</div>
+                  Accent Colors</div>
                   <br></br>
               {colorText.split("/").map((paragraph)=>{
                   return <>
@@ -331,4 +321,4 @@ const [hover, setHover] = useState(false)
   )
 }
 
-export default PersonalColorSection
+export default TrekinnColorSection
