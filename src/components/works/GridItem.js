@@ -5,130 +5,89 @@ import Fade from 'react-reveal/Fade';
 import {useEffect, useState} from 'react';
 const GridItem = ({m, l, direction, routeName, image, role, title, subtitle, specs, introduction, classes}) => {
 
-  const [hover, setHover] = useState(false)
+  const [cardHover, setCardHover] = useState(false)
+  const [buttonHover, setButtonHover] = useState(false)
 
 const gradientSetting = () =>{
-  if(hover){
-    if(direction==="lr"){
-      return `transition grid grid-lr-hover ${classes}`
-    }else{
-      return `transition grid grid-rl-hover ${classes}`
-    }
-  }else{
-    if(direction==="lr"){
-      return `transition grid grid-lr ${classes}`
-    }else{
-      return `transition grid grid-rl ${classes}`
-    }
-  }
+  if(cardHover) return `transition grid grid-lr-hover ${classes}`;
+  return `transition grid grid-lr ${classes}` ;
 }
 
-const borderRight = () => {
-  if(direction === "rl"){return;}
-
-  if(l){
-    if(hover){
-      return "3px solid var(--desert-rose)"
-      } else {
-    return "6px solid var(--cinerous)"
-    }
-  }else{
-    if(hover){
-      return "4px solid var(--desert-rose)"
-      } else {
-    return "6px solid var(--cinerous)"
-    }
-  }
-}
-
-const borderLeft = () => {
-  if(direction === "lr"){return;}
-
-  if(l){
-    if(hover){
-      return "3px solid var(--desert-rose)"
-      } else {
-    return "8px solid var(--cinerous)"
-    }
-  }else{
-    if(hover){
-      return "4px solid var(--desert-rose)"
-      } else {
-    return "8px solid var(--cinerous)"
-    }
-  }
-}
 
   return (
 
-    <Link to={routeName} className={gradientSetting()}
-      onFocus={() => setHover(true)}
-      onBlur={() => setHover(false)}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      onMouseDown={() => setHover(true)}
-      onMouseUp={() => setHover(false)}  style = {{textDecoration: "none", borderRadius: hover?"0px":"8px",
-
-    boxShadow:hover?"rgba(60, 84, 82, 0.05) 0px 1px 0px, rgba(60, 84, 82, 0.1) 0px 0px 8px":"rgba(60, 84, 82, 0.25) 0px 6px 12px -2px, rgba(60, 84, 82, 0.3) 0px 3px 7px -3px",
-    overflow: "hidden",
-    borderRight: borderRight(),
-    borderLeft: borderLeft()
+    
+    <div className="transition" onFocus={() => setCardHover(true)}
+      onBlur={() => setCardHover(false)}
+      onMouseEnter={() => setCardHover(true)}
+      onMouseLeave={() => setCardHover(false)}
+      onMouseDown={() => setCardHover(true)}
+      onMouseUp={() => setCardHover(false)}  
+      style = {{
+      borderRadius: cardHover?"3px":"8px",
+      borderBottom: cardHover? "6px solid var(--lilac)":"6px solid var(--cinerous)",
+      boxShadow:cardHover?"none":"rgba(60, 84, 82, 0.25) 0px 6px 12px -2px, rgba(60, 84, 82, 0.3) 0px 3px 7px -3px",
+      width:"35vw",
+      margin:l?"0 1.5rem":"1rem 0",
+      background:buttonHover?"none":"var(--lilac)",
+      outline:buttonHover?"1.5px solid var(--midnight)":"var(--lilac)"
   }}>
 
-
-      <ImageFadeIn role="presentation" className="gridImage transition" src={image} style={{ filter:hover?"saturate(0.6)":"saturate(0.1) opacity(0.8)",
-}}/>
-
-      <div className="transition Column" style = {{
-    height: "100%",
+    <div className={gradientSetting()} style={{
+      width:"35vw",
+      transform:cardHover && "translateY(-25vh)",
+    }}>
+          <ImageFadeIn role="presentation" className="gridImage transition" src={image} style={{ filter:cardHover?"saturate(0.6)":"saturate(0.1) opacity(0.8)",
+          }}/>
+<div className="transition Column" style = {{
+    height: "50%",
     width: "100%",
     position: "relative",
     zIndex: "10",
-    textAlign: direction === "lr" ? "left" : "right",
     color: "var(--lilac)",
     lineHeight: "5rem",
     justifyContent: "center",
-    padding:direction==="lr"?"1rem 4rem 0 1rem":"1rem 1rem 0 4rem",
-    opacity:hover?"0":"1"
+    padding:"1rem 4rem 0 1rem",
   }}
    >
-   <Fade top delay={500}>
-        <div style={{lineHeight:"1.3rem", marginTop:"0.5rem", fontFamily:"Yaldevi"}}>{role}</div>
-    </Fade>
     <Fade delay={700}>
-          <div style={{fontWeight:"400",font:m?"3rem/1.3 'Lusitana',sans-serif":"2.4rem/1.2 'Lusitana',sans-serif", letterSpacing:"0.0156rem",textTransform:"", margin:"0.6rem 0"}}>{title}</div>
+          <div style={{fontWeight:"400",font:m?"2rem/1.3 'Lusitana',sans-serif":"1.5rem/1.2 'Lusitana',sans-serif", letterSpacing:"0.0156rem",textTransform:"", margin:"0.6rem 0"}}>{title}</div>
     </Fade>
     <Fade bottom delay={900}>
 
-        <div className="subtitle1" style={{lineHeight:m?"2.4rem":"1.6rem",fontSize:!m && "1.2rem", marginBottom:"0.2rem"}}>{subtitle}</div>
+        <div className="subtitle1" style={{lineHeight:"1.7rem", fontWeight:"400",fontSize:"1.2rem", marginBottom:"0.2rem"}}>{subtitle}</div>
     </Fade>
 
     </div>
-    <div className="transition Column body2" style = {{
-  height: "100%",
-  width: "calc(40vw - 3.25rem)",
-  position: "absolute",
-  top:"0",
-  zIndex: "10",
-  textAlign:"left",
-  color: "var(--works-bg)",
-  justifyContent: "center",
-  padding:"0.5rem",
-  opacity:hover?"1":"0",
-  }}
-  >
+    </div>
+    <div className="Column">
+    <Fade top delay={500}>
+        <div style={{font:"0.8rem/1.5 'Yaldevi'", marginTop:"0.5rem"}}>{role}</div>
+    </Fade>
 
-  <Fade left>
-  <div className="overline" style={{marginTop:"1rem"}}><em>Click to see full case study.</em> <br></br>project uses {specs}.</div><br></br>
-  </Fade>
+    <div>
+        hihihihihihi
+    </div>
 
-  <Fade left>
-  <div className="body1">{introduction}</div>
-  </Fade>
-
-  </div>
-
-    </Link>
+    <Link to={routeName}
+     onFocus={() => setButtonHover(true)}
+     onBlur={() => setButtonHover(false)}
+     onMouseEnter={() => setButtonHover(true)}
+     onMouseLeave={() => setButtonHover(false)}
+     onMouseDown={() => setButtonHover(true)}
+     onMouseUp={() => setButtonHover(false)} 
+      style={{
+        justifySelf:"flex-end",
+        width:"100%",
+        color:"var(--contact-text)",
+        padding:"1rem",
+        textAlign:"right",
+        textDecoration: "none",
+        opacity:cardHover? "1" : "0",
+      background:buttonHover?"var(--velvet)":"var(--desert-rose)"
+    }}>GO TO CASE STUDY</Link>
+    </div>
+    </div>
 
   )
 }

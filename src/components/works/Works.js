@@ -1,4 +1,5 @@
 import GridItem from './GridItem'
+import useDraggableScroll from 'use-draggable-scroll';
 
 import projectBookImg from '../../images/woman-using-laptop-V.jpg'
 import projectPharmacyImg from '../../images/5-order-screen.jpg'
@@ -12,7 +13,7 @@ import { IoColorFilterOutline as ColorIcon} from 'react-icons/io5';
 import { IoLocateOutline as UserFrustrationsIcon } from 'react-icons/io5';
 import { IoTextOutline as TypographyIcon} from 'react-icons/io5';
 
-import {useEffect} from 'react'
+import {useEffect, useRef} from 'react'
 import { useLocation } from "react-router-dom";
 
 
@@ -33,6 +34,9 @@ const worksStyle = () => {
   }
 };
 
+const draggableScrollRef = useRef(null);
+const { onMouseDown } = useDraggableScroll(draggableScrollRef);
+
   return (
     <div className="Column" style={worksStyle()}>
 
@@ -45,14 +49,17 @@ const worksStyle = () => {
 
 
         </div>
-        <div className={l?"grid-container":"grid-container-mobile"}>
+        <div className={l?"Row":"Column"} ref={draggableScrollRef}
+    onMouseDown={onMouseDown} style={{
+      overflowX:"scroll",
+      padding:"3rem"}}>
 
             <GridItem
              image = {projectBookImg}
              s = {s}
              m = {m}
              l = {l}
-             classes = "grid-book"
+             classes = ""
              routeName = "/humanities-book-database"
              direction = "rl"
              role = "Ideation, UX Research, Design, full stack development"
