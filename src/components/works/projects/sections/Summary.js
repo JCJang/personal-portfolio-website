@@ -159,8 +159,8 @@ const Summary = ({
         zIndex: "29",
         padding: m?"1rem 5rem":"1rem 2rem",
         height: m
-          ? "20rem"
-          : "25rem",
+          ? "15rem"
+          : "20rem",
         width: "100vw",
         color: "var(--occlusion)",
         background: "var(--table-neutral)"
@@ -168,7 +168,7 @@ const Summary = ({
       <div style={{
           width: m
             ? "35vw"
-            : "80vw"
+            : "70vw"
         }}>
         <h2 className={l && "h1"} style={{paddingTop:"0"}}>{title}</h2>
         <br></br>
@@ -266,12 +266,12 @@ const Summary = ({
 
     {!carousel || !l &&  <div style={{marginBottom:extraSpacing()}}></div>}
 
-{!l && <h6 className="ColumnCentered"><strong>Tap on images to see them in full size</strong></h6>}
+{!l && <h6 className="ColumnCentered" style={{margin:`0 2rem`}}><strong>Tap on images to see them in full size</strong></h6>}
 
     {carousel &&
 
         <div className="body2" id="Final Screens" style={{marginTop:m?"3rem":"2rem"}}>
-          <Carousel carouselSlides={carouselSlides} carouselSlidesTitles={carouselSlidesTitles}/>
+          <Carousel carouselSlides={carouselSlides} height={l?"90vh":"40vh"} carouselSlidesTitles={carouselSlidesTitles}/>
         </div>
     }
 

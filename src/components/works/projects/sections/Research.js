@@ -1,6 +1,7 @@
 import ImageOverflow from './section-components/ImageOverflow'
 import Fade from 'react-reveal/Fade';
 
+import {IoScanCircleOutline as AssessmentIcon} from "react-icons/io5";
 import {IoPeopleOutline as UserStoriesIcon} from "react-icons/io5";
 import {IoLocateOutline as CompetitiveAnalysisIcon} from "react-icons/io5";
 import {IoNewspaperOutline as SurveyResultsIcon} from "react-icons/io5";
@@ -20,6 +21,9 @@ const Research = ({
   ideationText,
   ideationEmphasis,
   researchText,
+  assessmentText,
+  assessmentImages,
+  assessmentTitles,
   competitiveAnalysisEmphasis,
   competitiveAnalysis,
   users,
@@ -168,17 +172,18 @@ const Research = ({
 
   const parseText = (text) =>{
     if(!text) return
+    if(text.indexOf("/") === -1)return text
     return text.split("/").map((section, num)=>{
       return  <>
       <div>
       {
         section.split("$").map((titleSection, num) => {
-          if (num % 2 === 1 ) return <strong > {titleSection}< /strong>
+          if (num % 2 === 1 ) return <strong > {titleSection}</strong>
           if (titleSection.split("{=").length === 1) return titleSection
           return titleSection.split("•").slice(1).map(
                 (sec, num) => <div>- {sec}</div>)})
 
-                } < /div>
+                } </div>
       {num!==text.split("/").length && <br></br>}
       </>
     }
@@ -212,6 +217,21 @@ const Research = ({
   {parseText(researchText)}
   </div>
 
+  {assessmentText && <>
+
+  <h4 className="Row" style={textMarginStyleH4()}><AssessmentIcon style={iconStyle()}/>
+  Initial assessment</h4>
+  <div className="body1" style={textMarginStyle()}>
+  {parseText(assessmentText)}
+  </div>
+  <br></br>
+  {assessmentImages && <> <div className="RowCentered" style={overflowStyle()}>
+  <ImageOverflow l={l} m={m} height={l?"70vh":"50vh"} images={assessmentImages} titles={assessmentTitles} alt="assessment of original site" style={{filter:"saturate(0.8)"}}/>
+
+  </div>
+  </>}
+
+</>}
 
   {users && <>
   <h4 className="Row" style={textMarginStyleH4()}><UserStoriesIcon style={iconStyle()}/>User Stories</h4>
@@ -242,8 +262,6 @@ const Research = ({
   </>}
 
 { singleStatistic &&  <div style={{width:"100vw"}}>
-<div style={{marginBottom:extraSpacing()}}></div>
-
                   <Statistic m={m} l={l} title = {statisticTitles} text={statisticTexts} sources={statisticSources}/>
 
               <br></br>

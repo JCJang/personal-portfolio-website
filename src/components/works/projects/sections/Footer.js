@@ -116,6 +116,8 @@ const Footer = ({
 
        const parseText = (text) =>{
          if(!text) return
+         if(text.indexOf("/") === -1)return text
+
          return text.split("/").map((section, num)=>{
            return  <>
            <div>

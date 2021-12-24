@@ -17,8 +17,9 @@ import displayImage4 from './images/carousel-4.jpg'
 
 //research
 import Research from '../sections/Research'
-import userFlowAfter from './images/user-flow-after.png'
+import assessment from './images/assessment.png'
 import userFlowBefore from './images/user-flow-before.png'
+import userFlowAfter from './images/user-flow-after.png'
 //design
 import Design from '../sections/Design'
 
@@ -82,18 +83,18 @@ const ProjectTrekinn = ({m, l, setRouteFocus}) => {
         finalScreens={true}
         carousel = {true}
         carouselSlides={[displayImage1, displayImage2, displayImage3, displayImage4]}
-        carouselSlidesTitles={['user flow - order a refill. The app tracks medication count and highlights medications that are running low. Users have access to live status of their order and pharmacy wait times.','user flow - transfer a medication. Common questions about the transfer process are anticipated, and the user is guided through the process.', 'user flow - add a prescription via scan. The upload process can be overwhelming. Here I found a solution that presents information clearly without overwhelming the user, and also anticipated user questions regarding other methods of adding a prescription, answered in the tab "expand for other options', 'app hierarchy - menu and log-in screens on top, overlays in the middle, and the rest located in two main screens: Rx and Orders.']}
+        carouselSlidesTitles={["Trekinn's Landing page. Tablet screens are in English","Rooms page with photo Carousel", 'Map & Destinations page (laptop, phone) and Contact page (tablet). The mobile version of Map & Destinations has a button below the map. It opens the Google Maps app for quick navigation.', 'About page (laptop, phone) and Map & Destinations (tablet)']}
 
         mainImage={m?mainImageH:mainImageV}
-         research="Ideation, Research, and user flow"
+         research="Assessment, Reorganization, and user flow"
          design="color, typography, and wireframes"
          development = "Working with tailwind and i18n in React"
 
          title="Trekinn Website"
          roles="UI and UX Design, Development, Internationalization"
 
-         challenge="How can I design a scalable and maintainable portfolio website?"
-         solution="By using a design system and creating reusable sections and components."
+         challenge="How can I redesign a website while maintaining its original tone?"
+         solution="By extracting themes from website content and designing in accordance."
          summary="In this project I scoped out portfolio content constraints for both UX designers and junior frontend developers, then established a design system so that my website can scale consistently. Finally, I experimented with a new workflow that involves simultaneous design and development. By designing and developing reusable components in React and keeping organized, I was able to launch my react website in 20 days."
          websiteLink="vibrant-ritchie-da2a24.netlify.app"
 
@@ -105,53 +106,56 @@ const ProjectTrekinn = ({m, l, setRouteFocus}) => {
          l={l}
 
 
-         researchText="As the first step of design, I looked at common portfolio content and structure, referencing Google's UX design course for UX portfolio criteria, and junior web developer portfolio reviews for frontend developer portfolio criteria."
+         researchText="Trekinn is a local-owned homestay in Hualien - a popular gateway to some of the most scenic areas in Taiwan. Trekinn has two two-bed rooms and three one-bed rooms. Primary clients are young adults and families with young children."
+         assessmentText="The website uses minimal storytelling, and instead takes a direct and transparent tone that conveys simplicity and honesty. Website content emphasizes Trekinn’s cleanliness, excellent location, and locality – “We know our way around, and we can help you plan the best trip possible.” There are some thoughtful features such as a functional nav bar that allows users to quickly contact the homestay./Assessing the site, I can see very thoughtful information, but a lack of presentation - for instance, useful travel information and services are located under a “bulletin” page instead of being highlighted. The final scope of the project was information reorganization, increase of intra-website mobility, separation of Chinese and English versions, and overall, a responsive design that presents Trekinn in its best light."
+          assessmentImages={[assessment, userFlowBefore]}
+          assessmentTitles={["analysis of the original website's UX", "original website's information architecture"]}
 
-          competitiveAnalysisEmphasis="Each case study should be illustrative of design thinking and process, and provide context, roles, takeaways, and a lot of visuals to make the case study skimmable... ... Sections such as ‘Skills’ are discouraged, since evaluators prefer to see how developers apply those skills."
 
           singleStatistic={true}
           statisticTitles={["Do I need a responsive website?"]}
-          statisticTexts={["abcd"]}
+          statisticTexts={["The owner, who had created the original site, had taken a mobile-centered approach, and mentioned that most bookings were done via mobile. Since most of Trekinn's customers only book through mobile, is a desktop version needed? My answer is a wholehearted 'Yes'. According to a study by TripAdvisor, more than 55% of travelers use their laptops to plan or book a trip, in comparison to 42% for laptops - perhaps the lack of desktop bookings is not a prediction of desktop user behavior, but rather an indication that Trekinn’s website is not optimized for such users - the data collected by the owner was skewed by survivor bias (see source blog post). Optimizing for either mobile only or desktop only would be missing on many customers – a responsive design is crucial to providing a high quality and consistent experience for all users."]}
   
-          statisticSources={[["https://datausa.io/profile/geo/maine/"]]}
-          userFlowText = "With good user knowledge under my belt, I began organizing the screens into a coherent user flow. I ended up with three main user flows tha all have entry points in the current medications screen. I organized the three flows around two main screens - the orders screen and the current medications screen."
+          statisticSources={["https://ir.tripadvisor.com/news-releases/news-release-details/tripadvisor-study-reveals-42-travelers-worldwide-use-smartphones","https://www.trevorbragdon.com/when-data-gives-the-wrong-solution/"]}
+
+          userFlowText = "I ended up organizing site information into five screens: About, Rooms, Map & Destinations, and Contact. I also planned for a Landing page that would serve as an entry point to each page, and increased intra-website mobility by placing relavant links where needed. For instance, there is a link to the Contact page in the footer, and a link to Map & Destinations in the Rooms page, located right after booking information. This link is for users that just completed booking, and would like to explore things to do near the homestay or plan their itinerary in Hualien."
 
           userFlowImg={userFlowAfter}
-         designKeywords={["elegant", "tailored", "simplistic", "brochure-style"]}
-         designTone={["straightforward", "genuine", "insightful"]}
+         designKeywords={["elegant", "relaxing", "brochure-style"]}
+         designTone={["(established)","practical","informative","transparent", "genuine", "insightful"]}
         />
 
         <span id="design"></span>
         <Design m={m} l={l}
-        design="While looking at many web developer and web designer portfolios as part of my project research, I noticed that many portfolio designs lean towards the image of “big tech” or “sports” brands, using bold black and white, background-removed photos, and bold sans serif fonts or all-caps text. Although I tried this layout at first, it was ultimately not reflective of my design style or personality./By brainstorming on some qualities that make me and my designs unique, and decided on an elegant design, with bold and tasteful colors and a handwritten font that emphasizes craft."
+        design="I wanted to present Trekinn as a no frills, cost-effective, practical, and quiet space to relax and recharge. With this and the target audience of young adults and families in mind, I wanted the site to feel playful but not frivolous, modern but not too high end or eccentric. I began envisioning a brochure-like design quality, with many visuals, but also concentrated, well-organized information with a focus on exploring Hualien. With themes of warmth, elegance, and nature in mind, I jumped into my design workflow, starting with typography."
 
-        typography="With that starting point, I began looking at fonts. I wanted to find elegant and approachable fonts, more rectangular than boxed, and with an elongated stem. After briefly considering modern serifs, I decided that they tend to feel unapproachable, and turned to old-style serifs instead. I picked two serif fonts for the header, five sans serif ones for the body, and three for the handwritten decorative font. Then, I created a table of each header and body combination, assigned each combination the most complementary handwritten, then compared each before finally settling on ‘Lusitana’ for the header, ‘Yaldevi’ for the subtitles, and ‘La Belle Aurore’ for the handwritten font./Later in the development process I realized that Yaldevi can be quite difficult to read, so I brought in IBM Plex Sans to replace Yaldevi as the body font, keeping Yaldevi for subtitles."
+        typography="Since most customers are from Taiwan, my design approach is Chinese-first. For Chinese I wanted a Ming (serifed) font, which generally feels more serious and academic. I landed on Gen Wan Ming, which was a beautiful typeface that was both elegant and scholarly, with slightly rounded angles. The typeface pairs well with the serious tone of being direct and trustworthy, and also pairs well with the brochure quality I wanted./For the body text, I chose Genseki, a Gothic font. For the English body text, though at first I considered Noto Sans for its rounded quality, but finally turned to Roboto for its compactness and box-like quality that matches Chinese characters. At a late stage of development, I swapped the English Headers from the default Gen Wan Ming to the more Modern-leaning Rufina. This increased the coherency of the English website due to Rufina’s slimmer horizontal lines that ties in with Roboto./I encountered some difficulties tailoring the English version to the Chinese layout. For instance, optimal readability for Chinese or character-based languages falls between a line height of 1.5-1.7 (the default line height for Bootstrap is 1.4). When mapping English text onto the Chinese, line height can seem ‘off.’ This is why it is important to take a Chinese-first approach when it suits the project needs."
 
-        finalTypography={["3-Chinese Headings: Lusitana", "4-Chinese body: Noto Sans", "4-English Headings: Rufina","4-English body: Roboto"]}
+        finalTypography={["3-Chinese Headings: Gen Wan Ming", "4-Chinese body: Genseki", "4-English Headings: Rufina","4-English body: Roboto"]}
         typographyRefImages={[textRefEnglish, textRefBodyText]}
-        typographyRefTitles={["options for handwritten fonts", "all font combination options","comparison of readability between 'Yaldevi' and 'IBM Plex Sans'"]}
+        typographyRefTitles={["options for English headers", "Compatability of 'Genseki'-'Noto Sans' and 'Genseki'-'Roboto'"]}
         typographyFinalImg={typographyFinalImg}
 
         finalColorLabels={["sapling", "tropical", "ginger","plum"]}
         finalColorHexes ={ ['#A7C9AF','#83C4D2',"#C9AD83",'#E4816C']}
-        colorLabels={["cream", "beige","rapids", "taroko", "taroko"]}
+        colorLabels={["cream", "beige","rapids", "taroko", "ravine"]}
         colorHexes ={['#FFF6F2','#EDE2DD','#D8E5E3',"#3E4F54", '#384A2C']}
 
         designTitle ="Color Ideation"
         colorSection="Trekinn"
 
-        hifi="After viewing my high-fidelity design, a friend noted that the works design has a magazine-like quality to it. I decided to play with this design motif in my layout, adding elements such as dual columns, linear separators, and italics."
+        colorTitles="Color as Brand Message"
+        colorDescriptions="Although guests are highly encouraged to explore Hualien’s nature, there were not too many visuals. So the first thing I incorporated into the design assets were high-quality photos showcasing the local scenery. Since all of them are highly saturated, I wanted the website to have low to medium saturated colors for balance."
+        moodboardText="To generate a palette, I sampled both nature photos and photos of Trekinn’s interior, matched the sampled colors to each theme, then desaturated and tweaked each color individually until I have a low, medium, and high brightness colors for each theme."
+
+        colorTextures={texture}
+        colorText="lorem ipsum."
+        colorMoodboards={moodboard2}
+        
+        hifi="I wanted the site to be of medium contrast, with neutral to rounded components."
         hifiWireframesImages={[hifiMobile, hifiDesktop]}
         hifiWireframesTitles={["Mobile screens", "Desktop screens"]}
 
-        colorTitles="Color as Brand Message"
-        colorDescriptions="Three color groups reflect design keywords of warmth, nature, and elegance."
-        moodboardText="Using Pexels.com, I found various images which colors really speak to me, most of which have desaturated colors."
-
-        colorTextures={texture}
-        colorText="Noticing that the colors on the moodboard feel a bit too dreamy and eccentric, I added a bold and timeless burgundy./I also sought to add many greys, which not only convey professionality and elegance, but also make saturated colors stand out. The first grey I added to my website was a warm mid-dark grey, which really helped anchor the more vibrant colors on my existing palette. Desaturating photo elements also brought out many neutral greys to work with, while adding subtle gradients over them created further rootedness."
-        colorMoodboards={moodboard2}
-        
 
      />
      <span id="development"></span>
@@ -159,13 +163,13 @@ const ProjectTrekinn = ({m, l, setRouteFocus}) => {
       m={m}
       l={l}
 
-      developmentText="One of the things I wished I learned for my humanities database project was how to plan and organize code. For instance, I used too much inline CSS, which lead to readability issues whenever I needed to adjust the layout. Learning from that experience, I resolved to clearly plan my development folder tree."
+      developmentText="I am quite familiar with my React workflow at this point, but learning from my last project, wanted to learn and incorporate new tools. The first thing I did was setting up tailwind for quicker responsive coding. Being used to vanilla CSS, I had some difficulty finding corresponding classes by name, but having the cheatsheet from tailwindcomponents.com on hand really helped. Once I adapted, I loved working with tailwind, and I appreciated the freedom of coding CSS state changes without leaving JSX."
 
-      finalStack="HTML, CSS, JavaScript, React, Framer Motion."
+      finalStack="HTML, CSS, JavaScript, React, Tailwind, i18n."
       stackMemo="Hosted on Netlify"
       githubRepository="https://github.com/JCJang/personal-portfolio-website"
 
-  internationalizationText="internationalization/text"
+  internationalizationText="Instead of creating a separate English version of the site, I used i18n, which allows in-app language changes – no reload needed. It works by mapping json values onto their corresponding keys in the UI, and is fairly easy to work with."
   i18nTemplateCode="JCJang/4787555b42f172425b8cb8d0a3aaaff9"
 
   i18nJsonCode="JCJang/aa368419652cca4c9c63a15c9762beb8"

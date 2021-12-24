@@ -177,6 +177,7 @@ const Development = ({
 
  const parseText = (text) =>{
    if(!text) return
+   if(text.indexOf("/") === -1) return text
    return text.split("/").map((section, num)=>{
      return  <>
      <div>
@@ -199,17 +200,21 @@ const Development = ({
 
       <div id="summary-col-1" className="Column" style={colLarge()}>
 
-        <br></br>
+        
         <div className="body1">
           {parseText(developmentText)}
         </div>
       </div>
 
     <div id="summary-col-2" className="Column" style={colHalf()}>
-        <h5><a className="AboutWorksLink" href={githubRepository} target="_blank" style={{textDecoration:"none"}}><GithubIcon style={{  alignSelf: "center",
+        <h5><a className="AboutWorksLink" href={githubRepository} target="_blank" style={{textDecoration:"none"}}> 
+        <br style={{display:m && "none"}}></br>
+
+<GithubIcon style={{  alignSelf: "center",
           marginRight: "0.8rem",
           fontSize: "1.6rem",
-          minWidth:"1.6rem"}}/>click here for repository link</a></h5>
+          minWidth:"1.6rem"}}/>
+          click here for repository link</a></h5>
 
 
         <div className="boxDecoration" style={{
@@ -217,10 +222,10 @@ const Development = ({
           }}></div>
 
 
-        <h6 style={{paddingTop:col2PaddingTop()}}>
+        <h6>
          Final stack: {finalStack}
         </h6>
-        <br></br>
+        <br style={{display:l && "none"}}></br>
         <div><strong>{stackMemo}</strong></div>
     </div>
     </div>

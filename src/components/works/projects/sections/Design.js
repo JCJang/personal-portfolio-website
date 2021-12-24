@@ -187,6 +187,8 @@ const Design = ({
 
     const parseText = (text) =>{
       if(!text) return
+      if(text.indexOf("/") === -1)return text
+
       return text.split("/").map((section, num)=>{
         return  <>
         <div>
@@ -254,7 +256,7 @@ const Design = ({
   </div>
 <Fade>
   <div>
-    <ImageOverflow l={l} m={m} height={l?"60vh":"40vh"} images={typographyRefImages} titles={typographyRefTitles} style={{filter:"saturate(0)"}}/>
+    <ImageOverflow l={l} m={m} height={l?"50vh":"35vh"} images={typographyRefImages} titles={typographyRefTitles} style={{filter:"saturate(0)"}}/>
   </div>
 
 <div style={{marginBottom:extraSpacing()}}></div>
@@ -277,7 +279,7 @@ const Design = ({
 <div style={{marginBottom:extraSpacing()}}></div>
 
   <div className="RowCentered" style={overflowStyle()}>
-      {typographyFinalImg && <ImageOverflow l={l} m={m} height="70vh" alt="final typography choices" images={[typographyFinalImg]}/>}
+      {typographyFinalImg && <ImageOverflow l={l} m={m} height="50vh" alt="final typography choices" images={[typographyFinalImg]}/>}
   </div>
   <div style={{width:"100vw", background:"var(--cinerous)", color:"var(--occlusion)"}}>
   <div style={{paddingBottom:extraSpacing()}}></div>
@@ -375,7 +377,7 @@ const Design = ({
   <br></br>
 <Fade>
   <div className="RowCentered" style={overflowStyle()}>
-    {hifiWireframesImages && <ImageOverflow l={l} m={m} height={l?"60vh":"75vh"} images={hifiWireframesImages} titles={hifiWireframesTitles} alt="high fidelity wireframes" style={{filter:"saturate(0.8)"}}/>}
+    {hifiWireframesImages && <ImageOverflow l={l} m={m} height={l?"80vh":"50vh"} images={hifiWireframesImages} titles={hifiWireframesTitles} alt="high fidelity wireframes" style={{filter:"saturate(0.8)"}}/>}
   </div>
 </Fade>
   {prototype && <>
