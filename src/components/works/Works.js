@@ -23,6 +23,11 @@ import trekinnSlide2 from './projects/ProjectTrekinn/thumbnail-trekinn/carousel-
 import trekinnSlide3 from './projects/ProjectTrekinn/thumbnail-trekinn/carousel-3.jpg'
 import trekinnSlide4 from './projects/ProjectTrekinn/thumbnail-trekinn/carousel-4.jpg'
 
+
+import {IoChevronBackSharp as Prev} from "react-icons/io5";
+import {IoChevronForwardSharp as Next} from "react-icons/io5";
+
+
 import { IoAlbumsOutline as LofiIcon} from 'react-icons/io5/index.esm.js';
 import { IoLayersOutline as HifiIcon} from 'react-icons/io5';
 
@@ -35,6 +40,22 @@ import { useLocation } from "react-router-dom";
 
 
 const Works = ({s, m, l, setRouteFocus}) => {
+
+  const projectItems = document.querySelectorAll(".projectItem")
+  console.log(projectItems)
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        entry.target.classList.toggle("showLilac",entry.isIntersecting)
+      })
+    },
+    {
+      root: document.querySelector('#projectItemsContainer'),
+      threshold: 0.5  }
+  )
+  projectItems.forEach((entry)=>{
+    observer.observe(entry)
+  })
 
 const [controlsHover, setControlsHover] = useState(false)
 
@@ -57,7 +78,9 @@ return {
     border: controlsHover ? "1.5px solid var(--velvet)" : "1.5px solid var(--midnight)",
     borderRadius: "3px",
     padding: "1rem",
-    margin:"2rem 0"
+    margin:"2rem 0",
+    zIndex: "11",
+
         
 }
 }
@@ -86,7 +109,9 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
         left: -400,
         behavior: "smooth"
      })}}>
-          left
+       <Prev/>
+          <div>scroll</div>
+          <div>left</div>
         </div>
         <div id="projectItemsContainer" className={l?"Row":"Column"} ref={draggableScrollRef}
     onMouseDown={onMouseDown} style={{
@@ -107,7 +132,8 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
              title = "Humanities Book Database"
              subtitle = "How can I help readers find quality humanities books?"
              specs = "Figma, React, Node.js, MongoDB"
-             introduction = "In this project I addressed difficulties readers face when searching for humanities books by asking readers about their book search process. After analyzing user feedback, I created a full responsive web app by integrating data from Google Books API, Wikipedia API, and my multilingual MongoDB book database."/ >
+             introduction = "In this project I addressed difficulties readers face when searching for humanities books by asking readers about their book search process. After analyzing user feedback, I created a full responsive web app by integrating data from Google Books API, Wikipedia API, and my multilingual MongoDB book database."/>
+
 
               <GridItem
               image={projectPharmacyImg}
@@ -164,7 +190,9 @@ onFocus={() => setControlsHover(true)}
         left: 400,
         behavior: "smooth"
      })}}>
-          right
+       <Next/>
+         <div>scroll</div>
+         <div>right</div>
         </div>
       </div>
 

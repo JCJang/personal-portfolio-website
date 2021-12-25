@@ -965,14 +965,19 @@ line-height: 100%;
   outline:4rem solid var(--velvet);
 }
 
+
 .worksControls:hover{
+  color:var(--velvet);
+  transform: scale(1.05);
+}
+
+.worksControls:active{
   color:var(--contact-text);
   background: var(--velvet);
 }
 
-.worksControls:focus{
-  color:var(--contact-text);
-  background: var(--velvet);
+.showLilac{
+  background:var(--lilac);
 }
 
 @media screen and (max-width: 359px) {
