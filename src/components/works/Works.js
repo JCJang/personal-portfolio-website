@@ -51,7 +51,7 @@ const Works = ({s, m, l, setRouteFocus}) => {
     },
     {
       root: document.querySelector('#projectItemsContainer'),
-      threshold: 0.5  }
+      threshold: 0.9  }
   )
   projectItems.forEach((entry)=>{
     observer.observe(entry)
@@ -75,10 +75,12 @@ const worksStyle = () => {
 
 const controlsStyle = () => {
 return {
-    border: controlsHover ? "1.5px solid var(--velvet)" : "1.5px solid var(--midnight)",
+    background:"var(--works-accent)",
+    border: "1.5px solid var(--works-text)",
+    color: "var(--works-text)",
     borderRadius: "3px",
-    padding: "1rem",
-    margin:"2rem 0",
+    padding: "0.5rem",
+    margin:"3.2rem 0",
     zIndex: "11",
 
         
@@ -100,7 +102,7 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
 
         </div>
 
-        <div className="ColumnCentered worksControls" id="leftControl" tabIndex="1" style={controlsStyle()} 
+        <div className="ColumnCentered worksControls unselectable" id="leftControl" tabIndex="1" style={controlsStyle()} 
       onFocus={() => setControlsHover(true)}
       onBlur={() => setControlsHover(false)}
       onMouseEnter={() => setControlsHover(true)}
@@ -116,7 +118,9 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
         <div id="projectItemsContainer" className={l?"Row":"Column"} ref={draggableScrollRef}
     onMouseDown={onMouseDown} style={{
       overflowX:"scroll",
-      padding:"3rem"}}>
+      margin:"2rem 0",
+      padding:"1.5rem 0",
+     }}>
 
             <GridItem
              image = {projectBookImg}
@@ -181,7 +185,7 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
                role = "Design and Development"
               / >
         </div>
-        <div className="ColumnCentered worksControls" tabIndex="1" style={controlsStyle()} 
+        <div className="ColumnCentered worksControls unselectable" tabIndex="1" style={controlsStyle()} 
 onFocus={() => setControlsHover(true)}
       onBlur={() => setControlsHover(false)}
       onMouseEnter={() => setControlsHover(true)}

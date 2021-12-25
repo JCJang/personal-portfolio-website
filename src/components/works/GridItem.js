@@ -22,17 +22,17 @@ const gradientSetting = () =>{
       style = {{
       borderRadius: cardHover?"3px":"8px",
       background:controlsHover || buttonHover && "none",
-      borderBottom: buttonHover? "6px solid var(--velvet)":"6px solid var(--cinerous)",
-      boxShadow:cardHover?"none":"rgba(60, 84, 82, 0.25) 0px 6px 12px -2px, rgba(60, 84, 82, 0.3) 0px 3px 7px -3px",
+      borderBottom: buttonHover? "6px solid var(--velvet)":cardHover && "6px solid var(--cinerous)",
+      boxShadow:cardHover && "none",
       width:"35vw",
       margin:l?"0 1rem":"0.5rem 0",
-      outline:controlsHover?"1.5px solid var(--midnight)":buttonHover?"1.5px solid var(--midnight)":"1.5px solid var(--midnight)",
+      outline:controlsHover || buttonHover && "1.5px solid var(--midnight)",
       transition: 'border-bottom 0s, border-radius 0.3s, outline 0.3s, box-shadow 0.3s, background linear 0.4s, outline 0.3s'
   }}>
 
     <div className="transition" style={{
       width:"35vw",
-      height:"50%",
+      height:"45%",
       position:"relative",
       borderRadius:buttonHover || cardHover?"3px":"8px",
       overflow:"hidden"
@@ -42,7 +42,7 @@ const gradientSetting = () =>{
         zIndex:"5",
         height:"100%",
         position:"absolute",
-        transform:buttonHover? "": !carouselSlides[0] ? "": cardHover? "translateY(-35vh) scale(1.1)":"",
+        transform:buttonHover? "": !carouselSlides[0] ? "": cardHover? "translateY(-45vh) scale(1.1)":"",
         boxShadow:buttonHover? "": !carouselSlides[0] ? "": cardHover? "5px 8px":""
 }}>
           <ImageFadeIn role="presentation" className="gridImage transition" src={image} style={{ filter:cardHover?"saturate(0.6)":"saturate(0.1) opacity(0.8)",
@@ -56,11 +56,11 @@ const gradientSetting = () =>{
     lineHeight: "5rem",
     justifyContent: "center",
     alignContent:"center",
-    padding:"1rem 4rem 0 1rem",
+    padding:"1rem 2rem 0 1rem",
   }}
    >
     <Fade delay={700}>
-          <div style={{fontWeight:"400",font:m?"2.5rem/1.3 'Lusitana',sans-serif":"1.5rem/1.2 'Lusitana',sans-serif", letterSpacing:"0.0156rem",textTransform:"", margin:"0.6rem 0"}}>{title}</div>
+          <div style={{fontWeight:"400",font:m?"2.2rem/1.5 'Lusitana',sans-serif":"1.5rem/1.2 'Lusitana',sans-serif", letterSpacing:"0.0156rem",textTransform:"", margin:"0.6rem 0"}}>{title}</div>
     </Fade>
     <Fade bottom delay={900}>
 
@@ -71,7 +71,7 @@ const gradientSetting = () =>{
 
     </div>
     <div className="Column" style={{ height:"100%"}}>
-      <div style={{padding:"1.5rem 1.5rem 0 1.5rem", marginTop:"auto"}}><Carousel carouselSlides = {carouselSlides}
+      <div style={{padding:"1.5rem", marginTop:"auto"}}><Carousel carouselSlides = {carouselSlides}
       modalFunction = {false}
   height = "30vh"
   width = "calc( 35vw - 3rem)"/></div>
@@ -79,7 +79,7 @@ const gradientSetting = () =>{
       </div>
 
     </div>
-    <div className="Column" style={{height:"calc(50% - 3rem)",  padding:"0 1.5rem"}}>
+    <div className="Column" style={{height:"calc(55% - 3rem)",  padding:"0 1.5rem"}}>
     <Fade top delay={500}>
         <div style={{font:"1.2rem/1.5 'Yaldevi'", margin:"1rem 0 0.5rem 0",color:"var(--works-text)"}}>{role}</div>
     </Fade>
