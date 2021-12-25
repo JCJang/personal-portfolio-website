@@ -17,7 +17,8 @@ const Carousel = ({
   carouselSlidesTitles,
   hideTitles = false,
   height = "100vh",
-  width = "100vw"
+  width = "100vw",
+  modalFunction = true
 }) => {
 
   const [slideNumber, setSlideNumber] = useState(0)
@@ -31,7 +32,8 @@ const Carousel = ({
     }
   }
 
-  const nextSlide = () => {
+  const nextSlide = (e) => {
+    e.stopPropagation()
       if (slideNumber === carouselSlides.length - 1) {
         setSlideNumber(0)
       } else {
@@ -39,7 +41,8 @@ const Carousel = ({
       }
     }
 
-  const prevSlide = () => {
+  const prevSlide = (e) => {
+    e.stopPropagation()
       if (slideNumber === 0) {
         setSlideNumber(carouselSlides.length - 1)
       } else {
@@ -69,7 +72,8 @@ const Carousel = ({
   const [imageArrNumber, setImageArrNumber] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
   const modalRef = useRef()
-  useClickOutside(modalRef, () => {
+  useClickOutside(modalRef, (e) => {
+    e.stopPropagation()
     if (isOpen)
       setIsOpen(false)
   })
@@ -88,7 +92,8 @@ const Carousel = ({
 
     {
       carouselSlides.map((slide, num) => {
-        return <div className="carousel-gradient ImageOverflowImg" style={{
+        return <div className={modalFunction?"carousel-gradient ImageOverflowImg":"carousel-gradient"} style={{
+          
             position: "absolute",
             top: "0",
             left: slidePosition(slide),
@@ -96,8 +101,9 @@ const Carousel = ({
             opacity: num !== slideNumber && "0"
           }}>
 
-          <ImageFadeIn src={slide} alt={carouselSlidesTitles && carouselSlidesTitles[num]} dragabble="false"
+          <ImageFadeIn src={slide} alt={carouselSlidesTitles && carouselSlidesTitles[num]} draggable="false" 
             onClick={(e) => {
+              if(modalFunction === false) return;
               e.stopPropagation();
               setImageArrNumber(num);
               setIsOpen(true)

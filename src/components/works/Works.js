@@ -5,6 +5,23 @@ import projectBookImg from '../../images/woman-using-laptop-V.jpg'
 import projectPharmacyImg from '../../images/5-order-screen.jpg'
 import projectPersonalImg from '../../images/project-personal-thumbnail.jpg'
 
+import humanitiesSlide1 from './projects/ProjectHumanities/thumbnail-humanities/searchview-history.jpg'
+import humanitiesSlide2 from './projects/ProjectHumanities/thumbnail-humanities/shelfview-historianscraft.jpg'
+import humanitiesSlide3 from './projects/ProjectHumanities/thumbnail-humanities/detailsviewhistorianscraft.jpg'
+import humanitiesSlide4 from './projects/ProjectHumanities/thumbnail-humanities/authornav-burke.jpg'
+import humanitiesSlide5 from './projects/ProjectHumanities/thumbnail-humanities/authorpanel-burke.jpg'
+import humanitiesSlide6 from './projects/ProjectHumanities/thumbnail-humanities/authorbg-burke.jpg'
+import humanitiesSlide7 from './projects/ProjectHumanities/thumbnail-humanities/authorbio-burke.jpg'
+
+import pharmacySlide1 from './projects/ProjectPharmacy/thumbnail-pharmacy/3-checkout-flow.jpg'
+import pharmacySlide2 from './projects/ProjectPharmacy/thumbnail-pharmacy/7-transfer-flow.jpg'
+import pharmacySlide3 from './projects/ProjectPharmacy/thumbnail-pharmacy/9-add-rx-flow.jpg'
+import pharmacySlide4 from './projects/ProjectPharmacy/thumbnail-pharmacy/motion-design-short.jpg'
+
+import trekinnSlide1 from './projects/ProjectTrekinn/thumbnail-trekinn/carousel-1.jpg'
+import trekinnSlide2 from './projects/ProjectTrekinn/thumbnail-trekinn/carousel-2.jpg'
+import trekinnSlide3 from './projects/ProjectTrekinn/thumbnail-trekinn/carousel-3.jpg'
+import trekinnSlide4 from './projects/ProjectTrekinn/thumbnail-trekinn/carousel-4.jpg'
 
 import { IoAlbumsOutline as LofiIcon} from 'react-icons/io5/index.esm.js';
 import { IoLayersOutline as HifiIcon} from 'react-icons/io5';
@@ -56,6 +73,7 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
 
             <GridItem
              image = {projectBookImg}
+             carouselSlides={[humanitiesSlide1,humanitiesSlide2,humanitiesSlide3,humanitiesSlide4,humanitiesSlide5,humanitiesSlide6,humanitiesSlide7]}
              s = {s}
              m = {m}
              l = {l}
@@ -70,6 +88,8 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
 
               <GridItem
               image={projectPharmacyImg}
+              
+              carouselSlides={[trekinnSlide1,trekinnSlide2,trekinnSlide3,trekinnSlide4]}
               s = {s}
               m = {m}
               l = {l}
@@ -83,6 +103,7 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
 
              <GridItem
               image={projectPharmacyImg}
+              carouselSlides={[pharmacySlide1,pharmacySlide2,pharmacySlide3,pharmacySlide4]}
               s = {s}
               m = {m}
               l = {l}
@@ -102,6 +123,7 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
                 image={projectPersonalImg}
                routeName = "/personal-website"
                direction = "rl"
+               
                title = "Personal Website"
                specs = "Figma, React"
                introduction = "page in development. In this project I created a personal portfolio to showcase my work and design process."

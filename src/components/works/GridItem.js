@@ -1,9 +1,10 @@
 import {Link} from 'react-router-dom'
 import ImageFadeIn from '../../customHooks/imageFadeIn'
 import Fade from 'react-reveal/Fade';
+import Carousel from './projects/sections/section-components/Carousel'
 
 import {useEffect, useState} from 'react';
-const GridItem = ({m, l, direction, routeName, image, role, title, subtitle, specs, introduction, classes}) => {
+const GridItem = ({m, l, direction, routeName, image, role, title, subtitle, specs, introduction, classes, carouselSlides=[]}) => {
 
   const [cardHover, setCardHover] = useState(false)
   const [buttonHover, setButtonHover] = useState(false)
@@ -21,8 +22,6 @@ const gradientSetting = () =>{
       onBlur={() => setCardHover(false)}
       onMouseEnter={() => setCardHover(true)}
       onMouseLeave={() => setCardHover(false)}
-      onMouseDown={() => setCardHover(true)}
-      onMouseUp={() => setCardHover(false)}  
       style = {{
       borderRadius: cardHover?"3px":"8px",
       borderBottom: buttonHover? "6px solid var(--velvet)":cardHover?"6px solid var(--desert-rose)":"6px solid var(--cinerous)",
@@ -41,7 +40,7 @@ const gradientSetting = () =>{
       borderRadius:buttonHover || cardHover?"3px":"8px",
       overflow:"hidden"
       }}>
-      <div className={gradientSetting()} style={{width:"100%", height:"100%", position:"absolute",transform:buttonHover? "": cardHover? "translateY(-25vh)":"",
+      <div className={gradientSetting()} style={{width:"100%", zIndex:"5",height:"100%", position:"absolute",transform:buttonHover? "": cardHover? "translateY(-35vh)":"",
 }}>
           <ImageFadeIn role="presentation" className="gridImage transition" src={image} style={{ filter:cardHover?"saturate(0.6)":"saturate(0.1) opacity(0.8)",
           }}/>
@@ -68,14 +67,18 @@ const gradientSetting = () =>{
     </div>
 
     </div>
-    <div className="Column-center">
-      <div>carousel here asd;foasjd;fiajsd;lfajsd;lfjasldfjasldkfja;sldjfalsdikjfla;sidkjf;laisdjf;laiskdjf;laksdjf;lasikdjfsdl</div>
+    <div className="Column" style={{ height:"100%"}}>
+      <div style={{padding:"1.5rem 1.5rem 0 1.5rem", marginTop:"auto"}}><Carousel carouselSlides = {carouselSlides}
+      modalFunction = {false}
+  height = "30vh"
+  width = "calc( 35vw - 3rem)"/></div>
+      
       </div>
 
     </div>
-    <div className="Column" style={{height:"calc(50% - 3rem)",  padding:"1.5rem"}}>
+    <div className="Column" style={{height:"calc(50% - 3rem)",  padding:"0 1.5rem"}}>
     <Fade top delay={500}>
-        <div style={{font:"1.2rem/1.5 'Yaldevi'", marginTop:"0.5rem",color:"var(--works-text)"}}>{role}</div>
+        <div style={{font:"1.2rem/1.5 'Yaldevi'", margin:"1rem 0 0.5rem 0",color:"var(--works-text)"}}>{role}</div>
     </Fade>
 
     <div className='body2' style={{color:"var(--midnight"}}>
@@ -89,8 +92,6 @@ const gradientSetting = () =>{
      onBlur={() => setButtonHover(false)}
      onMouseEnter={() => setButtonHover(true)}
      onMouseLeave={() => setButtonHover(false)}
-     onMouseDown={() => setButtonHover(true)}
-     onMouseUp={() => setButtonHover(false)} 
       style={{
         justifySelf:"flex-end",
         width:"100%",
