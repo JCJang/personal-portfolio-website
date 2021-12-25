@@ -965,6 +965,16 @@ line-height: 100%;
   outline:4rem solid var(--velvet);
 }
 
+.worksControls:hover{
+  color:var(--contact-text);
+  background: var(--velvet);
+}
+
+.worksControls:focus{
+  color:var(--contact-text);
+  background: var(--velvet);
+}
+
 @media screen and (max-width: 359px) {
 html { font-size: 11px;}
 }

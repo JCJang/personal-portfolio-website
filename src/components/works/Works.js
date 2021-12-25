@@ -30,14 +30,15 @@ import { IoColorFilterOutline as ColorIcon} from 'react-icons/io5';
 import { IoLocateOutline as UserFrustrationsIcon } from 'react-icons/io5';
 import { IoTextOutline as TypographyIcon} from 'react-icons/io5';
 
-import {useEffect, useRef} from 'react'
+import {useState, useEffect, useRef} from 'react'
 import { useLocation } from "react-router-dom";
 
 
 const Works = ({s, m, l, setRouteFocus}) => {
 
+const [controlsHover, setControlsHover] = useState(false)
 
-const location = useLocation();
+  const location = useLocation();
 useEffect(()=>{
   setRouteFocus(location.pathname)
 },[])
@@ -51,6 +52,15 @@ const worksStyle = () => {
   }
 };
 
+const controlsStyle = () => {
+return {
+    border: controlsHover ? "1.5px solid var(--velvet)" : "1.5px solid var(--midnight)",
+    borderRadius: "3px",
+    padding: "1rem",
+    margin:"2rem 0"
+        
+}
+}
 const draggableScrollRef = useRef(null);
 const { onMouseDown } = useDraggableScroll(draggableScrollRef);
 
@@ -66,7 +76,19 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
 
 
         </div>
-        <div className={l?"Row":"Column"} ref={draggableScrollRef}
+
+        <div className="ColumnCentered worksControls" id="leftControl" tabIndex="1" style={controlsStyle()} 
+      onFocus={() => setControlsHover(true)}
+      onBlur={() => setControlsHover(false)}
+      onMouseEnter={() => setControlsHover(true)}
+      onMouseLeave={() => setControlsHover(false)}
+      onClick={() => {document.getElementById("projectItemsContainer").scrollBy({
+        left: -400,
+        behavior: "smooth"
+     })}}>
+          left
+        </div>
+        <div id="projectItemsContainer" className={l?"Row":"Column"} ref={draggableScrollRef}
     onMouseDown={onMouseDown} style={{
       overflowX:"scroll",
       padding:"3rem"}}>
@@ -77,6 +99,7 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
              s = {s}
              m = {m}
              l = {l}
+             controlsHover={controlsHover}
              classes = ""
              routeName = "/humanities-book-database"
              direction = "rl"
@@ -93,6 +116,7 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
               s = {s}
               m = {m}
               l = {l}
+              controlsHover={controlsHover}
               specs = "Figma, React, Node.js"
               introduction = "In this project I helped a client reorganize website content and create a responsive design true to the original tone."
               routeName = "/trekinn"
@@ -107,6 +131,7 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
               s = {s}
               m = {m}
               l = {l}
+              controlsHover={controlsHover}
               specs = "Figma"
               introduction = "In this project I researched common complaints and problems faced by Maine pharmacy users, then created a mobile app design and prototype with solutions such as transparent pricing, medication packaging status, refill notifications, and foreign language options."
               routeName = "/pharmacy-concept-app"
@@ -123,12 +148,23 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
                 image={projectPersonalImg}
                routeName = "/personal-website"
                direction = "rl"
-               
+               controlsHover={controlsHover}
                title = "Personal Website"
                specs = "Figma, React"
                introduction = "page in development. In this project I created a personal portfolio to showcase my work and design process."
                role = "Design and Development"
               / >
+        </div>
+        <div className="ColumnCentered worksControls" tabIndex="1" style={controlsStyle()} 
+onFocus={() => setControlsHover(true)}
+      onBlur={() => setControlsHover(false)}
+      onMouseEnter={() => setControlsHover(true)}
+      onMouseLeave={() => setControlsHover(false)}
+      onClick={() => {document.getElementById("projectItemsContainer").scrollBy({
+        left: 400,
+        behavior: "smooth"
+     })}}>
+          right
         </div>
       </div>
 

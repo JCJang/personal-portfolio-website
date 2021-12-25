@@ -4,7 +4,7 @@ import Fade from 'react-reveal/Fade';
 import Carousel from './projects/sections/section-components/Carousel'
 
 import {useEffect, useState} from 'react';
-const GridItem = ({m, l, direction, routeName, image, role, title, subtitle, specs, introduction, classes, carouselSlides=[]}) => {
+const GridItem = ({m, l, direction, routeName, controlsHover=false, image, role, title, subtitle, specs, introduction, classes, carouselSlides=[]}) => {
 
   const [cardHover, setCardHover] = useState(false)
   const [buttonHover, setButtonHover] = useState(false)
@@ -24,13 +24,13 @@ const gradientSetting = () =>{
       onMouseLeave={() => setCardHover(false)}
       style = {{
       borderRadius: cardHover?"3px":"8px",
-      borderBottom: buttonHover? "6px solid var(--velvet)":cardHover?"6px solid var(--desert-rose)":"6px solid var(--cinerous)",
+      borderBottom: controlsHover?"6px solid var(--works-accent)":buttonHover? "6px solid var(--velvet)":"6px solid var(--cinerous)",
       boxShadow:cardHover?"none":"rgba(60, 84, 82, 0.25) 0px 6px 12px -2px, rgba(60, 84, 82, 0.3) 0px 3px 7px -3px",
       width:"35vw",
-      margin:l?"0 1.5rem":"1rem 0",
-      background:buttonHover?"none":"var(--lilac)",
-      outline:buttonHover?"1.5px solid var(--midnight)":"var(--lilac)",
-      transition: 'border-bottom 0s'
+      margin:l?"0 1rem":"0.5rem 0",
+      background:controlsHover?"none":buttonHover?"none":"var(--lilac)",
+      outline:controlsHover?"1.5px solid var(--midnight)":buttonHover?"1.5px solid var(--midnight)":"var(--lilac)",
+      transition: 'border-bottom 0s, border-radius 0.3s, outline 0.3s, box-shadow 0.3s, background 0.3s, outline 0.3s'
   }}>
 
     <div className="transition" style={{
@@ -40,7 +40,7 @@ const gradientSetting = () =>{
       borderRadius:buttonHover || cardHover?"3px":"8px",
       overflow:"hidden"
       }}>
-      <div className={gradientSetting()} style={{width:"100%", zIndex:"5",height:"100%", position:"absolute",transform:buttonHover? "": cardHover? "translateY(-35vh)":"",
+      <div className={gradientSetting()} style={{width:"100%", zIndex:"5",height:"100%", position:"absolute",transform:buttonHover? "": carouselSlides === [] ? "": cardHover? "translateY(-35vh)":"",
 }}>
           <ImageFadeIn role="presentation" className="gridImage transition" src={image} style={{ filter:cardHover?"saturate(0.6)":"saturate(0.1) opacity(0.8)",
           }}/>
@@ -96,13 +96,13 @@ const gradientSetting = () =>{
         justifySelf:"flex-end",
         width:"100%",
         height:"3rem",
-        color:"var(--contact-text)",
+        color:buttonHover?"var(--contact-text)":"var(--midnight)",
         padding:"1rem",
         paddingBottom: "calc( 1rem - 6px)",
         textAlign:"right",
         textDecoration: "none",
         opacity:cardHover? "1" : "0",
-        background:buttonHover?"var(--velvet)":"var(--desert-rose)"
+        background:controlsHover?"var(--velvet)":buttonHover?"var(--velvet)":"var(--cinerous)"
     }}>GO TO CASE STUDY</Link>
     </div>
 
