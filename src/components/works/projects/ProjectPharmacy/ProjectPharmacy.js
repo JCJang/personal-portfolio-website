@@ -93,7 +93,7 @@ const ProjectPharmacy = ({m, l, setRouteFocus}) => {
         design="color, typography, and wireframes"
         prototype = "motion design"
         title="Pharmacy Concept App"
-        roles="Ideation, UI and UX design"
+        roles="Ideation, Research, UI & UX Design"
         summary="In this project I researched common complaints and problems faced by Maine pharmacy users, then created a mobile app design and prototype with solutions such as transparent pricing, medication packaging status, refill notifications, and foreign language options. Setting user expectations beforehand minimizes frustration, and more importantly, empowers users to plan their day and feel in control of something so personal - one's health and wellbeing."
         challenge="How can I simplify pharmacy trips for users?"
         solution="By listening to common user frustrations and integrating needed transparency into a mobile app."

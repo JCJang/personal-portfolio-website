@@ -13,7 +13,7 @@ import ImageModal from './ImageModal'
 
 const Carousel = ({
   tabindex = "0",
-  carouselSlides,
+  carouselSlides =[],
   carouselSlidesTitles,
   hideTitles = false,
   height = "100vh",
@@ -22,7 +22,6 @@ const Carousel = ({
 }) => {
 
   const [slideNumber, setSlideNumber] = useState(0)
-
   const slidePosition = (slide) => {
     const num = carouselSlides.indexOf(slide)
     if (slideNumber - num > 1) {

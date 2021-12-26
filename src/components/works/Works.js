@@ -1,9 +1,10 @@
 import GridItem from './GridItem'
 import useDraggableScroll from 'use-draggable-scroll';
 
-import projectBookImg from '../../images/woman-using-laptop-V.jpg'
-import projectPharmacyImg from '../../images/5-order-screen.jpg'
-import projectPersonalImg from '../../images/project-personal-thumbnail.jpg'
+import humanitiiesCoverImage from './projects/ProjectHumanities/cover-image-humanities.jpg'
+import pharmacyCoverImage from './projects/ProjectPharmacy/cover-image-pharmacy.jpg'
+import personalCoverImage from './projects/ProjectPersonal/cover-image-personal.jpg'
+import trekinnCoverImage from './projects/ProjectTrekinn/cover-image-trekinn.jpg'
 
 import humanitiesSlide1 from './projects/ProjectHumanities/thumbnail-humanities/searchview-history.jpg'
 import humanitiesSlide2 from './projects/ProjectHumanities/thumbnail-humanities/shelfview-historianscraft.jpg'
@@ -42,7 +43,7 @@ import { useLocation } from "react-router-dom";
 const Works = ({s, m, l, setRouteFocus}) => {
 
   const projectItems = document.querySelectorAll(".projectItem")
-  console.log(projectItems)
+
   const observer = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
@@ -75,38 +76,47 @@ const worksStyle = () => {
 
 const controlsStyle = () => {
 return {
-    background:"var(--works-accent)",
-    border: "1.5px solid var(--works-text)",
-    color: "var(--works-text)",
     borderRadius: "3px",
     padding: "0.5rem",
-    margin:"3.2rem 0",
+    margin:"1.2rem 0",
     zIndex: "11",
-
+    cursor:"pointer"
         
 }
 }
 const draggableScrollRef = useRef(null);
 const { onMouseDown } = useDraggableScroll(draggableScrollRef);
-
+// View case studies that follow my comprehensive design process, from research, design, to development of the final product.
   return (
     <div className="Column" style={worksStyle()}>
 
-      <div className={l?"Row":"Column"} style={{flex:"1", margin:l && "0rem 0"}}>
-        <div className= {l?"Column":"ColumnCentered"} style={{padding:"2rem", flex:"1", display:!l && "none"}}>
-          <h2>Works</h2>
-          <div className="boxDecoration"></div>
+      <div className="Row" style={{flex:"1", height:"calc(100% - 2rem - 1.2px)", padding: "0 3rem"}}>
+        {/* {<div className= {l?"Column":"ColumnCentered"} style={{paddingRight:"1.5rem", margin:"1.5rem 0", flex:"1", display:!l && "none",textAlign:"right"}}>
+
+          <div style={{height:"45%"}}>
+          <h3>Case Studies</h3>
           <br></br>
-          <div>View case studies that follow my comprehensive design process, from research, design, to development of the final product.</div>
+          <div>Target problem</div>
+          </div>
+          <div>
+          <div>my role</div>
+          <div>summary</div>
+          <br></br>
+          <div>go</div>
+          
+          </div>
 
 
-        </div>
+        </div>} */}
 
         <div className="ColumnCentered worksControls unselectable" id="leftControl" tabIndex="1" style={controlsStyle()} 
       onFocus={() => setControlsHover(true)}
       onBlur={() => setControlsHover(false)}
       onMouseEnter={() => setControlsHover(true)}
       onMouseLeave={() => setControlsHover(false)}
+      onKeyPress={(e)=>{
+        if (e.which === 13) document.getElementById("leftControl").click()
+       }}
       onClick={() => {document.getElementById("projectItemsContainer").scrollBy({
         left: -400,
         behavior: "smooth"
@@ -118,12 +128,11 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
         <div id="projectItemsContainer" className={l?"Row":"Column"} ref={draggableScrollRef}
     onMouseDown={onMouseDown} style={{
       overflowX:"scroll",
-      margin:"2rem 0",
       padding:"1.5rem 0",
      }}>
 
             <GridItem
-             image = {projectBookImg}
+             image = {humanitiiesCoverImage}
              carouselSlides={[humanitiesSlide1,humanitiesSlide2,humanitiesSlide3,humanitiesSlide4,humanitiesSlide5,humanitiesSlide6,humanitiesSlide7]}
              s = {s}
              m = {m}
@@ -132,7 +141,7 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
              classes = ""
              routeName = "/humanities-book-database"
              direction = "rl"
-             role = "Ideation, UX Research, Design, full stack development"
+             role = "Ideation, Research, UI and UX Design, Development"
              title = "Humanities Book Database"
              subtitle = "How can I help readers find quality humanities books?"
              specs = "Figma, React, Node.js, MongoDB"
@@ -140,23 +149,23 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
 
 
               <GridItem
-              image={projectPharmacyImg}
+              image={trekinnCoverImage}
               
               carouselSlides={[trekinnSlide1,trekinnSlide2,trekinnSlide3,trekinnSlide4]}
               s = {s}
               m = {m}
               l = {l}
               controlsHover={controlsHover}
-              specs = "Figma, React, Node.js"
-              introduction = "In this project I helped a client reorganize website content and create a responsive design true to the original tone."
+              specs = "Figma, React, Node.js, i18n, tailwind"
+              introduction = "In this project I remade a homestay’s website by reorganizing website content into relevant pages, creating a landing page with a call to action button, and separating Chinese and English versions through in-app internationalization. I also analyzed the original tone of the website and created a responsive design accordingly."
               routeName = "/trekinn"
               direction = "lr"
-              role = "UI and UX Design, Development, Internationalization"
+              role = "UI & UX Design, Development, Internationalization"
               title = "Trekinn Website"
               subtitle = "How can I reorganize a website without losing its brand image?" / >
 
              <GridItem
-              image={projectPharmacyImg}
+              image={pharmacyCoverImage}
               carouselSlides={[pharmacySlide1,pharmacySlide2,pharmacySlide3,pharmacySlide4]}
               s = {s}
               m = {m}
@@ -166,7 +175,7 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
               introduction = "In this project I researched common complaints and problems faced by Maine pharmacy users, then created a mobile app design and prototype with solutions such as transparent pricing, medication packaging status, refill notifications, and foreign language options."
               routeName = "/pharmacy-concept-app"
               direction = "lr"
-              role = "Ideation, UX Research, UI and UX Design"
+              role = "Ideation, Research, UI & UX Design"
               title = "Pharmacy concept app"
               subtitle = "How can I simplify pharmacy trips?" / >
 
@@ -175,21 +184,25 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
                 s = {s}
                 m = {m}
                 l = {l}
-                image={projectPersonalImg}
+                image={personalCoverImage}
                routeName = "/personal-website"
                direction = "rl"
                controlsHover={controlsHover}
                title = "Personal Website"
-               specs = "Figma, React"
-               introduction = "page in development. In this project I created a personal portfolio to showcase my work and design process."
-               role = "Design and Development"
+               subtitle = "How can I design a scalable and maintainable portfolio website?"
+               specs = "Figma, React, Node.js"
+               introduction = "In this project I scoped out portfolio content constraints for both UX designers and junior frontend developers, then established a design system so that my website can scale consistently. Using a new workflow that involves simultaneous design and development of reusable components in React, I was able to launch the basic site within 20 days."
+               role = "Research, UI & UX Design, Development"
               / >
         </div>
-        <div className="ColumnCentered worksControls unselectable" tabIndex="1" style={controlsStyle()} 
-onFocus={() => setControlsHover(true)}
+        <div id="rightControl" className="ColumnCentered worksControls unselectable" tabIndex="1" style={controlsStyle()} 
+      onFocus={() => setControlsHover(true)}
       onBlur={() => setControlsHover(false)}
       onMouseEnter={() => setControlsHover(true)}
       onMouseLeave={() => setControlsHover(false)}
+      onKeyPress={(e)=>{
+        if (e.which === 13) document.getElementById("rightControl").click()
+       }}
       onClick={() => {document.getElementById("projectItemsContainer").scrollBy({
         left: 400,
         behavior: "smooth"
@@ -200,7 +213,8 @@ onFocus={() => setControlsHover(true)}
         </div>
       </div>
 
-
+      <div style={{background:"var(--works-accent)", paddingBottom:"2rem"
+      ,borderTop:"1.2px solid var(--works-text)",margin:"0 3rem",opacity:"0.8"}}></div>
     </div>
   )
 }

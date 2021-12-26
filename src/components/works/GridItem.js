@@ -20,21 +20,24 @@ const gradientSetting = () =>{
       onMouseEnter={() => setCardHover(true)}
       onMouseLeave={() => setCardHover(false)}
       style = {{
-      borderRadius: cardHover?"3px":"8px",
-      background:controlsHover || buttonHover && "none",
-      borderBottom: buttonHover? "6px solid var(--velvet)":cardHover && "6px solid var(--cinerous)",
-      boxShadow:cardHover && "none",
-      width:"35vw",
+      borderRadius: "3px",
+      background:controlsHover && "none",
+      background:buttonHover && "var(--cinerous)",
+      borderBottom: buttonHover && "6px solid var(--velvet)",
+      boxShadow:cardHover && "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px",
+      width:"clamp(250px, 35vw, 500px)",
       margin:l?"0 1rem":"0.5rem 0",
-      outline:controlsHover || buttonHover && "1.5px solid var(--midnight)",
+      outline:controlsHover  && "1.5px solid var(--midnight)",
+      outline:buttonHover && "none",
       transition: 'border-bottom 0s, border-radius 0.3s, outline 0.3s, box-shadow 0.3s, background linear 0.4s, outline 0.3s'
   }}>
 
     <div className="transition" style={{
-      width:"35vw",
+      width:"clamp(250px, 35vw, 500px)",
       height:"45%",
       position:"relative",
-      borderRadius:buttonHover || cardHover?"3px":"8px",
+      borderTopLeftRadius:"3px",
+      borderTopRightRadius:"3px",
       overflow:"hidden"
       }}>
       <div className={gradientSetting()} style={{
@@ -43,10 +46,11 @@ const gradientSetting = () =>{
         height:"100%",
         position:"absolute",
         transform:buttonHover? "": !carouselSlides[0] ? "": cardHover? "translateY(-45vh) scale(1.1)":"",
-        boxShadow:buttonHover? "": !carouselSlides[0] ? "": cardHover? "5px 8px":""
+        boxShadow:buttonHover? "": !carouselSlides[0] ? "": cardHover? "5px 8px":"",
+        transition:"transform ease 0.4s, box-shadow 0.3"
 }}>
-          <ImageFadeIn role="presentation" className="gridImage transition" src={image} style={{ filter:cardHover?"saturate(0.6)":"saturate(0.1) opacity(0.8)",
-          }}/>
+        <ImageFadeIn role="presentation" className="gridImage transition" src={image} style={{ filter:cardHover?"saturate(0.6)":"saturate(0.1) opacity(0.8)",
+        }}/>
 <div className="transition Column" style = {{
     height: "100%",
     width: "100%",
@@ -74,17 +78,17 @@ const gradientSetting = () =>{
       <div style={{padding:"1.5rem", marginTop:"auto"}}><Carousel carouselSlides = {carouselSlides}
       modalFunction = {false}
   height = "30vh"
-  width = "calc( 35vw - 3rem)"/></div>
+  width = "calc( clamp(250px, 35vw, 500px) - 3rem)"/></div>
       
       </div>
 
     </div>
     <div className="Column" style={{height:"calc(55% - 3rem)",  padding:"0 1.5rem"}}>
     <Fade top delay={500}>
-        <div style={{font:"1.2rem/1.5 'Yaldevi'", margin:"1rem 0 0.5rem 0",color:"var(--works-text)"}}>{role}</div>
+        <div style={{font:"1.2rem/1.5 'Yaldevi'", margin:"1rem 0 0.5rem 0",color:buttonHover?"var(--occlusion)":"var(--works-text)"}}>{role}</div>
     </Fade>
 
-    <div className='body2' style={{color:"var(--midnight"}}>
+    <div className='body2' style={{color:buttonHover?"var(--occlusion)":"var(--midnight"}}>
         {introduction}
     </div>
 
@@ -95,6 +99,7 @@ const gradientSetting = () =>{
      onBlur={() => setButtonHover(false)}
      onMouseEnter={() => setButtonHover(true)}
      onMouseLeave={() => setButtonHover(false)}
+     className="buttonLink"
       style={{
         justifySelf:"flex-end",
         width:"100%",
@@ -104,8 +109,7 @@ const gradientSetting = () =>{
         paddingBottom: "calc( 1rem - 6px)",
         textAlign:"right",
         textDecoration: "none",
-        opacity:cardHover? "1" : "0",
-        background:controlsHover?"var(--velvet)":buttonHover?"var(--velvet)":"var(--cinerous)"
+        background:controlsHover || buttonHover && "var(--velvet)"
     }}>GO TO CASE STUDY</Link>
     </div>
 

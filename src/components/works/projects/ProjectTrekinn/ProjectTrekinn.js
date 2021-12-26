@@ -83,7 +83,7 @@ const ProjectTrekinn = ({m, l, setRouteFocus}) => {
         finalScreens={true}
         carousel = {true}
         carouselSlides={[displayImage1, displayImage2, displayImage3, displayImage4]}
-        carouselSlidesTitles={["Trekinn's Landing page. Tablet screens are in English","Rooms page with photo Carousel", 'Map & Destinations page (laptop, phone) and Contact page (tablet). The mobile version of Map & Destinations has a button below the map. It opens the Google Maps app for quick navigation.', 'About page (laptop, phone) and Map & Destinations (tablet)']}
+        carouselSlidesTitles={["Trekinn's Landing page. Tablet screens are in English","Rooms page with photo carousel", 'Map & Destinations page (laptop, phone) and Contact page (tablet). The mobile version of Map & Destinations has a button below the map. It opens the Google Maps app for quick navigation.', 'About page (laptop, phone) and Map & Destinations (tablet)']}
 
         mainImage={m?mainImageH:mainImageV}
          research="Assessment, Reorganization, and user flow"
@@ -91,11 +91,11 @@ const ProjectTrekinn = ({m, l, setRouteFocus}) => {
          development = "Working with tailwind and i18n in React"
 
          title="Trekinn Website"
-         roles="UI and UX Design, Development, Internationalization"
+         roles="UI & UX Design, Development, Internationalization"
 
          challenge="How can I redesign a website while maintaining its original tone?"
          solution="By extracting themes from website content and designing in accordance."
-         summary="In this project I scoped out portfolio content constraints for both UX designers and junior frontend developers, then established a design system so that my website can scale consistently. Finally, I experimented with a new workflow that involves simultaneous design and development. By designing and developing reusable components in React and keeping organized, I was able to launch my react website in 20 days."
+         summary="In this project I helped a client remake his homestay’s website. Ways I improved the site’s user experience included reorganizing website content into relevant pages, creating a landing page with a call to action button, separating Chinese and English versions through in-app internationalization, and increasing of intra-website mobility thro ugh links. I also analyzed the original tone of the website and created a responsive design that enhances the message. Mutable content is placed in a ‘EDITME’ folder for easy editing and maintenance, even from someone who has no experience with code."
          websiteLink="vibrant-ritchie-da2a24.netlify.app"
 
          />
@@ -129,7 +129,7 @@ const ProjectTrekinn = ({m, l, setRouteFocus}) => {
         <Design m={m} l={l}
         design="I wanted to present Trekinn as a no frills, cost-effective, practical, and quiet space to relax and recharge. With this and the target audience of young adults and families in mind, I wanted the site to feel playful but not frivolous, modern but not too high end or eccentric. I began envisioning a brochure-like design quality, with many visuals, but also concentrated, well-organized information with a focus on exploring Hualien. With themes of warmth, elegance, and nature in mind, I jumped into my design workflow, starting with typography."
 
-        typography="Since most customers are from Taiwan, my design approach is Chinese-first. For Chinese I wanted a Ming (serifed) font, which generally feels more serious and academic. I landed on Gen Wan Ming, which was a beautiful typeface that was both elegant and scholarly, with slightly rounded angles. The typeface pairs well with the serious tone of being direct and trustworthy, and also pairs well with the brochure quality I wanted./For the body text, I chose Genseki, a Gothic font. For the English body text, though at first I considered Noto Sans for its rounded quality, but finally turned to Roboto for its compactness and box-like quality that matches Chinese characters. At a late stage of development, I swapped the English Headers from the default Gen Wan Ming to the more Modern-leaning Rufina. This increased the coherency of the English website due to Rufina’s slimmer horizontal lines that ties in with Roboto./I encountered some difficulties tailoring the English version to the Chinese layout. For instance, optimal readability for Chinese or character-based languages falls between a line height of 1.5-1.7 (the default line height for Bootstrap is 1.4). When mapping English text onto the Chinese, line height can seem ‘off.’ This is why it is important to take a Chinese-first approach when it suits the project needs."
+        typography="Since most customers are from Taiwan, my design approach is Chinese-first. For Chinese I wanted a Ming (serifed) font, which generally feels more serious and academic. I landed on Gen Wan Ming, which was a beautiful typeface that was both elegant and scholarly, with slightly rounded angles. The typeface pairs well with the serious tone of being direct and trustworthy, and also pairs well with the brochure quality I wanted./For the body text, I chose Genseki, a Gothic font. For the English body text, though at first I considered Noto Sans for its rounded quality, but finally turned to Roboto for its compactness and box-like quality that matches Chinese characters. At a late stage of development, I swapped the English Headers from the default Gen Wan Ming to the more Modern-leaning Rufina. This increased the coherency of the English website due to Rufina’s slimmer horizontal lines that ties in with Roboto."
 
         finalTypography={["3-Chinese Headings: Gen Wan Ming", "4-Chinese body: Genseki", "4-English Headings: Rufina","4-English body: Roboto"]}
         typographyRefImages={[textRefEnglish, textRefBodyText]}
@@ -176,7 +176,8 @@ const ProjectTrekinn = ({m, l, setRouteFocus}) => {
          />
 
         <Footer m={m} l={l}
-      learned="I learned so much from this project, from tab navigation, integrating Netlify with react, to debugging across browsers. I also had fun working on ‘finishing touch’ features like a custom 404 page, loaders, and nav bar animations. What would I do differently for my next project? Enhance the vanilla CSS that I've been using thus far with tools like tailwind, with which I can manage ‘hover’ states. I also need to learn more about accessibility and how to solve related problems, like how to implement tab navigation inside modals./If you are reading this paragraph, thank you so much for following my journey. If you have any ideas or feedback about what I can do better, feel free to send me your thoughts in the 'contact' page! Your input would help me learn and grow as a designer and developer."/>
+      learned="I enjoy learning handy new technologies appropriate to each project. For this one, I learned tailwind and i18n, both of which are oddly satisfying to implement. One challenge I encountered was tailoring the English version to the Chinese version layout. In general, the line height range for optimal readability is 1.5-1.7 for Chinese or character-based languages, while falls around 1.3-1.5 for English and other languages that use the Latin alphabet. Since it is impossible to make individual tweaks for every CSS value, it is important to prioritize one language based on the target audience – in this case, taking a Chinese-first approach.
+      "/>
 
       </div>
     )

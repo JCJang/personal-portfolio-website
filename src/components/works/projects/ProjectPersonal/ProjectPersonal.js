@@ -89,7 +89,7 @@ const ProjectPersonal = ({m, l, setRouteFocus}) => {
          development = "defining resources and problem-solving in React"
 
          title="Personal Website"
-         roles="Design and Development"
+         roles="Research, UI & UX Design, Development"
 
          challenge="How can I design a scalable and maintainable portfolio website?"
          solution="By using a design system and creating reusable sections and components."

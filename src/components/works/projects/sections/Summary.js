@@ -90,6 +90,12 @@ const Summary = ({
           return "1rem 2rem"
         }
 
+        const sideMargin = () => {
+          if (l) return "10rem"
+          if (m) return "5rem"
+          return "2rem"
+        }
+
         const colLarge = () => {
           if (l) return {
               width:"calc(70vw - 12.5rem)"
@@ -157,10 +163,11 @@ const Summary = ({
     <div className="Column" style={{
         position: "relative",
         zIndex: "29",
-        padding: m?"1rem 5rem":"1rem 2rem",
+        paddingTop:"2rem",
+        paddingLeft: sideMargin(),
         height: m
-          ? "15rem"
-          : "20rem",
+          ? "13rem"
+          : "17rem",
         width: "100vw",
         color: "var(--occlusion)",
         background: "var(--table-neutral)"
@@ -173,7 +180,7 @@ const Summary = ({
         <h2 className={l && "h1"} style={{paddingTop:"0"}}>{title}</h2>
         <br></br>
         <h5 style={{
-            fontSize: l && "2rem"
+            fontSize: l && "1.8rem"
           }}>{
             roles.split(",").map((role) => {
               return <div>{role}</div>
@@ -225,7 +232,7 @@ const Summary = ({
 
       <div className={m
           ? "Row"
-          : "Column"} style={{margin:m?"1rem 5rem":"1rem 2rem"}}>
+          : "Column"} style={{margin:l?"1rem 8rem":m?"1rem 3rem":"1rem 2rem"}}>
         {background && <TocLabel m={m} label="background" sublabel={background}/>}
         {research && <TocLabel m={m} label="research" sublabel={research}/>}
         {design && <TocLabel m={m} label="design" sublabel={design}/>}
@@ -264,7 +271,6 @@ const Summary = ({
 
     </div>
 
-    {!carousel || !l &&  <div style={{marginBottom:extraSpacing()}}></div>}
 
 {!l && <h6 className="ColumnCentered" style={{margin:`0 2rem`}}><strong>Tap on images to see them in full size</strong></h6>}
 
@@ -274,6 +280,8 @@ const Summary = ({
           <Carousel carouselSlides={carouselSlides} height={l?"90vh":"40vh"} carouselSlidesTitles={carouselSlidesTitles}/>
         </div>
     }
+
+{!carousel || !l?  <div style={{marginBottom:extraSpacing()}}></div>:""}
 
     {websiteLink && <div className="Column subtitle1" style={{
         margin: m? "2rem 5rem": "2rem 2rem",

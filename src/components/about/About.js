@@ -213,7 +213,7 @@ const About = ({s, m, l, setRouteFocus}) => {
   <div id="summary-col-1" className="Column" style={{height:l?"var(--desktopheight)":"60vh", position:"relative",
     zIndex:"4"}}>
 
-  <h2 style={{paddingTop:"1rem", width:"50%"}}>Designer & Frontend Developer</h2>
+  <h2 style={{paddingTop:"1rem", width:"50%", textTransform:"none" }}>Hi, I'm Jennifer, a Web Designer & Developer</h2>
 
     <div className="boxDecoration" style={{
         borderColor: "var(--highlight)"
@@ -222,7 +222,7 @@ const About = ({s, m, l, setRouteFocus}) => {
     <h6 style={{flex:"1", width:s?"50%":"100%"}}>
 
     <Fade bottom delay={500}>
-      <div style={{fontSize:!s && "1.1 rem"}}><h6><em>How can I benefit people’s lives by combining psychology with the power of technology?</em></h6></div>
+      <div style={{fontSize:!s && "1.1 rem"}}><h6><em>My goal: How can I benefit people’s lives by combining psychology with the power of technology?</em></h6></div>
       </Fade>
 
     </h6>

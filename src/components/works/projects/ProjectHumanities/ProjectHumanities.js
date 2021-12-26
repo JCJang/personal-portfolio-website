@@ -112,7 +112,7 @@ const ProjectHumanities = ({m, l, setRouteFocus}) => {
          development="defining resources, database design, and problem-solving in React"
 
          title="Humanities Book Database"
-         roles="Ideation, Design, Full Stack Development"
+         roles="Ideation, Research, UI and UX Design, Development"
          summary="Through a user survey of 50 humanities book readers, I established four key criteria for book selection - rationality, specificity, systematicity, and personality - and gained insights about readers’ book selection behavior. Then, I organized research information into a user flow, and created a responsive design for mobile, tablet, and desktop sizes in Figma. Finally, I created the web app using React and node.js, using data from Google Books API, Wikipedia API, and my MongoDB book database."
          challenge="How can I present quality humanities books to readers?"
          solution="By pairing reader-defined quality books with an interface that prioritizes valued book selection criteria."

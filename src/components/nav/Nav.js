@@ -64,7 +64,7 @@ const colorForDivider = () => {
   if(routeFocus==="/about"){
     return "var(--desert-rose)"
   }else if (routeFocus==="/") {
-    return "var(--works-accent)"
+    return "var(--works-text)"
   }else if (routeFocus==="/contact") {
     return "var(--contact-text)"
   }else{
