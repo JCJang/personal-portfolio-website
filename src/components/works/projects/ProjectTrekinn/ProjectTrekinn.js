@@ -129,22 +129,20 @@ const ProjectTrekinn = ({m, l, setRouteFocus}) => {
         <Design m={m} l={l}
         design="I wanted to present Trekinn as a no frills, cost-effective, practical, and quiet space to relax and recharge. With this and the target audience of young adults and families in mind, I wanted the site to feel playful but not frivolous, modern but not too high end or eccentric. I began envisioning a brochure-like design quality, with many visuals, but also concentrated, well-organized information with a focus on exploring Hualien. With themes of warmth, elegance, and nature in mind, I jumped into my design workflow, starting with typography."
 
-        typography="Since most customers are from Taiwan, my design approach is Chinese-first. For Chinese I wanted a Ming (serifed) font, which generally feels more serious and academic. I landed on Gen Wan Ming, which was a beautiful typeface that was both elegant and scholarly, with slightly rounded angles. The typeface pairs well with the serious tone of being direct and trustworthy, and also pairs well with the brochure quality I wanted./For the body text, I chose Genseki, a Gothic font. For the English body text, though at first I considered Noto Sans for its rounded quality, but finally turned to Roboto for its compactness and box-like quality that matches Chinese characters. At a late stage of development, I swapped the English Headers from the default Gen Wan Ming to the more Modern-leaning Rufina. This increased the coherency of the English website due to Rufina’s slimmer horizontal lines that ties in with Roboto."
+        typography="Since most customers are from Taiwan, my design approach is Chinese-first. For Chinese I wanted a Ming (serifed) font, which generally feels more serious and academic. I landed on Gen Wan Ming, which was a beautiful typeface that was both elegant and scholarly, with slightly rounded angles. The typeface pairs well with the serious tone of being direct and trustworthy, and also pairs well with the brochure quality I wanted./For the body text, I chose Genseki, a Gothic font. For the English body text, though at first I considered Noto Sans for its rounded quality, but finally turned to Roboto for its compactness and box-like quality that matches Chinese characters. At a late stage of development, I swapped the English Headers from the default Gen Wan Ming to the more Modern-leaning Rufina. This increased the coherency of the English website as a whole since Rufina’s slimmer horizontal lines ties in with Roboto."
 
         finalTypography={["3-Chinese Headings: Gen Wan Ming", "4-Chinese body: Genseki", "4-English Headings: Rufina","4-English body: Roboto"]}
         typographyRefImages={[textRefEnglish, textRefBodyText]}
         typographyRefTitles={["options for English headers", "Compatability of 'Genseki'-'Noto Sans' and 'Genseki'-'Roboto'"]}
         typographyFinalImg={typographyFinalImg}
 
-        finalColorLabels={["sapling", "tropical", "ginger","plum"]}
-        finalColorHexes ={ ['#A7C9AF','#83C4D2',"#C9AD83",'#E4816C']}
-        colorLabels={["cream", "beige","rapids", "taroko", "ravine"]}
-        colorHexes ={['#FFF6F2','#EDE2DD','#D8E5E3',"#3E4F54", '#384A2C']}
+        colorLabels={["beige", "ginger","ravine","rapids","tropical", "taroko","cream","sapling","pebble",  "plum"]}
+        colorHexes ={['#EDE2DD',"#C9AD83",'#384A2C','#D8E5E3', '#83C4D2',"#3E4F54", '#FFF6F2','#A7C9AF','#988D98','#E4816C']}
 
         designTitle ="Color Ideation"
         colorSection="Trekinn"
 
-        colorTitles="Color as Brand Message"
+        colorTitles="Final Colors"
         colorDescriptions="Although guests are highly encouraged to explore Hualien’s nature, there were not too many visuals. So the first thing I incorporated into the design assets were high-quality photos showcasing the local scenery. Since all of them are highly saturated, I wanted the website to have low to medium saturated colors for balance."
         moodboardText="To generate a palette, I sampled both nature photos and photos of Trekinn’s interior, matched the sampled colors to each theme, then desaturated and tweaked each color individually until I have a low, medium, and high brightness colors for each theme."
 
@@ -167,7 +165,7 @@ const ProjectTrekinn = ({m, l, setRouteFocus}) => {
 
       finalStack="HTML, CSS, JavaScript, React, Tailwind, i18n."
       stackMemo="Hosted on Netlify"
-      githubRepository="https://github.com/JCJang/personal-portfolio-website"
+      githubRepository="https://github.com/JCJang/trekinn-website"
 
   internationalizationText="Instead of creating a separate English version of the site, I used i18n, which allows in-app language changes – no reload needed. It works by mapping json values onto their corresponding keys in the UI, and is fairly easy to work with."
   i18nTemplateCode="JCJang/4787555b42f172425b8cb8d0a3aaaff9"

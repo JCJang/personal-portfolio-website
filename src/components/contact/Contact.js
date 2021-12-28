@@ -27,7 +27,7 @@ useEffect(()=>{
     return {
       background:"var(--contact-bg)",
       color: "var(--contact-text)",
-      height:"var(--desktopheight)",
+      height:m?"var(--desktopheight)":"var(--mobileheight)",
       overflowY:"auto",
       width:"100vw",
       padding: textMargin(),

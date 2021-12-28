@@ -161,7 +161,7 @@ const [hover, setHover] = useState(false)
           cursor:"pointer",
           background: "var(--works-bg)",
           top:!l && openedLayout && "0px",
-          marginLeft:l && "5rem",
+          marginLeft:l && "7.5rem",
           marginTop: !l && "2rem",
           boxShadow: openedLayout?"rgba(17, 17, 26, 0.1) 0px 1px 0px": "rgba(0, 0, 0, 0.15) 0px 3px 3px 0px"
 }}>
@@ -173,8 +173,8 @@ const [hover, setHover] = useState(false)
               alt="moodboard"
               style={{
               transition: "filter linear 0.5s",
-              height:l?"30vw":"70vw",
-              width:l?"30vw":"70vw",
+              height:l?"30vw":m?"calc(100vw - 14rem)":"calc(100vw - 8rem)",
+              width:l?"30vw":m?"calc(100vw - 14rem)":"calc(100vw - 8rem)",
               filter:openedLayout && "saturate(0)"
             }} src={colorMoodboard}/>
         </div>
@@ -186,7 +186,7 @@ const [hover, setHover] = useState(false)
   alignSelf:"flex-start",
   justifySelf:"flex-start",
   paddingTop:"1rem",
-  marginLeft:"5rem",
+  marginLeft:l?"7.5rem":m?"5rem":"2rem",
   position:"relative",
   bottom: openedLayout ? "-3rem" : "1px",
   opacity: openedLayout? "0" : "1",
@@ -199,7 +199,7 @@ const [hover, setHover] = useState(false)
   <div id="description-col" className="Column" style={{
     width:l?"30vw":"80vw",
     paddingLeft:l && "4rem",
-    margin:l?"1rem 10rem":m?"1rem 5rem":"1rem 2rem"
+    margin:l?"":m?"1rem 5rem":"1rem 2rem"
   }}>
 
     <div className="subtitle1" style={{

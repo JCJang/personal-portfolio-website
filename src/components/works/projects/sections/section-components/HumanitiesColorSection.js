@@ -32,7 +32,7 @@ if(number===1){
     {number === 0 && <>
       <br></br>
 
-    <h4 className="Row"  style={{margin:m?"1rem 5rem 0 5rem":"1rem 2rem 0 2rem"}}>
+    <h4 className="Row"  style={{margin:l?"1rem 10rem 0 10rem":m?"1rem 5rem 0 5rem":"1rem 2rem 0 2rem"}}>
     <ColorIcon style={{alignSelf: "center",
     marginRight: "0.8rem"}}/>
     Color</h4>
@@ -41,11 +41,11 @@ if(number===1){
 
     <div className={l?"Row":"Column"} style={{
       flexDirection:l && rightToLeft()? "row-reverse": !l && "column-reverse",
-      margin:l? "2.5rem":"2.5rem 0",
+      padding:l?"2rem 10rem":m?"2rem 5rem":"2rem",
       position:"relative",
       height:"fit-content",
       overflow:!l && "hidden",
-      width:l?"calc(100vw - 5rem)":"100vw",
+      width:"100vw",
      color:"var(--occlusion)",
      position: "relative",
     }}>
@@ -81,8 +81,8 @@ if(number===1){
           <div style={{opacity:openedLayout && "0.4", transition: "opacity ease 0.9s"}}>
               <ImageFadeIn alt="moodboard" style={{
                 transition: "filter linear 0.5s",
-                height:l?"30vw":"70vw",
-                width:l?"30vw":"70vw",
+                height:l?"30vw":m?"calc(100vw - 14rem)":"calc(100vw - 8rem)",
+                width:l?"30vw":m?"calc(100vw - 14rem)":"calc(100vw - 8rem)",
                 filter:openedLayout && "saturate(0)"
               }} src={colorMoodboard}/>
           </div>
@@ -90,9 +90,7 @@ if(number===1){
       </div>
 
     </Fade>
-    <div className="overline" style={{alignSelf:leftToRight()? "flex-start":"flex-end", justifySelf:"flex-start", paddingTop:"1rem",
-    marginLeft:!l && leftToRight() && "5rem",
-    marginRight:!l && rightToLeft() && "5rem"}}>
+    <div className="overline" style={{alignSelf:leftToRight()? "flex-start":"flex-end", justifySelf:"flex-start", paddingTop:"1rem"}}>
       moodboard
     </div>
     </div>
@@ -109,8 +107,6 @@ if(number===1){
       <div className="subtitle1" style={{
         fontSize:"3rem",
         position:"relative",
-        marginLeft:!m && leftToRight() && "2rem",
-        marginRight:!m && rightToLeft() && "2rem",
         left: !l? "": leftToRight() && openedLayout ? "55vw" : leftToRight() ? "1px" : "",
         right: !l? "": rightToLeft() && openedLayout ? "55vw" : rightToLeft() ?  "1px" : "",
         opacity: !l? "1" : openedLayout? "0" : "1",
@@ -122,8 +118,6 @@ if(number===1){
         margin:"1.5rem 0",
         fontSize:"1.2rem",
         position:"relative",
-        marginLeft:!m && leftToRight() && "2rem",
-        marginRight:!m && rightToLeft() && "2rem",
         left: leftToRight() && openedLayout ? "100vw" : leftToRight() ? "1px" : "",
         right: rightToLeft() && openedLayout ? "100vw" : rightToLeft() ? "1px" : "",
         opacity: openedLayout? "0" : "1",
@@ -151,9 +145,8 @@ if(number===1){
       <div className="subtitle1" style={{
         opacity: openedLayout? "0" : "1",
         position:"relative",
-        paddingTop:!l && "4rem",
-        marginLeft:!m && leftToRight() && "2rem",
-        marginRight:!m && rightToLeft() && "2rem",
+        paddingTop:!l && "2.5rem",
+        marginBotton:!l && "0.5rem",
         alignSelf:l?"flex-end":"center",
         justifySelf:l?"flex-end":"center",
         bottom: openedLayout ? "-3rem" : "1px",

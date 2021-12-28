@@ -52,7 +52,7 @@ const Works = ({s, m, l, setRouteFocus}) => {
     },
     {
       root: document.querySelector('#projectItemsContainer'),
-      threshold: 0.9  }
+      threshold: s? 0.9 : 0.7 }
   )
   projectItems.forEach((entry)=>{
     observer.observe(entry)
@@ -69,7 +69,8 @@ const worksStyle = () => {
   return {
     background:"var(--works-accent)",
     color: "var(--midnight)",
-    height:"var(--desktopheight)",
+    height:m?"var(--desktopheight)":"var(--mobileheight)",
+    overflow: "hidden",
     width:"100vw",
   }
 };
@@ -90,7 +91,7 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
   return (
     <div className="Column" style={worksStyle()}>
 
-      <div className="Row" style={{flex:"1", height:"calc(100% - 2rem - 1.2px)", padding: "0 3rem"}}>
+      <div className="Row" style={{flex:"1", height:m?"calc(100% - 2rem - 1.2px)":"calc(100% - 5rem - 1.5px)", padding: l?"0 3rem":""}}>
         {/* {<div className= {l?"Column":"ColumnCentered"} style={{paddingRight:"1.5rem", margin:"1.5rem 0", flex:"1", display:!l && "none",textAlign:"right"}}>
 
           <div style={{height:"45%"}}>
@@ -109,7 +110,7 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
 
         </div>} */}
 
-        <div className="ColumnCentered worksControls unselectable" id="leftControl" tabIndex="1" style={controlsStyle()} 
+        {m && <div className="ColumnCentered worksControls unselectable" id="leftControl" tabIndex="1" style={controlsStyle()} 
       onFocus={() => setControlsHover(true)}
       onBlur={() => setControlsHover(false)}
       onMouseEnter={() => setControlsHover(true)}
@@ -124,8 +125,8 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
        <Prev/>
           <div>scroll</div>
           <div>left</div>
-        </div>
-        <div id="projectItemsContainer" className={l?"Row":"Column"} ref={draggableScrollRef}
+        </div>}
+        <div id="projectItemsContainer" className="Row" ref={draggableScrollRef}
     onMouseDown={onMouseDown} style={{
       overflowX:"scroll",
       padding:"1.5rem 0",
@@ -195,7 +196,49 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
                role = "Research, UI & UX Design, Development"
               / >
         </div>
-        <div id="rightControl" className="ColumnCentered worksControls unselectable" tabIndex="1" style={controlsStyle()} 
+       {m && <div id="rightControl" className="ColumnCentered worksControls unselectable" tabIndex="1" style={controlsStyle()} 
+      onFocus={() => setControlsHover(true)}
+      onBlur={() => setControlsHover(false)}
+      onMouseEnter={() => setControlsHover(true)}
+      onMouseLeave={() => setControlsHover(false)}
+      onKeyPress={(e)=>{
+        if (e.which === 13) document.getElementById("rightControl").click()
+       }}
+      onClick={() => {document.getElementById("projectItemsContainer").scrollBy({
+        left: 400,
+        behavior: "smooth"
+     })}}>
+       <Next/>
+         <div>scroll</div>
+         <div>right</div>
+        </div>}
+      </div>
+     {!m && <div className='RowCentered' style={{height:"5rem"}}>
+      <div className="ColumnCentered worksControlsS unselectable" id="leftControl" tabIndex="1" style={  
+        {padding: "0.5rem",
+    zIndex: "11",
+    cursor:"pointer"}
+      } 
+      onFocus={() => setControlsHover(true)}
+      onBlur={() => setControlsHover(false)}
+      onMouseEnter={() => setControlsHover(true)}
+      onMouseLeave={() => setControlsHover(false)}
+      onKeyPress={(e)=>{
+        if (e.which === 13) document.getElementById("leftControl").click()
+       }}
+      onClick={() => {document.getElementById("projectItemsContainer").scrollBy({
+        left: -400,
+        behavior: "smooth"
+     })}}>
+       <Prev/>
+          <div>scroll</div>
+          <div>left</div>
+        </div>
+        <div id="rightControl" className="ColumnCentered worksControlsS unselectable" tabIndex="1" style={  
+        {padding: "0.5rem",
+    zIndex: "11",
+    cursor:"pointer"}
+      } 
       onFocus={() => setControlsHover(true)}
       onBlur={() => setControlsHover(false)}
       onMouseEnter={() => setControlsHover(true)}
@@ -211,10 +254,9 @@ const { onMouseDown } = useDraggableScroll(draggableScrollRef);
          <div>scroll</div>
          <div>right</div>
         </div>
-      </div>
-
-      <div style={{background:"var(--works-accent)", paddingBottom:"2rem"
-      ,borderTop:"1.2px solid var(--works-text)",margin:"0 3rem",opacity:"0.8"}}></div>
+        </div>}
+      {m && <div style={{background:"var(--works-accent)", paddingBottom:"2rem"
+      ,borderTop:"1.2px solid var(--works-text)",margin:"0 3rem",opacity:"0.8"}}></div>}
     </div>
   )
 }

@@ -54,7 +54,7 @@ const About = ({s, m, l, setRouteFocus}) => {
       return {
         background:"var(--cinerous)",
         color: "var(--velvet)",
-        height:"var(--desktopheight)",
+        height:m?"var(--desktopheight)":"var(--mobileheight)",
         width:"100vw",
         overflowY:"auto",
         overflowX:"hidden",

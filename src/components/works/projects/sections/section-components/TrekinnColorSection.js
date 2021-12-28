@@ -161,7 +161,7 @@ const [hover, setHover] = useState(false)
           cursor:"pointer",
           background: "var(--works-bg)",
           top:!l && openedLayout && "0px",
-          marginLeft:l && "5rem",
+          marginLeft:l && "7.5rem",
           marginTop: !l && "2rem",
           boxShadow: openedLayout?"rgba(17, 17, 26, 0.1) 0px 1px 0px": "rgba(0, 0, 0, 0.15) 0px 3px 3px 0px"
 }}>
@@ -173,8 +173,8 @@ const [hover, setHover] = useState(false)
               alt="moodboard"
               style={{
               transition: "filter linear 0.5s",
-              height:l?"30vw":"70vw",
-              width:l?"30vw":"70vw",
+              height:l?"30vw":m?"calc(100vw - 14rem)":"calc(100vw - 8rem)",
+              width:l?"30vw":m?"calc(100vw - 14rem)":"calc(100vw - 8rem)",
               filter:openedLayout && "saturate(0)"
             }} src={colorMoodboard}/>
         </div>
@@ -186,7 +186,7 @@ const [hover, setHover] = useState(false)
   alignSelf:"flex-start",
   justifySelf:"flex-start",
   paddingTop:"1rem",
-  marginLeft:"5rem",
+  marginLeft:l?"7.5rem":m?"5rem":"2rem",
   position:"relative",
   bottom: openedLayout ? "-3rem" : "1px",
   opacity: openedLayout? "0" : "1",
@@ -199,7 +199,7 @@ const [hover, setHover] = useState(false)
   <div id="description-col" className="Column" style={{
     width:l?"30vw":"80vw",
     paddingLeft:l && "4rem",
-    margin:l?"1rem 10rem":m?"1rem 5rem":"1rem 2rem"
+    margin:l?"":m?"1rem 5rem":"1rem 2rem"
   }}>
 
     <div className="subtitle1" style={{
@@ -222,9 +222,10 @@ const [hover, setHover] = useState(false)
      {moodboardText}</div>
 
 
-    <div className="Row" style={{
+    <div style={{
       margin:"0 0.5rem",
-      flex:"1",
+      display:"grid",
+      gridTemplateColumns:"1fr 1fr 1fr",      
       position:"relative",
       left: openedLayout ? "95vw" : "1px",
       opacity: openedLayout? "0" : "1",
@@ -272,48 +273,6 @@ const [hover, setHover] = useState(false)
   </Fade>
 
   </div>
-
-  <div className="Row" style={{justifyContent:"center", width:"100vw"}}><div className="boxDecoration" style={{width:"20vw", borderColor:"var(--velvet)",margin:""}}></div></div>
-
-
-<div id="opened-col-colorText" className="Row" style={textMarginStyle()}>
-
-<div style={{paddingBottom:extraSpacing()}}></div>
-
-    <div style={colSmall()}>
-        <div className="Column">
-              {finalColorHexes.map((hex, number)=>{
-                return <Fade bottom>
-                <div className="Column" style={{alignItems:"center"}}>
-                 <div style={{height:l?"1.5rem":"2rem", width:l?"1.5rem":"2rem", background:hex, margin:"0.5rem 1.3rem", borderRadius:"2px"}}></div>
-                 <div><strong> {finalColorLabels && finalColorLabels[number]}</strong></div>
-                 <div style={{fontSize:"0.7rem", opacity:"0.8"}}>{hex}</div>
-                 </div>
-                 </Fade>
-              })}
-        </div>
-    </div>
-
-    <div className="body1" style={colLarge()}>
-          <div className="subtitle1" style={{
-                  fontSize:"3rem"}}>
-                  Accent Colors</div>
-                  <br></br>
-              {colorText.split("/").map((paragraph)=>{
-                  return <>
-                  <div>{paragraph}</div>
-
-                  <br></br>
-
-                  </>
-              })}
-    </div>
-    <div style={{paddingBottom:extraSpacing()}}></div>
-</div>
-
-
-
-
 
 
 </>

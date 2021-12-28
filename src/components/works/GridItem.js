@@ -26,7 +26,7 @@ const gradientSetting = () =>{
       borderBottom: buttonHover && "6px solid var(--velvet)",
       boxShadow:cardHover && "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px",
       width:"clamp(250px, 35vw, 500px)",
-      margin:l?"0 1rem":"0.5rem 0",
+      margin:"0 1rem",
       outline:controlsHover  && "1.5px solid var(--midnight)",
       outline:buttonHover && "none",
       transition: 'border-bottom 0s, border-radius 0.3s, outline 0.3s, box-shadow 0.3s, background linear 0.4s, outline 0.3s'
