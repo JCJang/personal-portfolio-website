@@ -521,9 +521,6 @@ const About = ({s, m, l, setRouteFocus}) => {
   <div style={{paddingTop:col2PaddingTop()}}></div>
   <div style={{display:"inline"}}>
   I am an interdisciplinary learner that enjoys working at every stage of a product. Being an INTJ personality type, my strengths lie in solving problems logically and systematically. If you haven’t already, take a look at my <Link className="AboutWorksLink" target="_blank" to="/">case studies</Link> that follow my comprehensive design process, from research, design, to development of the final product.
-  <br></br>
-  <br></br>
-   My ideal company is a small sized startup that uses technology to change people’s lives for the better. If this sounds like your team, I would love to hear from you!
   </div>
 
   <Link to="/contact"
